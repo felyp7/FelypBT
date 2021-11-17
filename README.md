@@ -52,3 +52,11 @@
 !iq
 
 !swag
+
+!forseninsane
+
+!trihard
+
+!bingchilling
+
+!zyzzrave
