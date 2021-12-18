@@ -1,62 +1,157 @@
 # Commands
-!hello
+'hello
+- Greet you lol
 
-!berriyapls
+'xqcl
+- xqcL ascii
 
-!xqcl
+'xqctf
 
-!xqctf
+- xqctf ascii
 
-!xqcs
+'xqcs
+- xqcS ascii
 
-!xqcinsane
+'tf
+- tf ascii
 
-!alienpls3
+'spider
+- animated spider ascii (need mod/vip lol)
 
-!thejungle
+'okayeg
+- okayeg ascii
 
-!smorc
+'lule
+- lule ascii
 
-!trafic
+'ping
+- Ping (Latency, Uptime, Ram)
 
-!tf
+'pingpong
+- ppPing ppPong
 
-!cockascii
+'poki
+- Simping poki copypasta
 
-!spider
+'pokilookingatyou
+- PokiLookingAtYou
 
-!okayeg
+'pick
+- Yes, No, Maybe
 
-!lule
+'roll
+- Rolls 1 or 2
 
-!ping
+'gaytest
+- Gay Test lol
 
-!pingpong
+'lesbiantest
+- Lesbian Test lol
 
-!sixconsoles
+'cock
+- Cock size BillyApprove
 
-!poki
+'vagina
+- Vagina depth lol
 
-!pokilookingatyou
+'iq
+- Iq size FeelsDankMan
 
-!pausechamp
+'swag
+- Size of swag 
 
-!roll
+'trihard
+- TriHard ascii
 
-!gaytest
+'vanish
+- Vanishes you
 
-!lesbiantest
+'pyramid
+- Pyramid with max size 40
 
-!cock
+'spam 
+- Spam with max size 80
 
-!iq
+'wedding
+- the date when you and someone else will have a wedding
 
-!swag
+'love
+- Love between you and someone else <3
 
-!forseninsane
+'depression
+- Size of your depression PoroSad
 
-!trihard
+'7tvsearch
+- Search 7tv emote
 
-!bingchilling
+'ffzsearch
+- Search ffz emote
 
-!zyzzrave
+'bttvsearch
+- Search bttv emote
+
+'emotes
+- Emotes of the channel
+
+'color
+- Your nickname color
+
+'logs
+- Your logs
+
+'massping
+- Pings everyone in the chat VeryTroll
+
+'retard
+- Photos of VeryPogftxQcOnTheToilet KEKHeim
+
+'followage
+- Followage lol
+
+'accage
+- Account age lol
+
+'avatar
+- Link to avatar
+
+'subs
+- Number of subscribers
+
+'subemotes
+- Shows sub emotes
+
+'uptime
+- Shows how long is the stream up
+
+'viewers
+- Shows how many viewers does the channel have
+
+'followers
+- Shows how many followers does the channel have
+
+'modlookup
+- Link to site where you can see where are you moderator
+
+'title
+- Shows stream title
+
+'uid
+- Shows your user id
+
+'game
+- Shows the game on the stream
+
+'subage
+- Shows how long you are subbed to the channel
+
+'afk
+- Counts time when you are afk
+
+'brb
+- Counts time when you are going to be right back
+
+'gn
+- Counts time when you are sleeping 
+
+'tuck
+- You can tuck someone to bed
