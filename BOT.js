@@ -1,5 +1,5 @@
 const tmi = require('tmi.js'),
-    { username, password} = require('./settings.json');
+    //{ username, password} = require('./settings.json');
 const client = new tmi.Client({
     options: { debug: true, messagesLogLevel: "info" },
     connection: {
@@ -7,8 +7,8 @@ const client = new tmi.Client({
         secure: true
     },
     identity: {
-        username,
-        password
+        username: process.env.username,
+        password: process.env.password
     },
     channels: ['xqcs_desk_garbage', 'Fookstee', 'florian_2807', 'verypogftxqconthetoilet', 'xtwitchPatrick', 'masenka12', 'lordevid', 'Sneeeze_', 'artix', 'kawanpls', 'turtoise', 'faufau4', 'fanda14_']
 });
