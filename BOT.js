@@ -33,7 +33,7 @@ const gn = client.gn
 client.food = new Map()
 const food = client.food
 
-client.connect().catch((err) => {console.log('Connection error!', err)});
+client.connect(process.env.password).catch(console.error);
 
 var block = false;
 
