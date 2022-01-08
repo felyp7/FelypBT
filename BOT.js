@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const tmi = require('tmi.js');
 
 const client = new tmi.Client({    
@@ -14,8 +16,6 @@ const client = new tmi.Client({
     channels: ['xqcs_desk_garbage', 'Fookstee', 'florian_2807', 'verypogftxqconthetoilet', 'xtwitchPatrick', 'masenka12', 'lordevid', 'Sneeeze_', 'artix', 'kawanpls', 'turtoise', 'faufau4', 'fanda14_']
 });
 const got = require('got');
-
-var process = require('process');
 
 const runTime = new Date().toString()
 
