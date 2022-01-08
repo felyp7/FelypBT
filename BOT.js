@@ -1196,5 +1196,8 @@ if(message.startsWith(`'math`)){
         } 
     } 
 
+    if(message.toLowerCase().startsWith("'restart")) {
+        process.exit()
+    }
 });
 
