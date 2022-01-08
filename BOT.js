@@ -15,10 +15,11 @@ const client = new tmi.Client({
 });
 const got = require('got');
 
+var process = require('process');
+
 const runTime = new Date().toString()
 
 const humanizeDuration = require("humanize-duration");
-
 
 client.afk = new Map()
 const afk = client.afk
@@ -29,33 +30,30 @@ const brb = client.brb
 client.gn = new Map()
 const gn = client.gn
 
-client.connect().catch(console.error);
+client.food = new Map()
+const food = client.food
+
+client.connect().catch((err) => {console.log('Connection error!', err)});
 
 var block = false;
 
+client.on("connected",() => {
+    client.say('#verypogftxqconthetoilet', 'ppJump')
+})
+
 client.on("message", async (channel, user, message, self) => {
     if (self) return;
-    
-    const args = message.slice(1).split(' ')
+
+const args = message.slice(1).split(' ')
     const command = args.shift().toLowerCase();
     const size = args[1]
     const size2 = args[0]
 
+    let isMod = user.mod || user['user-type'] === 'mod';
+    let isBroadcaster = channel.slice(1) === user.username;
+    let isModUp = isMod || isBroadcaster;
+    let isBroadcasterUp = isBroadcaster;
 
-
-    if (message.toLowerCase() === "'hello") {
-        client.say(channel, `@${user.username}, Okayge Hello!`);
-    }
-    
-    if (message.toLowerCase().startsWith("'kek")) {
-        if (!block) {
-            client.say(channel, `KEK`);
-            block = true;
-            setTimeout(() => {
-                block = false;
-            }, (5 * 1000));
-        }
-    }
 
     if (message.toLowerCase() === "'commands") {
         if (!block) {
@@ -66,6 +64,8 @@ client.on("message", async (channel, user, message, self) => {
             }, (5 * 1000));
         }
     }
+    
+
 
     if (message.toLowerCase().startsWith("'vanish")) {
         client.say(channel, `/timeout @${user.username} 1`)
@@ -76,7 +76,6 @@ client.on("message", async (channel, user, message, self) => {
         client.say(channel, `${args.join(" ")}`)
 
     }
-
     if (message.toLowerCase().startsWith("'pyramid") && command === 'pyramid') {
         if (!block) {
             if (size > 40) {
@@ -117,13 +116,6 @@ client.on("message", async (channel, user, message, self) => {
             }, (30 * 1000));
         }
     }
-
-
-
-    if (message == "'lol") {
-        client.say(channel, `test132`)
-    }
-
 
     if (message == "'artixw") {
         if (!block) {
@@ -274,23 +266,21 @@ client.on("message", async (channel, user, message, self) => {
         }
     }
 
-    if (message == "'ping") {
-        if (!block) {
-        const getUptime = new Date().getTime() - Date.parse(runTime);
-        const botUptime = humanizeDuration(getUptime, { round: true })
-            client.color("SpringGreen")
-            client.ping(channel).then(function (data) {
-                console.log(data);
-                client.say(channel, `FeelsDankMan 🏓 Pong! Latency is ${Math.floor(Math.round(data * 1000))}ms | Bot Uptime: ${botUptime} | RAM: ${Math.round(process.memoryUsage().rss / 1024 / 1024)}mb `)
-                block = true;
-                setTimeout(() => {
-                    block = false;
+if (message == "'ping") {  
+    if (!block) {
+    const getUptime = new Date().getTime() - Date.parse(runTime)
+    const botUptime = humanizeDuration(getUptime, { round: true })
+        client.color("SpringGreen")
+        client.ping(channel).then(function (data) {
+            console.log(data);
+            client.say(channel, `FeelsDankMan 🏓 Pong! Latency is ${Math.floor(Math.round(data * 1000))}ms | Bot Uptime: ${botUptime} | RAM: ${Math.round(process.memoryUsage().rss / 1024 / 1024)}mb `)
+            block = true;
+            setTimeout(() => {
+                block = false;
                 }, (5 * 1000));
-
             })
         }
-    }
-
+    }   
 
     if (message == "'pingpong") {
         if (!block) {
@@ -583,7 +573,7 @@ client.on("message", async (channel, user, message, self) => {
                     channelTarget = args[1];
                 }
             client.color("Chocolate")
-            client.say(channel, `@${user.username} https://e.wrnv.xyz/list/${channelTarget} https://emotes.raccatta.cc/twitch/${channelTarget}`)
+            client.say(channel, `@${user.username} https://e.wrnv.xyz/list/${channelTarget} RaccAttack : https://emotes.raccatta.cc/twitch/${channelTarget}`)
             block = true;
             setTimeout(() => {
                 block = false;
@@ -602,7 +592,7 @@ client.on("message", async (channel, user, message, self) => {
                     userTarget = args[0];
                 }
             client.color("Chocolate")
-            client.say(channel, `@${user.username} ${user.color}`)
+            client.say(channel, `@${user.username} ${user['color']}`)
             block = true;
             setTimeout(() => {
                 block = false;
@@ -610,7 +600,7 @@ client.on("message", async (channel, user, message, self) => {
         }
     }
 
-    if (message.toLowerCase().startsWith("ppPong") && user['user-id'] === "237719657" && channel == "kawanpls") {
+    if (message.toLowerCase().startsWith("ppPong") && user['user-id'] === "237719657" && channel == "#kawanpls") {
         if (!block) {
             client.color("Blue")
             client.say(channel, `ppPing ppPong `)
@@ -643,7 +633,9 @@ client.on("message", async (channel, user, message, self) => {
             }, (5 * 1000));
         }
     }
-    if (message.toLowerCase().startsWith("'massping") && command === 'massping' && user['user-id'] === "162760707") {
+    
+if(isModUp) { 
+    if (message.toLowerCase().startsWith("'massping") && command === 'massping') {
             const tChannel = channel.replace("#", "")
             let request = await got(`https://tmi.twitch.tv/group/user/${tChannel}/chatters`, { responseType: 'json' })
             if (!block) {
@@ -659,7 +651,7 @@ client.on("message", async (channel, user, message, self) => {
             }
         }
     }
-
+}
     
 
     if (message.toLowerCase().startsWith("'retard") && command === 'retard') {
@@ -674,7 +666,7 @@ client.on("message", async (channel, user, message, self) => {
     }
 
 
-        if (message.toLowerCase().startsWith("'followage")) {
+        if (message.toLowerCase().startsWith("'followage")  || message.toLowerCase().startsWith("'fa")) {
             if (!block) {
         
                 let userTarget = user.username;
@@ -700,6 +692,8 @@ client.on("message", async (channel, user, message, self) => {
                 }, (5 * 1000));
             }
         }
+
+        
 
 
         if (message.toLowerCase().startsWith("'accage")) {
@@ -777,8 +771,7 @@ client.on("message", async (channel, user, message, self) => {
         
                 const subs = await got(`https://decapi.me/twitch/subcount/${channelTarget}?`); 
                 let data = subs.body
-        
-                client.say(channel, `Channel ${channelTarget} has  ${data} subscribers`)  
+                    client.say(channel, `Channel ${channelTarget} has  ${data} subscribers`)  
         
                 block = true;
                 setTimeout(() => {
@@ -803,10 +796,13 @@ client.on("message", async (channel, user, message, self) => {
                     channelTarget = args[1];
                 }
         
-                const subemotes = await got(`https://decapi.me/twitch/subscriber_emotes/${channelTarget}?`); 
+                const subemotes = await got(`https://decapi.me/twitch/subscriber_emotes/${channelTarget}?precision=4`); 
                 let data = subemotes.body
-                client.say(channel, `Channel ${channelTarget} has these emotes: ${data}`)  
-        
+                    if (data === 'This channel does not have any subscriber emotes. ') {
+                    client.say(channel, `This channel does not have any subscriber emotes.`)
+                ;return;
+                }
+                client.say(channel, `${data}`)  
                 block = true;
                 setTimeout(() => {
                     block = false;
@@ -897,7 +893,7 @@ client.on("message", async (channel, user, message, self) => {
         }
         
 
-        if (message.toLowerCase().startsWith("'modlookup")) {
+        if (message.toLowerCase().startsWith("'modlookup")  || message.toLowerCase().startsWith("'ml")) {
             if (!block) {
         
                 let userTarget = user.username;
@@ -934,6 +930,7 @@ client.on("message", async (channel, user, message, self) => {
         
                 const title = await got(`https://decapi.me/twitch/title/${channelTarget}?`); 
                 let data = title.body
+                
                 client.say(channel, `Title is: ${data}`)  
         
                 block = true;
@@ -961,7 +958,7 @@ client.on("message", async (channel, user, message, self) => {
         
                 const uid = await got(`https://decapi.me/twitch/id/${userTarget}?`); 
                 let data = uid.body
-                client.say(channel, `${userTarget}'s id is ${data}`)  
+                client.say(channel, `${user.username} ${data}`)  
         
                 block = true;
                 setTimeout(() => {
@@ -999,7 +996,7 @@ client.on("message", async (channel, user, message, self) => {
 
         
 
-        if (message.toLowerCase().startsWith("'subage") && command === 'subage') {
+        if (message.toLowerCase().startsWith("'subage")  || message.toLowerCase().startsWith("'sa")) {
             if (!block) {
         
                 let userTarget = user.username;
@@ -1022,7 +1019,6 @@ client.on("message", async (channel, user, message, self) => {
                 ;return;
                 }
                 client.say(channel, `${userTarget} is subscribed to ${channelTarget} for ${data}`)  
-                
                 block = true;
                 setTimeout(() => {
                     block = false;
@@ -1050,6 +1046,35 @@ if (message.toLowerCase().startsWith("'afk")) {
             client.afk.set(user['user-id'], construct);
 
             client.say(channel, `@${user.username} is afk: ${afkMessage}`)
+        }
+
+        block = true;
+        setTimeout(() => {
+            block = false;
+        }, (5 * 1000));
+    }
+}
+
+let foodcheck = client.food.get(user['user-id']); 
+if (foodcheck) { 
+    client.food.delete(user['user-id']); 
+    client.say(channel, `${user['display-name']} finished eating 🍔: ${foodcheck.reason} (${humanizeDuration(new Date().getTime() - Date.parse(foodcheck.time), { round: true })})`)
+}
+ 
+if (message.toLowerCase().startsWith("'food")) {
+    if (!block) {
+
+        let foodMessage = args.join(' ') ? args.join(' ') : 'no message';
+        let foodlist = client.food.get(user['user-id']);
+        if (!foodlist) {
+            let construct = {
+                id: user['user-id'],
+                reason: foodMessage,
+                time: new Date().toString()
+            };
+            client.food.set(user['user-id'], construct);
+
+            client.say(channel, `@${user.username} is now eating 🍔: ${foodMessage}`)
         }
 
         block = true;
@@ -1091,7 +1116,7 @@ if (message.toLowerCase().startsWith("'brb")) {
 let gncheck = client.gn.get(user['user-id']); 
 if (gncheck) { 
     client.gn.delete(user['user-id']); 
-    client.say(channel, `${user['display-name']} just woke up: : ${gncheck.reason} (${humanizeDuration(new Date().getTime() - Date.parse(gncheck.time), { round: true })})`)
+    client.say(channel, `${user['display-name']} just woke up: ${gncheck.reason} (${humanizeDuration(new Date().getTime() - Date.parse(gncheck.time), { round: true })})`)
 }
 
 if (message.toLowerCase().startsWith("'gn")) {
@@ -1132,7 +1157,44 @@ if (message.toLowerCase().startsWith("'tuck")) {
     client.say(channel, `@${user.username} tucked ${userTarget} to bed FeelsOkayMan 👉 🛏 `)
 }
 
+if(message == "'rcolor") {
+    if (!block) {
+    var color = "";
+    for(var i = 0; i < 3; i++) {
+        var sub = Math.floor(Math.random() * 256).toString(16);
+        color += (sub.length == 1 ? "0" + sub : sub);
+    }
+    client.say(channel, "#" + color);
+    block = true;
+    setTimeout(() => {
+        block = false;
+    }, (5 * 1000));
+}
+};
 
-
+if(message.startsWith(`'math`)){
+    if(message.split(" ")[1] !== undefined){
+      let excersise = message.substring(message.split(" ")[0].split("").length +1, message.split("").length)
+      excersise = excersise.replace(/\s/g, "")
+      let validnums = 0
+      let invalidnums = 0
+      for(w = 0; w < excersise.length; w++){
+        let numchar = excersise.split("")[i]
+        if(!isNaN(numchar)){
+          validnums = +validnums+1
+        } else {
+          invalidnums = +invalidnums+1
+        }
+      }
+        let excersisesolved = eval(excersise)
+        if(excersisesolved !== isNaN){
+          client.say(channel, `${user.username} ${excersisesolved} FeelsOkayMan`)
+        }
+        else {
+            client.say(channel, `${user.username} Not mathematical! FeelsDankMan`)
+          } 
+        } 
+    } 
 
 });
+
