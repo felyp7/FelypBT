@@ -1141,34 +1141,10 @@ if (message.toLowerCase().startsWith("'gn")) {
     }
 }
 
-let showercheck = client.shower.get(user['user-id']); 
-if (showercheck) { 
-    client.shower.delete(user['user-id']); 
-    client.say(channel, `${user['display-name']} finished showering 🚿 : ${showercheck.reason} (${humanizeDuration(new Date().getTime() - Date.parse(showercheck.time), { round: true })})`)
+if(message == "'bruh"){
+    client.say(channel, 'Bruh')
 }
 
-if (message.toLowerCase().startsWith("'shower")) {
-    if (!block) {
-
-        let showerMessage = args.join(' ') ? args.join(' ') : '🛏 💤 ';
-        let showerlist = client.shower.get(user['user-id']);
-        if (!showerlist) {
-            let construct = {
-                id: user['user-id'],
-                reason: showerMessage,
-                time: new Date().toString()
-            };
-            client.shower.set(user['user-id'], construct);
-
-            client.say(channel, `@${user.username} is now showering 🚿 : ${showerMessage}`)
-        }
-
-        block = true;
-        setTimeout(() => {
-            block = false;
-        }, (5 * 1000));
-    }
-}
 
 if (message.toLowerCase().startsWith("'tuck")) {
     let userTarget = user.username;
