@@ -51,7 +51,8 @@ const args = message.slice(1).split(' ')
     let isBroadcaster = channel.slice(1) === user.username;
     let isModUp = isMod || isBroadcaster;
     let isBroadcasterUp = isBroadcaster;
-
+    let isFriend = user.username = ['xPatrck', 'VeryPogftxQcOnTheToilet']
+    let isFriendUp = isFriend
 
     if (message.toLowerCase() === "'commands") {
         if (!block) {
@@ -1194,9 +1195,12 @@ if(message.startsWith(`'math`)){
         } 
     } 
 
+if(isFriendUp){
     if(message.toLowerCase().startsWith("'restart")) {
         client.say(channel, 'Restarting... ppJump')
         process.exit()
     }
+}
+
 });
 
