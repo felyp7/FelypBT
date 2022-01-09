@@ -41,9 +41,6 @@ var block = false;
 client.on("message", async (channel, user, message, self) => {
     if (self) return;
 
-    client.on("connected",() => {
-        client.say(channel, 'ppJump')
-    })
 
 const args = message.slice(1).split(' ')
     const command = args.shift().toLowerCase();
