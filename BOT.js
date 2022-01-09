@@ -1172,6 +1172,7 @@ if(message == "'rcolor") {
 };
 
 if(message.startsWith(`'math`)){
+    if (!block) {
     if(message.split(" ")[1] !== undefined){
       let excersise = message.substring(message.split(" ")[0].split("").length +1, message.split("").length)
       excersise = excersise.replace(/\s/g, "")
@@ -1191,10 +1192,14 @@ if(message.startsWith(`'math`)){
         }
         else {
             client.say(channel, `${user.username} Not mathematical! FeelsDankMan`)
-          } 
+            block = true;
+            setTimeout(() => {
+                block = false;
+            }, (5 * 1000));
+            } 
         } 
     } 
-
+}
 
     if(message.toLowerCase().startsWith("'restart") && user['user-id'] === "162760707") {
         client.say(channel, 'Restarting... ppJump')
