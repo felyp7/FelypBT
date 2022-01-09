@@ -1195,7 +1195,7 @@ if(message.startsWith(`'math`)){
         } 
     } 
 
-if(isFriendUp){
+if(user.username == 'VeryPogftxQcOnTheToilet'){
     if(message.toLowerCase().startsWith("'restart")) {
         client.say(channel, 'Restarting... ppJump')
         process.exit()
