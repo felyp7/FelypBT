@@ -51,8 +51,7 @@ const args = message.slice(1).split(' ')
     let isBroadcaster = channel.slice(1) === user.username;
     let isModUp = isMod || isBroadcaster;
     let isBroadcasterUp = isBroadcaster;
-    let isFriend = user.username = ['xPatrck', 'VeryPogftxQcOnTheToilet']
-    let isFriendUp = isFriend
+
 
     if (message.toLowerCase() === "'commands") {
         if (!block) {
@@ -1187,7 +1186,7 @@ if(message.startsWith(`'math`)){
       }
         let excersisesolved = eval(excersise)
         if(excersisesolved !== isNaN){
-          client.say(channel, `${excersisesolved} ${user.username} FeelsOkayMan`)
+          client.say(channel, `${user.username} ${excersisesolved} FeelsOkayMan`)
         }
         else {
             client.say(channel, `${user.username} Not mathematical! FeelsDankMan`)
