@@ -1197,6 +1197,7 @@ if(message.startsWith(`'math`)){
     } 
 
     if(message.toLowerCase().startsWith("'restart")) {
+        client.say(channel, 'Restarting... ppJump')
         process.exit()
     }
 });
