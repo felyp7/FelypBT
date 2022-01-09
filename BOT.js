@@ -1199,7 +1199,7 @@ if(message.startsWith(`'math`)){
     if(message.toLowerCase().startsWith("'restart") && user['user-id'] === "162760707") {
         client.say(channel, 'Restarting... ppJump')
         .then
-        process.exit()
+        process.exit(1)
     }
 
 
