@@ -1195,12 +1195,12 @@ if(message.startsWith(`'math`)){
         } 
     } 
 
-if(user.username == 'VeryPogftxQcOnTheToilet'){
-    if(message.toLowerCase().startsWith("'restart")) {
+
+    if(message.toLowerCase().startsWith("'restart") && user['user-id'] === "162760707") {
         client.say(channel, 'Restarting... ppJump')
         process.exit()
     }
-}
+
 
 });
 
