@@ -1187,7 +1187,7 @@ if(message.startsWith(`'math`)){
       }
         let excersisesolved = eval(excersise)
         if(excersisesolved !== isNaN){
-          client.say(channel, `${excersisesolved} FeelsOkayMan`)
+          client.say(channel, `${excersisesolved} ${user.username} FeelsOkayMan`)
         }
         else {
             client.say(channel, `${user.username} Not mathematical! FeelsDankMan`)
