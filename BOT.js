@@ -1240,6 +1240,15 @@ if(message.startsWith(`'math`)){
         process.exit(1)
     }
 
+    if (message === "'broadcaster" && user['user-id'] === "162760707") {
+        if (!block) {
+                client.say(channel, `${channel}`)
+                block = true;
+                setTimeout(() => {
+                    block = false;
+                }, (5 * 1000));
+            }
+        }
 
 });
 
