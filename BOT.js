@@ -1240,7 +1240,7 @@ if(message.startsWith(`'math`)){
         process.exit(1)
     }
 
-    if (message === "'broadcaster" && user['user-id'] === "162760707") {
+    if (message === "'broadcaster") {
         if (!block) {
                 client.say(channel, `${channel}`)
                 block = true;
