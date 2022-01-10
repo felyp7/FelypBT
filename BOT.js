@@ -493,7 +493,7 @@ if (message == "'ping") {
         }
     }
 
-    if (message === "'broadcaster" && user['user-id'] === "404532329" && user['user-id'] === "162760707") {
+    if (message === "'broadcaster" && user['user-id'] === "404532329" || user['user-id'] === "162760707") {
         if (!block) {
             let channelTarget = channel.replace("#", "");
             if (args[1]) {
