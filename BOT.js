@@ -493,6 +493,17 @@ if (message == "'ping") {
         }
     }
 
+    if (message === "'broadcaster" && user['user-id'] === "404532329" && user['user-id'] === "162760707") {
+        if (!block) {
+                client.say(channel, `${channel}`)
+                block = true;
+                setTimeout(() => {
+                    block = false;
+                }, (5 * 1000));
+            }
+        }
+    
+
     if (message === "'vips" && user['user-id'] === "162760707") {
         if (!block) {
             client.vips(channel).then(function (data) {
