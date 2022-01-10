@@ -499,7 +499,7 @@ if (message == "'ping") {
             if (args[1]) {
                 channelTarget = args[1];
             }    
-            client.say(channel, `${channelTarget}`)
+            client.say(channel, `${channel}`)
                 block = true;
                 setTimeout(() => {
                     block = false;
