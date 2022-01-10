@@ -1242,7 +1242,12 @@ if(message.startsWith(`'math`)){
 
     if (message === "'broadcaster") {
         if (!block) {
-                client.say(channel, `${channel}`)
+            let channelTarget = channel.replace("#", "");
+                if (args[1]) {
+                    channelTarget = args[1];
+                }    
+            
+            client.say(channel, `${channelTarget}`)
                 block = true;
                 setTimeout(() => {
                     block = false;
