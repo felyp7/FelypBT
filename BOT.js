@@ -1086,6 +1086,34 @@ if (message.toLowerCase().startsWith("'food")) {
     }
 }
 
+let wccheck = client.wc.get(user['user-id']); 
+if (wcheck) { 
+    client.wc.delete(user['user-id']); 
+    client.say(channel, `${user['display-name']} came back from toilet 🚽: ${wccheck.reason} (${humanizeDuration(new Date().getTime() - Date.parse(wccheck.time), { round: true })})`)
+}
+ 
+if (message.toLowerCase().startsWith("'wc")) {
+    if (!block) {
+
+        let wcMessage = args.join(' ') ? args.join(' ') : 'no message';
+        let wclist = client.wc.get(user['user-id']);
+        if (!foodlist) {
+            let construct = {
+                id: user['user-id'],
+                reason: wcMessage,
+                time: new Date().toString()
+            };
+            client.wc.set(user['user-id'], construct);
+
+            client.say(channel, `@${user.username} went to a toilet 🚽: ${wcMessage}`)
+        }
+
+        block = true;
+        setTimeout(() => {
+            block = false;
+        }, (5 * 1000));
+    }
+}
 
 let brbcheck = client.brb.get(user['user-id']); 
 if (brbcheck) { 
