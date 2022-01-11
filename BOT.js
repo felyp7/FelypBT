@@ -1090,7 +1090,7 @@ if (message.toLowerCase().startsWith("'food")) {
 }
 
 let wccheck = client.wc.get(user['user-id']); 
-if (wcheck) { 
+if (wccheck) { 
     client.wc.delete(user['user-id']); 
     client.say(channel, `${user['display-name']} came back from toilet 🚽: ${wccheck.reason} (${humanizeDuration(new Date().getTime() - Date.parse(wccheck.time), { round: true })})`)
 }
