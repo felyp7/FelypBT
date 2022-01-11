@@ -1100,7 +1100,7 @@ if (message.toLowerCase().startsWith("'wc")) {
 
         let wcMessage = args.join(' ') ? args.join(' ') : 'no message';
         let wclist = client.wc.get(user['user-id']);
-        if (!foodlist) {
+        if (!wclist) {
             let construct = {
                 id: user['user-id'],
                 reason: wcMessage,
