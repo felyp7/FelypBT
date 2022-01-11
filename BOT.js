@@ -36,6 +36,9 @@ const food = client.food
 client.shower = new Map()
 const shower = client.shower
 
+client.wc = new Map()
+const wc = client.wc
+
 client.connect(process.env.password).catch(console.error);
 
 var block = false;
