@@ -48,7 +48,9 @@ client.on("message", async (channel, user, message, self) => {
     if (self) return;
 
 
-const args = message.slice(1).split(' ')
+    let colors = ["Blue", "Coral", "DodgerBlue", "SpringGreen", "YellowGreen", "Green", "OrangeRed", "Red", "GoldenRod", "HotPink", "CadetBlue", "SeaGreen", "Chocolate", "BlueViolet", "Firebrick"]
+
+    const args = message.slice(1).split(' ')
     const command = args.shift().toLowerCase();
     const size = args[1]
     const size2 = args[0]
@@ -72,15 +74,18 @@ const args = message.slice(1).split(' ')
 
 
     if (message.toLowerCase().startsWith("'vanish")) {
+        client.color(color[Math.floor(Math.random() * color.length)])
         client.say(channel, `/timeout @${user.username} 1`)
 
     }
 
     if (message.toLowerCase().startsWith("'echo") && command === 'echo' && user['user-id'] === "162760707") {
+        client.color(color[Math.floor(Math.random() * color.length)])
         client.say(channel, `${args.join(" ")}`)
 
     }
     if (message.toLowerCase().startsWith("'pyramid") && command === 'pyramid') {
+        client.color(color[Math.floor(Math.random() * color.length)])
         if (!block) {
             if (size > 40) {
                 client.say(channel, 'the maximum size is 40')
@@ -104,6 +109,7 @@ const args = message.slice(1).split(' ')
     }
 
     if (message.toLowerCase().startsWith("'spam")) {
+        client.color(color[Math.floor(Math.random() * color.length)])
         if (!block) {
             if (size2 > 80) {
                 client.say(channel, 'the maximum size is 80')
@@ -122,6 +128,7 @@ const args = message.slice(1).split(' ')
     }
 
     if (message == "'artixw") {
+        client.color(color[Math.floor(Math.random() * color.length)])
         if (!block) {
             client.say(channel, `⣋⠄⠄⠄⠄⠄⠄⠄⠄⠄⢹⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ⠿⠿⠛⠛⠓⠄⠄⠐⠲⠦⣿⣿⣿⣿⣿⣿⣿⣿⡿⠄⠄⠄⠄⠄⠄⣀⣀⠄⠄ ⣀⣀⣀⣀⡀⣀⠄⠄⠄⠄⣹⣿⣿⣿⣿⣿⣿⡟⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ⣿⣿⣿⣿⣟⡛⣃⣀⣀⣾⣿⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠇⠄⠠⠤⠄⠄⠄⠄⠄⠄⠠⠤ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ⣿⣿⣿⣿⡿⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣤ ⣿⡿⠋⠄⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⠻⠿ ⠉⠄⠄⠄⠄⢼⡿⣿⡿⣿⣿⣿⣿⣿⣿⠿⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ⠄⠄⠄⠄⠄⢀⣀⣀⡀⠄⠄⠈⠉⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ⠄⠄⠄⠄⠈⢻⣿⣿⣿⣿⣶⣦⣀⣀⣄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ⣀⠄⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣀⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⠂⠄⠄⠄⠄⠄⠄⠄⠄ `);
             block = true;
@@ -132,6 +139,7 @@ const args = message.slice(1).split(' ')
     }
 
     if (message == "'xqcl") {
+        client.color(color[Math.floor(Math.random() * color.length)])
         if (!block) {
             client.say(channel, `⣿⣿⣿⣿⠿⠛⣛⣛⠛⠿⣿⣿⡿⠿⠿⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⠋⢁⣾⣿⣿⣿⣿⣷⣦⣭⣶⣿⣿⣿⣷⣄⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⡿⠁⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣜⢿⣿⣿⣿⣿⣿⣿⣿⣿ ⢀⣤⣤⠉⠄⣀⣀⣀⠈⠉⢙⣿⣿⣿⣿⠛⠋⠉⠉⠉⠄⠙⣿⣿⣿⣿⣿⣿⣿ ⢸⡿⠛⠁⠄⠄⠄⠄⠄⠄⠄⢹⣿⣿⠋⠄⡄⠈⠉⠙⠻⡆⢹⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣶⣦⣤⡤⠄⣀⣠⣼⣿⣿⣦⣀⣤⣤⣤⣴⠖⣠⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⢉⡙⣿⣿⣿⣿⣿⣿⣿⡇⢿⣿⣿⣿⣿⣿⣿⣿⣿ ⠙⣿⡿⠛⠿⠿⠿⠿⠿⣧⠉⣹⣿⣿⣿⣿⣿⣿⣿⣿⡌⢿⣿⣿⣿⣿⣿⣿⣿ ⠄⠘⠿⠷⠤⢄⣀⡀⠄⢀⣀⣀⣉⣁⣈⣉⣉⣉⣉⡛⢁⣾⣿⣿⣿⣿⣿⣿⣿ ⣀⣤⣤⣤⣤⣤⣀⠉⠻⢿⣿⣿⡿⠿⠿⠿⠿⠿⢋⣥⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠉⢁⣤⣴⣶⣶⣦⣄⡀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⡿⠿⢿⣿⣿⣿⣿⣿⣷⡄⠈⣿⣿⣿⣿⣿⣿⣷⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿ ⢀⣤⣶⣤⡈⠹⣿⣿⣿⣿⣿⠟⠉⣉⠙⠻⣿⣿⣿⠁⠄⣾⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⡿⠛⢁⣰⣿⣿⣿⣿⣿⠄⢻⣿⣿⡆⠈⢻⠇⠄⢰⣿⣿⣿⣿⣿⣿⣿⣿ `)
             block = true;
@@ -143,6 +151,7 @@ const args = message.slice(1).split(' ')
 
 
     if (message == "'xqctf") {
+        client.color(color[Math.floor(Math.random() * color.length)])
         if (!block) {
             client.say(channel, `⣿⡿⡿⠐⢭⣭⣴⣿⣿⣿⡿⠿⢿⣿⣿⣿⣿⣿⣿⣷⣤⣤⡉⠉⠡⠤⢿⣿⣿ ⠛⠏⠄⢀⣿⣿⣿⣿⣿⣿⣦⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⠈⠉⠙ ⠄⣤⣴⣿⡿⠛⠋⠉⠄⠄⠄⠄⠉⠛⢯⣽⡿⠿⠿⠿⠛⠛⠻⠿⡿⠛⠂⠄⠈ ⣤⠛⠉⢻⡀⣠⣴⣶⣶⣤⣤⣤⣤⣴⣶⣦⣤⣤⣤⣤⣤⣤⣠⣴⣿⣶⣤⠄⠄ ⣿⡀⠄⠈⠉⠄⠄⠄⠄⠉⠉⠉⠉⠛⣿⣿⣿⡟⠋⠉⠉⠉⠙⠛⠛⠄⠄⠄⠄ ⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⣿⣿⣿⣧⠄⠄⠄⠄⠄⠄⢀⣀⣀⠄⠄ ⣿⡏⠄⣾⣿⣶⣶⣶⣶⣶⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄ ⣿⣿⠄⢹⣿⣿⣿⣿⡿⠟⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠄⢰ ⠁⠄⠄⠨⠉⠻⣟⠄⠄⠰⣿⣛⣋⣀⣈⠙⠛⠛⠛⠛⠛⢛⣻⣿⣿⠙⡇⠄⢸ ⣷⣀⡀⠄⠈⢷⣿⣶⣤⣄⡿⣿⣿⣿⣿⣿⣿⣷⣶⣾⣿⣿⣿⣿⣿⣦⣧⡄⠸ ⣿⣿⣷⡀⠂⠄⠙⢿⣿⣿⣿⣷⣬⣍⣽⣿⣿⣿⣿⠿⢿⣿⣿⣽⣿⣿⣿⣷⠄ ⣿⣿⣿⣿⣶⣆⣀⣀⠉⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄ ⣿⣿⣿⣿⣿⣿⣿⣤⠐⢀⣀⠈⠛⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⢀ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣤⡒⠒⢀⣀⠈⠉⠛⠻⣿⣿⣿⣿⣿⣿⠛⠁⢀⠄  `)
             block = true;
@@ -153,6 +162,7 @@ const args = message.slice(1).split(' ')
     }
 
     if (message == "'xqcs") {
+        client.color(color[Math.floor(Math.random() * color.length)])
         if (!block) {
             client.say(channel, `⣿⡏⠄⠄⠄⠄⠄⠄⠈⠉⠄⠉⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⠟⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠉⠉⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⠄⠄⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋ ⠄⠄⠄⠄⣀⣀⣀⡀⠄⠄⠄⣷⠄⠄⠄⠄⠄⠄⠉⠻⣿⣿⣿⣿⣿⡟⠁⣠⣾ ⠄⠄⠄⢀⣿⣿⣿⣿⣦⣴⣶⣤⣄⡀⠄⠄⠄⠄⠄⠄⣀⣹⣿⠟⠉⢠⣾⣿⣿ ⠄⠄⠄⠰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣤⣀⣀⣤⣿⣿⣿⣶⠄⣼⣿⣿⣿ ⠄⠄⠄⠄⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠄⣿⣿⣿⣿ ⠄⠄⠄⠄⠙⢿⣿⣿⣿⣿⣿⡿⠟⠛⠛⠛⣿⣿⣿⣿⣿⣿⡟⢁⣼⣿⣿⣿⣿ ⠄⠄⠄⢀⣤⡤⠯⠭⠽⣿⣭⣤⣄⠄⣤⣾⣿⣶⣿⣿⣿⣿⡇⢸⣿⣿⣿⣹⣿ ⠄⠄⠄⣿⣿⣧⣠⡦⣀⣈⠙⠻⣿⣇⠙⠛⠿⠿⣿⣿⣿⣿⡇⢸⣿⣿⣿⣿⣿ ⠄⠄⢸⣿⣿⣿⣿⣶⣿⣿⣿⣿⣿⣿⣿⡇⢀⣀⡀⠙⠛⠛⣡⣿⣿⣿⣿⣿⣿ ⠄⠄⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⣹⣿ ⠄⠄⠄⠈⠿⣿⣿⣿⣿⣿⣿⣿⡿⠁⣴⣿⣿⣯⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿  `)
             block = true;
@@ -166,6 +176,7 @@ const args = message.slice(1).split(' ')
 
 
     if (message == "'alienpls3") {
+        client.color(color[Math.floor(Math.random() * color.length)])
         if (!block) {
             client.say(channel, `⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⠁⣤⠙⢿⣿⢟⡉⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⡄⠄⠄⠄⢸⡏⠈⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⡻⣆⢤⠤⣿⡧⣄⣀⡔⣫⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣮⣌⠓⠖⢒⣁⣵⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠚⣿⣷⣶⣿⡿⣾⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣧⣿⣿⣿⣿⣷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⢻⣿⣯⠛⠛⠟⠻⣯⣿⡗⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣮⣛⢈⣷⡦⡖⣶⣶⢛⣡⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢘⣛⠳⣻⢋⣛⡛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣛⣻⣛⣝⣿⣿⣃⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿   `)
             client.say(channel, `⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠛⠛⢛⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠛⢿⣷⡂⢊⡉⠉⢻⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⠉⠈⣟⠄⠈⠁⠄⢈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣯⢄⡀⣠⣿⣄⡀⢀⣠⣿⡿⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣹⣯⣭⣥⣿⢿⡛⣽⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣯⣾⣿⣿⣿⣯⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣧⠺⣿⣿⠿⠿⢿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢹⣿⣯⠉⠂⣶⣿⡟⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢸⣿⣿⡇⣆⡙⢿⡇⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣮⣽⣯⣾⣿⢁⢉⣻⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣙⣿⣟⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿   `)
@@ -194,6 +205,7 @@ const args = message.slice(1).split(' ')
     }
 
     if (message == "'thejungle") {
+        client.color(color[Math.floor(Math.random() * color.length)])
         if (!block) {
             client.say(channel, `The Jungle isnt just a place; its a sanctuary where we put our problems aside and enjoy watching the gaming warlord juicer. Youve changed more lives than you think Mr. Cow, xqcL   `)
             block = true;
@@ -207,6 +219,7 @@ const args = message.slice(1).split(' ')
 
    
     if (message == "'tf") {
+        client.color(color[Math.floor(Math.random() * color.length)])
         if (!block) {
             client.say(channel, `⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⡿⠛⠛⠛⠛⢛⡛⠛⠛⠛⠛⠛⠛⠛⠛⠿⠿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⡿⠋⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣶⣤⣉⠛⢿⣿⣿ ⣿⣿⣿⢁⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⣿⣿ ⣿⠟⢁⣚⣻⣿⣿⣿⡟⢁⣀⣀⡲⢦⡝⢿⣿⣿⠿⠛⠉⠉⣙⣻⣿⣿⣷⣌⠻ ⢁⣴⡿⣩⣶⠶⣭⣝⣛⣛⣭⣿⣿⣷⣶⣿⣿⣿⡆⢾⣿⣿⠿⠟⣻⣟⣿⣿⡆ ⠈⣿⣇⣿⣭⠰⣮⣍⡛⠿⢿⣿⣿⡏⣼⢿⢿⣿⣿⡶⣉⣻⣿⣿⠏⢻⣿⣿⠃ ⣦⡈⢻⣿⣿⣧⡈⣝⡉⠻⢷⣶⡌⣩⣛⣛⠻⠿⠥⠾⠿⡛⢋⣁⣄⢸⣿⠃⣼ ⣿⣿⣆⢹⣿⣿⣷⣍⠳⣶⣶⣤⢀⣙⠛⠛⠉⠛⠛⠘⠛⠛⠉⠁⠄⢸⣿⠄⣿ ⣿⣿⣿⣦⡙⢿⣿⣿⣷⣮⣙⠛⢼⣿⣿⡇⣶⣶⡆⣤⣤⣠⠄⡤⠄⣼⣿⠄⣿ ⣿⣿⣿⣿⣿⣦⣈⠛⠿⣿⣿⣿⣷⣶⣮⣥⣬⣭⣥⣭⣤⣤⣶⣶⣿⣿⣿⡄⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣶⣤⣌⡙⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣬⣍⣉⡛⠛⠿⠿⠿⠿⠿⠿⠛⣁⣼⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣶⣶⣶⣶⣿⣿⣿⣿
 
@@ -222,6 +235,7 @@ const args = message.slice(1).split(' ')
 
     if (message == "'spider") {
 
+        client.color(color[Math.floor(Math.random() * color.length)])
         if (!block) {
             client.say(channel, `⣿⡿⠏⣩⣷⣟⣁⠄⢸⣷⣿⡇⣀⢹⣿⠄⠄⣈⠻⣷⡍⠿⠿⢿⣿⣿⣿⣿⣿ ⣿⡇⣿⢟⣹⣿⣷⣞⣁⠶⣹⡇⣿⢸⣿⣿⡇⠿⣶⣶⣈⠻⣷⡌⢹⣿⣿⣿⣿ ⣿⣷⣶⣾⣿⣿⣿⣷⣿⢸⠟⣁⣿⣘⣃⣘⢻⣇⣿⣿⣿⣷⣶⣶⣾⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣿⣿⣿⣿⣿⣶⠻⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ `)
             client.say(channel, `⣿⣿⣿⣏⣩⣥⣿⠟⠛⠃⣀⣀⣀⣴⣦⠹⢿⣷⡍⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⡏⣽⢿⣟⡱⠖⣠⣾⠟⢿⡟⣛⢿⣿⣄⠄⣘⠣⡍⠿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣷⣶⣾⣿⣇⣘⣛⣁⢠⣾⡇⣿⣘⣛⠛⢧⣍⠄⠹⣷⣍⠹⢿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⢸⡇⣶⣿⣿⣿⣶⣘⢻⡇⣶⣈⠻⡷⢸⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣿⣿⣿⣿⣿⣿⣶⣶⣿⣿⣷⣶⣾⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ `)
@@ -251,6 +265,7 @@ const args = message.slice(1).split(' ')
     }
 
     if (message == "'okayeg") {
+        client.color(color[Math.floor(Math.random() * color.length)])
         if (!block) {
             client.say(channel, `⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⠉⠉⠉⣩⡏⡘⣯⡈⠙⢿⣿⣛⣩⣤⣤⣭⣽⣿⣿ ⣿⣿⣿⣿⣿⣿⡿⠛⠉⠄⠄⠄⠄⠄⢿⡇⢡⣿⣿⣦⠈⠑⣿⣿⣿⠉⣿⣿⣿⣿ ⣿⣿⣿⡿⠿⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠉⠚⠿⢿⡿⠄⠄⠉⢿⣟⠄⣿⣿⣿⣿ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠹⠾⠿⠋⠄⣿ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸ ⢠⣶⣶⠢⣄⣀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸ ⠘⢿⣿⣷⣮⡹⣷⣦⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘ ⠄⠄⠈⢿⣿⣿⣎⡛⠿⣷⣦⣀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ⣦⣤⣀⠄⠈⠛⠿⣿⣷⣮⣍⣛⠿⢿⣶⣶⣦⣄⣀⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠ ⣿⣿⣿⣿⣶⣦⣄⡀⠉⠉⠉⠛⠻⢷⣦⣭⣭⣙⣛⣛⠷⠶⠤⠤⠤⠤⠤⠤⠤⢎ ⣿⡟⣩⣶⣶⣦⡙⢿⣷⣦⣄⡀⠄⠄⠈⠉⠉⠉⠛⠛⠛⠛⠛⠿⠿⢿⣿⡿⢿⣿ ⡟⣸⣿⣿⣿⣿⣿⡄⣿⣿⣿⣿⣷⣶⣤⣤⣀⡀⠄⠄⠄⠄⠄⠄⢀⣀⣰⣾⣿⣿ ⡇⣿⣿⣿⣿⣿⣿⣿⢸⣿⠋⣭⡙⢿⠋⣩⡝⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣷⡘⢿⣿⣿⣿⠿⣃⣿⣿⡀⠶⠒⣾⡀⠻⠏⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣶⣮⣭⣶⣾⣿⣿⣿⣿⣿⣿⣿⣍⣉⣁⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿`)
             block = true;
@@ -261,6 +276,7 @@ const args = message.slice(1).split(' ')
     }
 
     if (message == "'lule") {
+        client.color(color[Math.floor(Math.random() * color.length)])
         if (!block) {
             client.say(channel, `⠋⣁⣀⣀⡈⠙⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇ ⣿⣿⢟⣛⣿⣿⡲⣾⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⠛⠛⠛⠛⠛⠻⣿⣿⣿⡇ ⣿⡇⠾⠛⠛⠛⠛⠄⢻⣿⣿⣿⣿⡍⠉⠉⠄⠄⠄⢀⣤⢤⣄⣀⠄⠄⠈⠉⠄ ⣿⣥⣤⣄⣀⣠⣶⣀⣠⣿⣿⣿⡿⠁⠄⠄⣀⣐⠊⠛⠛⠻⠖⠄⠉⢀⡀⢀⡀ ⣿⣿⣿⣿⣿⣛⣉⣵⣿⣿⣿⡿⠁⠄⠄⢲⣿⣿⣿⣳⠂⠒⠄⠄⠄⠄⠠⠾⠿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡦⠄⠄⠈⠙⠻⣿⣿⣿⣶⣶⣶⣶⣾⣿⣿⣿ ⣿⣿⣿⣿⣿⡿⢻⣿⣿⣿⡿⠋⠄⠄⠄⠄⠄⠄⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⠏⣰⡿⠛⠛⠃⠄⢠⠄⠄⠄⠄⠄⠄⠄⠄⠘⢿⣿⣿⣿⣿⣿⣿⣿ ⠙⣿⣿⣿⣴⡿⠄⠄⠄⠄⠘⠛⠒⠄⠄⠐⠂⠄⠄⠄⠄⠈⢻⣿⣿⣿⣿⢿⣿ ⠠⣿⣿⣿⣿⣷⡀⢠⣶⣾⣿⣿⣿⠿⡿⢿⡧⣶⢤⠄⠄⠄⠄⣻⣿⣿⣿⣿⣿ ⣶⣿⣿⣿⡟⢨⠙⠄⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣰⣿⡀⣿⣿⣿⣿⣿⣿ ⢿⣿⢟⠹⡁⣼⡀⣄⢀⣀⠐⠠⢄⣀⣀⣴⣶⣷⣶⣿⣿⣿⣿⡿⠻⣿⣿⣿⣿ ⠈⠂⠄⠄⠠⢿⣿⡘⣺⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠄⠄⠻⠾⡛ ⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⠄⠄⠄⠄⠄⠂`)
             block = true;
@@ -274,7 +290,7 @@ if (message == "'ping") {
     if (!block) {
     const getUptime = new Date().getTime() - Date.parse(runTime)
     const botUptime = humanizeDuration(getUptime, { round: true })
-        client.color("SpringGreen")
+    client.color(color[Math.floor(Math.random() * color.length)])
         client.ping(channel).then(function (data) {
             console.log(data);
             client.say(channel, `FeelsDankMan 🏓 Pong! Latency is ${Math.floor(Math.round(data * 1000))}ms | Bot Uptime: ${botUptime} | RAM: ${Math.round(process.memoryUsage().rss / 1024 / 1024)}mb `)
@@ -287,6 +303,7 @@ if (message == "'ping") {
     }   
 
     if (message == "'pingpong") {
+        client.color(color[Math.floor(Math.random() * color.length)])
         if (!block) {
             client.say(channel, `ppPing ppPong 🏓 PingPong `)
             block = true;
@@ -299,6 +316,7 @@ if (message == "'ping") {
     
 
     if (message == "'copetix") {
+        client.color(color[Math.floor(Math.random() * color.length)])
         if (!block) {
             client.say(channel, `⠈⠀⠐⠠⠐⡀⡂⡢⡂⢆⠪⡘⠤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⢀⢂⢅⢎⢢⢊⢔⢕⡎⣗⡵⣕⣵⡱⡠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⢰⢱⢕⣗⢷⣽⣾⣯⣿⣿⣿⣿⡿⣿⡄⠋⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⢜⢜⢵⢝⣽⢯⣿⣿⣟⣿⣾⣿⣿⣿⣿⠌⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠌⢆⢇⢟⣞⣿⣻⣽⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⡘⠔⢅⢣⢳⣯⣿⣿⣿⣿⣿⣿⣿⡿⡾⡿⠵⢀⠨⡀⠀⠀⠀⠀⠀⠀⠀���⠀ ⣈⠪⠨⡂⠫⡪⡓⣝⢽⢙⠿⣽⡺⣺⣽⣞⡾⡢⡢⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠹⣎⢌⡢⡑⣝⣟⣿⣽⡎⢜⣿⣝⣿⣽⣯⢯⠂⠈⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠂⠝⣷⡹⢮⣻⣽⡿⡾⣹⢮⣻⣿⣾⣽⣽⢧⠃⠀⠀⠀⠀⡀⠀⠀⡀⠀⠀⠀ ⠀⠡⢊⢫⢷⡽⣾⢾⣟⠝⡾⠽⣿⢿⣻⡽⡕⣠⣶⢿⣻⡷⡾⠺⠠⠀⠀⠀⠀ ⠐⡈⠀⠕⡍⢯⢟⡿⡽⣻⢽⣻⡽⡿⣽⢧⣓⡟⡥⡧⡶⡴⣲⢽⡲⣲⣲⢤⡂ ⢸⢶⡈⡐⠨⢊⢗⡵⣟⣞⣷⣟⣿⢿⡯⢃⡽⡇⢯⣻⢮⣣⡵⡶⡮⣵⣲⣺⡂ ⠀⠍⢷⣔⠈⡀⠂⡝⣵⣳⣳⣏⣟⣿⡃⣾⡏⠀⣟⢾⢽⣺⢽⢽⢽⣺⣺⣺⡂ ⠀⠡⡡⢙⠷⢶⣦⣤⣁⢓⠵⡻⣺⡵⣟⠏⠂⡀⠹⠽⠵⠼⠭⠭⠽⠾⠵⠗⠇ `)
             block = true;
@@ -309,6 +327,7 @@ if (message == "'ping") {
     }
 
     if (message == "'trihard") {
+        client.color(color[Math.floor(Math.random() * color.length)])
         if (!block) {
             client.say(channel, `⣿⣿⣿⣿⣿⣿⡿⢫⣍⣭⣥⣶⣶⡶⠶⣭⣴⣬⣩⣍⣛⢻⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⠟⣥⣿⣭⡿⠿⠿⠟⠿⠁⠉⢻⣿⣿⣿⣿⣷⣬⠹⣿⣿⣿⣿⣿ ⣿⣿⣿⡿⢃⣾⡿⠟⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠛⠻⢿⣷⠸⣿⣿⣿⣿ ⣿⣿⣿⡲⣿⣯⠁⠄⠄⠄⣀⣀⠄⠄⢀⣀⣀⠄⠄⠄⠄⠄⠄⠈⠃⠹⣿⣿⣿ ⣿⣿⣿⠃⠼⠄⠄⠄⠄⠾⢿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠤⠄⠄⠄⠄⠄⣿⣿⣿ ⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⣿⣿⣿ ⣿⣿⣿⣿⣇⣤⣄⠄⠄⣠⣬⣽⣿⣿⣿⣿⣿⣿⣿⣿⣧⡀⠄⠄⢠⣾⣿⣿⣿ ⣿⣿⣿⣿⣇⢿⣿⠄⢀⣿⣿⣴⣅⣼⣿⣿⣿⡿⣟⠉⡒⠄⢀⣠⣾⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣶⠄⠄⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣴⠄⣾⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⡄⠄⠈⠛⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢠⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣷⡀⠄⠛⣰⣾⣾⣿⣿⣿⣤⠉⣉⠉⣠⣾⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣷⡀⠄⢻⣿⣿⣿⣿⣿⣿⠟⢁⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠸⣿⣿⣟⣛⣛⠁⣠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡉⠛⠛⠛⣫⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿  `)
             block = true;
@@ -322,6 +341,7 @@ if (message == "'ping") {
     
     
     if (message == "'poki") {
+        client.color(color[Math.floor(Math.random() * color.length)])
         if (!block) {
             client.say(channel, `Simping for Pokimane isn't just a moment, it’s a lifestyle 💫 a reason to breathe 🤲 an escape from this evil world filled with thieves 🌏 It’s art 🖼 the first gift you open on Xmas 🎁 a hug from a loved one 🤗 everything you’ve ever wanted love 💗 everything you need 💕🥺`)
             block = true;
@@ -343,7 +363,7 @@ if (message == "'ping") {
 
     if (message == "'pokilookingatyou") {
         if (!block) {
-            client.color("SeaGreen")
+            client.color(color[Math.floor(Math.random() * color.length)])
             client.say(channel, `⣿⣿⣿⣿⣿⣿⣿⣿⢟⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⣻⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣻⣿⣿⠿⢛⣩⡭⠭⠭⠭⠭⢿⣟⡿⢿⣶⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⡏⠉⠁⠐⠛⠁⠄⠄⠄⠄⠄⠄⠈⠉⠙⠻⢷⣶⣯⡻⣿⣿⣿ ⣿⣿⣿⣿⠋⠉⠄⠄⢀⣶⣿⣿⣿⣿⣿⣿⣷⣄⠄⠄⠄⠄⠄⠄⠛⢿⣮⡻⣿ ⣿⣿⣾⠏⠄⠄⠄⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡧⠄⠄⠄⠄⠄⠄⠄⠙⠿⢟ ⣿⣿⠏⠄⠄⠄⣠⣿⣿⡿⢿⣿⣿⣿⣿⣿⡿⠛⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ⣟⠋⠄⠄⠄⠄⣿⣵⣶⣶⣶⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⣈ ⡁⠄⠄⠄⠄⢸⣿⣿⠿⠟⠻⣿⣿⣿⣿⣿⣿⡉⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⢙ ⠄⠄⠄⠄⠄⣿⣿⣦⣤⣴⣾⣿⣿⣿⣿⣿⣿⣿⣷⣶⣤⡀⠄⠄⠄⠄⠄⠄⠄ ⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿⣿⣿⠟⢿⡿⠄⠻⣿⣿⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄ ⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿⣿⣿⣶⣿⣷⣶⣶⣿⣿⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄ ⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠻⠿⣿⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄ ⠄⠄⠄⠄⠄⢹⣿⣿⣿⣿⣋⣥⣶⣶⣤⣤⣶⣄⡀⢹⣿⠃⠄⠄⠄⠄⠄⠄⠄ ⠄⢀⠄⠄⠄⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣅⠈⠙⠿⠛⠄⠄⠄⠄⠈⠑⢦⣄ `)
             block = true;
             setTimeout(() => {
@@ -357,7 +377,7 @@ if (message == "'ping") {
     if (message.toLowerCase().startsWith("'pick") && command === 'pick') {
         if (!block) {
             let array = ["Yes Okayge", "No Okayge", "Maybe Okayge"]
-            client.color("OrangeRed")
+            client.color(color[Math.floor(Math.random() * color.length)])
             client.say(channel, ` @${user.username} ${array[Math.floor(Math.random() * array.length)]}`)
             block = true;
             setTimeout(() => {
@@ -368,7 +388,7 @@ if (message == "'ping") {
 
     if (message == "'roll") {
         if (!block) {
-            client.color("HotPink")
+            client.color(color[Math.floor(Math.random() * color.length)])
             client.say(channel, `@${user.username} :tf: 👉   ${Math.floor(Math.random() * 2) + 1}!`)
             block = true;
             setTimeout(() => {
@@ -379,7 +399,7 @@ if (message == "'ping") {
 
     if (message.toLowerCase().startsWith("'gaytest") && command === 'gaytest') {
         if (!block) {
-            client.color("Green")
+            client.color(color[Math.floor(Math.random() * color.length)])
             client.say(channel, `@${user.username} ${args.join(" ")} is  ${Math.floor(Math.random() * 100) + 1}% gay Okayge`)
             block = true;
             setTimeout(() => {
@@ -390,7 +410,7 @@ if (message == "'ping") {
 
     if (message.toLowerCase().startsWith("'lesbiantest") && command === 'lesbiantest') {
         if (!block) {
-            client.color("GoldenRod")
+            client.color(color[Math.floor(Math.random() * color.length)])
             client.say(channel, `@${user.username} ${args.join(" ")} is  ${Math.floor(Math.random() * 100) + 1}% lesbian Okayge`)
             block = true;
             setTimeout(() => {
@@ -401,7 +421,7 @@ if (message == "'ping") {
 
     if (message.toLowerCase().startsWith("'cock") && command === 'cock') {
         if (!block) {
-            client.color("Firebrick")
+            client.color(color[Math.floor(Math.random() * color.length)])
             client.say(channel, `@${user.username} ${args.join(" ")} has ${Math.floor(Math.random() * 30) + 1}cm cock Okayge`)
             block = true;
             setTimeout(() => {
@@ -412,7 +432,7 @@ if (message == "'ping") {
 
     if (message.toLowerCase().startsWith("'vagina") && command === 'vagina') {
         if (!block) {
-            client.color("DodgerBlue")
+            client.color(color[Math.floor(Math.random() * color.length)])
             client.say(channel, `@${user.username} ${args.join(" ")} 's vagina is ${Math.floor(Math.random() * 17) + 1}cm deep Okayge`)
             block = true;
             setTimeout(() => {
@@ -423,7 +443,7 @@ if (message == "'ping") {
 
     if (message.toLowerCase().startsWith("'iq") && command === 'iq') {
         if (!block) {
-            client.color("Coral")
+            client.color(color[Math.floor(Math.random() * color.length)])
             client.say(channel, `@${user.username} ${args.join(" ")} has ${Math.floor(Math.random() * 269) + 1}iq FeelsDankMan`)
             block = true;
             setTimeout(() => {
@@ -434,7 +454,7 @@ if (message == "'ping") {
 
     if (message.toLowerCase().startsWith("'wedding") && command === 'wedding') {
         if (!block) {
-            client.color("Coral")
+            client.color(color[Math.floor(Math.random() * color.length)])
             client.say(channel, `@${user.username} and ${args.join(" ")} will have wedding in ${Math.floor(Math.random() * 20) + 1} Years ${Math.floor(Math.random() * 11) + 1} Months ${Math.floor(Math.random() * 30) + 1} Days ${Math.floor(Math.random() * 59) + 1} Minutes 💒 ❤ 💍  Pag`)
             block = true;
             setTimeout(() => {
@@ -445,7 +465,7 @@ if (message == "'ping") {
 
     if (message.toLowerCase().startsWith("'swag") && command === 'swag') {
         if (!block) {
-            client.color("Chocolate")
+            client.color(color[Math.floor(Math.random() * color.length)])
             client.say(channel, `@${user.username} ${args.join(" ")} has ${Math.floor(Math.random() * 100) + 1} % swag 😎 `)
             block = true;
             setTimeout(() => {
@@ -456,7 +476,7 @@ if (message == "'ping") {
 
     if (message.toLowerCase().startsWith("'love") && command === 'love') {
         if (!block) {
-            client.color("Green")
+            client.color(color[Math.floor(Math.random() * color.length)])
             client.say(channel, `Love between ${user.username} and ${args.join(" ")} is ${Math.floor(Math.random() * 100) + 1}% PogChamp ❤  `)
             block = true;
             setTimeout(() => {
@@ -467,7 +487,7 @@ if (message == "'ping") {
 
     if (message.toLowerCase().startsWith("'depression") && command === 'depression') {
         if (!block) {
-            client.color("Blue")
+            client.color(color[Math.floor(Math.random() * color.length)])
             client.say(channel, `@${user.username} ${args.join(" ")} is ${Math.floor(Math.random() * 100) + 1}% Depressed PoroSad 💔  `)
             block = true;
             setTimeout(() => {
@@ -477,16 +497,17 @@ if (message == "'ping") {
     }
 
     if (message.startsWith("ppBounce") && user['user-id'] === "654447790") {
-            client.color("CadetBlue")
+        client.color(color[Math.floor(Math.random() * color.length)])
             client.say(channel, "ppJump")
     }
 
     if (message.startsWith("ppCircle") && user['user-id'] === "625016038") {
-            client.color("BlueViolet")
+        client.color(color[Math.floor(Math.random() * color.length)])
             client.say(channel, "ppCircle")
     }
 
     if (message === "'mods" && user['user-id'] === "162760707") {
+        client.color(color[Math.floor(Math.random() * color.length)])
         if (!block) {
             client.mods(channel).then(function (data) {
                 console.log(data);
@@ -501,6 +522,7 @@ if (message == "'ping") {
     
 
     if (message === "'vips" && user['user-id'] === "162760707") {
+        client.color(color[Math.floor(Math.random() * color.length)])
         if (!block) {
             client.vips(channel).then(function (data) {
                 console.log(data);
@@ -523,7 +545,7 @@ if (message == "'ping") {
             setTimeout(() => {
                 block = false;
             }, (5 * 1000));
-            client.color("HotPink")
+            client.color(color[Math.floor(Math.random() * color.length)])
             client.say(channel, `@${user.username} https://7tv.app/emotes?sortBy=popularity&page=0&query=${args.join(" ")} `)
             block = true;
             setTimeout(() => {
@@ -539,7 +561,7 @@ if (message == "'ping") {
                 client.say(channel, 'No emote provided')
                 ; return;
             }
-            client.color("Red")
+            client.color(color[Math.floor(Math.random() * color.length)])
             client.say(channel, `@${user.username} https://betterttv.com/emotes/shared/search?query=${args.join(" ")} `)
             block = true;
             setTimeout(() => {
@@ -554,7 +576,7 @@ if (message == "'ping") {
                 client.say(channel, 'No emote provided')
                 ; return;
             }
-            client.color("Green")
+            client.color(color[Math.floor(Math.random() * color.length)])
             client.say(channel, `@${user.username} https://www.frankerfacez.com/emoticons/?q=${args.join(" ")} `)
             block = true;
             setTimeout(() => {
@@ -577,7 +599,7 @@ if (message == "'ping") {
                 if (args[1]) {
                     channelTarget = args[1];
                 }
-            client.color("Chocolate")
+                client.color(color[Math.floor(Math.random() * color.length)])
             client.say(channel, `@${user.username} https://e.wrnv.xyz/list/${channelTarget} RaccAttack : https://emotes.raccatta.cc/twitch/${channelTarget}`)
             block = true;
             setTimeout(() => {
@@ -596,7 +618,7 @@ if (message == "'ping") {
                     }
                     userTarget = args[0];
                 }
-            client.color("Chocolate")
+                client.color(color[Math.floor(Math.random() * color.length)])
             client.say(channel, `@${user.username} ${user['color']}`)
             block = true;
             setTimeout(() => {
@@ -607,7 +629,7 @@ if (message == "'ping") {
 
     if (message.toLowerCase().startsWith("ppPong") && user['user-id'] === "237719657" && channel == "#kawanpls") {
         if (!block) {
-            client.color("Blue")
+            client.color(color[Math.floor(Math.random() * color.length)])
             client.say(channel, `ppPing ppPong `)
             block = true;
             setTimeout(() => {
@@ -618,6 +640,7 @@ if (message == "'ping") {
 
     if (message.toLowerCase().startsWith("'logs") && command === 'logs') {
         if (!block) {
+            client.color(color[Math.floor(Math.random() * color.length)])
             let userTarget = user.username;
                 if (args[0]) {
                     if (args[0].startsWith("@")) {
@@ -641,7 +664,8 @@ if (message == "'ping") {
     
 if(isModUp) { 
     if (message.toLowerCase().startsWith("'massping") && command === 'massping') {
-            const tChannel = channel.replace("#", "")
+        client.color(color[Math.floor(Math.random() * color.length)])     
+        const tChannel = channel.replace("#", "")
             let request = await got(`https://tmi.twitch.tv/group/user/${tChannel}/chatters`, { responseType: 'json' })
             if (!block) {
             let all = request.body.chatters
@@ -660,6 +684,7 @@ if(isModUp) {
     
 
     if (message.toLowerCase().startsWith("'retard") && command === 'retard') {
+        client.color(color[Math.floor(Math.random() * color.length)])
         if (!block) {
             client.color("Red")
             client.say(channel, `@${user.username} https://i.nuuls.com/Jiwv3.png , https://i.nuuls.com/PDVFk.png , https://i.nuuls.com/gRnsh.png , https://i.nuuls.com/N7F5g.png , https://i.nuuls.com/L9l4Y.png , https://i.nuuls.com/8MqtH.png , https://i.nuuls.com/q81Qw.png , `)
@@ -672,6 +697,7 @@ if(isModUp) {
 
 
         if (message.toLowerCase().startsWith("'followage")  || message.toLowerCase().startsWith("'fa")) {
+            client.color(color[Math.floor(Math.random() * color.length)])
             if (!block) {
         
                 let userTarget = user.username;
@@ -702,6 +728,7 @@ if(isModUp) {
 
 
         if (message.toLowerCase().startsWith("'accage")) {
+            client.color(color[Math.floor(Math.random() * color.length)])
             if (!block) {
         
                 let userTarget = user.username;
@@ -730,6 +757,7 @@ if(isModUp) {
         }
 
         if (message.toLowerCase().startsWith("'avatar")) {
+            client.color(color[Math.floor(Math.random() * color.length)]) 
             if (!block) {
         
                 let userTarget = user.username;
@@ -759,6 +787,7 @@ if(isModUp) {
 
 
         if (message.toLowerCase().startsWith("'subs")) {
+            client.color(color[Math.floor(Math.random() * color.length)])
             if (!block) {
         
                 let userTarget = user.username;
@@ -786,6 +815,7 @@ if(isModUp) {
         }
 
         if (message.toLowerCase().startsWith("'subemotes")) {
+            client.color(color[Math.floor(Math.random() * color.length)]) 
             if (!block) {
         
                 let userTarget = user.username;
@@ -817,6 +847,7 @@ if(isModUp) {
 
 
         if (message.toLowerCase().startsWith("'uptime")) {
+            client.color(color[Math.floor(Math.random() * color.length)])
             if (!block) {
         
                 let userTarget = user.username;
@@ -846,6 +877,7 @@ if(isModUp) {
 
 
         if (message.toLowerCase().startsWith("'viewers") && command === 'viewers') {
+            client.color(color[Math.floor(Math.random() * color.length)])
             if (!block) {
         
                 let userTarget = user.username;
@@ -872,6 +904,7 @@ if(isModUp) {
         }
         
         if (message.toLowerCase().startsWith("'followers") && command === 'followers') {
+            client.color(color[Math.floor(Math.random() * color.length)])
             if (!block) {
         
                 let userTarget = user.username;
@@ -899,6 +932,7 @@ if(isModUp) {
         
 
         if (message.toLowerCase().startsWith("'modlookup")  || message.toLowerCase().startsWith("'ml")) {
+            client.color(color[Math.floor(Math.random() * color.length)]) 
             if (!block) {
         
                 let userTarget = user.username;
@@ -918,6 +952,7 @@ if(isModUp) {
     }
 
         if (message.toLowerCase().startsWith("'title")) {
+            client.color(color[Math.floor(Math.random() * color.length)]) 
             if (!block) {
         
                 let userTarget = user.username;
@@ -946,6 +981,7 @@ if(isModUp) {
         }
 
         if (message.toLowerCase().startsWith("'uid")) {
+            client.color(color[Math.floor(Math.random() * color.length)])
             if (!block) {
         
                 let userTarget = user.username;
@@ -973,6 +1009,7 @@ if(isModUp) {
         }
 
         if (message.toLowerCase().startsWith("'game")) {
+            client.color(color[Math.floor(Math.random() * color.length)])
             if (!block) {
         
                 let userTarget = user.username;
@@ -1002,6 +1039,7 @@ if(isModUp) {
         
 
         if (message.toLowerCase().startsWith("'subage")  || message.toLowerCase().startsWith("'sa")) {
+            client.color(color[Math.floor(Math.random() * color.length)]) 
             if (!block) {
         
                 let userTarget = user.username;
@@ -1038,6 +1076,7 @@ if (afkcheck) {
 }
  
 if (message.toLowerCase().startsWith("'afk")) {
+    client.color(color[Math.floor(Math.random() * color.length)])
     if (!block) {
 
         let afkMessage = args.join(' ') ? args.join(' ') : 'no message';
@@ -1067,6 +1106,7 @@ if (foodcheck) {
 }
  
 if (message.toLowerCase().startsWith("'food")) {
+    client.color(color[Math.floor(Math.random() * color.length)]) 
     if (!block) {
 
         let foodMessage = args.join(' ') ? args.join(' ') : 'no message';
@@ -1096,6 +1136,7 @@ if (wccheck) {
 }
  
 if (message.toLowerCase().startsWith("'wc")) {
+    client.color(color[Math.floor(Math.random() * color.length)])
     if (!block) {
 
         let wcMessage = args.join(' ') ? args.join(' ') : 'no message';
@@ -1125,6 +1166,7 @@ if (brbcheck) {
 }
 
 if (message.toLowerCase().startsWith("'brb")) {
+    client.color(color[Math.floor(Math.random() * color.length)])
     if (!block) {
 
         let brbMessage = args.join(' ') ? args.join(' ') : 'ppHop';
@@ -1154,6 +1196,7 @@ if (gncheck) {
 }
 
 if (message.toLowerCase().startsWith("'gn")) {
+    client.color(color[Math.floor(Math.random() * color.length)]) 
     if (!block) {
 
         let gnMessage = args.join(' ') ? args.join(' ') : '🛏 💤 ';
@@ -1183,6 +1226,7 @@ if (showercheck) {
 }
 
 if (message.toLowerCase().startsWith("'shower")) {
+    client.color(color[Math.floor(Math.random() * color.length)])
     if (!block) {
 
         let showerMessage = args.join(' ') ? args.join(' ') : 'no message';
@@ -1211,6 +1255,7 @@ if(message == "'bruh"){
 
 
 if (message.toLowerCase().startsWith("'tuck")) {
+    client.color(color[Math.floor(Math.random() * color.length)])
     let userTarget = user.username;
     if (args[0]) {
         if (args[0].startsWith("@")) {
@@ -1226,6 +1271,7 @@ if (message.toLowerCase().startsWith("'tuck")) {
 }
 
 if(message == "'rcolor") {
+    client.color(color[Math.floor(Math.random() * color.length)])
     if (!block) {
     var color = "";
     for(var i = 0; i < 3; i++) {
@@ -1241,8 +1287,9 @@ if(message == "'rcolor") {
 };
 
 if(message.startsWith(`'math`)){
+    client.color(color[Math.floor(Math.random() * color.length)])
     if(message.split(" ")[1] !== undefined){
-      let excersise = message.substring(message.split(" ")[0].split("").length +1, message.split("").length)
+        let excersise = message.substring(message.split(" ")[0].split("").length +1, message.split("").length)
       excersise = excersise.replace(/\s/g, "")
       let validnums = 0
       let invalidnums = 0
@@ -1266,6 +1313,7 @@ if(message.startsWith(`'math`)){
 }
 
     if(message.toLowerCase().startsWith("'restart") && user['user-id'] === "162760707") {
+        client.color(color[Math.floor(Math.random() * color.length)])
         client.say(channel, 'Restarting... ppJump')
         .then
         process.exit(1)
@@ -1273,6 +1321,7 @@ if(message.startsWith(`'math`)){
 
     if (message === "'broadcaster") {
         if (!block) {
+            client.color(color[Math.floor(Math.random() * color.length)])
             let channelTarget = channel.replace("#", "");
                 if (args[1]) {
                     channelTarget = args[1];
@@ -1287,7 +1336,8 @@ if(message.startsWith(`'math`)){
         }
 
         if(message.startsWith(`'song`)){
-              let spotify_song = {
+            client.color(color[Math.floor(Math.random() * color.length)])
+            let spotify_song = {
                 method: "GET",
                   headers: {
                   "Accept" : "application/json",
