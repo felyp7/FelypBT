@@ -1342,7 +1342,7 @@ if(message.startsWith(`'math`)){
                   headers: {
                   "Accept" : "application/json",
                   "Content-Type" : "application/json",
-                  "Authorization" : "Bearer BQAForXUorE52pOtLxcMBNprFwOy632g82Kt7-dscbqRjvbzWeoSucUW-GwPTSk59mm99txLAvLwfoRb-0sb6MGiYEfdHQp18sdzf79hymK4q97GpHjVg7hXtavPZvGT0Eqvi9H5kLM0DsQnvHioeixEya-C5Uu4qhfvRIIo"
+                  "Authorization" : "Bearer BQBey363nfjZnWDv9mZcwIlFs18qLQXngk2pVok5tpojXXP7aKPnB8PgPRkAbefwsOwjT0ToO1eUigrYz200q6FBnK4jnDK8rDNGpBAokXPd4CyIa-lBumgbvQCf0WHZQH9hb1fgKCM6b8Ss6SFtrwSD3K7rlipA9qfeKEs_"
                   }
                 }
               
