@@ -1337,22 +1337,15 @@ if(message.startsWith(`'math`)){
 
         if(message.startsWith(`'song`)){
             client.color(array[Math.floor(Math.random() * array.length)])
-            const SpotifyWebApi = require('spotify-web-api-node');
-            const spotify = require('spotify-token');
-            function refreshToken() {
-                spotify.getAccessToken('AQBAdbVyshfO_h7dfjZh9EcDRq_LGY9dH-5xFYhv0AzPPwqxS2UuA0KpnVIAN2k-bunGOE7TixLCPDfMlKxxiSyW8Pmw9IoNew2vdsRoI22FBkn8DH3rX2IDJ7YK-TzqMlNuwpyBwKZlGR7CeQAbM-yf_qKZyYw', '1043e4a3-f108-404e-95a7-4df7b446b1e3').then(function (token) {
-                
-
             let spotify_song = {
                 method: "GET",
                   headers: {
                   "Accept" : "application/json",
                   "Content-Type" : "application/json",
-                  "Authorization" : `Bearer ${token}`
+                  "Authorization" : `Bearer BQBey363nfjZnWDv9mZcwIlFs18qLQXngk2pVok5tpojXXP7aKPnB8PgPRkAbefwsOwjT0ToO1eUigrYz200q6FBnK4jnDK8rDNGpBAokXPd4CyIa-lBumgbvQCf0WHZQH9hb1fgKCM6b8Ss6SFtrwSD3K7rlipA9qfeKEs_ `
                   }
                 }
-            })
-        }
+            
                 const request = require('request')
               request(`https://api.spotify.com/v1/me/player/currently-playing`, spotify_song, function(e, r){
                 if(e){
