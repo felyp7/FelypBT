@@ -1249,8 +1249,14 @@ if (message.toLowerCase().startsWith("'shower")) {
 }
 
 if(message == "'bruh"){
+    if (!block) {
     client.color(array[Math.floor(Math.random() * array.length)])
     client.say(channel, 'Bruh')
+    block = true;
+    setTimeout(() => {
+        block = false;
+    }, (5 * 1000));
+}
 }
 
 
