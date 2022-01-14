@@ -1292,7 +1292,7 @@ if(message.startsWith(`'math`)){
                   headers: {
                   "Accept" : "application/json",
                   "Content-Type" : "application/json",
-                  "Authorization" : "Bearer BQCN4pjlnqqkjsu6GgEYvmyuUqF2kvJmRI8N4E_du0ep5INzneJJKw4ncOXuodea5w2eIv6O6iBK65Ge97tC_bjWrTnHhoOkpKuXJFhKFGgh3TaBC5EHvnvunlpm6DWpSPwXBBDxzpqFu3SJf_NtMvLL0EDd5A2wOZK_-HY1"
+                  "Authorization" : "Bearer BQAForXUorE52pOtLxcMBNprFwOy632g82Kt7-dscbqRjvbzWeoSucUW-GwPTSk59mm99txLAvLwfoRb-0sb6MGiYEfdHQp18sdzf79hymK4q97GpHjVg7hXtavPZvGT0Eqvi9H5kLM0DsQnvHioeixEya-C5Uu4qhfvRIIo"
                   }
                 }
               
