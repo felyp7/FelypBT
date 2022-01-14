@@ -1299,14 +1299,14 @@ if(message.startsWith(`'math`)){
                 const request = require('request')
               request(`https://api.spotify.com/v1/me/player/currently-playing`, spotify_song, function(e, r){
                 if(e){
-                  client.say(channel, `${userstate.username} Error on getting not playing`)
+                  client.say(channel, `${user.username} Error on getting not playing`)
                   console.log(`>> ERROR ${e}`)
                 } else {
                   if(r.body.length < 60){
-                    client.say(channel, `${userstate.username} Nothing playing`)
+                    client.say(channel, `${user.username} Nothing playing`)
                   } else {
                     let dat = JSON.parse(r.body)
-                    client.action(channel, `${userstate.username}, ${dat.item.name} - ${dat.item.album.artists[0].name} FeelsOkayMan`)
+                    client.action(channel, `${user.username}, ${dat.item.name} - ${dat.item.album.artists[0].name} FeelsOkayMan`)
                   }
                 } 
               })
