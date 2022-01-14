@@ -1286,5 +1286,32 @@ if(message.startsWith(`'math`)){
             }
         }
 
+        if(message.startsWith(`'song`)){
+              let spotify_song = {
+                method: "GET",
+                  headers: {
+                  "Accept" : "application/json",
+                  "Content-Type" : "application/json",
+                  "Authorization" : "Bearer BQCN4pjlnqqkjsu6GgEYvmyuUqF2kvJmRI8N4E_du0ep5INzneJJKw4ncOXuodea5w2eIv6O6iBK65Ge97tC_bjWrTnHhoOkpKuXJFhKFGgh3TaBC5EHvnvunlpm6DWpSPwXBBDxzpqFu3SJf_NtMvLL0EDd5A2wOZK_-HY1"
+                  }
+                }
+              
+                const request = require('request')
+              request(`https://api.spotify.com/v1/me/player/currently-playing`, spotify_song, function(e, r){
+                if(e){
+                  client.say(channel, `${userstate.username} Error on getting not playing`)
+                  console.log(`>> ERROR ${e}`)
+                } else {
+                  if(r.body.length < 60){
+                    client.say(channel, `${userstate.username} Nothing playing`)
+                  } else {
+                    let dat = JSON.parse(r.body)
+                    client.action(channel, `${userstate.username}, ${dat.item.name} - ${dat.item.album.artists[0].name} FeelsOkayMan`)
+                  }
+                } 
+              })
+            }
+          
+
 });
 
