@@ -1249,6 +1249,7 @@ if (message.toLowerCase().startsWith("'shower")) {
 }
 
 if(message == "'bruh"){
+    client.color(array[Math.floor(Math.random() * array.length)])
     client.say(channel, 'Bruh')
 }
 
