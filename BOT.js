@@ -1306,7 +1306,7 @@ if(message.startsWith(`'math`)){
                     client.say(channel, `${user.username} Nothing playing`)
                   } else {
                     let dat = JSON.parse(r.body)
-                    client.action(channel, `${user.username}, ${dat.item.name} - ${dat.item.album.artists[0].name} FeelsOkayMan`)
+                    client.action(channel, `${user.username}, ${dat.item.name} - ${dat.item.album.artists[0].name} ${dat.item.time} FeelsOkayMan`)
                   }
                 } 
               })
