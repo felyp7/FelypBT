@@ -21,7 +21,7 @@ const runTime = new Date().toString()
 
 const humanizeDuration = require("humanize-duration");
 
-const rafkList = new Set() //outside  client.on
+const rafkList = new Map() //outside  client.on
 
 client.afk = new Map()
 const afk = client.afk
