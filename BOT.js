@@ -612,15 +612,30 @@ if (message == "'ping") {
 
     if (message.toLowerCase().startsWith("'color") && command === 'color') {
         if (!block) {
-            let userTarget = user.username;
-                if (args[0]) {
-                    if (args[0].startsWith("@")) {
-                        args[0] = args[0].substring(1);
-                    }
-                    userTarget = args[0];
+            let username = user.username;
+
+            if(args[0]) {
+                if(args[0].startsWith("@")) {
+                    args[0] = args[0].substring(1);
                 }
+                username = args[0];
+            }
+                const userCheck = await got(`https://api.ivr.fi/twitch/resolve/${username}`,{
+                    responseType: 'json',
+                    throwHttpErrors: false
+                })
+                if(!userCheck.body.id) return { reply: `This user does not exist.` }
+
+                const userData = userCheck.body
+                const userColor = userData.chatColofa-rotate-180
+                
+                if(usercolor === null) return { reply: 'Default. (never set)' }
+
+                const colorName = await got(`https://www.thecolorapi.com/id?hex=${userColor.replace('#', '')}`).json();
+
                 client.color(array[Math.floor(Math.random() * array.length)])
-            client.say(channel, `@${user.username} ${user['color']}`)
+
+                client.say(channel, `${userColor} (${colorName.name.value}) `) 
             block = true;
             setTimeout(() => {
                 block = false;
@@ -1383,6 +1398,7 @@ if(message.startsWith(`'math`)){
                 }, (5 * 1000));
             }
         }
+
 
 
 });
