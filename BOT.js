@@ -629,7 +629,7 @@ if (message == "'ping") {
                 const userData = userCheck.body
                 const userColor = userData.chatColor
                 
-                if(usercolor === null) return { reply: 'Default. (never set)' }
+                if(userColor === null) return { reply: 'Default. (never set)' }
 
                 const colorName = await got(`https://www.thecolorapi.com/id?hex=${userColor.replace('#', '')}`).json();
 
