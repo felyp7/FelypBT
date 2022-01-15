@@ -21,6 +21,8 @@ const runTime = new Date().toString()
 
 const humanizeDuration = require("humanize-duration");
 
+const rafkList = new Set() //outside  client.on
+
 client.afk = new Map()
 const afk = client.afk
 
@@ -1258,6 +1260,47 @@ if(message == "'bruh"){
     }, (5 * 1000));
 }
 }
+
+ // on afk check
+ if (afkcheck) {
+    client.afk.delete(user['user-id']);
+
+    rafkList.add(user.username) // add this
+    setTimeout(() => rafkList.delete(user.username), 600000); //
+
+    client.say(channel, `${user['display-name']} is no longer afk: ${afkcheck.reason} (${humanizeDuration(new Date().getTime() - Date.parse(afkcheck.time), { round: true })})`)
+}
+
+if (message.toLowerCase().startsWith("'rafk")) { //command
+    client.color(array[Math.floor(Math.random() * array.length)])
+    if (!block) {
+
+        if (rafkList.has(user.username)) {
+
+            let afkMessage = args.join(' ') ? args.join(' ') : 'no message';
+            let construct = {
+                id: user['user-id'],
+                reason: afkMessage,
+                time: new Date().toString()
+            };
+            
+            client.afk.set(user['user-id'], construct);
+            client.say(channel, `@${user.username} your afk status has been resumed: ${afkMessage}`)
+
+            rafkList.delete(user.username)
+            
+        } else {
+            client.say(channel, `@${user.username}, you cannot resume your afk, because it ended more than 10 minutes ago or you never went afk before.`)
+        }
+
+        block = true;
+        setTimeout(() => {
+            block = false;
+        }, (5 * 1000));
+    }
+}
+
+
 
 
 if (message.toLowerCase().startsWith("'tuck")) {
