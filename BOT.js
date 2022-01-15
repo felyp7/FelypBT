@@ -627,7 +627,7 @@ if (message == "'ping") {
                 if(!userCheck.body.id) return { reply: `This user does not exist.` }
 
                 const userData = userCheck.body
-                const userColor = userData.chatColofa-rotate-180
+                const userColor = userData.chatColor
                 
                 if(usercolor === null) return { reply: 'Default. (never set)' }
 
