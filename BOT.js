@@ -1268,7 +1268,7 @@ if(message == "'bruh"){
     rafkList.add(user.username) // add this
     setTimeout(() => rafkList.delete(user.username), 600000); //
 
-    client.say(channel, `${user['display-name']} is no longer afk: ${afkcheck.reason} (${humanizeDuration(new Date().getTime() - Date.parse(afkcheck.time), { round: true })})`)
+    
 }
 
 if (message.toLowerCase().startsWith("'rafk")) { //command
