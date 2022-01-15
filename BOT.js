@@ -1341,32 +1341,6 @@ if(message.startsWith(`'math`)){
             }
         }
 
-        if(message.startsWith(`'song`)){
-            client.color(array[Math.floor(Math.random() * array.length)])
-            let spotify_song = {
-                method: "GET",
-                  headers: {
-                  "Accept" : "application/json",
-                  "Content-Type" : "application/json",
-                  "Authorization" : `Bearer BQBey363nfjZnWDv9mZcwIlFs18qLQXngk2pVok5tpojXXP7aKPnB8PgPRkAbefwsOwjT0ToO1eUigrYz200q6FBnK4jnDK8rDNGpBAokXPd4CyIa-lBumgbvQCf0WHZQH9hb1fgKCM6b8Ss6SFtrwSD3K7rlipA9qfeKEs_ `
-                  }
-                }
-            
-                const request = require('request')
-              request(`https://api.spotify.com/v1/me/player/currently-playing`, spotify_song, function(e, r){
-                if(e){
-                  client.say(channel, `${user.username} Error on getting not playing`)
-                  console.log(`>> ERROR ${e}`)
-                } else {
-                  if(r.body.length < 60){
-                    client.say(channel, `${user.username} Nothing playing`)
-                  } else {
-                    let dat = JSON.parse(r.body)
-                    client.action(channel, `${user.username} is currently playing ▶  ${dat.item.name} by ${dat.item.album.artists[0].name}`)
-                  }
-                } 
-            })
-        }
 
 });
 
