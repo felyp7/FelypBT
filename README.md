@@ -1,6 +1,7 @@
 # JuicerB0t 
 
-Bot prefis is: '        
+### Bot prefix is: '        
+
 ## Commands
         
 | Command  | Alias  | Description  | min. Permission |
