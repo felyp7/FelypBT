@@ -1,157 +1,66 @@
-# Commands
-'hello
-- Greet you lol
+# JuicerB0t Commands
 
-'xqcl
-- xqcL ascii
-
-'xqctf
-
-- xqctf ascii
-
-'xqcs
-- xqcS ascii
-
-'tf
-- tf ascii
-
-'spider
-- animated spider ascii (need mod/vip lol)
-
-'okayeg
-- okayeg ascii
-
-'lule
-- lule ascii
-
-'ping
-- Ping (Latency, Uptime, Ram)
-
-'pingpong
-- ppPing ppPong
-
-'poki
-- Simping poki copypasta
-
-'pokilookingatyou
-- PokiLookingAtYou
-
-'pick
-- Yes, No, Maybe
-
-'roll
-- Rolls 1 or 2
-
-'gaytest
-- Gay Test lol
-
-'lesbiantest
-- Lesbian Test lol
-
-'cock
-- Cock size BillyApprove
-
-'vagina
-- Vagina depth lol
-
-'iq
-- Iq size FeelsDankMan
-
-'swag
-- Size of swag 
-
-'trihard
-- TriHard ascii
-
-'vanish
-- Vanishes you
-
-'pyramid
-- Pyramid with max size 40
-
-'spam 
-- Spam with max size 80
-
-'wedding
-- the date when you and someone else will have a wedding
-
-'love
-- Love between you and someone else <3
-
-'depression
-- Size of your depression PoroSad
-
-'7tvsearch
-- Search 7tv emote
-
-'ffzsearch
-- Search ffz emote
-
-'bttvsearch
-- Search bttv emote
-
-'emotes
-- Emotes of the channel
-
-'color
-- Your nickname color
-
-'logs
-- Your logs
-
-'massping
-- Pings everyone in the chat VeryTroll
-
-'retard
-- Photos of VeryPogftxQcOnTheToilet KEKHeim
-
-'followage
-- Followage lol
-
-'accage
-- Account age lol
-
-'avatar
-- Link to avatar
-
-'subs
-- Number of subscribers
-
-'subemotes
-- Shows sub emotes
-
-'uptime
-- Shows how long is the stream up
-
-'viewers
-- Shows how many viewers does the channel have
-
-'followers
-- Shows how many followers does the channel have
-
-'modlookup
-- Link to site where you can see where are you moderator
-
-'title
-- Shows stream title
-
-'uid
-- Shows your user id
-
-'game
-- Shows the game on the stream
-
-'subage
-- Shows how long you are subbed to the channel
-
-'afk
-- Counts time when you are afk
-
-'brb
-- Counts time when you are going to be right back
-
-'gn
-- Counts time when you are sleeping 
-
-'tuck
-- You can tuck someone to bed
+        
+## Commands
+        
+| Command  | Alias  | Description  | min. Permission |
+|:-----------:|:-----------:|:------------:|:------:|
+ | 7tvsearch |  | Search an emote on the 7TV website | User 
+ | accage |  |Check Accountage of you or other users | User  
+ | bttvsearch |  | Search an emote on the BetterTTV website | User 
+ | cock |  | Your cock size | User 
+ | roll |  | Coin Flip | User 
+ | color |  | Check Color of you or other users | User 
+ | commands |  | Shows you a list of all my commands | User 
+ | ffzsearch |  | Search an emote on the FFZ Website | User 
+ | followage |  | Check your Followage | User 
+ | massping |  | pings everyone in the chat :tf: | Broadcaster, Moderator 
+ | math |  | Math xd | User  
+ | pick |  | Yes, No or Maybe | User 
+ | ping |  | Just a Ping command | User 
+ | rcolor |  | Gives you a random Hex-Code | User 
+ | restart |  | Restarts the bot | Admin 
+ | echo |  | repeat your message | Developer 
+ | spam |  | spams something into the chat (max size 80) | User 
+ | subage | sa | Check your Subage | User 
+ | subemotes |  | Shows you all subemote of a streamer | Admin  
+ | uptime |  | Shows the uptime of the bot | User 
+ | hello |  | Greets you lol | User
+ | xqcTF |  | xqcTF ascii | User
+ | xqcL |  | xqcL ascii | User
+ | spider |  | spider ascii | User
+ | lule |  | LULE ascii | User
+ | gaytest |  | GayTest in % | User
+ | lesbiantest |  | LesbianTest in % | User
+ | cock |  | Surely real size of your cock Okge | User
+ | vagina |  | Surely real depth of your vagina Okge | User
+ | iq |  | Surely your real iq | User
+ | swag |  | Size of your swag | User
+ | vanish |  | Vanishes you | User
+ | pyramid |  | Pyramid (max size 40) | User
+ | wedding |  | The date when you and someone else will have wedding | User
+ | love |  | Love between you and someone else <3 | User
+ | depression |  | Size of your depression | User
+ | emotes |  | Link to site with emotes of the channel | User
+ | logs |  | Link to sites with logs | User
+ | retard |  | Photos of Felyp Bruh | User
+ | avatar |  | Link to picture with avatar of selected user | User
+ | subs |  | number of subs (need to verify firs) | User
+ | viewers |  | number of viewers | User
+ | title |  | Title of the stream | User
+ | uid |  | user id | User
+ | game |  | Game which is the streamer playing | User
+ | afk |  | Counts time when you are afk | User
+ | brb |  | Counts time when you are going to be right back | User
+ | gn |  | Counts time when you are sleeping | User
+ | wc |  | Counts time when you are on the toilet | User
+ | rafk |  | resets afk status | user
+ | food |  | Counts time when you are eating | User
+ | shower |  | Counts time when you are showering | User
+ | tuck |  | Tucks someone to bed | User
+ | mods |  | List of mods | Developer
+ | vips |  | List of vips | Developer
+ | modlookup |  | Link to site where you can see where is the user mod/vip | user
+ | bruh |  | Bruh | user
+ | broadcaster |  | Pings broadcaster | user
+ 
