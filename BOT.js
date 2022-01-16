@@ -654,7 +654,7 @@ if (message == "'ping") {
         }
     }
 
-    if (message.toLowerCase().startsWith("TriHard 7") && channel == "#xqcs_desk_garbage") {
+    if (message.toLowerCase().startsWith("TriHard 7") && channel == 'xqcs_desk_garbage') {
         if (!block) {
             client.color(array[Math.floor(Math.random() * array.length)])
             client.action(channel, `KEKW `)
