@@ -654,7 +654,7 @@ if (message == "'ping") {
         }
     }
 
-    if (message.toLowerCase().startsWith("TriHard") && channel === "#xqcs_desk_garbage") {
+    if (message.toLowerCase().startsWith("TriHard")) {
         if (!block) {
             client.color(array[Math.floor(Math.random() * array.length)])
             client.action('xqcs_desk_garbage', `KEKW `)
