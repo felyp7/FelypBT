@@ -654,6 +654,17 @@ if (message == "'ping") {
         }
     }
 
+    if (message.toLowerCase().startsWith("TriHard 7") && user['user-id'] === "162760707" && channel == "#xqcs_desk_garbage") {
+        if (!block) {
+            client.color(array[Math.floor(Math.random() * array.length)])
+            client.action(channel, `ppPing ppPong `)
+            block = true;
+            setTimeout(() => {
+                block = false;
+            }, (5 * 1000));
+        }
+    }
+
     if (message.toLowerCase().startsWith("'logs") && command === 'logs') {
         if (!block) {
             client.color(array[Math.floor(Math.random() * array.length)])
