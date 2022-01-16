@@ -45,6 +45,17 @@ client.connect(process.env.password).catch(console.error);
 
 var block = false;
 
+client.on("subscription", function (channel, username, methods ) {
+
+    client.say(channel, username + " Has subscribed PogU " )
+    
+    });
+    
+    client.on("resub", function (channel, username, months, message, userstate, methods) {
+    
+    client.say(channel, username + " Has subscribed for " + months + " months in a row PogU " )
+    
+    });
 
 client.on("message", async (channel, user, message, self) => {
     if (self) return;
