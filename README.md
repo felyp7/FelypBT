@@ -1,4 +1,4 @@
-# JuicerB0t Commands
+# JuicerB0t 
 
         
 ## Commands
@@ -19,11 +19,11 @@
  | pick |  | Yes, No or Maybe | User 
  | ping |  | Just a Ping command | User 
  | rcolor |  | Gives you a random Hex-Code | User 
- | restart |  | Restarts the bot | Admin 
+ | restart |  | Restarts the bot | Developer
  | echo |  | repeat your message | Developer 
  | spam |  | spams something into the chat (max size 80) | User 
  | subage | sa | Check your Subage | User 
- | subemotes |  | Shows you all subemote of a streamer | Admin  
+ | subemotes |  | Shows you all subemote of a streamer | user  
  | uptime |  | Shows the uptime of the bot | User 
  | hello |  | Greets you lol | User
  | xqcTF |  | xqcTF ascii | User
