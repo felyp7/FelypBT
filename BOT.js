@@ -643,27 +643,6 @@ if (message == "'ping") {
         }
     }
 
-    if (message.toLowerCase().startsWith("ppPong") && user['user-id'] === "237719657" && channel == "#kawanpls") {
-        if (!block) {
-            client.color(array[Math.floor(Math.random() * array.length)])
-            client.action(channel, `ppPing ppPong `)
-            block = true;
-            setTimeout(() => {
-                block = false;
-            }, (5 * 1000));
-        }
-    }
-
-    if (message.toLowerCase().startsWith("TriHard")) {
-        if (!block) {
-            client.color(array[Math.floor(Math.random() * array.length)])
-            client.action('xqcs_desk_garbage', `KEKW `)
-            block = true;
-            setTimeout(() => {
-                block = false;
-            }, (5 * 1000));
-        }
-    }
 
     if (message.toLowerCase().startsWith("'logs") && command === 'logs') {
         if (!block) {
