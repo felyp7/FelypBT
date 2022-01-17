@@ -1075,31 +1075,6 @@ if(isModUp) {
             }
         }
 
-        
- 
-if (message.toLowerCase().startsWith("'afk")) {
-    client.color(array[Math.floor(Math.random() * array.length)])
-    if (!block) {
-
-        let afkMessage = args.join(' ') ? args.join(' ') : 'no message';
-        let afklist = client.afk.get(user['user-id']);
-        if (!afklist) {
-            let construct = {
-                id: user['user-id'],
-                reason: afkMessage,
-                time: new Date().toString()
-            };
-            client.afk.set(user['user-id'], construct);
-
-            client.action(channel, `@${user.username} is afk: ${afkMessage}`)
-        }
-
-        block = true;
-        setTimeout(() => {
-            block = false;
-        }, (5 * 1000));
-    }
-}
 
 let foodcheck = client.food.get(user['user-id']); 
 if (foodcheck) { 
@@ -1276,6 +1251,30 @@ let afkcheck = client.afk.get(user['user-id']);
 if (afkcheck) { 
     client.afk.delete(user['user-id']); 
     client.action(channel, `${user['display-name']} is no longer afk: ${afkcheck.reason} (${humanizeDuration(new Date().getTime() - Date.parse(afkcheck.time), { round: true })})`)
+}
+
+if (message.toLowerCase().startsWith("'afk")) {
+    client.color(array[Math.floor(Math.random() * array.length)])
+    if (!block) {
+
+        let afkMessage = args.join(' ') ? args.join(' ') : 'no message';
+        let afklist = client.afk.get(user['user-id']);
+        if (!afklist) {
+            let construct = {
+                id: user['user-id'],
+                reason: afkMessage,
+                time: new Date().toString()
+            };
+            client.afk.set(user['user-id'], construct);
+
+            client.action(channel, `@${user.username} is afk: ${afkMessage}`)
+        }
+
+        block = true;
+        setTimeout(() => {
+            block = false;
+        }, (5 * 1000));
+    }
 }
 
 if (message.toLowerCase().startsWith("'rafk")) { //command
