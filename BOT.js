@@ -1237,20 +1237,19 @@ if(message == "'bruh"){
 }
 }
 
- // on afk check
+let afkcheck = client.afk.get(user['user-id']); 
+if (afkcheck) { 
+    client.afk.delete(user['user-id']); 
+    client.action(channel, `${user['display-name']} is no longer afk: ${afkcheck.reason} (${humanizeDuration(new Date().getTime() - Date.parse(afkcheck.time), { round: true })})`)
+}
+
+
  if (afkcheck) {
     client.afk.delete(user['user-id']);
 
     rafkList.add(user.username) // add this
     setTimeout(() => rafkList.delete(user.username), 600000); //
-
-    
-}
-
-let afkcheck = client.afk.get(user['user-id']); 
-if (afkcheck) { 
-    client.afk.delete(user['user-id']); 
-    client.action(channel, `${user['display-name']} is no longer afk: ${afkcheck.reason} (${humanizeDuration(new Date().getTime() - Date.parse(afkcheck.time), { round: true })})`)
+   
 }
 
 if (message.toLowerCase().startsWith("'afk")) {
