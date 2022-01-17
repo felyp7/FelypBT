@@ -1075,11 +1075,7 @@ if(isModUp) {
             }
         }
 
-        let afkcheck = client.afk.get(user['user-id']); 
-if (afkcheck) { 
-    client.afk.delete(user['user-id']); 
-    client.action(channel, `${user['display-name']} is no longer afk: ${afkcheck.reason} (${humanizeDuration(new Date().getTime() - Date.parse(afkcheck.time), { round: true })})`)
-}
+        
  
 if (message.toLowerCase().startsWith("'afk")) {
     client.color(array[Math.floor(Math.random() * array.length)])
@@ -1274,6 +1270,12 @@ if(message == "'bruh"){
     setTimeout(() => rafkList.delete(user.username), 600000); //
 
     
+}
+
+let afkcheck = client.afk.get(user['user-id']); 
+if (afkcheck) { 
+    client.afk.delete(user['user-id']); 
+    client.action(channel, `${user['display-name']} is no longer afk: ${afkcheck.reason} (${humanizeDuration(new Date().getTime() - Date.parse(afkcheck.time), { round: true })})`)
 }
 
 if (message.toLowerCase().startsWith("'rafk")) { //command
