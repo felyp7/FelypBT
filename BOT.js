@@ -295,7 +295,7 @@ if (message == "'ping" && command === 'ping') {
     client.color(array[Math.floor(Math.random() * array.length)])
         client.ping(channel).then(function (data) {
             console.log(data);
-            client.action(channel, `FeelsDankMan 🏓 Pong! Latency is ${Math.floor(Math.round(data * 1000))}ms | Bot Uptime: ${botUptime} | RAM: ${Math.round(process.memoryUsage().rss / 1024 / 1024)}mb `)
+            client.action(channel, `${args.join(' ')} 🏓 Pong! Latency is ${Math.floor(Math.round(data * 1000))}ms | Bot Uptime: ${botUptime} | RAM: ${Math.round(process.memoryUsage().rss / 1024 / 1024)}mb `)
             block = true;
             setTimeout(() => {
                 block = false;
