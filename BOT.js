@@ -1245,7 +1245,7 @@ if (afkcheck) {
 
 
  if (afkcheck) {
-    client.afk.delete(user['user-id']);
+    
 
     rafkList.add(user.username) // add this
     setTimeout(() => rafkList.delete(user.username), 600000); //
