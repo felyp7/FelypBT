@@ -1286,7 +1286,7 @@ if (message.toLowerCase().startsWith("'rafk")) { //command
             let construct = {
                 id: user['user-id'],
                 reason: afkMessage,
-                time: Date.parse(afkcheck)
+                time: new Date().getTime() - Date.parse(afkcheck.time)
             };
             
             client.afk.set(user['user-id'], construct);
