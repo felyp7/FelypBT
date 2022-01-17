@@ -297,7 +297,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
             console.log(data);
             if (args.join(" ") == []) {
                 client.action(channel, `FeelsDankMan 🏓 Pong! Latency is ${Math.floor(Math.round(data * 1000))}ms | Bot Uptime: ${botUptime} | RAM: ${Math.round(process.memoryUsage().rss / 1024 / 1024)}mb `)
-                ;break;
+                ;return;
             }
             client.action(channel, `${args.join(" ")} 🏓 Pong! Latency is ${Math.floor(Math.round(data * 1000))}ms | Bot Uptime: ${botUptime} | RAM: ${Math.round(process.memoryUsage().rss / 1024 / 1024)}mb `)
             block = true;
