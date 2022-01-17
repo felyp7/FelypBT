@@ -288,7 +288,7 @@ client.on("message", async (channel, user, message, self) => {
         }
     }
 
-if (message == "'ping") {  
+if (message == "'ping" && command === 'ping') {  
     if (!block) {
     const getUptime = new Date().getTime() - Date.parse(runTime)
     const botUptime = humanizeDuration(getUptime, { round: true })
