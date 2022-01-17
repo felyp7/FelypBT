@@ -1262,7 +1262,7 @@ if (message.toLowerCase().startsWith("'afk")) {
             let construct = {
                 id: user['user-id'],
                 reason: afkMessage,
-                time: Date.parse(afkcheck.time)
+                time: Date.parse(afkcheck)
             };
             client.afk.set(user['user-id'], construct);
 
