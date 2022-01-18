@@ -1300,34 +1300,7 @@ if (message.toLowerCase().startsWith("'rafk")) { //command
     }
 }
 
-if (message.toLowerCase().startsWith("'rgn")) { //command
-    client.color(array[Math.floor(Math.random() * array.length)])
-    if (!block) {
 
-        if (rgnList.has(user.username)) {
-
-            let gnMessage = args.join(' ') ? args.join(' ') : 'no message';
-            let construct = {
-                id: user['user-id'],
-                reason: gnMessage,
-                time: new Date().toString()
-            };
-            
-            client.gn.set(user['user-id'], construct);
-            client.action(channel, `@${user.username} your gn status has been resumed: ${gnMessage}`)
-
-            rgnList.delete(user.username)
-            
-        } else {
-            client.action(channel, `@${user.username}, you cannot resume your gn, because it ended more than 10 minutes ago or you never went gn before.`)
-        }
-
-        block = true;
-        setTimeout(() => {
-            block = false;
-        }, (5 * 1000));
-    }
-}
 
 
 
