@@ -1271,34 +1271,7 @@ if (message.toLowerCase().startsWith("'afk")) {
     }
 }
 
-if (message.toLowerCase().startsWith("'rafk")) { //command
-    client.color(array[Math.floor(Math.random() * array.length)])
-    if (!block) {
 
-        if (rafkList.has(user.username)) {
-
-            let afkMessage = args.join(' ') ? args.join(' ') : 'no message';
-            let construct = {
-                id: user['user-id'],
-                reason: afkMessage,
-                time: new Date().toString()
-            };
-            
-            client.afk.set(user['user-id'], construct);
-            client.action(channel, `@${user.username} your afk status has been resumed: ${afkMessage}`)
-
-            rafkList.delete(user.username)
-            
-        } else {
-            client.action(channel, `@${user.username}, you cannot resume your afk, because it ended more than 10 minutes ago or you never went afk before.`)
-        }
-
-        block = true;
-        setTimeout(() => {
-            block = false;
-        }, (5 * 1000));
-    }
-}
 
 
 
