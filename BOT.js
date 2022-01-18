@@ -23,6 +23,8 @@ const humanizeDuration = require("humanize-duration");
 
 const rafkList = new Set() //outside  client.on
 
+const rgnList = new Set()
+
 client.afk = new Map()
 const afk = client.afk
 
@@ -1244,13 +1246,6 @@ if (afkcheck) {
 }
 
 
- if (afkcheck) {
-    
-
-    rafkList.add(user.username) // add this
-    setTimeout(() => rafkList.delete(user.username), 600000); //
-   
-}
 
 if (message.toLowerCase().startsWith("'afk")) {
     client.color(array[Math.floor(Math.random() * array.length)])
@@ -1309,7 +1304,7 @@ if (message.toLowerCase().startsWith("'rgn")) { //command
     client.color(array[Math.floor(Math.random() * array.length)])
     if (!block) {
 
-        if (rafkList.has(user.username)) {
+        if (rgnList.has(user.username)) {
 
             let gnMessage = args.join(' ') ? args.join(' ') : 'no message';
             let construct = {
@@ -1321,7 +1316,7 @@ if (message.toLowerCase().startsWith("'rgn")) { //command
             client.gn.set(user['user-id'], construct);
             client.action(channel, `@${user.username} your gn status has been resumed: ${gnMessage}`)
 
-            rafkList.delete(user.username)
+            rgnList.delete(user.username)
             
         } else {
             client.action(channel, `@${user.username}, you cannot resume your gn, because it ended more than 10 minutes ago or you never went gn before.`)
