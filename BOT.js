@@ -92,7 +92,7 @@ client.on("message", async (channel, user, message, self) => {
         client.color(array[Math.floor(Math.random() * array.length)])
         if (!block) {
             if (size > 40) {
-                client.action(channel, 'the maximum size is 40')
+                client.say(channel, 'the maximum size is 40')
                 ; return;
             }
             for (var i = 0; i < args[1]; i++) {
