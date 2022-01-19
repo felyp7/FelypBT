@@ -1344,7 +1344,7 @@ if(message.startsWith(`'math`)){
 
 if (channel === '#xqcs_desk_garbage') {
     if (!block) {
-    if(message == "monkaStop ALARM " && user['user-id'] === "162760707") {
+    if(message == "monkaStop ALARM" && user['user-id'] === "162760707") {
         client.color(array[Math.floor(Math.random() * array.length)])
         client.action(channel, 'TriHard')
         block = true;
