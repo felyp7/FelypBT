@@ -13,7 +13,7 @@ const client = new tmi.Client({
         username: process.env.username,
         password: process.env.password
     },
-    channels: ['xqcs_desk_garbage', 'Fookstee', 'florian_2807', 'verypogftxqconthetoilet', 'xPatrck', 'masenka12', 'lordevid', 'Sneeeze_', 'artix', 'kawanpls', 'turtoise', 'faufau4', 'fanda14_', 'anniiikaa', 'pajlada']
+    channels: ['xqcs_desk_garbage', 'Fookstee', 'florian_2807', 'verypogftxqconthetoilet', 'xPatrck', 'masenka12', 'lordevid', 'Sneeeze_', 'artix', 'kawanpls', 'turtoise', 'faufau4', 'fanda14_', 'anniiikaa']
 });
 const got = require('got');
 
@@ -707,6 +707,58 @@ if(isModUp) {
         }
     }
 
+
+    if (message.toLowerCase().startsWith("'whois")) {
+        client.color(array[Math.floor(Math.random() * array.length)])
+        if (!block) {
+    
+            let username = user.username;
+
+            if(args[0]) {
+                if(args[0].startsWith("@")) {
+                    args[0] = args[0].substring(1);
+                }
+                username = args[0];
+            }
+                const userCheck = await got(`https://api.ivr.fi/twitch/resolve/${username}`,{
+                    responseType: 'json',
+                    throwHttpErrors: false
+                })
+                if(!userCheck.body.id) return { reply: `This user does not exist.` }
+
+                const userData = userCheck.body
+                const userColor = userData.chatColor
+                
+                if(userColor === null) return { reply: 'Default. (never set)' }
+
+                const colorName = await got(`https://www.thecolorapi.com/id?hex=${userColor.replace('#', '')}`).json();
+
+
+            let userTarget = user.username;
+            if (args[0]) {
+                if (args[0].startsWith("@")) {
+                    args[0] = args[0].substring(1);
+                }
+                userTarget = args[0];
+            }
+    
+            let channelTarget = channel.replace("#", "");
+            if (args[1]) {
+                channelTarget = args[1];
+            }
+    
+            const creation = await got(`https://decapi.me/twitch/creation/${userTarget}`);
+            const uid = await got(`https://decapi.me/twitch/id/${userTarget}?`);
+            const avatar = await got(`https://decapi.me/twitch/avatar/${userTarget}`)
+            let data = followage.body
+            client.action(channel, `@${user.username} ${userTarget}, ${userCheck}`)  
+    
+            block = true;
+            setTimeout(() => {
+                block = false;
+            }, (5 * 1000));
+        }
+    }
 
         if (message.toLowerCase().startsWith("'followage")  || message.toLowerCase().startsWith("'fa")) {
             client.color(array[Math.floor(Math.random() * array.length)])
