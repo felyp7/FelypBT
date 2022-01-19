@@ -79,6 +79,10 @@ client.on("message", async (channel, user, message, self) => {
 
     if (message.toLowerCase().startsWith("'vanish")) {
         client.color(array[Math.floor(Math.random() * array.length)])
+        if (isModUp) {
+            client.action(channel, "Can't timeout broadcaster/moderator.")
+            ;return;
+        }
         client.say(channel, `/timeout @${user.username} 1`)
 
     }
