@@ -712,6 +712,19 @@ if(isModUp) {
         client.color(array[Math.floor(Math.random() * array.length)])
         if (!block) {
     
+            let userTarget = user.username;
+            if (args[0]) {
+                if (args[0].startsWith("@")) {
+                    args[0] = args[0].substring(1);
+                }
+                userTarget = args[0];
+            }
+    
+            let channelTarget = channel.replace("#", "");
+            if (args[1]) {
+                channelTarget = args[1];
+            }
+
             let username = user.username;
 
             if(args[0]) {
@@ -732,32 +745,20 @@ if(isModUp) {
                 if(userColor === null) return { reply: 'Default. (never set)' }
 
                 const colorName = await got(`https://www.thecolorapi.com/id?hex=${userColor.replace('#', '')}`).json();
-
-
-            let userTarget = user.username;
-            if (args[0]) {
-                if (args[0].startsWith("@")) {
-                    args[0] = args[0].substring(1);
-                }
-                userTarget = args[0];
-            }
-    
-            let channelTarget = channel.replace("#", "");
-            if (args[1]) {
-                channelTarget = args[1];
-            }
             
-            const userCreation = userData.createdAt
+            
             const userId = userData.id
             const userAvatar = userData.logo
             const userBio = userData.bio
 
-            const creation = userCreation
             const uid = userId
             const avatar = userAvatar
             const bio = userBio
 
-            client.action(channel, `@${user.username} ${userTarget}, ${avatar}, ${userColor}, account created at ${creation}, id: ${uid}, bio: ${bio}`)  
+            const creationDate = await got(`https://decapi.me/twitch/creation/${userTarget}`);
+                
+
+            client.action(channel, `@${user.username} ${userTarget}, Avatar: ${avatar}, Color: ${userColor} ${colorName}, Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)  
     
             block = true;
             setTimeout(() => {
