@@ -755,8 +755,8 @@ if(isModUp) {
             const avatar = userAvatar
             const bio = userBio
 
-            const creationDate = await got(`https://decapi.me/twitch/creation/${userTarget}`);
-                
+            const creation = await got(`https://decapi.me/twitch/creation/${userTarget}`);
+                let creationDate = creation.body
 
             client.action(channel, `@${user.username} ${userTarget}, Avatar: ${avatar}, Color: ${userColor} ${colorName}, Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)  
     
