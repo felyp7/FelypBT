@@ -746,12 +746,18 @@ if(isModUp) {
             if (args[1]) {
                 channelTarget = args[1];
             }
-    
-            const creation = await got(`https://decapi.me/twitch/creation/${userTarget}`);
-            const uid = await got(`https://decapi.me/twitch/id/${userTarget}?`);
-            const avatar = await got(`https://decapi.me/twitch/avatar/${userTarget}`)
             
-            client.action(channel, `@${user.username} ${userTarget}, ${userData}`)  
+            const userCreation = userData.createdAt
+            const userId = userData.id
+            const userAvatar = userData.logo
+            const userBio = userData.bio
+
+            const creation = userCreation
+            const uid = userId
+            const avatar = userAvatar
+            const bio = userBio
+
+            client.action(channel, `@${user.username} ${userTarget}, ${avatar}, ${userColor}, account created at ${creation}, id: ${uid}, bio: ${bio}`)  
     
             block = true;
             setTimeout(() => {
