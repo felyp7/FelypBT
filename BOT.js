@@ -1342,11 +1342,11 @@ if(message.startsWith(`'math`)){
         process.exit(1)
     }
 
-if (channel === '#xqcs_desk_garbage') {
+if (channel === '#pajlada') {
     if (!block) {
-    if(message == "monkaStop ALARM" && user['user-id'] === "162760707") {
+    if(message == "monkaStop ALARM" && user['user-id'] === "670591988") {
         client.color(array[Math.floor(Math.random() * array.length)])
-        client.action(channel, 'TriHard')
+        client.action(channel, 'pajaGIGA 🚨 ALERT')
         block = true;
         setTimeout(() => {
             block = false;
