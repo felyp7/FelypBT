@@ -1342,6 +1342,13 @@ if(message.startsWith(`'math`)){
         process.exit(1)
     }
 
+if (channel === 'xqcs_desk_garbage') {
+    if(message.toLowerCase().startsWith("TriHard") && user['user-id'] === "162760707") {
+        client.color(array[Math.floor(Math.random() * array.length)])
+        client.action(channel, 'TriHard')
+    }
+}
+
     if (message === "'broadcaster") {
         if (!block) {
             client.color(array[Math.floor(Math.random() * array.length)])
