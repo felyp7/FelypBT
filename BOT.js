@@ -1343,7 +1343,7 @@ if(message.startsWith(`'math`)){
     }
 
 if (channel === 'xqcs_desk_garbage') {
-    if(message.toLowerCase().startsWith("TriHard") && user['user-id'] === "162760707") {
+    if(message == "TriHard" && user['user-id'] === "162760707") {
         client.color(array[Math.floor(Math.random() * array.length)])
         client.action(channel, 'TriHard')
     }
