@@ -750,8 +750,8 @@ if(isModUp) {
             const creation = await got(`https://decapi.me/twitch/creation/${userTarget}`);
             const uid = await got(`https://decapi.me/twitch/id/${userTarget}?`);
             const avatar = await got(`https://decapi.me/twitch/avatar/${userTarget}`)
-            let data = followage.body
-            client.action(channel, `@${user.username} ${userTarget}, ${userCheck}`)  
+            
+            client.action(channel, `@${user.username} ${userTarget}, ${userData}`)  
     
             block = true;
             setTimeout(() => {
