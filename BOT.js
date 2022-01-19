@@ -1342,7 +1342,7 @@ if(message.startsWith(`'math`)){
         process.exit(1)
     }
 
-if (channel === '#xqcs_desk_garbage') {
+if (channel === '#pepegachat__') {
     if(message == "TriHard" && user['user-id'] === "162760707") {
         client.color(array[Math.floor(Math.random() * array.length)])
         client.action(channel, 'TriHard')
