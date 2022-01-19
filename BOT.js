@@ -13,7 +13,7 @@ const client = new tmi.Client({
         username: process.env.username,
         password: process.env.password
     },
-    channels: ['xqcs_desk_garbage', 'Fookstee', 'florian_2807', 'verypogftxqconthetoilet', 'xPatrck', 'masenka12', 'lordevid', 'Sneeeze_', 'artix', 'kawanpls', 'turtoise', 'faufau4', 'fanda14_']
+    channels: ['xqcs_desk_garbage', 'Fookstee', 'florian_2807', 'verypogftxqconthetoilet', 'xPatrck', 'masenka12', 'lordevid', 'Sneeeze_', 'artix', 'kawanpls', 'turtoise', 'faufau4', 'fanda14_', 'anniiikaa', 'pajlada']
 });
 const got = require('got');
 
@@ -1342,8 +1342,8 @@ if(message.startsWith(`'math`)){
         process.exit(1)
     }
 
-if (channel === '#pepegachat__') {
-    if(message == "TriHard" && user['user-id'] === "162760707") {
+if (channel === '#xqcs_desk_garbage') {
+    if(message == "monkaStop ALARM " && user['user-id'] === "162760707") {
         client.color(array[Math.floor(Math.random() * array.length)])
         client.action(channel, 'TriHard')
     }
