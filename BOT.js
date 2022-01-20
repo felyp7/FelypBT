@@ -936,7 +936,7 @@ if(isModUp) {
                 }
                 username = args[0];
             }
-                const firstMessage = await got(`https://api.ivr.fi/logs/firstmessage/${channelTarget}/${username}`,{
+                const firstMessage = await got(`https://api.paauulli.me/logs/firstmessage/${channelTarget}/${username}`,{
                     responseType: 'json',
                     throwHttpErrors: false
                 })
