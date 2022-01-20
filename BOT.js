@@ -935,7 +935,7 @@ if(isModUp) {
                 }
                 username = args[0];
             }
-                const userCheck = await got(`https://api.ivr.fi/logs/rq/${channel}/${userTarget}`,{
+                const RandomQuote = await got(`https://api.ivr.fi/logs/rq/${channel}/${userTarget}`,{
                     responseType: 'json',
                     throwHttpErrors: false
                 })
@@ -950,7 +950,7 @@ if(isModUp) {
             const randomQuoteTime = userRandomQuoteTime
             
 
-                client.action(channel, `${userTarget}: ${randomQuote}, ${randomQuoteTime}`)
+                client.action(channel, `${userTarget}: ${RandomQuote}`)
     
             block = true;
             setTimeout(() => {
