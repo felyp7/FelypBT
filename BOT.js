@@ -950,7 +950,7 @@ if(isModUp) {
             const firstMessageTime = userfirstMessageTime
             
 
-                client.action(channel, `${userTarget}: ${firstMessage}, ${firstMessageTime}`)
+                client.action(channel, `${userTarget}: ${userCheck}`)
     
             block = true;
             setTimeout(() => {
