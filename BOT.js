@@ -939,9 +939,9 @@ if(isModUp) {
                     responseType: 'json',
                     throwHttpErrors: false
                 })
-                if(!userCheck.body.id) return { reply: `This user does not exist.` }
+                if(!RandomQuote.body.id) return { reply: `This user does not exist.` }
 
-                const userData = userCheck.body
+                const userData = RandomQuote.body
 
             const userRandomQuote = userData.message
             const userRandomQuoteTime = userData.time
