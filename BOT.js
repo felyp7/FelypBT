@@ -911,7 +911,7 @@ if(isModUp) {
         }
     }
 
-    if (message.toLowerCase().startsWith("'firstmessage")) {
+    if (message.toLowerCase().startsWith("'firstmessage1")) {
         client.color(array[Math.floor(Math.random() * array.length)])
         if (!block) {
     
@@ -936,16 +936,58 @@ if(isModUp) {
                 }
                 username = args[0];
             }
-            const firstMessage = await got(`https://api.ivr.fi/logs/firstmessage/${channelTarget}/${username}` || `https://api.paauulli.me/logs/lastmessage/${channelTarget}/${username}`,{
+            const firstMessage = await got(`https://api.ivr.fi/logs/firstmessage/${channelTarget}/${username}`,{
                 responseType: 'json',
                 throwHttpErrors: false
             })
             const userData = firstMessage.body
 
-            const userFirstMessage = userData.message || userData.text
+            const userFirstMessage = userData.message
             
                 
-                client.action(channel, `${channel}, ${userFirstMessage} `)
+                client.action(channel, `${channelTarget}, ${userFirstMessage} `)
+            block = true;
+            setTimeout(() => {
+                block = false;
+            }, (5 * 1000));
+        }
+    }
+
+    if (message.toLowerCase().startsWith("'firstmessage2")) {
+        client.color(array[Math.floor(Math.random() * array.length)])
+        if (!block) {
+    
+            let userTarget = user.username;
+            if (args[0]) {
+                if (args[0].startsWith("@")) {
+                    args[0] = args[0].substring(1);
+                }
+                userTarget = args[0];
+            }
+    
+            let channelTarget = channel.replace("#", "");
+            if (args[1]) {
+                channelTarget = args[1];
+            }
+
+            let username = user.username;
+
+            if(args[0]) {
+                if(args[0].startsWith("@")) {
+                    args[0] = args[0].substring(1);
+                }
+                username = args[0];
+            }
+            const firstMessage = await got(`https://api.paauulli.me/logs/lastmessage/${channelTarget}/${username}`,{
+                responseType: 'json',
+                throwHttpErrors: false
+            })
+            const userData = firstMessage.body
+
+            const userFirstMessage = userData.text
+            
+                
+                client.action(channel, `${channelTarget}, ${userFirstMessage} `)
             block = true;
             setTimeout(() => {
                 block = false;
