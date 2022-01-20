@@ -1812,7 +1812,7 @@ if (channel === '#pajlada') {
                     username = args[0];
                 }
 
-                const EmoteUpdates7tv = await got(`https://events.7tv.app/v1/channel-emotes?channel=verypogftxqconthetoilet`,{
+                const EmoteUpdates7tv = await got(`https://events.7tv.app/v1/channel-emotes?channel=xqcs_desk_garbage`,{
                     responseType: 'json',
                     throwHttpErrors: false
                 })
