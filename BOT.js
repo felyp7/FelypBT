@@ -1797,6 +1797,7 @@ if (channel === '#pajlada') {
 }
 
 if (isModUp) {
+    if (message.toLocaleLowerCase().startsWith("'settitle")) {
 const game = args.join(" ")
 
 const getID = await got(`https://api.twitch.tv/helix/games?name=${game}`, {
@@ -1813,6 +1814,9 @@ let patch = await got.patch('https://api.twitch.tv/helix/channels?broadcaster_id
 
 client.action(channel, `game changed to "${gameID.data[0].name}"`)
 }
+}
+
+
 
 });
 
