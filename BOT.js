@@ -983,8 +983,8 @@ if(isModUp) {
 
             const userFirstMessage = userData.text
             const userFirstMessageTime = userData.timestamp
-                if (userFirstMessage == 'undefined') {
-                    client.action(channel, 'Channel isnt tracked.')
+                if (userFirstMessage && userFirstMessageTime == 'undefined') {
+                    client.action(channel, "Channel isn't tracked.")
                     ;return;
                 }
                 client.action(channel, `${channelTarget}, ${userFirstMessage} (${userFirstMessageTime}) `)
