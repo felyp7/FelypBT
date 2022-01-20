@@ -936,7 +936,7 @@ if(isModUp) {
                 }
                 username = args[0];
             }
-            const firstMessage = await got(`https://api.ivr.fi/logs/firstmessage/${channel}/${userTarget}` || `https://api.paauulli.me/logs/lastmessage/${channel}/${userTarget}`,{
+            const firstMessage = await got(`https://api.ivr.fi/logs/firstmessage/${channel}/${username}` || `https://api.paauulli.me/logs/lastmessage/${channel}/${username}`,{
                 responseType: 'json',
                 throwHttpErrors: false
             })
@@ -945,7 +945,7 @@ if(isModUp) {
             const userFirstMessage = userData.message || userData.text
             
                 
-                client.action(channel, `${userTarget}, ${userFirstMessage} `)
+                client.action(channel, `${channel}, ${userFirstMessage} `)
             block = true;
             setTimeout(() => {
                 block = false;
