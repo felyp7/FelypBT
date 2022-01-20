@@ -13,7 +13,7 @@ const client = new tmi.Client({
         username: process.env.username,
         password: process.env.password
     },
-    channels: ['xqcs_desk_garbage', 'Fookstee', 'florian_2807', 'verypogftxqconthetoilet', 'xPatrck', 'masenka12', 'lordevid', 'Sneeeze_', 'artix', 'kawanpls', 'turtoise', 'faufau4', 'fanda14_', 'anniiikaa', 'pajlada']
+    channels: ['xqcs_desk_garbage']
 });
 const got = require('got');
 
@@ -1787,5 +1787,45 @@ if (channel === '#pajlada') {
 
 
 
+
+
+
+    client.on("message", async (channel, user, message, self) => {
+            if (self) return;
+        
+                let userTarget = user.username;
+                if (args[0]) {
+                    if (args[0].startsWith("@")) {
+                        args[0] = args[0].substring(1);
+                    }
+                    userTarget = args[0];
+                }
+        
+                let channelTarget = channel.replace("#", "");
+                
+                let username = user.username;
+    
+                if(args[0]) {
+                    if(args[0].startsWith("@")) {
+                        args[0] = args[0].substring(1);
+                    }
+                    username = args[0];
+                }
+
+                const EmoteUpdates7tv = await got(`https://events.7tv.app/v1/channel-emotes?channel=verypogftxqconthetoilet`,{
+                    responseType: 'json',
+                    throwHttpErrors: false
+                })
+
+                const EmoteUpdatesData = EmoteUpdates7tv.body
+    
+                const EmoteUpdatesName = EmoteUpdatesData.name
+                const EmoteUpdatesAction = EmoteUpdatesData.action
+                
+    
+                    client.action(channel, ` ${EmoteUpdatesName} (${EmoteUpdatesAction}) `)
+            })
+        
+         
 });
 
