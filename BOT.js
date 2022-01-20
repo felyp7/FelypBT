@@ -950,7 +950,7 @@ if(isModUp) {
             const randomQuoteTime = userRandomQuoteTime
             
 
-                client.action(channel, `${userTarget}: ${RandomQuote}`)
+                client.action(channel, `${userTarget}: ${userData.message}`)
     
             block = true;
             setTimeout(() => {
