@@ -756,11 +756,17 @@ if(isModUp) {
             const avatar = userAvatar
             const bio = userBio
             const isbanned = userBanned
+                if (userBanned === 'false') {
+                    let isbanned = 'false ❌ '  
+                }
+                if (userBanned === 'true') {
+                    let isbanned = 'true ✅ '
+                }
 
             const creation = await got(`https://decapi.me/twitch/creation/${userTarget}`);
                 let creationDate = creation.body
 
-            client.action(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Avatar: ${avatar}, Color: ${userColor} ${colorName.name.value}}, Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)  
+            client.action(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Avatar: ${avatar}, Color: ${userColor} (${colorName.name.value}), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)  
     
             block = true;
             setTimeout(() => {
