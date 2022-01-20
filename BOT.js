@@ -868,7 +868,7 @@ if(isModUp) {
 
     if (message.toLowerCase().startsWith("'whois")) {
         client.color(array[Math.floor(Math.random() * array.length)])
-        if (!block) {
+        
     
             let userTarget = user.username;
             if (args[0]) {
@@ -900,7 +900,7 @@ if(isModUp) {
                 if(!userCheck.body.id) {
                     client.action(channel, `This user does not exist.`) 
                 ;return;
-                
+                if (!block) {
             
     }
                 const userData = userCheck.body
