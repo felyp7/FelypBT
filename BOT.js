@@ -896,8 +896,8 @@ if(isModUp) {
                     throwHttpErrors: false
                 })
                 
+                if(!block) {
                 if(!userCheck.body.id) {
-                    if(!block) {
                     client.action(channel, `This user does not exist.`) 
                 ;return;
                 block = true;
