@@ -943,7 +943,7 @@ if(isModUp) {
 
                 const userData = userCheck.body
 
-            const userfirstMessage = userData.response
+            const userfirstMessage = userData.message
             const userfirstMessageTime = userData.time
 
             const firstMessage = userfirstMessage
