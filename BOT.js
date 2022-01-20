@@ -872,7 +872,10 @@ if(isModUp) {
                     responseType: 'json',
                     throwHttpErrors: false
                 })
-                if(!userCheck.body.id) return { reply: `This user does not exist.` }
+                if(!userCheck.body.id) {
+                    client.action(channel, "User doesn't exist.")
+                ;return;
+                }
 
                 const userData = userCheck.body
                 const userColor = userData.chatColor
