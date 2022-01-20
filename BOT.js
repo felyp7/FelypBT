@@ -895,14 +895,15 @@ if(isModUp) {
                     responseType: 'json',
                     throwHttpErrors: false
                 })
-                if(!block) {
+                
                 if(!userCheck.body.id) {
+                    if(!block) {
                     client.action(channel, `This user does not exist.`) 
                 ;return;
                 block = true;
             setTimeout(() => {
                 block = false;
-            }, (5 * 1000));
+            }, (4 * 1000));
         }
     }
                 const userData = userCheck.body
