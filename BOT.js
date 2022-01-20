@@ -13,7 +13,7 @@ const client = new tmi.Client({
         username: process.env.username,
         password: process.env.password
     },
-    channels: ['xqcs_desk_garbage']
+    channels: ['xqcs_desk_garbage', 'Fookstee', 'florian_2807', 'verypogftxqconthetoilet', 'xPatrck', 'masenka12', 'lordevid', 'Sneeeze_', 'artix', 'kawanpls', 'turtoise', 'faufau4', 'fanda14_', 'anniiikaa', 'pajlada']
 });
 const got = require('got');
 
@@ -1790,27 +1790,5 @@ if (channel === '#pajlada') {
 
 
 
-        const source = new EventSource('https://events.7tv.app/v1/channel-emotes?channel=xqcs_desk_garbage');
-
-        source.addEventListener("ready", (e) => {
-          // Should be "7tv-event-sub.v1" since this is the `v1` endpoint
-          console.log(e); 
-        }, false);
-        
-        source.addEventListener("update", (e) => {
-         
-          console.log(e);
-        }, false);
-        
-        source.addEventListener("open", (e) => {
-          // Connection was opened.
-        }, false);
-        
-        source.addEventListener("error", (e) => {
-          if (e.readyState === EventSource.CLOSED) {
-            // Connection was closed.
-          }
-        }, false);
-         
 });
 
