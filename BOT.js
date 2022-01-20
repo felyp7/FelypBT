@@ -895,12 +895,16 @@ if(isModUp) {
                     responseType: 'json',
                     throwHttpErrors: false
                 })
-                
+                if(!block) {
                 if(!userCheck.body.id) {
                     client.action(channel, `This user does not exist.`) 
                 ;return;
-                }
-
+                block = true;
+            setTimeout(() => {
+                block = false;
+            }, (5 * 1000));
+        }
+    }
                 const userData = userCheck.body
                 const userColor = userData.chatColor
                 
@@ -935,7 +939,7 @@ if(isModUp) {
             block = true;
             setTimeout(() => {
                 block = false;
-            }, (3 * 1000));
+            }, (5 * 1000));
         }
     }
 
