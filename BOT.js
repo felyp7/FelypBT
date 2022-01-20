@@ -758,10 +758,10 @@ if(isModUp) {
             const isbanned = userBanned
                 if (userBanned === 'false') {
                     let isbanned = 'false ❌ '  
-                }
+                
                 if (userBanned === 'true') {
                     let isbanned = 'true ✅ '
-                }
+                
 
             const creation = await got(`https://decapi.me/twitch/creation/${userTarget}`);
                 let creationDate = creation.body
@@ -774,6 +774,8 @@ if(isModUp) {
             }, (5 * 1000));
         }
     }
+}
+}
 
         if (message.toLowerCase().startsWith("'followage")  || message.toLowerCase().startsWith("'fa")) {
             client.color(array[Math.floor(Math.random() * array.length)])
