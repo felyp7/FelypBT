@@ -642,7 +642,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                     throwHttpErrors: false
                 })
                 if(!userCheck.body.id) {
-                    client.action(`This user does not exist.`) 
+                    client.action(channel, `This user does not exist.`) 
                 ;return;
                 }
 
@@ -751,7 +751,10 @@ if(isModUp) {
                     responseType: 'json',
                     throwHttpErrors: false
                 })
-                if(!userCheck.body.id) return { reply: `This user does not exist.` }
+                if(!userCheck.body.id) {
+                    client.action(channel, `This user does not exist.`) 
+                ;return;
+                }
 
                 const userData = userCheck.body
 
@@ -796,7 +799,10 @@ if(isModUp) {
                     responseType: 'json',
                     throwHttpErrors: false
                 })
-                if(!userCheck.body.id) return { reply: `This user does not exist.` }
+                if(!userCheck.body.id) {
+                    client.action(channel, `This user does not exist.`) 
+                ;return;
+                }
 
                 const userData = userCheck.body
 
@@ -841,7 +847,10 @@ if(isModUp) {
                     responseType: 'json',
                     throwHttpErrors: false
                 })
-                if(!userCheck.body.id) return { reply: `This user does not exist.` }
+                if(!userCheck.body.id) {
+                    client.action(channel, `This user does not exist.`) 
+                ;return;
+                }
 
                 const userData = userCheck.body
 
@@ -888,17 +897,14 @@ if(isModUp) {
                 })
                 
                 if(!userCheck.body.id) {
-                    client.action(`This user does not exist.`) 
+                    client.action(channel, `This user does not exist.`) 
                 ;return;
                 }
 
                 const userData = userCheck.body
                 const userColor = userData.chatColor
                 
-                if(!userData.id) {
-                    client.action(`This user does not exist.`) 
-                ;return;
-                }
+                
 
                 if(userColor === null) return { reply: 'Default. (never set)' }
 
