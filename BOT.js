@@ -910,7 +910,7 @@ if(isModUp) {
         }
     }
 
-    if (message.toLowerCase().startsWith("'firstmessage")) {
+    if (message.toLowerCase().startsWith("'lastmessage")) {
         client.color(array[Math.floor(Math.random() * array.length)])
         if (!block) {
     
@@ -943,7 +943,7 @@ if(isModUp) {
 
                 const userData = userCheck.body
 
-            const userLastMessage = userData.message
+            const userLastMessage = userData.response
             const userLastMessageTime = userData.time
 
             const lastMessage = userLastMessage
