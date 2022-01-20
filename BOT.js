@@ -751,22 +751,22 @@ if(isModUp) {
             const userAvatar = userData.logo
             const userBio = userData.bio
             const userBanned = userData.banned
+            const userPartner = userData.partner
+            const userAffiliate = userData.affiliate
+            const userBadge = userData.badge
 
             const uid = userId
             const avatar = userAvatar
             const bio = userBio
             const isbanned = userBanned
-                if (userBanned === 'false') {
-                    let isbanned = 'false ❌ '  
-                
-                if (userBanned === 'true') {
-                    let isbanned = 'true ✅ '
-                
+            const isPartner = userPartner
+            const isAffiliate = userAffiliate
+            const badge = userBadge
 
             const creation = await got(`https://decapi.me/twitch/creation/${userTarget}`);
                 let creationDate = creation.body
 
-            client.action(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Avatar: ${avatar}, Color: ${userColor} (${colorName.name.value}), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)  
+            client.action(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Badge: ${badge}, Avatar: ${avatar}, Color: ${userColor} (${colorName.name.value}), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)  
     
             block = true;
             setTimeout(() => {
@@ -774,8 +774,6 @@ if(isModUp) {
             }, (5 * 1000));
         }
     }
-}
-}
 
         if (message.toLowerCase().startsWith("'followage")  || message.toLowerCase().startsWith("'fa")) {
             client.color(array[Math.floor(Math.random() * array.length)])
