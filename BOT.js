@@ -940,9 +940,9 @@ if(isModUp) {
                 responseType: 'json',
                 throwHttpErrors: false
             })
-            const userData = firstMessage1.body
+            const userData1 = firstMessage1.body
 
-            const userFirstMessage1 = userData.message
+            const userFirstMessage1 = userData1.message
             
             if (userFirstMessage1 = 'undefined'){
             
@@ -952,9 +952,9 @@ if(isModUp) {
                 })
                 
 
-                const userData = firstMessage2.body
+                const userData2 = firstMessage2.body
 
-            const userFirstMessage2 = userData.text
+            const userFirstMessage2 = userData2.text
             
 
                 client.action(channel, `${userTarget}, ${userFirstMessage2} `)
