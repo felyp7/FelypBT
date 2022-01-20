@@ -936,7 +936,17 @@ if(isModUp) {
                 }
                 username = args[0];
             }
-                const firstMessage = await got(`https://api.paauulli.me/logs/lastmessage/${channelTarget}/${userTarget}`,{
+            const firstMessage = await got(`https://api.ivr.fi/logs/firstmessage/${channelTarget}/${userTarget}`,{
+                responseType: 'json',
+                throwHttpErrors: false
+            })
+            const userData = firstMessage.body
+
+            const userFirstMessage = userData.message
+            const FirstMessage = userFirstMessage
+            if (userFirstMessage = 'undefined'){
+            
+                    const firstMessage = await got(`https://api.paauulli.me/logs/lastmessage/${channelTarget}/${userTarget}`,{
                     responseType: 'json',
                     throwHttpErrors: false
                 })
@@ -948,7 +958,9 @@ if(isModUp) {
             const FirstMessage = userFirstMessage
 
                 client.action(channel, `${userTarget}, ${userFirstMessage} `)
-    
+            }
+            ;return;
+                client.action(channel, `${userTarget}, ${userFirstMessage} `)
             block = true;
             setTimeout(() => {
                 block = false;
