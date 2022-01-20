@@ -834,7 +834,7 @@ if(isModUp) {
             const useraffiliate = userData.affiliate
             const isAffiliate = useraffiliate
 
-                client.action(channel, `${userTarget} Partner: ${isAffiliate} ;p `)
+                client.action(channel, `${userTarget} Affiliate: ${isAffiliate} ;p `)
     
             block = true;
             setTimeout(() => {
