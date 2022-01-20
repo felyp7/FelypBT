@@ -975,7 +975,7 @@ if(isModUp) {
                 }
                 username = args[0];
             }
-            const firstMessage = await got(`https://api.paauulli.me/logs/lastmessage/${channelTarget}/${userTarget}`,{
+            const firstMessage = await got(`https://api.paauulli.me/logs/firstmessage/${channelTarget}/${userTarget}`,{
                 responseType: 'json',
                 throwHttpErrors: false
             })
@@ -983,7 +983,7 @@ if(isModUp) {
 
             const userFirstMessage = userData.text
             const userFirstMessageTime = userData.timestamp
-                if (userFirstMessage && userFirstMessageTime == 'undefined') {
+                if (!userFirstMessage) {
                     client.action(channel, "Channel isn't tracked.")
                     ;return;
                 }
