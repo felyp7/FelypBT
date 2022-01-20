@@ -942,9 +942,9 @@ if(isModUp) {
             const userData = firstMessage.body
 
             const userFirstMessage = userData.message
-            
+            const userFirstMessageTime = userData.time
                 
-                client.action(channel, `${channelTarget}, ${userFirstMessage} `)
+                client.action(channel, `${channelTarget}, ${userFirstMessage} (${userFirstMessageTime}) `)
             block = true;
             setTimeout(() => {
                 block = false;
@@ -982,9 +982,9 @@ if(isModUp) {
             const userData = firstMessage.body
 
             const userFirstMessage = userData.text
-            
+            const userFirstMessageTime = userData.timestamp
                 
-                client.action(channel, `${channelTarget}, ${userFirstMessage} `)
+                client.action(channel, `${channelTarget}, ${userFirstMessage} (${userFirstMessageTime}) `)
             block = true;
             setTimeout(() => {
                 block = false;
