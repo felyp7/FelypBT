@@ -967,6 +967,51 @@ if(isModUp) {
         }
     }
 
+    if (message.toLowerCase().startsWith("'lastmessage1") || message.toLowerCase().startsWith("'lm1")) {
+        client.color(array[Math.floor(Math.random() * array.length)])
+        if (!block) {
+    
+            let userTarget = user.username;
+            if (args[0]) {
+                if (args[0].startsWith("@")) {
+                    args[0] = args[0].substring(1);
+                }
+                userTarget = args[0];
+            }
+    
+            let channelTarget = channel.replace("#", "");
+            
+            
+
+            let username = user.username;
+
+            if(args[0]) {
+                if(args[0].startsWith("@")) {
+                    args[0] = args[0].substring(1);
+                }
+                username = args[0];
+            }
+            const lastMessage = await got(`https://api.ivr.fi/logs/lastmessage/${channelTarget}/${userTarget}`,{
+                responseType: 'json',
+                throwHttpErrors: false
+            })
+            const userData = lastMessage.body
+
+            const userlastMessage = userData.message
+            const userlastMessageTime = userData.time
+            if (!userlastMessage) {
+                client.action(channel, "Channel isn't tracked.")
+                ;return;
+            }    
+
+                client.action(channel, `${channelTarget}, ${userlastMessage} (${userlastMessageTime}) `)
+            block = true;
+            setTimeout(() => {
+                block = false;
+            }, (5 * 1000));
+        }
+    }
+
     if (message.toLowerCase().startsWith("'firstmessage2") || message.toLowerCase().startsWith("'fm2")) {
         client.color(array[Math.floor(Math.random() * array.length)])
         if (!block) {
@@ -1010,7 +1055,48 @@ if(isModUp) {
         }
     }
 
+    if (message.toLowerCase().startsWith("'lastmessage2") || message.toLowerCase().startsWith("'lm2")) {
+        client.color(array[Math.floor(Math.random() * array.length)])
+        if (!block) {
     
+            let userTarget = user.username;
+            if (args[0]) {
+                if (args[0].startsWith("@")) {
+                    args[0] = args[0].substring(1);
+                }
+                userTarget = args[0];
+            }
+    
+            let channelTarget = channel.replace("#", "");
+
+
+            let username = user.username;
+
+            if(args[0]) {
+                if(args[0].startsWith("@")) {
+                    args[0] = args[0].substring(1);
+                }
+                username = args[0];
+            }
+            const lastMessage = await got(`https://api.paauulli.me/logs/lastmessage/${channelTarget}/${userTarget}`,{
+                responseType: 'json',
+                throwHttpErrors: false
+            })
+            const userData = lastMessage.body
+
+            const userlastMessage = userData.text
+            const userlastMessageTime = userData.timestamp
+                if (!userlastMessage) {
+                    client.action(channel, "Channel isn't tracked.")
+                    ;return;
+                }
+                client.action(channel, `${channelTarget}, ${userlastMessage} (${userlastMessageTime}) `)
+            block = true;
+            setTimeout(() => {
+                block = false;
+            }, (5 * 1000));
+        }
+    }
 
         if (message.toLowerCase().startsWith("'followage")  || message.toLowerCase().startsWith("'fa")) {
             client.color(array[Math.floor(Math.random() * array.length)])
