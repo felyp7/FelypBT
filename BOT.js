@@ -910,7 +910,7 @@ if(isModUp) {
         }
     }
 
-    if (message.toLowerCase().startsWith("'lastmessage")) {
+    if (message.toLowerCase().startsWith("'rq")) {
         client.color(array[Math.floor(Math.random() * array.length)])
         if (!block) {
     
@@ -935,7 +935,7 @@ if(isModUp) {
                 }
                 username = args[0];
             }
-                const userCheck = await got(`https://api.ivr.fi/logs/lastmessage/${channel}/${userTarget}`,{
+                const userCheck = await got(`https://api.ivr.fi/logs/rq/${channel}/${userTarget}`,{
                     responseType: 'json',
                     throwHttpErrors: false
                 })
@@ -943,14 +943,14 @@ if(isModUp) {
 
                 const userData = userCheck.body
 
-            const userLastMessage = userData.response
-            const userLastMessageTime = userData.time
+            const userRandomQuote = userData.message
+            const userRandomQuoteTime = userData.time
 
-            const lastMessage = userLastMessage
-            const lastMessageTime = userLastMessageTime
+            const randomQuote = userRandomQuote
+            const randomQuoteTime = userRandomQuoteTime
             
 
-                client.action(channel, `${userTarget}: ${lastMessage}, ${lastMessageTime}`)
+                client.action(channel, `${userTarget}: ${randomQuote}, ${randomQuoteTime}`)
     
             block = true;
             setTimeout(() => {
