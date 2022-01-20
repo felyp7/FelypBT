@@ -911,7 +911,7 @@ if(isModUp) {
         }
     }
 
-    if (message.toLowerCase().startsWith("'firstmessage1")) {
+    if (message.toLowerCase().startsWith("'firstmessage1") || message.toLowerCase().startsWith("'fm1")) {
         client.color(array[Math.floor(Math.random() * array.length)])
         if (!block) {
     
@@ -943,7 +943,11 @@ if(isModUp) {
 
             const userFirstMessage = userData.message
             const userFirstMessageTime = userData.time
-                
+            if (!userFirstMessage) {
+                client.action(channel, "Channel isn't tracked.")
+                ;return;
+            }    
+
                 client.action(channel, `${channelTarget}, ${userFirstMessage} (${userFirstMessageTime}) `)
             block = true;
             setTimeout(() => {
@@ -952,7 +956,7 @@ if(isModUp) {
         }
     }
 
-    if (message.toLowerCase().startsWith("'firstmessage2")) {
+    if (message.toLowerCase().startsWith("'firstmessage2") || message.toLowerCase().startsWith("'fm2")) {
         client.color(array[Math.floor(Math.random() * array.length)])
         if (!block) {
     
