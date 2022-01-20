@@ -911,6 +911,50 @@ if(isModUp) {
         }
     }
 
+    if (message.toLowerCase().startsWith("'firstmessage")) {
+        client.color(array[Math.floor(Math.random() * array.length)])
+        if (!block) {
+    
+            let userTarget = user.username;
+            if (args[0]) {
+                if (args[0].startsWith("@")) {
+                    args[0] = args[0].substring(1);
+                }
+                userTarget = args[0];
+            }
+    
+            let channelTarget = channel.replace("#", "");
+            if (args[1]) {
+                channelTarget = args[1];
+            }
+
+            let username = user.username;
+
+            if(args[0]) {
+                if(args[0].startsWith("@")) {
+                    args[0] = args[0].substring(1);
+                }
+                username = args[0];
+            }
+                const userCheck = await got(`https://api.ivr.fi/logs/firstmessage/${channel}/${username}`,{
+                    responseType: 'json',
+                    throwHttpErrors: false
+                })
+                
+
+                const userData = userCheck.body
+
+            const userFirstMessage = userData.response
+            const FirstMessage = userFirstMessage
+
+                client.action(channel, `${userTarget}, ${FirstMessage} `)
+    
+            block = true;
+            setTimeout(() => {
+                block = false;
+            }, (5 * 1000));
+        }
+    }
 
         if (message.toLowerCase().startsWith("'followage")  || message.toLowerCase().startsWith("'fa")) {
             client.color(array[Math.floor(Math.random() * array.length)])
