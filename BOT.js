@@ -935,7 +935,7 @@ if(isModUp) {
             block = true;
             setTimeout(() => {
                 block = false;
-            }, (5 * 1000));
+            }, (3 * 1000));
         }
     }
 
