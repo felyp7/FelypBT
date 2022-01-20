@@ -641,7 +641,10 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                     responseType: 'json',
                     throwHttpErrors: false
                 })
-                if(!userCheck.body.id) return { reply: `This user does not exist.` }
+                if(!userCheck.body.id) {
+                    client.action(`This user does not exist.`) 
+                ;return;
+                }
 
                 const userData = userCheck.body
                 const userColor = userData.chatColor
