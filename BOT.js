@@ -1794,12 +1794,12 @@ if (channel === '#pajlada') {
 
         source.addEventListener("ready", (e) => {
           // Should be "7tv-event-sub.v1" since this is the `v1` endpoint
-          console.log(e.data); 
+          console.log(e); 
         }, false);
         
         source.addEventListener("update", (e) => {
-          // This is a JSON payload matching the type for the specified event channel
-          console.log(e.data);
+         
+          console.log(e);
         }, false);
         
         source.addEventListener("open", (e) => {
