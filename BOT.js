@@ -766,12 +766,12 @@ if(isModUp) {
             const creation = await got(`https://decapi.me/twitch/creation/${userTarget}`);
                 let creationDate = creation.body
 
-                if (isbanned === 'false') {
+                if (isbanned == 'false') {
                     client.action(channel, `@${user.username} ${userTarget}, Banned: ${isbanned} ❌, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Badge: ${badge}, Avatar: ${avatar}, Color: ${userColor} (${colorName.name.value}), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`) 
                     ;return;
                 }
                 
-                if (isbanned === 'true') {
+                if (isbanned == 'true') {
                     client.action(channel, `@${user.username} ${userTarget}, Banned: ${isbanned} ✅, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Badge: ${badge}, Avatar: ${avatar}, Color: ${userColor} (${colorName.name.value}), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`) 
                     ;return;
                 }
