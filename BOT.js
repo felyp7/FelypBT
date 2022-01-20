@@ -924,9 +924,8 @@ if(isModUp) {
             }
     
             let channelTarget = channel.replace("#", "");
-            if (args[1]) {
-                channelTarget = args[1];
-            }
+            
+            
 
             let username = user.username;
 
@@ -936,7 +935,7 @@ if(isModUp) {
                 }
                 username = args[0];
             }
-            const firstMessage = await got(`https://api.ivr.fi/logs/firstmessage/${channelTarget}/${username}`,{
+            const firstMessage = await got(`https://api.ivr.fi/logs/firstmessage/${channelTarget}/${userTarget}`,{
                 responseType: 'json',
                 throwHttpErrors: false
             })
