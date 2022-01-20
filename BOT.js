@@ -827,10 +827,7 @@ if(isModUp) {
                     responseType: 'json',
                     throwHttpErrors: false
                 })
-                if(!userCheck.body.id) {
-                    client.action(channel, "User doesn't exist.")
-                    ;return;
-                }
+                
 
                 const userData = userCheck.body
 
@@ -875,18 +872,12 @@ if(isModUp) {
                     responseType: 'json',
                     throwHttpErrors: false
                 })
-                if(!userCheck.body.id) {
-                    client.action(channel, "User doesn't exist.")
-                ;return;
-                }
+                
 
                 const userData = userCheck.body
                 const userColor = userData.chatColor
                 
-                if(userColor === null) {
-                    client.action(channel, "Default color (never set).")
-                    ;return;
-                }
+                
 
                 const colorName = await got(`https://www.thecolorapi.com/id?hex=${userColor.replace('#', '')}`).json();
             
