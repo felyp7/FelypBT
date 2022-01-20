@@ -1792,7 +1792,7 @@ if (channel === '#pajlada') {
             body: JSON.stringify({ "title": `${args.join(" ")}` })
         });
         
-        client.say(channel, `title changed to "${args.join(" ")}"!`)
+        client.action(channel, `title changed to "${args.join(" ")}"`)
     }
 }
 
