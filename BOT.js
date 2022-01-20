@@ -1790,42 +1790,27 @@ if (channel === '#pajlada') {
 
 
 
-    client.on("message", async (channel, user, message, self) => {
-            if (self) return;
-        
-                let userTarget = user.username;
-                if (args[0]) {
-                    if (args[0].startsWith("@")) {
-                        args[0] = args[0].substring(1);
-                    }
-                    userTarget = args[0];
-                }
-        
-                let channelTarget = channel.replace("#", "");
-                
-                let username = user.username;
-    
-                if(args[0]) {
-                    if(args[0].startsWith("@")) {
-                        args[0] = args[0].substring(1);
-                    }
-                    username = args[0];
-                }
+        const source = new EventSource('https://events.7tv.app/v1/channel-emotes?channel=xqcs_desk_garbage');
 
-                const EmoteUpdates7tv = await got(`https://events.7tv.app/v1/channel-emotes?channel=xqcs_desk_garbage`,{
-                    responseType: 'json',
-                    throwHttpErrors: false
-                })
-
-                const EmoteUpdatesData = EmoteUpdates7tv.body
-    
-                const EmoteUpdatesName = EmoteUpdatesData.name
-                const EmoteUpdatesAction = EmoteUpdatesData.action
-                
-    
-                    client.action(channel, ` ${EmoteUpdatesName} (${EmoteUpdatesAction}) `)
-            })
+        source.addEventListener("ready", (e) => {
+          // Should be "7tv-event-sub.v1" since this is the `v1` endpoint
+          console.log(e.data); 
+        }, false);
         
+        source.addEventListener("update", (e) => {
+          // This is a JSON payload matching the type for the specified event channel
+          console.log(e.data);
+        }, false);
+        
+        source.addEventListener("open", (e) => {
+          // Connection was opened.
+        }, false);
+        
+        source.addEventListener("error", (e) => {
+          if (e.readyState === EventSource.CLOSED) {
+            // Connection was closed.
+          }
+        }, false);
          
 });
 
