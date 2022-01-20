@@ -1801,7 +1801,7 @@ if (isModUp) {
 const game = args.join(" ")
 
 const getID = await got(`https://api.twitch.tv/helix/games?name=${game}`, {
-  headers: { "Authorization": `Bearer cnqgpj0xa9gtnmawlb83cjeuddphma`, "Client-ID": `xszg16qk7z67cirz37vu1cpdz6qtn0` },
+  headers: { "Authorization": `Bearer ${process.env.app_oauth}`, "Client-ID": `${process.env.client_id}` },
   responseType: "json"
 });
 const gameID = getID.body
@@ -1811,7 +1811,7 @@ if (gameID.data.length == 0) {
 ;return;
 }
 
-let patch = await got.patch('https://api.twitch.tv/helix/channels?broadcaster_id=162760707', { headers: { "Authorization": `Bearer cnqgpj0xa9gtnmawlb83cjeuddphma`, "Client-ID": `xszg16qk7z67cirz37vu1cpdz6qtn0`, "Content-type": 'application/json' }, body: JSON.stringify({ "game_id": `${gameID.data[0].id}` }) })
+let patch = await got.patch(`https://api.twitch.tv/helix/channels?broadcaster_id=162760707`, { headers: { "Authorization": `Bearer ${process.env.app_oauth}`, "Client-ID": `${process.env.client_id}`, "Content-type": 'application/json' }, body: JSON.stringify({ "game_id": `${gameID.data[0].id}` }) })
 
 client.action(channel, `game changed to "${gameID.data[0].name}"`)
 }
