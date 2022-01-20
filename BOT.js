@@ -708,6 +708,141 @@ if(isModUp) {
     }
 
 
+    if (message.toLowerCase().startsWith("'isbanned")) {
+        client.color(array[Math.floor(Math.random() * array.length)])
+        if (!block) {
+    
+            let userTarget = user.username;
+            if (args[0]) {
+                if (args[0].startsWith("@")) {
+                    args[0] = args[0].substring(1);
+                }
+                userTarget = args[0];
+            }
+    
+            let channelTarget = channel.replace("#", "");
+            if (args[1]) {
+                channelTarget = args[1];
+            }
+
+            let username = user.username;
+
+            if(args[0]) {
+                if(args[0].startsWith("@")) {
+                    args[0] = args[0].substring(1);
+                }
+                username = args[0];
+            }
+                const userCheck = await got(`https://api.ivr.fi/twitch/resolve/${username}`,{
+                    responseType: 'json',
+                    throwHttpErrors: false
+                })
+                if(!userCheck.body.id) return { reply: `This user does not exist.` }
+
+                const userData = userCheck.body
+
+            const userBanned = userData.banned
+            const isbanned = userBanned
+
+                client.action(channel, `${userTarget} Banned: ${isbanned} MODS`)
+    
+            block = true;
+            setTimeout(() => {
+                block = false;
+            }, (5 * 1000));
+        }
+    }
+
+    if (message.toLowerCase().startsWith("'ispartner")) {
+        client.color(array[Math.floor(Math.random() * array.length)])
+        if (!block) {
+    
+            let userTarget = user.username;
+            if (args[0]) {
+                if (args[0].startsWith("@")) {
+                    args[0] = args[0].substring(1);
+                }
+                userTarget = args[0];
+            }
+    
+            let channelTarget = channel.replace("#", "");
+            if (args[1]) {
+                channelTarget = args[1];
+            }
+
+            let username = user.username;
+
+            if(args[0]) {
+                if(args[0].startsWith("@")) {
+                    args[0] = args[0].substring(1);
+                }
+                username = args[0];
+            }
+                const userCheck = await got(`https://api.ivr.fi/twitch/resolve/${username}`,{
+                    responseType: 'json',
+                    throwHttpErrors: false
+                })
+                if(!userCheck.body.id) return { reply: `This user does not exist.` }
+
+                const userData = userCheck.body
+
+            const userpartner = userData.partner
+            const isPartner = userpartner
+
+                client.action(channel, `${userTarget} Partner: ${isPartner} ;p `)
+    
+            block = true;
+            setTimeout(() => {
+                block = false;
+            }, (5 * 1000));
+        }
+    }
+
+    if (message.toLowerCase().startsWith("'isaffiliate")) {
+        client.color(array[Math.floor(Math.random() * array.length)])
+        if (!block) {
+    
+            let userTarget = user.username;
+            if (args[0]) {
+                if (args[0].startsWith("@")) {
+                    args[0] = args[0].substring(1);
+                }
+                userTarget = args[0];
+            }
+    
+            let channelTarget = channel.replace("#", "");
+            if (args[1]) {
+                channelTarget = args[1];
+            }
+
+            let username = user.username;
+
+            if(args[0]) {
+                if(args[0].startsWith("@")) {
+                    args[0] = args[0].substring(1);
+                }
+                username = args[0];
+            }
+                const userCheck = await got(`https://api.ivr.fi/twitch/resolve/${username}`,{
+                    responseType: 'json',
+                    throwHttpErrors: false
+                })
+                if(!userCheck.body.id) return { reply: `This user does not exist.` }
+
+                const userData = userCheck.body
+
+            const useraffiliate = userData.affiliate
+            const isAffiliate = useraffiliate
+
+                client.action(channel, `${userTarget} Partner: ${isAffiliate} ;p `)
+    
+            block = true;
+            setTimeout(() => {
+                block = false;
+            }, (5 * 1000));
+        }
+    }
+
     if (message.toLowerCase().startsWith("'whois")) {
         client.color(array[Math.floor(Math.random() * array.length)])
         if (!block) {
