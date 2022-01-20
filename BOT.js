@@ -942,9 +942,9 @@ if(isModUp) {
             })
             const userData = firstMessage.body
 
-            const userFirstMessage = userData.message
-            const FirstMessage = userFirstMessage
-            if (userFirstMessage = 'undefined'){
+            const userFirstMessage1 = userData.message
+            
+            if (userFirstMessage1 = 'undefined'){
             
                     const firstMessage = await got(`https://api.paauulli.me/logs/lastmessage/${channelTarget}/${userTarget}`,{
                     responseType: 'json',
@@ -954,13 +954,13 @@ if(isModUp) {
 
                 const userData = firstMessage.body
 
-            const userFirstMessage = userData.text
-            const FirstMessage = userFirstMessage
+            const userFirstMessage2 = userData.text
+            
 
-                client.action(channel, `${userTarget}, ${userFirstMessage} `)
+                client.action(channel, `${userTarget}, ${userFirstMessage2} `)
             }
             ;return;
-                client.action(channel, `${userTarget}, ${userFirstMessage} `)
+                client.action(channel, `${userTarget}, ${userFirstMessage1} `)
             block = true;
             setTimeout(() => {
                 block = false;
