@@ -393,6 +393,17 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         }
     }
 
+    if (message.toLowerCase().startsWith("'8ball") && command === '8ball') {
+        if (!block) {
+            let array = ["Yes Okayge", "No Okayge", "Maybe Okayge", "Surely Clueless", "Fuck You Bruh", "NOIDONTTHINKSO", "Copege I believe so", "YESIDOTHINKSO", "Clueless TeaTime", "Basedding no", "NOIDONTTHINKSO Never Doubt"]
+            client.action(channel, ` @${user.username} ${array[Math.floor(Math.random() * array.length)]}`)
+            block = true;
+            setTimeout(() => {
+                block = false;
+            }, (5 * 1000));
+        }
+    }
+
     if (message == "'roll") {
         if (!block) {
             client.color(array[Math.floor(Math.random() * array.length)])
@@ -998,6 +1009,8 @@ if(isModUp) {
             }, (5 * 1000));
         }
     }
+
+    
 
         if (message.toLowerCase().startsWith("'followage")  || message.toLowerCase().startsWith("'fa")) {
             client.color(array[Math.floor(Math.random() * array.length)])
