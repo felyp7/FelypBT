@@ -1796,7 +1796,16 @@ if (channel === '#pajlada') {
     }
 }
 
+if (isModUp) {
+    if (message.toLocaleLowerCase().startsWith("'setgame")) {
+let patch = await got.patch('https://api.twitch.tv/helix/channels?broadcaster_id=162760707 ', {
+    headers: { "Authorization": `Bearer cnqgpj0xa9gtnmawlb83cjeuddphma`, "Client-ID": `xszg16qk7z67cirz37vu1cpdz6qtn0`, "Content-type": 'application/json' },
+    body: JSON.stringify({ "game": `${args.join(" ")}` })
+});
 
+client.action(channel, `game changed to "${args.join(" ")}"`)
+}
+}
 
 });
 
