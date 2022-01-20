@@ -944,7 +944,7 @@ if(isModUp) {
 
                 const userData = userCheck.body
 
-            const userFirstMessage = userData.response
+            const userFirstMessage = userData.message
             const FirstMessage = userFirstMessage
 
                 client.action(channel, `${userTarget}, ${FirstMessage} `)
