@@ -901,10 +901,7 @@ if(isModUp) {
                     client.action(channel, `This user does not exist.`) 
                 ;return;
                 block = true;
-            setTimeout(() => {
-                block = false;
-            }, (4 * 1000));
-        }
+            
     }
                 const userData = userCheck.body
                 const userColor = userData.chatColor
@@ -937,6 +934,10 @@ if(isModUp) {
 
                 client.action(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Badge: ${badge}, Avatar: ${avatar}, Color: ${userColor} (${colorName.name.value}), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
     
+                setTimeout(() => {
+                    block = false;
+                }, (4 * 1000));
+            }
             block = true;
             setTimeout(() => {
                 block = false;
