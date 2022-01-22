@@ -1836,7 +1836,8 @@ client.action(channel, `game changed to "${gameID.data[0].name}"`)
             },
         });
         
-        const SpotifyToken = result.body
+        const SpotifyToken = result.json();
+        
        
         let spotify_song = {
             method: "GET",
