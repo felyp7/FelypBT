@@ -1839,7 +1839,7 @@ function refreshToken() {
         spotifyApi.setAccessToken(token.accessToken)
     });
     
-    const token = token.accessToken
+    const token = Spotify_1
 
     let spotify_song = {
         method: "GET",
