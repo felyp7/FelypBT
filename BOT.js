@@ -1822,47 +1822,124 @@ client.action(channel, `game changed to "${gameID.data[0].name}"`)
 
     if(message.startsWith(`'song`)){
         client.color(array[Math.floor(Math.random() * array.length)])
+    
+        var SpotifyWebApi = require('spotify-web-api-node');
+        const express = require('express')
         
         
-
-        const clientId = "f964e03f35654baabcc3fe46177c0122"
-            const clientSecret = "e0e5d067e4d1494585b45d233a93f8c9"
-
-        const result = await fetch('https://accounts.spotify.com/api/token', {
-            method: 'POST',
-            headers: {
-                'Content-Type' : 'application/x-www-form-urlencoded',
-                'Authorization' : 'Basic ' + btoa( clientId + ':' + clientSecret)
-            },
-        });
-        
-        const SpotifyToken = result.json();
-        
-       
-        let spotify_song = {
-            method: "GET",
-              headers: {
-              "Accept" : "application/json",
-              "Content-Type" : "application/json",
-              "Authorization" : `Bearer ${SpotifyToken} `
-              }
+        const scopes = [
+            'ugc-image-upload',
+            'user-read-playback-state',
+            'user-modify-playback-state',
+            'user-read-currently-playing',
+            'streaming',
+            'app-remote-control',
+            'user-read-email',
+            'user-read-private',
+            'playlist-read-collaborative',
+            'playlist-modify-public',
+            'playlist-read-private',
+            'playlist-modify-private',
+            'user-library-modify',
+            'user-library-read',
+            'user-top-read',
+            'user-read-playback-position',
+            'user-read-recently-played',
+            'user-follow-read',
+            'user-follow-modify'
+          ];
+          
+        // credentials are optional
+        var spotifyApi = new SpotifyWebApi({
+            clientId: 'f964e03f35654baabcc3fe46177c0122',
+            clientSecret: 'e0e5d067e4d1494585b45d233a93f8c9',
+            redirectUri: 'http://localhost:8888/callback'
+          });
+          
+          const app = express();
+          
+          app.get('/login', (req, res) => {
+            res.redirect(spotifyApi.createAuthorizeURL(scopes));
+          });
+          
+          app.get('/callback', (req, res) => {
+            const error = req.query.error;
+            const code = req.query.code;
+            const state = req.query.state;
+          
+            if (error) {
+              console.error('Callback Error:', error);
+              res.send(`Callback Error: ${error}`);
+              return;
             }
-        
-            const request = require('request')
-          request(`https://api.spotify.com/v1/me/player/currently-playing`, spotify_song, function(e, r){
-            if(e){
-              client.say(channel, `${user.username} Error on getting not playing`)
-              console.log(`>> ERROR ${e}`)
-            } else {
-              if(r.body.length < 60){
-                client.say(channel, `${user.username} Nothing playing`)
-              } else {
-                let dat = JSON.parse(r.body)
-                client.action(channel, `${user.username} is currently playing ▶  ${dat.item.name} by ${dat.item.album.artists[0].name}`)
-              }
-            } 
-        })
-    }
+          
+            spotifyApi
+              .authorizationCodeGrant(code)
+              .then(data => {
+                const access_token = data.body['access_token'];
+                const refresh_token = data.body['refresh_token'];
+                const expires_in = data.body['expires_in'];
+          
+                spotifyApi.setAccessToken(access_token);
+                spotifyApi.setRefreshToken(refresh_token);
+          
+                console.log('access_token:', access_token);
+                console.log('refresh_token:', refresh_token);
+          
+                console.log(
+                  `Sucessfully retreived access token. Expires in ${expires_in} s.`
+                );
+                res.send('Success! You can now close the window.');
+          
+                setInterval(async () => {
+                  const data = await spotifyApi.refreshAccessToken();
+                  const access_token = data.body['access_token'];
+          
+                  console.log('The access token has been refreshed!');
+                  console.log('access_token:', access_token);
+                  spotifyApi.setAccessToken(access_token);
+                }, expires_in / 2 * 1000);
+            
+                let spotify_song = {
+                    method: "GET",
+                      headers: {
+                      "Accept" : "application/json",
+                      "Content-Type" : "application/json",
+                      "Authorization" : `Bearer ${access_token} `
+                      }
+                    }
+                
+                    const request = require('request')
+                  request(`https://api.spotify.com/v1/me/player/currently-playing`, spotify_song, function(e, r){
+                    if(e){
+                      client.say(channel, `${user.username} Error on getting not playing`)
+                      console.log(`>> ERROR ${e}`)
+                    } else {
+                      if(r.body.length < 60){
+                        client.say(channel, `${user.username} Nothing playing`)
+                      } else {
+                        let dat = JSON.parse(r.body)
+                        client.action(channel, `${user.username} is currently playing ▶  ${dat.item.name} by ${dat.item.album.artists[0].name}`)  
+                    }
+                    } 
+                })
+            
+            })
+              .catch(error => {
+                console.error('Error getting Tokens:', error);
+                res.send(`Error getting Tokens: ${error}`);
+                
+            });
+          });
+          
+          app.listen(8888, () =>
+            console.log(
+              'HTTP Server up. Now go to http://localhost:8888/login in your browser.'
+            )
+          );
+    
+    }  
+
 
 
 
