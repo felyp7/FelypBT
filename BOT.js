@@ -1819,6 +1819,7 @@ client.action(channel, `game changed to "${gameID.data[0].name}"`)
 
 
 
+if (message.toLowerCase().startsWith("'song")) {
 
 const SpotifyWebApi = require('spotify-web-api-node');
 const spotify = require('spotify-token');
@@ -1857,7 +1858,7 @@ const currentSongData = (await spotifyApi.getMyCurrentPlayingTrack()).body;
       } else {
         client.say(channel, `Currently there is no song playing`)
       }
-
+    }
 
 
 });
