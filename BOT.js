@@ -1817,32 +1817,27 @@ client.action(channel, `game changed to "${gameID.data[0].name}"`)
 }
 }
 
-if(message.startsWith(`'song`)){
-    client.color(array[Math.floor(Math.random() * array.length)])
-    let spotify_song = {
-        method: "GET",
-          headers: {
-          "Accept" : "application/json",
-          "Content-Type" : "application/json",
-          "Authorization" : `Bearer BQCjNY_xTRu_CVl-13agojrs0KCC0oy51T8TZG8to49iB8CC9vrTl_8o2KhxfYBtz02TBSCFvAD5eGsdHxnUSkg2dMhDGRCUcWxCg7CkjaGe4TX3R2ZbRy8MDAZL8GJxMyvVG0LGzjohJ9nOhNG5FpeW13dqk3HqCaEhTBt2 `
-          }
-        }
-    
-        const request = require('request')
-      request(`https://api.spotify.com/v1/me/player/currently-playing`, spotify_song, function(e, r){
-        if(e){
-          client.say(channel, `${user.username} Error on getting not playing`)
-          console.log(`>> ERROR ${e}`)
-        } else {
-          if(r.body.length < 60){
-            client.say(channel, `${user.username} Nothing playing`)
-          } else {
-            let dat = JSON.parse(r.body)
-            client.action(channel, `${user.username} is currently playing ${dat.item.name} by ${dat.item.album.artists[0].name} ▶ [${dat.item.progress.ms}]`)
-          }
-        } 
-    })
+if (message.toLowerCase().startsWith("'song")) {
+const spotifyApi = new SpotifyWebApi({
+    accessToken: 'BQBAhgPj1VsUnMWyIy7nbin9oXBajrIXkoB7RsO-gUqsoOwPWDefEqEBmb2HMGTbA0lZ75Nf_v5XKxKu9_FZjXNuocyQ0zbohpvgIxT6pSMd6CPtpYWAQldHUh_AJft24u2SScHI5YOJ0ED42g_Oh5YEpgaGI_k2okXrqAAx-5eI70b6MKK9Dw',
+    clientId: 'f964e03f35654baabcc3fe46177c0122',
+    clientSecret: 'e0e5d067e4d1494585b45d233a93f8c9',
+    refreshToken: 'AQDz1gK9cx18q9837mk-lJenYMtYYryvHF1WXr8iwHz_ZDb-z_Gcp-T2ugCdkJoe_0S7Fvxt7j98PuxSnO3Uz9gCFlhlckntwLY5hXm2KYLep9MkXhvsiEFNJl7DkemmRTs',
+  })
+
+  let res = await spotifyApi.getMyCurrentPlayingTrack()
+
+  if (res.statusCode === 401) {
+    const api = await spotifyApi.refreshAccessToken()
+    spotifyApi.setAccessToken(api.body['access_token'])
+
+    res = await spotifyApi.getMyCurrentPlayingTrack()
+  }
+
+  const currentPlaying = res.body.item
+  console.log('currentPlaying', currentPlaying)
 }
+
 
 });
 
