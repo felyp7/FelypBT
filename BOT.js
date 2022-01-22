@@ -1832,11 +1832,20 @@ setInterval(() => {
 }, 1 * 60 * 60 * 1000);
  
  
-function refreshToken() {
-  spotify.getAccessToken(Spotify_1, Spotify_2).then(function (token) {
-    spotifyApi.setAccessToken(token.accessToken)
-  });
-}
+const Updater = require("spotify-oauth-refresher");
+const api = new Updater({ clientId: "f964e03f35654baabcc3fe46177c0122", clientSecret: "e0e5d067e4d1494585b45d233a93f8c9" });
+
+api.setAccessToken("BQBAhgPj1VsUnMWyIy7nbin9oXBajrIXkoB7RsO-gUqsoOwPWDefEqEBmb2HMGTbA0lZ75Nf_v5XKxKu9_FZjXNuocyQ0zbohpvgIxT6pSMd6CPtpYWAQldHUh_AJft24u2SScHI5YOJ0ED42g_Oh5YEpgaGI_k2okXrqAAx-5eI70b6MKK9Dw");
+api.setRefreshToken("AQDz1gK9cx18q9837mk-lJenYMtYYryvHF1WXr8iwHz_ZDb-z_Gcp-T2ugCdkJoe_0S7Fvxt7j98PuxSnO3Uz9gCFlhlckntwLY5hXm2KYLep9MkXhvsiEFNJl7DkemmRTs");
+
+// You will never need to manually refresh your access token again!
+const me = await api.request({
+  url: "https://api.spotify.com/v1/me",
+  method: "get",
+  authType: "bearer",
+});
+
+console.log(me.id);
  
 const currentSongData = (await spotifyApi.getMyCurrentPlayingTrack()).body;
 
@@ -1858,7 +1867,7 @@ const currentSongData = (await spotifyApi.getMyCurrentPlayingTrack()).body;
       }
     }
 
-    
+
 
 });
 
