@@ -1822,19 +1822,9 @@ client.action(channel, `game changed to "${gameID.data[0].name}"`)
 
     if(message.startsWith(`'song`)){
         client.color(array[Math.floor(Math.random() * array.length)])
-        let spotify_song = {
-            method: "GET",
-              headers: {
-              "Accept" : "application/json",
-              "Content-Type" : "application/json",
-              "Authorization" : `Bearer ${SpotifyToken} `
-              }
-            }
         
-            const clientId = "f964e03f35654baabcc3fe46177c0122"
+        const clientId = "f964e03f35654baabcc3fe46177c0122"
             const clientSecret = "e0e5d067e4d1494585b45d233a93f8c9"
-
-
 
         const result = await fetch('https://accounts.spotify.com/api/token', {
             method: 'POST',
@@ -1845,9 +1835,16 @@ client.action(channel, `game changed to "${gameID.data[0].name}"`)
         });
         
         const SpotifyToken = result.body
+       
+        let spotify_song = {
+            method: "GET",
+              headers: {
+              "Accept" : "application/json",
+              "Content-Type" : "application/json",
+              "Authorization" : `Bearer ${SpotifyToken} `
+              }
+            }
         
-    
-
             const request = require('request')
           request(`https://api.spotify.com/v1/me/player/currently-playing`, spotify_song, function(e, r){
             if(e){
