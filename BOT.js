@@ -1839,7 +1839,6 @@ const me = await api.request({
 
 console.log(me.config.headers.Authorization);
     
-    const token = Spotify_1
 
     let spotify_song = {
         method: "GET",
