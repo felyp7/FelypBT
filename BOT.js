@@ -1863,7 +1863,7 @@ setInterval(() => {
             const progress_ms = format(dat.progress_ms)
             const duration_ms = format(dat.item.duration_ms)
             
-            client.action(channel, `${user.username} is currently playing ${dat.item.name} by ${dat.item.album.artists[0].name} ▶ [${progress_ms}/${duration_ms}]`)
+            client.action(channel, `VeryPogftxQcOnTheToilet is currently playing ${dat.item.name} by ${dat.item.album.artists[0].name} ▶ [${progress_ms}/${duration_ms}]`)
           }
         } 
     })      
