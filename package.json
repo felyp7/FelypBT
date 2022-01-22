@@ -18,7 +18,8 @@
     "request": "^2.88.2",
     "spotify-web-api-node": "^5.0.2",
     "spotify-token": "^1.0.1",
-    "spotify-oauth-refresher": "^1.0.8"
+    "spotify-oauth-refresher": "^1.0.8",
+    "node-fetch": "^3.2.0"
   },
   "devDependencies": {},
   "keywords": [],
