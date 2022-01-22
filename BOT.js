@@ -1857,7 +1857,11 @@ setInterval(() => {
             client.say(channel, `${user.username} Nothing playing`)
           } else {
             let dat = JSON.parse(r.body)
-            client.action(channel, `${user.username} is currently playing ▶  ${dat.item.name} by ${dat.item.album.artists[0].name} [${dat.progress_ms}/${dat.item.duration_ms}]`)
+            
+            const progress_ms = humanizeDuration(dat.progress_ms)
+            const duration_ms = humanizeDuration(dat.duration_ms)
+            
+            client.action(channel, `${user.username} is currently playing ▶  ${dat.item.name} by ${dat.item.album.artists[0].name} [${progress_ms}/${duration_ms}]`)
           }
         } 
     })      
