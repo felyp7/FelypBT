@@ -1820,109 +1820,43 @@ client.action(channel, `game changed to "${gameID.data[0].name}"`)
 
 
 
-    if(message.startsWith(`'song`)){
-        client.color(array[Math.floor(Math.random() * array.length)])
-    
-        var SpotifyWebApi = require('spotify-web-api-node');
-        const express = require('express')
-        
-        
-        const scopes = [
-            'ugc-image-upload',
-            'user-read-playback-state',
-            'user-modify-playback-state',
-            'user-read-currently-playing',
-            'streaming',
-            'app-remote-control',
-            'user-read-email',
-            'user-read-private',
-            'playlist-read-collaborative',
-            'playlist-modify-public',
-            'playlist-read-private',
-            'playlist-modify-private',
-            'user-library-modify',
-            'user-library-read',
-            'user-top-read',
-            'user-read-playback-position',
-            'user-read-recently-played',
-            'user-follow-read',
-            'user-follow-modify'
-          ];
-          
-        // credentials are optional
-        var spotifyApi = new SpotifyWebApi({
-            clientId: 'f964e03f35654baabcc3fe46177c0122',
-            clientSecret: 'e0e5d067e4d1494585b45d233a93f8c9',
-            redirectUri: 'http://localhost:8888/callback'
-          });
-          
-          const app = express();
-          
-          app.get('/callback', (req, res) => {
-            const error = req.query.error;
-            const code = req.query.code;
-            const state = req.query.state;
-            
-            spotifyApi
-              .authorizationCodeGrant(code)
-              .then(data => {
-                const access_token = data.body['access_token'];
-                const refresh_token = data.body['refresh_token'];
-                const expires_in = data.body['expires_in'];
-          
-                spotifyApi.setAccessToken(access_token);
-                spotifyApi.setRefreshToken(refresh_token);
-          
-                console.log('access_token:', access_token);
-                console.log('refresh_token:', refresh_token);
-          
-                console.log(
-                  `Sucessfully retreived access token. Expires in ${expires_in} s.`
-                );
-                res.send('Success! You can now close the window.');
-          
-                setInterval(async () => {
-                  const data = await spotifyApi.refreshAccessToken();
-                  const access_token = data.body['access_token'];
-          
-                  console.log('The access token has been refreshed!');
-                  console.log('access_token:', access_token);
-                  spotifyApi.setAccessToken(access_token);
-                }, expires_in / 2 * 1000);
-            
-                let spotify_song = {
-                    method: "GET",
-                      headers: {
-                      "Accept" : "application/json",
-                      "Content-Type" : "application/json",
-                      "Authorization" : `Bearer ${access_token} `
-                      }
-                    }
-                
-                    const request = require('request')
-                  request(`https://api.spotify.com/v1/me/player/currently-playing`, spotify_song, function(e, r){
-                    if(e){
-                      client.say(channel, `${user.username} Error on getting not playing`)
-                      console.log(`>> ERROR ${e}`)
-                    } else {
-                      if(r.body.length < 60){
-                        client.say(channel, `${user.username} Nothing playing`)
-                      } else {
-                        let dat = JSON.parse(r.body)
-                        client.action(channel, `${user.username} is currently playing ▶  ${dat.item.name} by ${dat.item.album.artists[0].name}`)  
-                    }
-                    } 
-                })
-            })
-            })
-              .catch(error => {
-                console.error('Error getting Tokens:', error);
-                res.send(`Error getting Tokens: ${error}`);
-                
-            });
-    
-    }  
+const SpotifyWebApi = require('spotify-web-api-node');
+const spotify = require('spotify-token');
 
+
+const Spotify_1 = 'BQBAhgPj1VsUnMWyIy7nbin9oXBajrIXkoB7RsO-gUqsoOwPWDefEqEBmb2HMGTbA0lZ75Nf_v5XKxKu9_FZjXNuocyQ0zbohpvgIxT6pSMd6CPtpYWAQldHUh_AJft24u2SScHI5YOJ0ED42g_Oh5YEpgaGI_k2okXrqAAx-5eI70b6MKK9Dw'
+const Spotify_2 = 'AQDz1gK9cx18q9837mk-lJenYMtYYryvHF1WXr8iwHz_ZDb-z_Gcp-T2ugCdkJoe_0S7Fvxt7j98PuxSnO3Uz9gCFlhlckntwLY5hXm2KYLep9MkXhvsiEFNJl7DkemmRTs'
+
+const spotifyApi = new SpotifyWebApi();
+setInterval(() => {
+  refreshToken();
+}, 1 * 60 * 60 * 1000);
+ 
+ 
+function refreshToken() {
+  spotifyApi.getAccessToken(Spotify_1, Spotify_2).then(function (token) {
+    spotifyApi.setAccessToken(token.accessToken)
+  });
+}
+ 
+const currentSongData = (await spotifyApi.getMyCurrentPlayingTrack()).body;
+
+      if (currentSongData === undefined) {
+        return client.say(channel, `Currently there is no song playing`)
+      }
+ 
+      const currentSong = currentSongData.item;
+ 
+      const artists = [];
+      for (let i = 0; i < currentSong.album.artists.length; i++) {
+        artists.push(currentSong.album.artists[i].name)
+      }
+ 
+      if (currentSongData.is_playing) {
+        client.say(channel, `Currently playing ${currentSong.name} from ${artists.join(", ")} ${currentSongData.actions.disallows.pausing ? '[PAUSED]' : `[${formatTimePlaying(currentSongData.progress_ms)}/${formatTimePlaying(currentSong.duration_ms)}]`}`)
+      } else {
+        client.say(channel, `Currently there is no song playing`)
+      }
 
 
 
