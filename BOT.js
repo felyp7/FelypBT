@@ -1849,7 +1849,7 @@ const me = await api.request({
   authType: "bearer",
 });
 
-console.log(me.id);
+console.log(me);
     
     const token = Spotify_1
 
