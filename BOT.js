@@ -1849,7 +1849,7 @@ const me = await api.request({
   authType: "bearer",
 });
 
-console.log(me.config);
+console.log(me.config.headers.Authorization);
     
     const token = Spotify_1
 
@@ -1858,7 +1858,7 @@ console.log(me.config);
           headers: {
           "Accept" : "application/json",
           "Content-Type" : "application/json",
-          "Authorization" : `Bearer ${me.config} `
+          "Authorization" : `Bearer ${me.config.headers.Authorization} `
           }
         }
     
