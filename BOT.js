@@ -1846,7 +1846,7 @@ function refreshToken() {
           headers: {
           "Accept" : "application/json",
           "Content-Type" : "application/json",
-          "Authorization" : `Bearer ${token.accessToken} `
+          "Authorization" : `Bearer ${token} `
           }
         }
     
