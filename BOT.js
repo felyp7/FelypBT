@@ -1834,10 +1834,7 @@ setInterval(() => {
 }, 1 * 60 * 60 * 1000);
  
  
-function refreshToken() {
-    spotify.getAccessToken(Spotify_1, Spotify_2).then(function (token) {
-        spotifyApi.setAccessToken(token.accessToken)
-    });
+
     
     const token = Spotify_1
 
@@ -1865,7 +1862,7 @@ function refreshToken() {
         } 
     })      
 }
-}
+
 
 
 });
