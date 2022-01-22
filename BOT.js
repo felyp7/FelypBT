@@ -1858,7 +1858,7 @@ console.log(me.config.headers.Authorization);
           headers: {
           "Accept" : "application/json",
           "Content-Type" : "application/json",
-          "Authorization" : `Bearer ${me.config.headers.Authorization} `
+          "Authorization" : `${me.config.headers.Authorization} `
           }
         }
     
