@@ -13,7 +13,7 @@ const client = new tmi.Client({
         username: process.env.username,
         password: process.env.password
     },
-    channels: ['xqcs_desk_garbage', 'Fookstee', 'florian_2807', 'verypogftxqconthetoilet', 'xPatrck', 'masenka12', 'lordevid', 'Sneeeze_', 'kawanpls', 'turtoise', 'anniiikaa', 'pajlada']
+    channels: ['xqcs_desk_garbage']
 });
 const got = require('got');
 
@@ -1817,7 +1817,32 @@ client.action(channel, `game changed to "${gameID.data[0].name}"`)
 }
 }
 
-
+if(message.startsWith(`'song`)){
+    client.color(array[Math.floor(Math.random() * array.length)])
+    let spotify_song = {
+        method: "GET",
+          headers: {
+          "Accept" : "application/json",
+          "Content-Type" : "application/json",
+          "Authorization" : `Bearer BQCjNY_xTRu_CVl-13agojrs0KCC0oy51T8TZG8to49iB8CC9vrTl_8o2KhxfYBtz02TBSCFvAD5eGsdHxnUSkg2dMhDGRCUcWxCg7CkjaGe4TX3R2ZbRy8MDAZL8GJxMyvVG0LGzjohJ9nOhNG5FpeW13dqk3HqCaEhTBt2 `
+          }
+        }
+    
+        const request = require('request')
+      request(`https://api.spotify.com/v1/me/player/currently-playing`, spotify_song, function(e, r){
+        if(e){
+          client.say(channel, `${user.username} Error on getting not playing`)
+          console.log(`>> ERROR ${e}`)
+        } else {
+          if(r.body.length < 60){
+            client.say(channel, `${user.username} Nothing playing`)
+          } else {
+            let dat = JSON.parse(r.body)
+            client.action(channel, `${user.username} is currently playing ${dat.item.name} by ${dat.item.album.artists[0].name} ▶ [${dat.item.progress_ms}]`)
+          }
+        } 
+    })
+}
 
 });
 
