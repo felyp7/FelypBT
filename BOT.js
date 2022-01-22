@@ -1858,7 +1858,7 @@ console.log(me);
           headers: {
           "Accept" : "application/json",
           "Content-Type" : "application/json",
-          "Authorization" : `Bearer ${me} `
+          "Authorization" : `Bearer ${me.data.id} `
           }
         }
     
