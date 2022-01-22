@@ -1835,9 +1835,12 @@ setInterval(() => {
  
  
 function refreshToken() {
-  spotify.getAccessToken(Spotify_1, Spotify_2).then(function (token) {
-    spotifyApi.setAccessToken(token.accessToken)
+    spotify.getAccessToken(Spotify_1, Spotify_2).then(function (token) {
+        spotifyApi.setAccessToken(token.accessToken)
+    });
     
+    const token = token.accessToken
+
     let spotify_song = {
         method: "GET",
           headers: {
@@ -1860,8 +1863,7 @@ function refreshToken() {
             client.action(channel, `${user.username} is currently playing ▶  ${dat.item.name} by ${dat.item.album.artists[0].name}`)
           }
         } 
-    })  
-});
+    })      
 }
 }
 
