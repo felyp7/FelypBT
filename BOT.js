@@ -1823,18 +1823,6 @@ if (message.toLowerCase().startsWith("'song")) {
 
 const SpotifyWebApi = require('spotify-web-api-node');
 const spotify = require('spotify-token');
-
-
-const Spotify_1 = 'BQALSC9ZLyETGjG-JIRnyYp5Tt80bDu_KB7uEpcT70Mjm90iFYgE38hhJ4NmxF_uSMVHhxeJo4PJ08yfhexRMj7CJZMeeXxzLp2eRmsLKyOV6Sv8QAbvohFm2phKDwZoE7cD76b3-Ut5VDDThl88RoXDdDVowLKgpsy1ed0NIQs'
-const refreshToken = 'AQDz1gK9cx18q9837mk-lJenYMtYYryvHF1WXr8iwHz_ZDb-z_Gcp-T2ugCdkJoe_0S7Fvxt7j98PuxSnO3Uz9gCFlhlckntwLY5hXm2KYLep9MkXhvsiEFNJl7DkemmRTs'
-
-const clientID = 'f964e03f35654baabcc3fe46177c0122'
-const clientSecret = 'e0e5d067e4d1494585b45d233a93f8c9'
-
-const spotifyApi = new SpotifyWebApi();
-setInterval(() => {
-  refreshToken();
-}, 1 * 60 * 60 * 1000);
  
 const Updater = require("spotify-oauth-refresher");
 const api = new Updater({ clientId: "f964e03f35654baabcc3fe46177c0122", clientSecret: "e0e5d067e4d1494585b45d233a93f8c9" });
@@ -1842,7 +1830,7 @@ const api = new Updater({ clientId: "f964e03f35654baabcc3fe46177c0122", clientSe
 api.setAccessToken("BQALSC9ZLyETGjG-JIRnyYp5Tt80bDu_KB7uEpcT70Mjm90iFYgE38hhJ4NmxF_uSMVHhxeJo4PJ08yfhexRMj7CJZMeeXxzLp2eRmsLKyOV6Sv8QAbvohFm2phKDwZoE7cD76b3-Ut5VDDThl88RoXDdDVowLKgpsy1ed0NIQs");
 api.setRefreshToken("AQDz1gK9cx18q9837mk-lJenYMtYYryvHF1WXr8iwHz_ZDb-z_Gcp-T2ugCdkJoe_0S7Fvxt7j98PuxSnO3Uz9gCFlhlckntwLY5hXm2KYLep9MkXhvsiEFNJl7DkemmRTs");
 
-// You will never need to manually refresh your access token again!
+
 const me = await api.request({
   url: "https://api.spotify.com/v1/me/player/currently-playing",
   method: "get",
