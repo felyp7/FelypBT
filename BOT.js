@@ -1859,7 +1859,7 @@ setInterval(() => {
             let dat = JSON.parse(r.body)
             
             const progress_ms = humanizeDuration(dat.progress_ms)
-            const duration_ms = humanizeDuration(dat.duration_ms)
+            const duration_ms = humanizeDuration(dat.item.duration_ms)
             
             client.action(channel, `${user.username} is currently playing ▶  ${dat.item.name} by ${dat.item.album.artists[0].name} [${progress_ms}/${duration_ms}]`)
           }
