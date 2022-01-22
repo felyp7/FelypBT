@@ -1844,12 +1844,12 @@ api.setRefreshToken("AQDz1gK9cx18q9837mk-lJenYMtYYryvHF1WXr8iwHz_ZDb-z_Gcp-T2ugC
 
 // You will never need to manually refresh your access token again!
 const me = await api.request({
-  url: "https://api.spotify.com/v1/me",
+  url: "https://api.spotify.com/v1/me/player/currently-playing",
   method: "get",
   authType: "bearer",
 });
 
-console.log(me.headers.Authorization);
+console.log(me);
     
     const token = Spotify_1
 
@@ -1858,7 +1858,7 @@ console.log(me.headers.Authorization);
           headers: {
           "Accept" : "application/json",
           "Content-Type" : "application/json",
-          "Authorization" : `Bearer ${me.headers.Authorization} `
+          "Authorization" : `Bearer ${me} `
           }
         }
     
