@@ -1818,7 +1818,10 @@ client.action(channel, `game changed to "${gameID.data[0].name}"`)
 }
 
 if (message.toLowerCase().startsWith("'song")) {
-const spotifyApi = new SpotifyWebApi({
+
+    const SpotifyWebApi = require('spotify-web-api-node');
+
+    const spotifyApi = new SpotifyWebApi({
     accessToken: 'BQBAhgPj1VsUnMWyIy7nbin9oXBajrIXkoB7RsO-gUqsoOwPWDefEqEBmb2HMGTbA0lZ75Nf_v5XKxKu9_FZjXNuocyQ0zbohpvgIxT6pSMd6CPtpYWAQldHUh_AJft24u2SScHI5YOJ0ED42g_Oh5YEpgaGI_k2okXrqAAx-5eI70b6MKK9Dw',
     clientId: 'f964e03f35654baabcc3fe46177c0122',
     clientSecret: 'e0e5d067e4d1494585b45d233a93f8c9',
