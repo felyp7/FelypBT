@@ -1858,21 +1858,11 @@ client.action(channel, `game changed to "${gameID.data[0].name}"`)
           
           const app = express();
           
-          app.get('/login', (req, res) => {
-            res.redirect(spotifyApi.createAuthorizeURL(scopes));
-          });
-          
           app.get('/callback', (req, res) => {
             const error = req.query.error;
             const code = req.query.code;
             const state = req.query.state;
-          
-            if (error) {
-              console.error('Callback Error:', error);
-              res.send(`Callback Error: ${error}`);
-              return;
-            }
-          
+            
             spotifyApi
               .authorizationCodeGrant(code)
               .then(data => {
@@ -1923,20 +1913,13 @@ client.action(channel, `game changed to "${gameID.data[0].name}"`)
                     }
                     } 
                 })
-            
+            })
             })
               .catch(error => {
                 console.error('Error getting Tokens:', error);
                 res.send(`Error getting Tokens: ${error}`);
                 
             });
-          });
-          
-          app.listen(8888, () =>
-            console.log(
-              'HTTP Server up. Now go to http://localhost:8888/login in your browser.'
-            )
-          );
     
     }  
 
