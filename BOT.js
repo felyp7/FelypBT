@@ -1817,30 +1817,48 @@ client.action(channel, `game changed to "${gameID.data[0].name}"`)
 }
 }
 
+
 if (message.toLowerCase().startsWith("'song")) {
+const SpotifyWebApi = require('spotify-web-api-node');
+const spotify = require('spotify-token');
 
-    const SpotifyWebApi = require('spotify-web-api-node');
 
-    const spotifyApi = new SpotifyWebApi({
-    accessToken: 'BQBAhgPj1VsUnMWyIy7nbin9oXBajrIXkoB7RsO-gUqsoOwPWDefEqEBmb2HMGTbA0lZ75Nf_v5XKxKu9_FZjXNuocyQ0zbohpvgIxT6pSMd6CPtpYWAQldHUh_AJft24u2SScHI5YOJ0ED42g_Oh5YEpgaGI_k2okXrqAAx-5eI70b6MKK9Dw',
-    clientId: 'f964e03f35654baabcc3fe46177c0122',
-    clientSecret: 'e0e5d067e4d1494585b45d233a93f8c9',
-    refreshToken: 'AQDz1gK9cx18q9837mk-lJenYMtYYryvHF1WXr8iwHz_ZDb-z_Gcp-T2ugCdkJoe_0S7Fvxt7j98PuxSnO3Uz9gCFlhlckntwLY5hXm2KYLep9MkXhvsiEFNJl7DkemmRTs',
-  })
+const Spotify_1 = 'BQBAhgPj1VsUnMWyIy7nbin9oXBajrIXkoB7RsO-gUqsoOwPWDefEqEBmb2HMGTbA0lZ75Nf_v5XKxKu9_FZjXNuocyQ0zbohpvgIxT6pSMd6CPtpYWAQldHUh_AJft24u2SScHI5YOJ0ED42g_Oh5YEpgaGI_k2okXrqAAx-5eI70b6MKK9Dw'
+const Spotify_2 = 'AQDz1gK9cx18q9837mk-lJenYMtYYryvHF1WXr8iwHz_ZDb-z_Gcp-T2ugCdkJoe_0S7Fvxt7j98PuxSnO3Uz9gCFlhlckntwLY5hXm2KYLep9MkXhvsiEFNJl7DkemmRTs'
 
-  let res = await spotifyApi.getMyCurrentPlayingTrack()
-
-  if (res.statusCode === 401) {
-    const api = await spotifyApi.refreshAccessToken()
-    spotifyApi.setAccessToken(api.body['access_token'])
-
-    res = await spotifyApi.getMyCurrentPlayingTrack()
-  }
-
-  const currentPlaying = res.body.item
-  console.log('currentPlaying', currentPlaying)
+const spotifyApi = new SpotifyWebApi();
+setInterval(() => {
+  refreshToken();
+}, 1 * 60 * 60 * 1000);
+ 
+ 
+function refreshToken() {
+  spotify.getAccessToken(Spotify_1, Spotify_2).then(function (token) {
+    spotifyApi.setAccessToken(token.accessToken)
+  });
 }
+ 
+const currentSongData = (await spotifyApi.getMyCurrentPlayingTrack()).body;
 
+      if (currentSongData === undefined) {
+        return client.say(channel, `Currently there is no song playing`)
+      }
+ 
+      const currentSong = currentSongData.item;
+ 
+      const artists = [];
+      for (let i = 0; i < currentSong.album.artists.length; i++) {
+        artists.push(currentSong.album.artists[i].name)
+      }
+ 
+      if (currentSongData.is_playing) {
+        client.say(channel, `Currently playing ${currentSong.name} from ${artists.join(", ")} ${currentSongData.actions.disallows.pausing ? '[PAUSED]' : `[${formatTimePlaying(currentSongData.progress_ms)}/${formatTimePlaying(currentSong.duration_ms)}]`}`)
+      } else {
+        client.say(channel, `Currently there is no song playing`)
+      }
+    }
+
+    
 
 });
 
