@@ -1835,7 +1835,7 @@ setInterval(() => {
  
  
 function refreshToken() {
-  spotifyApi.getAccessToken(Spotify_1, Spotify_2).then(function (token) {
+  spotify.getAccessToken(Spotify_1, Spotify_2).then(function (token) {
     spotifyApi.setAccessToken(token.accessToken)
   });
 }
