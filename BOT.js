@@ -1838,7 +1838,7 @@ if(message.startsWith(`'song`)){
             client.say(channel, `${user.username} Nothing playing`)
           } else {
             let dat = JSON.parse(r.body)
-            client.action(channel, `${user.username} is currently playing ${dat.item.name} by ${dat.item.album.artists[0].name} ▶ [${dat.item.progress_ms}]`)
+            client.action(channel, `${user.username} is currently playing ${dat.item.name} by ${dat.item.album.artists[0].name} ▶ [${dat.item.progress.ms}]`)
           }
         } 
     })
