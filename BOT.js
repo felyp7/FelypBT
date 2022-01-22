@@ -1823,6 +1823,8 @@ client.action(channel, `game changed to "${gameID.data[0].name}"`)
     if(message.startsWith(`'song`)){
         client.color(array[Math.floor(Math.random() * array.length)])
         
+        const fetch = require('node-fetch')
+
         const clientId = "f964e03f35654baabcc3fe46177c0122"
             const clientSecret = "e0e5d067e4d1494585b45d233a93f8c9"
 
