@@ -1881,17 +1881,20 @@ console.log(me.config.headers.Authorization);
 
 if (message.toLowerCase().startsWith("'test")) {
 
-    const emotesid = await got(`
-    https://emotes.adamcy.pl/v1/channel/${channel}/emotes/7tv.bttv.ffz`, {
-        headers: { "Content-Type": `application/json` },
-        responseType: "json"
-      });
-      const emotes = emotesid.body
-        
-            console.log(`${emotes.code}` )
+    const request = require('request');
 
-            client.action(channel, `${emotes.code}`)
-          }
+const options = {
+  method: 'GET',
+  url: 'https://emotes.adamcy.pl/v1/channel/channel/emotes/services',
+  headers: {'Content-Type': 'application/json'}
+};
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
+}
         
          
 
