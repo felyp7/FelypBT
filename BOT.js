@@ -17,7 +17,7 @@ const client = new tmi.Client({
         username: process.env.username,
         password: process.env.password
     },
-    channels: ['xqcs_desk_garbage', 'Fookstee', 'florian_2807', 'veryracc', 'xPatrck', 'masenka12', 'lordevid', 'Sneeeze_', 'kawanpls', 'turtoise', 'anniiikaa', 'pajlada']
+    channels: ['veryracc']
 });
 const got = require('got');
 
@@ -1879,8 +1879,19 @@ console.log(me.config.headers.Authorization);
 }
 
 
-          
-    
+if (message.toLowerCase().startsWith("'test")) {
+
+const request = require('request')
+      request(`https://emotes.adamcy.pl/v1/channel/${channel}/emotes/7tv.bttv.ffz`, function(e, r){
+       
+            let data = JSON.parse(r.body)
+        
+            
+            client.action(channel, `${data.code}`)
+          })
+        }
+         
+
 
 
 });
