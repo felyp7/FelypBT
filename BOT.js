@@ -1694,7 +1694,7 @@ if (message.toLowerCase().startsWith("'afk")) {
 if (message.toLowerCase().startsWith("'tuck")) {
     client.color(array[Math.floor(Math.random() * array.length)])
     
-    const emote = args.join(' ') ? args.join(' ') : 'FeelsOkayMan'
+    const emote = args[1] ? args[1] : 'FeelsOkayMan'
 
     let userTarget = user.username;
     if (args[0]) {
