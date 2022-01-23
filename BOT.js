@@ -4,7 +4,11 @@ const tmi = require('tmi.js');
 
 const client = new tmi.Client({    
 
-    options: { debug: true, messagesLogLevel: "info" },
+    options: { 
+        debug: true, 
+        messagesLogLevel: "info"
+        joinInterval: 300
+    },
     connection: {
         reconnect: true,
         secure: true
