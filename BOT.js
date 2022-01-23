@@ -1881,14 +1881,20 @@ console.log(me.config.headers.Authorization);
 
 if (message.toLowerCase().startsWith("'test")) {
 
-    const SevenTV = require("node_modules/qs/lib");
-    const api = SevenTV();
-    
-    async function test () {
-        const emotes = await api.fetchUserEmotes("veryracc");
-        console.log(emotes); // Returns array of Emote (Class)
-    }
+    const request = require('request');
+
+const options = {
+  method: 'GET',
+  url: 'https://api.7tv.app/v2/users/veryracc/emotes',
+  headers: {'Content-Type': 'application/json'}
 };
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
+}
 
         
          
