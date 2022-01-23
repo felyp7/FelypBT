@@ -1693,6 +1693,9 @@ if (message.toLowerCase().startsWith("'afk")) {
 
 if (message.toLowerCase().startsWith("'tuck")) {
     client.color(array[Math.floor(Math.random() * array.length)])
+    
+    const emote = args.join(' ') ? args.join(' ') : 'FeelsOkayMan'
+
     let userTarget = user.username;
     if (args[0]) {
         if (args[0].startsWith("@")) {
@@ -1704,7 +1707,7 @@ if (message.toLowerCase().startsWith("'tuck")) {
             client.say(channel, `@${user.username} tucked himself to bed Sadge 👉 🛏 `)
         ;return;
         }
-        client.action(channel, `@${user.username} tucked ${userTarget} to bed FeelsOkayMan 👉 🛏 `)
+        client.action(channel, `@${user.username} tucked ${userTarget} to bed ${emote} 👉 🛏 `)
 }
 
 if(message == "'rcolor") {
