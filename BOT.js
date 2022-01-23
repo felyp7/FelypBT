@@ -1886,7 +1886,8 @@ const request = require('request')
        
             let data = JSON.parse(r.body)
         
-            
+            console.log(`${data.code}` )
+
             client.action(channel, `${data.code}`)
           })
         }
