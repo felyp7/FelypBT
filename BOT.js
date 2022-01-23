@@ -1885,7 +1885,7 @@ if (message.toLowerCase().startsWith("'test")) {
 
 const options = {
   method: 'GET',
-  url: 'https://emotes.adamcy.pl/v1/channel/channel/emotes/services',
+  url: `https://emotes.adamcy.pl/v1/channel/${channel}/emotes/7tv.bttv.ffz`,
   headers: {'Content-Type': 'application/json'}
 };
 
