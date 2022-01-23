@@ -1883,18 +1883,16 @@ if (message.toLowerCase().startsWith("'test")) {
 
     const request = require('request');
 
-    let channelTarget = channel.replace("#", "");
-
-const options = {
-  method: 'GET',
-  url: `https://emotes.adamcy.pl/v1/channel/${channelTarget}/emotes/7tv.bttv.ffz`,
-  headers: {'Content-Type': 'application/json'}
-};
-
-request(options, function (error, response, body) {
-  if (error) throw new Error(error);
-
-  console.log(response.url);
+    const options = {
+      method: 'GET',
+      url: 'https://stoplight.io/mocks/adiq/temotes/32656821/v1/channel/veryracc/emotes/7tv.bttv.ffz.twitch',
+      headers: {'Content-Type': 'application/json'}
+    };
+    
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error);
+    
+      console.log(body);
 });
 }
         
