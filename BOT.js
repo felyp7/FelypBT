@@ -13,7 +13,7 @@ const client = new tmi.Client({
         username: process.env.username,
         password: process.env.password
     },
-    channels: ['xqcs_desk_garbage', 'Fookstee', 'florian_2807', 'veryracc', 'xPatrck', 'masenka12', 'lordevid', 'Sneeeze_', 'kawanpls', 'turtoise', 'anniiikaa', 'pajlada']
+    channels: ['veryracc']
 });
 const got = require('got');
 
@@ -1874,6 +1874,59 @@ console.log(me.config.headers.Authorization);
     })      
 }
 
+if (message.toLowerCase().startsWith("'spotifyprofile")) {
+
+    const SpotifyWebApi = require('spotify-web-api-node');
+    const spotify = require('spotify-token');
+     
+    let userTarget = user.username;
+    if (args[0]) {
+        if (args[0].startsWith("@")) {
+            args[0] = args[0].substring(1);
+        }
+        userTarget = args[0];
+    }
+
+    const Updater = require("spotify-oauth-refresher");
+    const api = new Updater({ clientId: `${process.env.clientId}`, clientSecret: `${process.env.clientSecret}` });
+    
+    api.setAccessToken(`${process.env.accessToken}`);
+    api.setRefreshToken(`${process.env.refreshToken}`);
+    
+    
+    const me = await api.request({
+        url: "https://api.spotify.com/v1/me/player/currently-playing",
+        method: "get",
+        authType: "bearer",
+      });
+    
+    const profile = await api.request({
+        url: `	https://api.spotify.com/v1/users/${userTarget}`,
+        method: "get",
+        authType: "bearer",
+      });
+    
+        
+    
+        let spotify_profile = {
+            method: "GET",
+              headers: {
+              "Accept" : "application/json",
+              "Content-Type" : "application/json",
+              "Authorization" : `${me.config.headers.Authorization} `
+              }
+            }
+        
+            const request = require('request')
+          request(`	https://api.spotify.com/v1/users/${userTarget}`, spotify_profile, function(e, r){
+            
+
+                
+                client.action(channel, `${userTarget}'s Spotify profile: ${profile.spotify} `)
+              })
+            }
+          
+    
 
 
 });
