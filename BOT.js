@@ -1883,6 +1883,8 @@ if (message.toLowerCase().startsWith("'test")) {
 
     const request = require('request');
 
+    let channelTarget = channel.replace("#", "");
+
 const options = {
   method: 'GET',
   url: `https://emotes.adamcy.pl/v1/channel/${channelTarget}/emotes/7tv.bttv.ffz`,
