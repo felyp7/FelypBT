@@ -1881,7 +1881,7 @@ console.log(me.config.headers.Authorization);
 
 if (message.toLowerCase().startsWith("'test")) {
 
-    const SevenTV = require("/lib");
+    const SevenTV = require("node_modules/qs/lib");
     const api = SevenTV();
     
     async function test () {
