@@ -1881,20 +1881,15 @@ console.log(me.config.headers.Authorization);
 
 if (message.toLowerCase().startsWith("'test")) {
 
-    const request = require('request');
+    const SevenTV = require("../lib");
+    const api = SevenTV();
+    
+    async function test () {
+        const emotes = await api.fetchUserEmotes("veryracc");
+        console.log(emotes); // Returns array of Emote (Class)
+    }
+};
 
-    const options = {
-      method: 'GET',
-      url: 'https://stoplight.io/mocks/adiq/temotes/32656821/v1/channel/veryracc/emotes/7tv.bttv.ffz.twitch',
-      headers: {'Content-Type': 'application/json'}
-    };
-    
-    request(options, function (error, response, body) {
-      if (error) throw new Error(error);
-    
-      console.log(body);
-});
-}
         
          
 
