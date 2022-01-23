@@ -1892,7 +1892,7 @@ const options = {
 request(options, function (error, response, body) {
   if (error) throw new Error(error);
 
-  console.log(body[0].name);
+  console.log(body[1].name);
 });
 }
 
