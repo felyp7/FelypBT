@@ -1894,7 +1894,7 @@ if (message.toLowerCase().startsWith("'test")) {
     
     let data = JSON.parse(body)
 
-      console.log(data[0]);
+      console.log(data[-1]);
     });
 }
 
