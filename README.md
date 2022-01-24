@@ -71,4 +71,7 @@
  | modlookup |  | Link to site where you can see where is the user mod/vip | user
  | bruh |  | Bruh | user
  | broadcaster |  | Pings broadcaster | user
- 
+ | song |  | Currenly playing song on spotify | Developer
+ | allemotes |  | Types every third party thing emotes and sub emotes | user
+ | setgame |  | Change game | Developer
+ | settitle |  | Change title | Developer
