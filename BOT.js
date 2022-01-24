@@ -17,7 +17,7 @@ const client = new tmi.Client({
         username: process.env.username,
         password: process.env.password
     },
-    channels: ['veryracc']
+    channels: ['veryracc', 'xqcs_desk_garbage']
 });
 const got = require('got');
 
