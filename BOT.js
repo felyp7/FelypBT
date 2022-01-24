@@ -1894,7 +1894,7 @@ console.log(`${emotes.push(e.name)}`)
 }
 
         
-if (message.content.includes('TriHard')) {
+if (message.content === 'TriHard') {
     
     client.action(channel, 'TriHard')
 }
