@@ -1883,19 +1883,19 @@ if (message.toLowerCase().startsWith("'test")) {
 
     const request = require('request');
 
-const options = {
-  method: 'GET',
-  url: 'https://api.7tv.app/v2/users/veryracc/emotes',
-  headers: {'Content-Type': 'application/json'}
-};
+    const options = {
+      method: 'GET',
+      url: 'https://emotes.adamcy.pl/v1/channel/veryracc/emotes/7tv.bttv.ffz.twitch',
+      headers: {'Content-Type': 'application/json'}
+    };
+    
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error);
+    
+    let data = JSON.parse(response.body)
 
-request(options, function (error, response, body) {
-  if (error) throw new Error(error);
-
-let data = JSON.parse(response.body)
-
-  console.log(data.every.name);
-});
+      console.log(data);
+    });
 }
 
         
