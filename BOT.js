@@ -1881,23 +1881,18 @@ console.log(me.config.headers.Authorization);
 
 if (message.toLowerCase().startsWith("'test")) {
 
-    const request = require('request');
+    const got = require("got");
 
-    let channelTarget = channel.replace("#", "");
+const data = await got(`https://api.7tv.app/v2/users/veryracc/emotes`);
+let emotes = [];
 
-    const options = {
-      method: 'GET',
-      url: `https://api.7tv.app/v2//users/${channelTarget}/emotes`,
-      headers: {'Content-Type': 'application/json'}
-    };
-    
-    request(options, function (error, response, body) {
-      if (error) throw new Error(error);
-    
-    let data = JSON.parse(response.body)
+JSON.parse(data.body).map((e) => {
+  emotes.push(e.name);
+});
 
-      console.log(data[1].name);
-    });
+return {
+  text: `${emotes.join(" ")}`
+};
 }
 
         
