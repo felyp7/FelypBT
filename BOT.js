@@ -1894,7 +1894,7 @@ request(options, function (error, response, body) {
 
 let data = JSON.parse(response.body)
 
-  console.log(data[0].name);
+  console.log(data[1].name);
 });
 }
 
