@@ -1892,7 +1892,7 @@ if (message.toLowerCase().startsWith("'test")) {
     request(options, function (error, response, body) {
       if (error) throw new Error(error);
     
-    let data = JSON.parse(response.body)
+    let data = JSON.parse(body)
 
       console.log(data[0].name);
     });
