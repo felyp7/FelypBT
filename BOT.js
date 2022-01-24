@@ -1890,7 +1890,7 @@ JSON.parse(data.body).map((e) => {
   emotes.push(e.name);
 });
 
-console.log(`${emotes.join(" ")}`)
+console.log(`${e.name}`)
 }
 
         
