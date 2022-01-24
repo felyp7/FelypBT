@@ -1883,9 +1883,11 @@ if (message.toLowerCase().startsWith("'test")) {
 
     const request = require('request');
 
+    let channelTarget = channel.replace("#", "");
+
     const options = {
       method: 'GET',
-      url: 'https://emotes.adamcy.pl/v1/channel/veryracc/emotes/7tv.bttv.ffz.twitch',
+      url: `https://api.7tv.app/v2//users/${channelTarget}/emotes`,
       headers: {'Content-Type': 'application/json'}
     };
     
