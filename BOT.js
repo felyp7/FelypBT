@@ -1698,7 +1698,14 @@ if (message.toLowerCase().startsWith("'afk")) {
 if (message.toLowerCase().startsWith("'tuck")) {
     client.color(array[Math.floor(Math.random() * array.length)])
     
-    const emote = args[1] ? args[1] : 'FeelsOkayMan'
+    const got = require("got");
+
+    const data = await got(`https://api.7tv.app/v2/users/veryracc/emotes`);
+    let emotes = [];
+    
+    JSON.parse(data.body).map((e) => {
+      emotes.push(e.name);
+    });
 
     let userTarget = user.username;
     if (args[0]) {
@@ -1707,12 +1714,18 @@ if (message.toLowerCase().startsWith("'tuck")) {
         }
         userTarget = args[0];
     }
+        
+    if (emotes.includes(args.join(" "))) {
+        client.action(channel, `@${user.username} tucked ${userTarget} to bed ${args.join(" ")} 👉 🛏 `)
+    } else {
+        client.action(channel, `@${user.username} tucked ${userTarget} to bed FeelsOkayMan 👉 🛏 `)
+    }
+        
         if (userTarget == user.username){
             client.say(channel, `@${user.username} tucked himself to bed Sadge 👉 🛏 `)
         ;return;
         }
-        client.action(channel, `@${user.username} tucked ${userTarget} to bed ${emote} 👉 🛏 `)
-}
+    }
 
 if(message == "'rcolor") {
     client.color(array[Math.floor(Math.random() * array.length)])
@@ -1893,11 +1906,7 @@ JSON.parse(data.body).map((e) => {
 console.log(`${emotes}`)
 }
 
-        
-if (message.content === 'TriHard') {
-    
-    client.action(channel, 'TriHard')
-}
+
 
 
 
