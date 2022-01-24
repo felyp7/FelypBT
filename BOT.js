@@ -1700,7 +1700,9 @@ if (message.toLowerCase().startsWith("'tuck")) {
     
     const got = require("got");
 
-    const data = await got(`https://api.7tv.app/v2/users/veryracc/emotes`);
+    let channelTarget = channel.replace("#", "");
+    
+    const data = await got(`https://api.7tv.app/v2/users/${channelTarget}/emotes`);
     let emotes = [];
     
     JSON.parse(data.body).map((e) => {
