@@ -1898,7 +1898,7 @@ if (message.toLowerCase().startsWith("'test")) {
 
     const got = require("got");
 
-const data = await got(`https://api.betterttv.net/3/cached/users/twitch/162760707`);
+const data = await got(`https://emotes.adamcy.pl/v1/channel/veryracc/emotes/7tv.bttv.ffz.twitch`);
 let emotes = [];
 
 JSON.parse(data.body).map((e) => {
