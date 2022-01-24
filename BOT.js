@@ -1861,7 +1861,7 @@ client.action(channel, `game changed to "${gameID.data[0].name}"`)
 
 
 if (message.toLowerCase().startsWith("'song")) {
-
+    if (!block) {
 const SpotifyWebApi = require('spotify-web-api-node');
 const spotify = require('spotify-token');
  
@@ -1910,11 +1910,16 @@ console.log(me.config.headers.Authorization);
           }
         } 
     })      
+    block = true;
+    setTimeout(() => {
+    block = false;
+}, (5 * 1000));
+}   
 }
 
 
-if (message.toLowerCase().startsWith("'test")) {
-
+if (message.toLowerCase().startsWith("'allemotes")) {
+    if (!block) {
     let channelTarget = channel.replace("#", "");
 
     const got = require("got");
@@ -1927,8 +1932,12 @@ JSON.parse(data.body).map((e) => {
 });
 
 client.say(channel, `${emotes.join(" ")}`)
+        block = true;
+        setTimeout(() => {
+        block = false;
+    }, (5 * 1000));
+}   
 }
-
 
 
 
