@@ -299,13 +299,6 @@ client.on("message", async (channel, user, message, self) => {
     }
 
 
-
-    if (emotes.includes(args[1])) {
-        client.action(channel, `@${user.username} tucked ${userTarget} to bed ${args[1]} 👉 🛏 `)
-    } else {
-        client.action(channel, `@${user.username} tucked ${userTarget} to bed FeelsOkayMan 👉 🛏 `)
-    }
-
 if (message.toLowerCase().startsWith("'ping") && command === 'ping') {  
     if (!block) {
     const getUptime = new Date().getTime() - Date.parse(runTime)
