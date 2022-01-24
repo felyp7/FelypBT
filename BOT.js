@@ -1753,8 +1753,9 @@ if(message == "'rcolor") {
     for(var i = 0; i < 3; i++) {
         var sub = Math.floor(Math.random() * 256).toString(16);
         color += (sub.length == 1 ? "0" + sub : sub);
-        const colorName = await got(`https://www.thecolorapi.com/id?hex=${color.replace('#', '')}`).json();
     }
+    const colorName = await got(`https://www.thecolorapi.com/id?hex=${color.replace('#', '')}`).json();
+    
     client.action(channel, `${colorName}`, "#" + color);
     block = true;
     setTimeout(() => {
