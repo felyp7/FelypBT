@@ -1926,7 +1926,7 @@ JSON.parse(data.body).map((e) => {
   emotes.push(e.code);
 });
 
-console.action(channel, `${emotes.join(" ")}`)
+client.action(channel, `${emotes.join(" ")}`)
 }
 
 
