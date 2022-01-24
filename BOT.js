@@ -318,8 +318,8 @@ JSON.parse(data.body).map((e) => {
         client.ping(channel).then(function (data) {
             console.log(data);
         
-        if (emotes.includes(args[1])) {
-            client.action(channel, `${args[1]} 🏓 Pong! Latency is ${Math.floor(Math.round(data * 1000))}ms | Bot Uptime: ${botUptime} | RAM: ${Math.round(process.memoryUsage().rss / 1024 / 1024)}mb | Channels: ${client.getChannels().length} `)
+        if (emotes.includes(args[0])) {
+            client.action(channel, `${args[0]} 🏓 Pong! Latency is ${Math.floor(Math.round(data * 1000))}ms | Bot Uptime: ${botUptime} | RAM: ${Math.round(process.memoryUsage().rss / 1024 / 1024)}mb | Channels: ${client.getChannels().length} `)
         } else {
             client.action(channel, `FeelsDankMan 🏓 Pong! Latency is ${Math.floor(Math.round(data * 1000))}ms | Bot Uptime: ${botUptime} | RAM: ${Math.round(process.memoryUsage().rss / 1024 / 1024)}mb | Channels: ${client.getChannels().length} `)
         }
