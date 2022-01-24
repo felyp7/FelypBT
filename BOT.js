@@ -1828,7 +1828,14 @@ if (channel === '#pajlada') {
 
         if (isModUp) {
             if (message.toLocaleLowerCase().startsWith("'settitle")) {
-        let patch = await got.patch('https://api.twitch.tv/helix/channels?broadcaster_id=162760707 ', {
+                const userCheck = await got(`https://api.ivr.fi/twitch/resolve/${username}`,{
+                    responseType: 'json',
+                    throwHttpErrors: false
+                })
+
+                let id = userCheck.body.id
+
+        let patch = await got.patch(`https://api.twitch.tv/helix/channels?broadcaster_id=${id}`, {
             headers: { "Authorization": `Bearer cnqgpj0xa9gtnmawlb83cjeuddphma`, "Client-ID": `xszg16qk7z67cirz37vu1cpdz6qtn0`, "Content-type": 'application/json' },
             body: JSON.stringify({ "title": `${args.join(" ")}` })
         });
@@ -1841,6 +1848,13 @@ if (isModUp) {
     if (message.toLocaleLowerCase().startsWith("'setgame")) {
 const game = args.join(" ")
 
+const userCheck = await got(`https://api.ivr.fi/twitch/resolve/${username}`,{
+                    responseType: 'json',
+                    throwHttpErrors: false
+                })
+
+let id = userCheck.body.id
+
 const getID = await got(`https://api.twitch.tv/helix/games?name=${game}`, {
   headers: { "Authorization": `Bearer ${process.env.app_oauth}`, "Client-ID": `${process.env.client_id}` },
   responseType: "json"
@@ -1852,7 +1866,7 @@ if (gameID.data.length == 0) {
 ;return;
 }
 
-let patch = await got.patch(`https://api.twitch.tv/helix/channels?broadcaster_id=162760707`, { headers: { "Authorization": `Bearer ${process.env.app_oauth}`, "Client-ID": `${process.env.client_id}`, "Content-type": 'application/json' }, body: JSON.stringify({ "game_id": `${gameID.data[0].id}` }) })
+let patch = await got.patch(`https://api.twitch.tv/helix/channels?broadcaster_id=${id}`, { headers: { "Authorization": `Bearer ${process.env.app_oauth}`, "Client-ID": `${process.env.client_id}`, "Content-type": 'application/json' }, body: JSON.stringify({ "game_id": `${gameID.data[0].id}` }) })
 
 client.action(channel, `game changed to "${gameID.data[0].name}"`)
 }
