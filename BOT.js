@@ -1828,7 +1828,10 @@ if (channel === '#pajlada') {
 
         if (isModUp) {
             if (message.toLocaleLowerCase().startsWith("'settitle")) {
-                const userCheck = await got(`https://api.ivr.fi/twitch/resolve/${username}`,{
+                
+                let channelTarget = channel.replace("#", "");
+
+                const userCheck = await got(`https://api.ivr.fi/twitch/resolve/${channelTarget}`,{
                     responseType: 'json',
                     throwHttpErrors: false
                 })
@@ -1848,7 +1851,9 @@ if (isModUp) {
     if (message.toLocaleLowerCase().startsWith("'setgame")) {
 const game = args.join(" ")
 
-const userCheck = await got(`https://api.ivr.fi/twitch/resolve/${username}`,{
+let channelTarget = channel.replace("#", "");
+
+const userCheck = await got(`https://api.ivr.fi/twitch/resolve/${channelTarget}`,{
                     responseType: 'json',
                     throwHttpErrors: false
                 })
