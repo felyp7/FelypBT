@@ -1901,7 +1901,7 @@ if (message.toLowerCase().startsWith("'test")) {
 const data = await got(`https://api.betterttv.net/3/cached/users/twitch/162760707`);
 let emotes = [];
 
-JSON.parse(data.body[1]).map((e) => {
+JSON.parse(data.body.channelEmotes).map((e) => {
   emotes.push(e.code);
 });
 
