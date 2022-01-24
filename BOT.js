@@ -1697,8 +1697,6 @@ if (message.toLowerCase().startsWith("'afk")) {
 
 if (message.toLowerCase().startsWith("'tuck")) {
     client.color(array[Math.floor(Math.random() * array.length)])
-    
-    const got = require("got");
 
     let channelTarget = channel.replace("#", "");
 
