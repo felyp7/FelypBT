@@ -1715,8 +1715,8 @@ if (message.toLowerCase().startsWith("'tuck")) {
         userTarget = args[0];
     }
         
-    if (emotes.includes(args.join(" "))) {
-        client.action(channel, `@${user.username} tucked ${userTarget} to bed ${args.join(" ")} 👉 🛏 `)
+    if (emotes.includes(args[1])) {
+        client.action(channel, `@${user.username} tucked ${userTarget} to bed ${args[1]} 👉 🛏 `)
     } else {
         client.action(channel, `@${user.username} tucked ${userTarget} to bed FeelsOkayMan 👉 🛏 `)
     }
