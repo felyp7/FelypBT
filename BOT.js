@@ -1960,6 +1960,8 @@ client.say(channel, `${emotes.join(" ")}`)
 
 if (message === "'test") {
     
+    let channelTarget = channel.replace("#", "");
+
     const userCheck = await got(`https://api.ivr.fi/twitch/resolve/${channelTarget}`,{
                     responseType: 'json',
                     throwHttpErrors: false
