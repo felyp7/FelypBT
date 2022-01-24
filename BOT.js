@@ -1702,12 +1702,14 @@ if (message.toLowerCase().startsWith("'tuck")) {
 
     let channelTarget = channel.replace("#", "");
 
-    const data = await got(`https://api.7tv.app/v2/users/${channelTarget}/emotes`);
-    let emotes = [];
-    
-    JSON.parse(data.body).map((e) => {
-      emotes.push(e.name);
-    });
+    const got = require("got");
+
+const data = await got(`https://emotes.adamcy.pl/v1/channel/${channelTarget}/emotes/7tv.bttv.ffz.twitch`);
+let emotes = [];
+
+JSON.parse(data.body).map((e) => {
+  emotes.push(e.code);
+});
 
     let userTarget = user.username;
     if (args[0]) {
@@ -1896,9 +1898,11 @@ console.log(me.config.headers.Authorization);
 
 if (message.toLowerCase().startsWith("'test")) {
 
+    let channelTarget = channel.replace("#", "");
+
     const got = require("got");
 
-const data = await got(`https://emotes.adamcy.pl/v1/channel/veryracc/emotes/7tv.bttv.ffz.twitch`);
+const data = await got(`https://emotes.adamcy.pl/v1/channel/${channelTarget}/emotes/7tv.bttv.ffz.twitch`);
 let emotes = [];
 
 JSON.parse(data.body).map((e) => {
