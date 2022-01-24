@@ -1755,8 +1755,8 @@ if(message == "'rcolor") {
         color += (sub.length == 1 ? "0" + sub : sub);
     }
     const colorName = await got(`https://www.thecolorapi.com/id?hex=${color.replace('#', '')}`).json();
-    
-    client.action(channel, `${colorName}`, "#" + color);
+
+    client.action(channel, `${colorName.name.value}`, "#" + color);
     block = true;
     setTimeout(() => {
         block = false;
