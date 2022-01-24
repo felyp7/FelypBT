@@ -298,14 +298,38 @@ client.on("message", async (channel, user, message, self) => {
         }
     }
 
+
+
+    if (emotes.includes(args[1])) {
+        client.action(channel, `@${user.username} tucked ${userTarget} to bed ${args[1]} 👉 🛏 `)
+    } else {
+        client.action(channel, `@${user.username} tucked ${userTarget} to bed FeelsOkayMan 👉 🛏 `)
+    }
+
 if (message.toLowerCase().startsWith("'ping") && command === 'ping') {  
     if (!block) {
     const getUptime = new Date().getTime() - Date.parse(runTime)
     const botUptime = humanizeDuration(getUptime, { round: true })
+    
+    let channelTarget = channel.replace("#", "");
+
+    const got = require("got");
+
+const data = await got(`https://emotes.adamcy.pl/v1/channel/${channelTarget}/emotes/7tv.bttv.ffz.twitch`);
+let emotes = [];
+
+JSON.parse(data.body).map((e) => {
+  emotes.push(e.code);
+});
     client.color(array[Math.floor(Math.random() * array.length)])
         client.ping(channel).then(function (data) {
             console.log(data);
+        
+        if (emotes.includes(args[1])) {
+            client.action(channel, `${args[1]} 🏓 Pong! Latency is ${Math.floor(Math.round(data * 1000))}ms | Bot Uptime: ${botUptime} | RAM: ${Math.round(process.memoryUsage().rss / 1024 / 1024)}mb | Channels: ${client.getChannels().length} `)
+        } else {
             client.action(channel, `FeelsDankMan 🏓 Pong! Latency is ${Math.floor(Math.round(data * 1000))}ms | Bot Uptime: ${botUptime} | RAM: ${Math.round(process.memoryUsage().rss / 1024 / 1024)}mb | Channels: ${client.getChannels().length} `)
+        }
             block = true;
             setTimeout(() => {
                 block = false;
