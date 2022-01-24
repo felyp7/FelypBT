@@ -1958,8 +1958,17 @@ client.say(channel, `${emotes.join(" ")}`)
 }   
 }
 
+if (message === "'test") {
+    
+    const userCheck = await got(`https://api.ivr.fi/twitch/resolve/${channelTarget}`,{
+                    responseType: 'json',
+                    throwHttpErrors: false
+                })
 
-
+                let id = userCheck.body.id
+    
+    client.action(channel, id)
+}
 
 });
 
