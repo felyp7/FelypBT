@@ -995,7 +995,7 @@ if(isModUp) {
 
             const userFirstMessage = userData.message
             const userFirstMessageTime = userData.time
-           
+            const error = userData.status
 
             const firstMessage1 = await got(`https://api.paauulli.me/logs/firstmessage/${channelTarget}/${userTarget}`,{
                 responseType: 'json',
@@ -1005,14 +1005,14 @@ if(isModUp) {
 
             const userFirstMessage1 = userData1.text
             const userFirstMessageTime1 = userData1.timestamp
+            const error1 = userData1.statusCode
 
-
-                if (!userFirstMessage) {
+                if (error) {
                     client.action(channel, `${channelTarget}, ${userFirstMessage1} (${userFirstMessageTime1}) `)
                 ;return;
                 }
 
-                if (!userFirstMessage1 && !userFirstMessage) {
+                if (error && error1) {
                     client.action(channel, 'Channel is not tracked FeelsBadMan')
                 ;return;
                 }
