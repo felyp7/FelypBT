@@ -1007,6 +1007,11 @@ if(isModUp) {
             const userFirstMessage1 = userData1.text
             const userFirstMessageTime1 = userData1.timestamp
 
+                if(!userFirstMessage1){
+                    client.action(channel, 'Channel is not tracked FeelsBadMan')
+                    ;return;
+                }
+
                 client.action(channel, `${channelTarget}, ${userFirstMessage1} (${userFirstMessageTime1}) `)
                 ;return;
             }
