@@ -1074,8 +1074,6 @@ if(isModUp) {
                     client.action(channel, `${channelTarget}, ${userlastMessage1} (${userlastMessageTime1}) `)
                     ;return;
                 }
-                ;return;
-            }    
 
                 client.action(channel, `${channelTarget}, ${userlastMessage} (${userlastMessageTime}) `)
             block = true;
@@ -1083,7 +1081,7 @@ if(isModUp) {
                 block = false;
             }, (5 * 1000));
         }
-    
+    }
 
     if (message.toLowerCase().startsWith("'firstmessage2") || message.toLowerCase().startsWith("'fm2")) {
         client.color(array[Math.floor(Math.random() * array.length)])
