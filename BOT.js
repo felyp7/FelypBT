@@ -1797,13 +1797,6 @@ console.log(me.config.headers.Authorization);
     
         const request = require('request')
       request(`https://api.spotify.com/v1/me/player/currently-playing`, spotify_song, function(e, r){
-        if(e){
-          client.say(channel, `${user.username} Error on getting not playing`)
-          console.log(`>> ERROR ${e}`)
-        } else {
-          if(r.body.length < 60){
-            client.say(channel, `${user.username} Nothing playing`)
-          } else {
             let dat = JSON.parse(r.body)
             
             const format = require('format-duration')
@@ -1813,19 +1806,19 @@ console.log(me.config.headers.Authorization);
             const paused = dat.is_playing
 
             if (dat.is_playing ==  false) {
-                client.action(channel, 'asd')
+                client.action(channel, "Nothing is playing on VeryRacc's spotify")
                 ;return;
             }
 
             client.action(channel, `VeryRacc is currently playing ${dat.item.name} by ${dat.item.album.artists[0].name} ▶ [${progress_ms}/${duration_ms}]`)
-          }
-        } 
-    })      
+          })
+        
+          
     block = true;
     setTimeout(() => {
     block = false;
 }, (5 * 1000));
-}   
+}
 }
 
 
