@@ -963,7 +963,7 @@ if(isModUp) {
         }
     }
 
-    if (message.toLowerCase().startsWith("'firstmessage1") || message.toLowerCase().startsWith("'fm1")) {
+    if (message.toLowerCase().startsWith("'firstmessage") || message.toLowerCase().startsWith("'fm")) {
         client.color(array[Math.floor(Math.random() * array.length)])
         if (!block) {
     
@@ -1024,7 +1024,7 @@ if(isModUp) {
         }
     }
 
-    if (message.toLowerCase().startsWith("'lastmessage1") || message.toLowerCase().startsWith("'lm1")) {
+    if (message.toLowerCase().startsWith("'lastmessage") || message.toLowerCase().startsWith("'lm")) {
         client.color(array[Math.floor(Math.random() * array.length)])
         if (!block) {
     
@@ -1057,7 +1057,24 @@ if(isModUp) {
             const userlastMessage = userData.message
             const userlastMessageTime = userData.time
             if (!userlastMessage) {
-                client.action(channel, "Channel isn't tracked.")
+                if(!userFirstMessage) {
+                    const lastMessage1 = await got(`https://api.paauulli.me/logs/lastmessage/${channelTarget}/${userTarget}`,{
+                    responseType: 'json',
+                    throwHttpErrors: false
+                })
+                const userData1 = lastMessage1.body
+    
+                const userlastMessage1 = userData1.text
+                const userlastMessageTime1 = userData1.timestamp
+    
+                    if(!userlastMessage1){
+                        client.action(channel, 'Channel is not tracked FeelsBadMan')
+                        ;return;
+                    }
+    
+                    client.action(channel, `${channelTarget}, ${userlastMessage1} (${userlastMessageTime1}) `)
+                    ;return;
+                }
                 ;return;
             }    
 
