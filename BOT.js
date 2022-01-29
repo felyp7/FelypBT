@@ -1812,10 +1812,8 @@ console.log(me.config.headers.Authorization);
             const duration_ms = format(dat.item.duration_ms)
             const paused = dat.is_playing
 
-            if(paused === 'false'){
-                client.action(channel, `VeryRacc is not playing anything`)
-                ;return;
-            }
+            console.log(paused)
+
             client.action(channel, `VeryRacc is currently playing ${dat.item.name} by ${dat.item.album.artists[0].name} ▶ [${progress_ms}/${duration_ms}]`)
           }
         } 
