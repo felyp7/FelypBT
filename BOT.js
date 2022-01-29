@@ -1067,7 +1067,6 @@ if(isModUp) {
                 const userlastMessageTime1 = userData1.timestamp
     
                     if(!userlastMessage1){
-                        client.action(channel, 'Channel is not tracked FeelsBadMan')
                         ;return;
                     }
     
