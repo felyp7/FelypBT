@@ -1012,7 +1012,7 @@ if(isModUp) {
                 ;return;
                 }
 
-                if (!userFirstMessage1) {
+                if (!userFirstMessage1 && !userFirstMessage) {
                     client.action(channel, 'Channel is not tracked FeelsBadMan')
                 ;return;
                 }
