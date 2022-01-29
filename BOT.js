@@ -17,7 +17,7 @@ const client = new tmi.Client({
         username: process.env.username,
         password: process.env.password
     },
-    channels: ['xqcs_desk_garbage', 'Fookstee', 'florian_2807', 'veryracc', 'xPatrck', 'masenka12', 'lordevid', 'Sneeeze_', 'kawanpls', 'turtoise', 'anniiikaa', 'pajlada']
+    channels: ['xqcs_desk_garbage']
 });
 const got = require('got');
 
@@ -996,7 +996,16 @@ if(isModUp) {
             const userFirstMessage = userData.message
             const userFirstMessageTime = userData.time
             if (!userFirstMessage) {
-                client.action(channel, "Channel isn't tracked.")
+                let firstMessage = await got(`https://api.paauulli.me/logs/firstmessage/${channelTarget}/${userTarget}`,{
+                    responseType: 'json',
+                    throwHttpErrors: false
+                })
+                let userData = firstMessage.body
+    
+                let userFirstMessage = userData.text
+                let userFirstMessageTime = userData.timestamp
+                
+                client.action(channel, `${channelTarget}, ${userFirstMessage} (${userFirstMessageTime}) `)
                 ;return;
             }    
 
