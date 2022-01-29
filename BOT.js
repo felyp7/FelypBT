@@ -996,16 +996,16 @@ if(isModUp) {
             const userFirstMessage = userData.message
             const userFirstMessageTime = userData.time
             if (!userFirstMessage) {
-                const firstMessage = await got(`https://api.paauulli.me/logs/firstmessage/${channelTarget}/${userTarget}`,{
+                const firstMessage1 = await got(`https://api.paauulli.me/logs/firstmessage/${channelTarget}/${userTarget}`,{
                     responseType: 'json',
                     throwHttpErrors: false
                 })
-                const userData = firstMessage.body
+                const userData1 = firstMessage1.body
     
-                const userFirstMessage = userData.text
-                const userFirstMessageTime = userData.timestamp
+                const userFirstMessage1 = userData1.text
+                const userFirstMessageTime1 = userData1.timestamp
                 
-                client.action(channel, `${channelTarget}, ${userFirstMessage} (${userFirstMessageTime}) `)
+                client.action(channel, `${channelTarget}, ${userFirstMessage1} (${userFirstMessageTime1}) `)
                 ;return;
             }    
 
