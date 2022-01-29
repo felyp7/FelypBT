@@ -1057,7 +1057,6 @@ if(isModUp) {
             const userlastMessage = userData.message
             const userlastMessageTime = userData.time
             if (!userlastMessage) {
-                if(!userFirstMessage) {
                     const lastMessage1 = await got(`https://api.paauulli.me/logs/lastmessage/${channelTarget}/${userTarget}`,{
                     responseType: 'json',
                     throwHttpErrors: false
@@ -1084,7 +1083,7 @@ if(isModUp) {
                 block = false;
             }, (5 * 1000));
         }
-    }
+    
 
     if (message.toLowerCase().startsWith("'firstmessage2") || message.toLowerCase().startsWith("'fm2")) {
         client.color(array[Math.floor(Math.random() * array.length)])
