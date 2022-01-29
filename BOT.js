@@ -1012,6 +1012,11 @@ if(isModUp) {
                 ;return;
                 }
 
+                if (!userFirstMessage1) {
+                    client.action(channel, 'Channel is not tracked FeelsBadMan')
+                ;return;
+                }
+
                 client.action(channel, `${channelTarget}, ${userFirstMessage} (${userFirstMessageTime}) `)
             block = true;
             setTimeout(() => {
