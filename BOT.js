@@ -1812,7 +1812,7 @@ console.log(me.config.headers.Authorization);
             const duration_ms = format(dat.item.duration_ms)
             const paused = dat.is_playing
 
-            if (paused == 'false') {
+            if (dat.is_playing == 'false') {
                 client.action(channel, 'asd')
                 ;return;
             }
