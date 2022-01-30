@@ -734,7 +734,7 @@ if(isModUp) {
         client.color(array[Math.floor(Math.random() * array.length)])
         if (!block) {
             client.color("Red")
-            client.action(channel, `@${user.username} https://i.nuuls.com/Jiwv3.png , https://i.nuuls.com/PDVFk.png , https://i.nuuls.com/gRnsh.png , https://i.nuuls.com/N7F5g.png , https://i.nuuls.com/L9l4Y.png , https://i.nuuls.com/8MqtH.png , https://i.nuuls.com/q81Qw.png , `)
+            client.action(channel, `@${user.username} https://i.nuuls.com/Jiwv3.png , https://i.nuuls.com/4pmuF.png , https://i.nuuls.com/80WHA.png , https://i.nuuls.com/o3YH3.png , https://i.nuuls.com/qvNbP.png , https://i.nuuls.com/Qasua.png , https://i.nuuls.com/sU952.png , https://i.nuuls.com/PDVFk.png , https://i.nuuls.com/gRnsh.png , https://i.nuuls.com/N7F5g.png , https://i.nuuls.com/L9l4Y.png , https://i.nuuls.com/8MqtH.png , https://i.nuuls.com/q81Qw.png , `)
             block = true;
             setTimeout(() => {
                 block = false;
