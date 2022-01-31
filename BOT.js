@@ -69,12 +69,6 @@ client.on("message", async (channel, user, message, self) => {
     let isBroadcasterUp = isBroadcaster;
 
 
-    const git = require('git-last-commit');
-
-    git.getLastCommit(function(err, commit) {
-
-    console.log(commit);
-    });
 
 
 if (user.username === 'juicerb0t') {
@@ -301,6 +295,13 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
     const getUptime = new Date().getTime() - Date.parse(runTime)
     const botUptime = humanizeDuration(getUptime, { round: true })
     
+    const git = require('git-last-commit');
+
+    git.getLastCommit(function(err, commit) {
+
+    console.log(commit);
+    
+
     let channelTarget = channel.replace("#", "");
 
     const got = require("got");
@@ -323,9 +324,12 @@ JSON.parse(data.body).map((e) => {
             setTimeout(() => {
                 block = false;
                 }, (5 * 1000));
+            });
             })
         }
-    }   
+    }
+
+   
 
     if (message == "'pingpong") {
         if (!block) {
