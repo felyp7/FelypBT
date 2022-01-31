@@ -295,11 +295,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
     const getUptime = new Date().getTime() - Date.parse(runTime)
     const botUptime = humanizeDuration(getUptime, { round: true })
     
-    const git = require('git-last-commit');
 
-    git.getLastCommit(function(err, commit) {
-
-    console.log(commit);
     
 
     let channelTarget = channel.replace("#", "");
@@ -318,13 +314,12 @@ JSON.parse(data.body).map((e) => {
         if (emotes.includes(args[0])) {
             client.action(channel, `${args[0]} 🏓 Pong! Latency is ${Math.floor(Math.round(data * 1000))}ms | Bot Uptime: ${botUptime} | RAM: ${Math.round(process.memoryUsage().rss / 1024 / 1024)}mb | Channels: ${client.getChannels().length} `)
         } else {
-            client.action(channel, `FeelsDankMan 🏓 Pong! Latency is ${Math.floor(Math.round(data * 1000))}ms | Bot Uptime: ${botUptime} | RAM: ${Math.round(process.memoryUsage().rss / 1024 / 1024)}mb | Channels: ${client.getChannels().length} (${commit.branch}, ${commit.shortHash})`)
+            client.action(channel, `FeelsDankMan 🏓 Pong! Latency is ${Math.floor(Math.round(data * 1000))}ms | Bot Uptime: ${botUptime} | RAM: ${Math.round(process.memoryUsage().rss / 1024 / 1024)}mb | Channels: ${client.getChannels().length}`)
         }
             block = true;
             setTimeout(() => {
                 block = false;
                 }, (5 * 1000));
-            });
             })
         }
     }
