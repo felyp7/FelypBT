@@ -69,6 +69,14 @@ client.on("message", async (channel, user, message, self) => {
     let isBroadcasterUp = isBroadcaster;
 
 
+    const git = require('git-last-commit');
+
+    git.getLastCommit(function(err, commit) {
+
+    console.log(commit);
+    });
+
+
 if (user.username === 'juicerb0t') {
     client.color(array[Math.floor(Math.random() * array.length)])
 }
@@ -309,7 +317,7 @@ JSON.parse(data.body).map((e) => {
         if (emotes.includes(args[0])) {
             client.action(channel, `${args[0]} 🏓 Pong! Latency is ${Math.floor(Math.round(data * 1000))}ms | Bot Uptime: ${botUptime} | RAM: ${Math.round(process.memoryUsage().rss / 1024 / 1024)}mb | Channels: ${client.getChannels().length} `)
         } else {
-            client.action(channel, `FeelsDankMan 🏓 Pong! Latency is ${Math.floor(Math.round(data * 1000))}ms | Bot Uptime: ${botUptime} | RAM: ${Math.round(process.memoryUsage().rss / 1024 / 1024)}mb | Channels: ${client.getChannels().length} `)
+            client.action(channel, `FeelsDankMan 🏓 Pong! Latency is ${Math.floor(Math.round(data * 1000))}ms | Bot Uptime: ${botUptime} | RAM: ${Math.round(process.memoryUsage().rss / 1024 / 1024)}mb | Channels: ${client.getChannels().length} (${commit.branch}, ${commit.shortHash})`)
         }
             block = true;
             setTimeout(() => {
