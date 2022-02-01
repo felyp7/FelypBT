@@ -1778,7 +1778,7 @@ const me = await api.request({
               console.log(`>> ERROR ${e}`)
             } else {
               if(r.body.length < 60){
-                client.say(channel, `${user.username} Nothing playing`)
+                client.say(channel, "Nothing is playing on VeryRacc's spotify")
               } else {
                 let dat = JSON.parse(r.body)
                 
