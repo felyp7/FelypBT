@@ -1390,6 +1390,7 @@ if(isModUp) {
                 const type = data.meta.type
                 const giftedby = data.meta.gift.name
                 const months = data.cumulative.months
+                const anniversary = data.cumulative.remaining
                 const endsin = data.streak.remaining
                 const streak = data.streak.months
 
@@ -1402,17 +1403,17 @@ if(isModUp) {
 
 
                if (type == 'gift'){
-                   client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} cumulative months with tier ${tier} gifted by ${giftedby} and is on ${streak} months streak. Ends in ${endsin} days.`)
+                   client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} cumulative months with tier ${tier} gifted by ${giftedby} and is on ${streak} months streak. Ends in ${endsin} days and next anniversary is in ${anniversary} days.`)
                 ;return;
                 }
 
                 if (type == 'paid'){
-                    client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} cumulative months with tier ${tier} and is on ${streak} months streak. Ends in ${endsin} days.`)
+                    client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} cumulative months with tier ${tier} and is on ${streak} months streak. Ends in ${endsin} days and next anniversary is in ${anniversary} days.`)
                 ;return;
                 }
 
                 if (type == 'prime'){
-                    client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} cumulative months with tier ${tier} and is on ${streak} months streak. Ends in ${remaining} days.`)
+                    client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} cumulative months with tier ${tier} and is on ${streak} months streak. Ends in ${endsin} days and next anniversary is in ${anniversary} days.`)
                 ;return;
                 } 
                 block = true;
