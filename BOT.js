@@ -1386,7 +1386,7 @@ if(isModUp) {
                     throwHttpErrors: false
                 })
 
-                const ban = banCheck.body
+                const ban = JSON.parse(banCheck.body)
 
             const userBan = ban.banned
      
