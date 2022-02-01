@@ -1381,17 +1381,17 @@ if(isModUp) {
                     channelTarget = args[1];
                 }
         
-                const userCheck = await got(`https://api.ivr.fi/twitch/resolve/${userTarget}`,{
+                const banCheck = await got(`https://api.ivr.fi/twitch/resolve/${userTarget}`,{
                     responseType: 'json',
                     throwHttpErrors: false
                 })
 
-                const userData = userCheck.body
+                const ban = banCheck.body
 
-            const userBanned = userData.banned
-            const isbanned = userBanned
+            const userBan = ban.banned
+     
 
-            if (isbanned == 'true'){
+            if (userBan == 'true'){
                 client.action(channel, 'No data found. User is probably banned.')
             ;return;
             }
