@@ -17,7 +17,7 @@ const client = new tmi.Client({
         username: process.env.username,
         password: process.env.password
     },
-    channels: ['xqcs_desk_garbage', 'Fookstee', 'bobthebuilder_98', 'florian_2807', 'veryracc', 'xPatrck', 'masenka12', 'lordevid', 'Sneeeze_', 'kawanpls', 'turtoise', 'anniiikaa', 'pajlada']
+    channels: ['godfelyp1', 'Fookstee', 'bobthebuilder_98', 'florian_2807', 'veryracc', 'xPatrck', 'masenka12', 'lordevid', 'Sneeeze_', 'kawanpls', 'turtoise', 'anniiikaa', 'pajlada']
 });
 const got = require('got');
 
@@ -58,9 +58,7 @@ client.on("message", async (channel, user, message, self) => {
 
     let array = ["Blue", "Coral", "DodgerBlue", "SpringGreen", "YellowGreen", "Green", "OrangeRed", "Red", "GoldenRod", "HotPink", "CadetBlue", "SeaGreen", "Chocolate", "BlueViolet", "Firebrick"]
 
-    if (user.username === 'juicerb0t') {
-        client.color(array[Math.floor(Math.random() * array.length)])
-    }
+
 
     const args = message.slice(1).split(' ')
     const command = args.shift().toLowerCase();
@@ -82,7 +80,7 @@ client.on("message", async (channel, user, message, self) => {
         }
     }
 
-    
+
 if (message.toLowerCase().startsWith("'restart") && user.username === 'juicerb0t' ) {
     process.exit()
 }
