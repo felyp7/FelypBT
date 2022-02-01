@@ -10,7 +10,7 @@ const client = new tmi.Client({
         messagesLogLevel: "info"
     },
     connection: {
-        reconnect: false,
+        reconnect: true,
         secure: true
     },
     identity: {
