@@ -1384,7 +1384,7 @@ if(isModUp) {
                 const subage = await got(`https://api.ivr.fi/twitch/subage/${userTarget}/${channelTarget}`);
                 let data = subage.body
 
-                const tier = data.meta.tier
+                const tier = data.tier
                 const type = data.meta.type
                 const giftedby = data.meta.gift.name
                 const months = data.comulative.months
