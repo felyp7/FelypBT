@@ -1408,16 +1408,34 @@ if(isModUp) {
 
                if (type == 'gift'){
                     const giftedby = data.meta.gift.name
+                    const banned = data.error
+                    
+                    if (banned) {
+                        client.action(channel, `No data found. User is probably banned.`)
+                        ;return;
+                    }
                     client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} cumulative months with tier ${tier} gifted by ${giftedby} and is on ${streak} months streak. Ends in ${endsin} days and next anniversary is in ${anniversary} days.`)
                 ;return;
                 }
 
                 if (type == 'paid'){
+                    const banned = data.error
+                    
+                    if (banned) {
+                        client.action(channel, `No data found. User is probably banned.`)
+                        ;return;
+                    }
                     client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} cumulative months with tier ${tier} and is on ${streak} months streak. Ends in ${endsin} days and next anniversary is in ${anniversary} days.`)
                 ;return;
                 }
 
                 if (type == 'prime'){
+                    const banned = data.error
+                    
+                    if (banned) {
+                        client.action(channel, `No data found. User is probably banned.`)
+                        ;return;
+                    }
                     client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} cumulative months with tier ${tier} and is on ${streak} months streak. Ends in ${endsin} days and next anniversary is in ${anniversary} days.`)
                 ;return;
                 } 
