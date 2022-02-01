@@ -1381,6 +1381,23 @@ if(isModUp) {
                     channelTarget = args[1];
                 }
         
+                const userCheck = await got(`https://api.ivr.fi/twitch/resolve/${userTarget}`,{
+                    responseType: 'json',
+                    throwHttpErrors: false
+                })
+
+                const userData = userCheck.body
+
+            const userBanned = userData.banned
+            const isbanned = userBanned
+
+            if (isbanned == 'true'){
+                client.action(channel, 'No data found. User is probably banned.')
+            ;return;
+            }
+
+
+
                 const subage = await got(`https://api.ivr.fi/twitch/subage/${userTarget}/${channelTarget}`);
                 let data = JSON.parse(subage.body)
 
@@ -1403,16 +1420,9 @@ if(isModUp) {
             const userBanned = userData.banned
             const isbanned = userBanned
 
-                client.action(channel, `${userTarget} Banned: ${isbanned} MODS`)
-
 
                 if (data.subscribed == false){
                     client.action(channel, `${userTarget} isn't subscribed to ${channelTarget}, but used to be subscribed for ${months} months.`)
-                ;return;
-                }
-
-                if (isbanned == 'true'){
-                    client.action(channel, 'No data found. User is probably banned.')
                 ;return;
                 }
 
