@@ -1393,7 +1393,7 @@ if(isModUp) {
                 const endsin = data.streak.remaining
                 const streak = data.streak.months
 
-                console.log(data.meta.tier)
+                
 
 
                 if (data.subscribed == false){
