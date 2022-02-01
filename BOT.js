@@ -1793,7 +1793,7 @@ const me = await api.request({
                 ;return;
             }
 
-            client.action(channel, `VeryRacc is currently playing ${dat.item.name} by ${dat.item.album.artists[0].name} ▶ [${progress_ms}/${duration_ms}]`)
+            client.action(channel, `VeryRacc is currently playing ${dat.item.name} by ${dat.item.album.artists[0].name} ▶ [${progress_ms}/${duration_ms}] ${dat.item.external_urls.spotify}`)
           }
     }
 })
