@@ -58,6 +58,10 @@ client.on("message", async (channel, user, message, self) => {
 
     let array = ["Blue", "Coral", "DodgerBlue", "SpringGreen", "YellowGreen", "Green", "OrangeRed", "Red", "GoldenRod", "HotPink", "CadetBlue", "SeaGreen", "Chocolate", "BlueViolet", "Firebrick"]
 
+    if (user.username === 'juicerb0t') {
+        client.color(array[Math.floor(Math.random() * array.length)])
+    }
+
     const args = message.slice(1).split(' ')
     const command = args.shift().toLowerCase();
     const size = args[1]
@@ -77,12 +81,8 @@ client.on("message", async (channel, user, message, self) => {
             }, (5 * 1000));
         }
     }
+
     
-    if (user.username === 'juicerb0t') {
-        client.color(array[Math.floor(Math.random() * array.length)])
-    }
-
-
 if (message.toLowerCase().startsWith("'restart") && user.username === 'juicerb0t' ) {
     process.exit()
 }
