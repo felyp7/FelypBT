@@ -1391,6 +1391,7 @@ if(isModUp) {
                 const endsin = data.remaining
                 const streak = data.months
 
+                console.log(tier + type + giftedby + months + endsin + streak)
 
                 if (data.error){
                     client.action(channel, `No data found. User is probably banned.`)
