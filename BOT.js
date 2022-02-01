@@ -1395,10 +1395,6 @@ if(isModUp) {
 
                 console.log(data.meta.tier)
 
-                if (!data.cumulative){
-                    client.action(channel, `No data found. User is probably banned.`)
-                ;return;
-                }
 
                 if (data.subscribed == false){
                     client.action(channel, `${userTarget} isn't subscribed to ${channelTarget}, but used to be subscribed for ${months} months.`)
@@ -1406,14 +1402,11 @@ if(isModUp) {
                 }
 
 
+            if (!dat.status){
                if (type == 'gift'){
                     const giftedby = data.meta.gift.name
                     const banned = data.error
-                    
-                    if (banned) {
-                        client.action(channel, `No data found. User is probably banned.`)
-                        ;return;
-                    }
+                
                     client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} cumulative months with tier ${tier} gifted by ${giftedby} and is on ${streak} months streak. Ends in ${endsin} days and next anniversary is in ${anniversary} days.`)
                 ;return;
                 }
@@ -1421,31 +1414,26 @@ if(isModUp) {
                 if (type == 'paid'){
                     const banned = data.error
                     
-                    if (banned) {
-                        client.action(channel, `No data found. User is probably banned.`)
-                        ;return;
-                    }
                     client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} cumulative months with tier ${tier} and is on ${streak} months streak. Ends in ${endsin} days and next anniversary is in ${anniversary} days.`)
                 ;return;
                 }
 
                 if (type == 'prime'){
                     const banned = data.error
-                    
-                    if (banned) {
-                        client.action(channel, `No data found. User is probably banned.`)
-                        ;return;
-                    }
+  
                     client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} cumulative months with tier ${tier} and is on ${streak} months streak. Ends in ${endsin} days and next anniversary is in ${anniversary} days.`)
                 ;return;
-                } 
+                }
+            } else {
+                client.action(channel, `No data found. User is probably banned.`)
+                ;return;
+            }
                 block = true;
                 setTimeout(() => {
                     block = false;
                 }, (5 * 1000));
             }
         }
-
 
 let foodcheck = client.food.get(user['user-id']); 
 if (foodcheck) { 
