@@ -1395,8 +1395,13 @@ if(isModUp) {
 
                 console.log(data.meta.tier)
 
-                if (data.error){
+                if (!data.cumulative){
                     client.action(channel, `No data found. User is probably banned.`)
+                ;return;
+                }
+
+                if (!data.meta){
+                    client.action(channel, `${userTarget} isn't subscribed to ${channelTarget}, but used to be subscribed for ${months} months.`)
                 ;return;
                 }
 
