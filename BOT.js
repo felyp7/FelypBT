@@ -1742,18 +1742,18 @@ client.action(channel, `game changed to "${gameID.data[0].name}"`)
 
 
 if (message.toLowerCase().startsWith("'song")) {
+    if (!block) {
+const SpotifyWebApi = require('spotify-web-api-node');
+const spotify = require('spotify-token');
+ 
+const Updater = require("spotify-oauth-refresher");
+const api = new Updater({ clientId: `${process.env.clientId}`, clientSecret: `${process.env.clientSecret}` });
 
-    const SpotifyWebApi = require('spotify-web-api-node');
-    const spotify = require('spotify-token');
-     
-    const Updater = require("spotify-oauth-refresher");
-    const api = new Updater({ clientId: "f964e03f35654baabcc3fe46177c0122", clientSecret: "e0e5d067e4d1494585b45d233a93f8c9" });
-    
-    api.setAccessToken("BQALSC9ZLyETGjG-JIRnyYp5Tt80bDu_KB7uEpcT70Mjm90iFYgE38hhJ4NmxF_uSMVHhxeJo4PJ08yfhexRMj7CJZMeeXxzLp2eRmsLKyOV6Sv8QAbvohFm2phKDwZoE7cD76b3-Ut5VDDThl88RoXDdDVowLKgpsy1ed0NIQs");
-    api.setRefreshToken("AQDz1gK9cx18q9837mk-lJenYMtYYryvHF1WXr8iwHz_ZDb-z_Gcp-T2ugCdkJoe_0S7Fvxt7j98PuxSnO3Uz9gCFlhlckntwLY5hXm2KYLep9MkXhvsiEFNJl7DkemmRTs");
-    
-    
-    const me = await api.request({
+api.setAccessToken(`${process.env.accessToken}`);
+api.setRefreshToken(`${process.env.refreshToken}`);
+
+
+const me = await api.request({
       url: "https://api.spotify.com/v1/me/player/currently-playing",
       method: "get",
       authType: "bearer",
@@ -1786,13 +1786,20 @@ if (message.toLowerCase().startsWith("'song")) {
     
                 const progress_ms = format(dat.progress_ms)
                 const duration_ms = format(dat.item.duration_ms)
-                
-                client.action(channel, `VeryPogftxQcOnTheToilet is currently playing ${dat.item.name} by ${dat.item.album.artists[0].name} ▶ [${progress_ms}/${duration_ms}]`)
-              }
-            } 
-        })      
-    }
+            const paused = dat.is_playing
 
+            if (dat.is_playing ==  false) {
+                client.action(channel, "Nothing is playing on VeryRacc's spotify")
+                ;return;
+            }
+
+            client.action(channel, `VeryRacc is currently playing ${dat.item.name} by ${dat.item.album.artists[0].name} ▶ [${progress_ms}/${duration_ms}]`)
+          }
+    }
+})
+}
+}
+    
 
 
 if (message.toLowerCase().startsWith("'allemotes")) {
