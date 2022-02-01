@@ -1389,7 +1389,7 @@ if(isModUp) {
                 const tier = data.meta.tier
                 const type = data.meta.type
                 const giftedby = data.meta.name
-                const months = data.comulative.months
+                const months = data.cumulative.months
                 const endsin = data.streak.remaining
                 const streak = data.streak.months
 
