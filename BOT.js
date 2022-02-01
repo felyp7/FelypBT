@@ -1736,7 +1736,7 @@ console.log(me.config.headers.Authorization);
                 ;return;
             }
 
-            client.action(channel, `VeryRacc is currently playing ${dat.item.name} by ${dat.item.album.artists[0].name} ▶ [${progress_ms}/${duration_ms}]`)
+            client.action(channel, `VeryRacc is currently playing ${dat.item.name} by ${dat.item.album.artists[0].name} ▶ [${progress_ms}/${duration_ms}] ${dat.external_urls.spotify}`)
             })
           block = true;
         setTimeout(() => {
