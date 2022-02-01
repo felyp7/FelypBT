@@ -55,10 +55,7 @@
  | brb |  | Counts time when you are going to be right back | User
  | gn |  | Counts time when you are sleeping | User
  | wc |  | Counts time when you are on the toilet | User
- | firstmessage1 | fm1 | Shows your or someone elses first message in exact channel (Using https://logs.ivr.fi/) | user
- | firstmessage2 | fm2 | Shows your or someone elses first message in exact channel (Using https://logs.apulxd.ga/) | user
- | lastmessage1 | lm1 | Shows your or someone elses last message in exact channel (Using https://logs.ivr.fi/) | user
- | lastmessage2 | lm2 | Shows your or someone elses last message in exact channel (Using https://logs.apulxd.ga/) | user
+ | firstmessage | fm | Shows your or someone elses first message in exact channel (Using https://logs.ivr.fi/) | user
  | isbanned |  | Checks if user is banned | User
  | ispartner |  | Checks if user is partner | User
  | isaffiliate |  | Checks if user is affiliate | User
