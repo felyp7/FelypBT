@@ -1781,6 +1781,11 @@ console.log(me.config.headers.Authorization);
             const duration_ms = format(dat.item.duration_ms)
             const paused = dat.is_playing
 
+            if(r.body.length < 60){
+                client.action(channel, "Nothing is playing on VeryRacc's spotify")
+                ;return;
+            }
+
             if (dat.is_playing ==  false) {
                 client.action(channel, "Nothing is playing on VeryRacc's spotify")
                 ;return;
