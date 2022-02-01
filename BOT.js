@@ -55,7 +55,26 @@ var block = false;
 client.on("message", async (channel, user, message, self) => {
     if (self) return;
 
-
+    (async () => {
+        try {
+          const asyncActions = []
+      
+          for (let i = 0; i < 3; i++) {
+            await new Promise((resolve, reject) => setTimeout(resolve, 1000))
+      
+            for (let j = 0; j < 3; j++) {
+              asyncActions.push(new Promise((resolve, reject) => setTimeout(reject, 1000)))
+            }
+          }
+      
+          await Promise.all(asyncActions)
+          console.log('all resolved')
+        }
+        catch (e) {
+          console.log('caught error', e)
+        }
+      })()
+      
 
     let array = ["Blue", "Coral", "DodgerBlue", "SpringGreen", "YellowGreen", "Green", "OrangeRed", "Red", "GoldenRod", "HotPink", "CadetBlue", "SeaGreen", "Chocolate", "BlueViolet", "Firebrick"]
 
