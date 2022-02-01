@@ -55,15 +55,7 @@ var block = false;
 client.on("message", async (channel, user, message, self) => {
     if (self) return;
 
-    (async function () {
-        try {
-               await returnsPromise()
-           } catch (error) {
-               console.error(error)
-               process.exit(1)
-           }
-        console.log('This will not be printed.');
-        })()
+
 
     let array = ["Blue", "Coral", "DodgerBlue", "SpringGreen", "YellowGreen", "Green", "OrangeRed", "Red", "GoldenRod", "HotPink", "CadetBlue", "SeaGreen", "Chocolate", "BlueViolet", "Firebrick"]
 
@@ -1624,12 +1616,6 @@ if(message.startsWith(`'math`)){
         } 
     }  
 }
-
-    if(message.toLowerCase().startsWith("'restart") && user['user-id'] === "162760707") {
-        client.action(channel, 'Restarting... ppJump')
-        .then
-        process.exit(1)
-    }
 
 if (channel === '#pajlada') {
     if (!block) {
