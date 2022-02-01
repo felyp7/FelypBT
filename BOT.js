@@ -10,7 +10,7 @@ const client = new tmi.Client({
         messagesLogLevel: "info"
     },
     connection: {
-        reconnect: true,
+        reconnect: false,
         secure: true
     },
     identity: {
@@ -54,8 +54,6 @@ var block = false;
 
 client.on("message", async (channel, user, message, self) => {
     if (self) return;
-
-    
       
 
     let array = ["Blue", "Coral", "DodgerBlue", "SpringGreen", "YellowGreen", "Green", "OrangeRed", "Red", "GoldenRod", "HotPink", "CadetBlue", "SeaGreen", "Chocolate", "BlueViolet", "Firebrick"]
