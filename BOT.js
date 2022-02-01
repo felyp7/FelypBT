@@ -1402,12 +1402,12 @@ if(isModUp) {
 
 
                if (type == 'gift'){
-                   client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} comulative months with tier ${tier} gifted by ${giftedby} and is on ${streak} months streak. Ends in ${endsin} days.`)
+                   client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} cumulative months with tier ${tier} gifted by ${giftedby} and is on ${streak} months streak. Ends in ${endsin} days.`)
                 ;return;
                 }
 
                 if (type == 'paid'){
-                    client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} comulative months with tier ${tier} and is on ${streak} months streak. Ends in ${endsin} days.`)
+                    client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} cumulative months with tier ${tier} and is on ${streak} months streak. Ends in ${endsin} days.`)
                 ;return;
                 }
 
