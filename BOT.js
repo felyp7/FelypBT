@@ -1400,7 +1400,7 @@ if(isModUp) {
                 ;return;
                 }
 
-                if (!data.meta){
+                if (data.meta == ''){
                     client.action(channel, `${userTarget} isn't subscribed to ${channelTarget}, but used to be subscribed for ${months} months.`)
                 ;return;
                 }
