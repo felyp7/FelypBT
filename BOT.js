@@ -1386,7 +1386,7 @@ if(isModUp) {
 
                 const tier = data.tier
                 const type = data.type
-                const giftedby = data.gift.name
+                const giftedby = data.name
                 const months = data.comulative.months
                 const endsin = data.streak.remaining
                 const streak = data.streak.months
