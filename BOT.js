@@ -1412,7 +1412,7 @@ if(isModUp) {
                 }
 
                 if (type == 'prime'){
-                    client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} comulative months with tier ${tier} and is on ${streak} months streak. Ends in ${remaining} days.`)
+                    client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} cumulative months with tier ${tier} and is on ${streak} months streak. Ends in ${remaining} days.`)
                 ;return;
                 } 
                 block = true;
