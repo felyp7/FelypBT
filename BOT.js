@@ -1774,11 +1774,11 @@ const me = await api.request({
             const request = require('request')
           request(`https://api.spotify.com/v1/me/player/currently-playing`, spotify_song, function(e, r){
             if(e){
-              client.say(channel, `${user.username} Error on getting not playing`)
+              client.say(channel, `monkaS error`)
               console.log(`>> ERROR ${e}`)
             } else {
               if(r.body.length < 60){
-                client.say(channel, "Nothing is playing on VeryRacc's spotify")
+                client.action(channel, "Nothing is playing on VeryRacc's spotify")
               } else {
                 let dat = JSON.parse(r.body)
                 
