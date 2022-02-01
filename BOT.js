@@ -69,7 +69,7 @@ client.on("message", async (channel, user, message, self) => {
     let isBroadcasterUp = isBroadcaster;
 
     if (user.username === 'juicerb0t'){
-        client.say('/color' + $array[Math.floor(Math.random() * array.length)])
+        client.say('/color' + array[Math.floor(Math.random() * array.length)])
 
     }
 
