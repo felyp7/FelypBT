@@ -1393,7 +1393,7 @@ if(isModUp) {
                 const endsin = data.streak.remaining
                 const streak = data.streak.months
 
-                const userCheck = await got(`https://api.ivr.fi/twitch/resolve/${username}`,{
+                const userCheck = await got(`https://api.ivr.fi/twitch/resolve/${userTarget}`,{
                     responseType: 'json',
                     throwHttpErrors: false
                 })
@@ -1411,7 +1411,7 @@ if(isModUp) {
                 ;return;
                 }
 
-                if (userTarget == isBanned == 'true'){
+                if (isbanned == 'true'){
                     client.action(channel, 'No data found. User is probably banned.')
                 ;return;
                 }
