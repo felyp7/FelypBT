@@ -1737,7 +1737,11 @@ console.log(me.config.headers.Authorization);
             }
 
             client.action(channel, `VeryRacc is currently playing ${dat.item.name} by ${dat.item.album.artists[0].name} ▶ [${progress_ms}/${duration_ms}]`)
-          })
+            })
+          block = true;
+        setTimeout(() => {
+        block = false;
+        }, (5 * 1000));
     }
 }
 
