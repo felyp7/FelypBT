@@ -1382,7 +1382,9 @@ if(isModUp) {
                 }
         
                 const subage = await got(`https://api.ivr.fi/twitch/subage/${userTarget}/${channelTarget}`);
-                let data = subage.body
+                let data = JSON.parse(subage.body)
+
+                console.log(data)
 
                 const tier = data.tier
                 const type = data.type
