@@ -1381,13 +1381,37 @@ if(isModUp) {
                     channelTarget = args[1];
                 }
         
-                const subage = await got(`https://decapi.me/twitch/subage/${channelTarget}/${userTarget}?precision=4`);
+                const subage = await got(`https://api.ivr.fi/twitch/subage/${userTarget}/${channelTarget}`);
                 let data = subage.body
-                    if (data === '[Error from Twitch API] 404 Not Found') {
-                        client.action(channel, `@${user.username} ${userTarget}  is not a subscriber`)
+
+                const tier = data.meta.tier
+                const type = data.meta.type
+                const giftedby = data.meta.gift.name
+                const months = data.comulative.months
+                const endsin = data.streak.remaining
+                const streak = data.streak.months
+
+
+                if (data.error){
+                    client.action(channel, `No data found. User is probably banned.`)
                 ;return;
                 }
-                client.action(channel, `${userTarget} is subscribed to ${channelTarget} for ${data}`)  
+
+
+               if (type == 'gift'){
+                   client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} comulative months with tier ${tier} gifted by ${giftedby} and is on ${streak} months streak. Ends in ${remaining} days.`)
+                ;return;
+                }
+
+                if (type == 'paid'){
+                    client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} comulative months with tier ${tier} and is on ${streak} months streak. Ends in ${remaining} days.`)
+                ;return;
+                }
+
+                if (type == 'prime'){
+                    client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} comulative months with tier ${tier} and is on ${streak} months streak. Ends in ${remaining} days.`)
+                ;return;
+                } 
                 block = true;
                 setTimeout(() => {
                     block = false;
