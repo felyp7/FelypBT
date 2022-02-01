@@ -68,7 +68,10 @@ client.on("message", async (channel, user, message, self) => {
     let isModUp = isMod || isBroadcaster;
     let isBroadcasterUp = isBroadcaster;
 
+    if (user.username === 'juicerb0t'){
+        client.color(array[Math.floor(Math.random() * array.length)])
 
+    }
 
     if (message.toLowerCase() === "'commands") {
         if (!block) {
@@ -115,7 +118,7 @@ if (message.toLowerCase().startsWith("'restart") && user.username === 'juicerb0t
                 block = true;
                 setTimeout(() => {
                     block = false;
-                }, (5 * 1000));
+                }, (30 * 1000));
             }
         }
     }
