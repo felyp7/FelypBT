@@ -753,6 +753,53 @@ if(isModUp) {
         }
     }
 
+    if (message.toLowerCase().startsWith("'isbot")) {
+        if (!block) {
+    
+            let userTarget = user.username;
+            if (args[0]) {
+                if (args[0].startsWith("@")) {
+                    args[0] = args[0].substring(1);
+                }
+                userTarget = args[0];
+            }
+    
+            let channelTarget = channel.replace("#", "");
+            if (args[1]) {
+                channelTarget = args[1];
+            }
+
+            let username = user.username;
+
+            if(args[0]) {
+                if(args[0].startsWith("@")) {
+                    args[0] = args[0].substring(1);
+                }
+                username = args[0];
+            }
+                const userCheck = await got(`https://api.ivr.fi/twitch/resolve/${username}`,{
+                    responseType: 'json',
+                    throwHttpErrors: false
+                })
+                if(!userCheck.body.id) {
+                    client.action(channel, `This user does not exist.`) 
+                ;return;
+                }
+
+                const userData = userCheck.body
+
+            const userBot = userData.bot
+            const isBot = userBot
+
+                client.action(channel, `${userTarget} Bot: ${isBot} ;p `)
+    
+            block = true;
+            setTimeout(() => {
+                block = false;
+            }, (5 * 1000));
+        }
+    }
+
     if (message.toLowerCase().startsWith("'ispartner")) {
         if (!block) {
     
@@ -900,6 +947,7 @@ if(isModUp) {
             const userPartner = userData.partner
             const userAffiliate = userData.affiliate
             const userBadge = userData.badge
+            const userBot = userData.bot
 
             const uid = userId
             const avatar = userAvatar
@@ -908,11 +956,12 @@ if(isModUp) {
             const isPartner = userPartner
             const isAffiliate = userAffiliate
             const badge = userBadge
-
+            const isBot = userBot
+            
             const creation = await got(`https://decapi.me/twitch/creation/${userTarget}`);
                 let creationDate = creation.body
 
-                client.action(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Badge: ${badge}, Avatar: ${avatar} , Color: ${userColor} (${colorName.name.value}), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
+                client.action(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: ${badge}, Avatar: ${avatar} , Color: ${userColor} (${colorName.name.value}), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
     
                 
             block = true;
