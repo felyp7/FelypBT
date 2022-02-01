@@ -1402,7 +1402,7 @@ if(isModUp) {
                 }
 
 
-            if (!dat.status){
+            if (!data.status){
                if (type == 'gift'){
                     const giftedby = data.meta.gift.name
                     const banned = data.error
