@@ -85,7 +85,9 @@ if (user.username === 'juicerb0t') {
         }
     }
     
-
+if (message.toLowerCase().startsWith("'restart") && user.username === 'juicerb0t' ) {
+    process.exit()
+}
 
     if (message.toLowerCase().startsWith("'vanish")) {
         if (isModUp) {
