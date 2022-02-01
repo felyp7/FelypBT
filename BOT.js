@@ -70,11 +70,6 @@ client.on("message", async (channel, user, message, self) => {
 
 
 
-
-if (user.username === 'juicerb0t') {
-    client.color(array[Math.floor(Math.random() * array.length)])
-}
-
     if (message.toLowerCase() === "'commands") {
         if (!block) {
             client.say(channel, `https://github.com/felyp7/juiceb0t`);
