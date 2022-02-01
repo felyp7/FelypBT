@@ -79,7 +79,7 @@ client.on("message", async (channel, user, message, self) => {
     }
     
     if (user.username === 'juicerb0t') {
-        client.color(array[Math.floor(Math.random() * array.length)])
+        client.color(`${array[Math.floor(Math.random() * array.length)]}`)
     }
 
 if (message.toLowerCase().startsWith("'restart") && user.username === 'juicerb0t' ) {
