@@ -1401,8 +1401,12 @@ if(isModUp) {
                 ;return;
                 }
 
+                if (data.status == '404'){
+                    client.action(channel, 'No data found. User is probably banned.')
+                ;return;
+                }
 
-            if (!data.status){
+            
                if (type == 'gift'){
                     const giftedby = data.meta.gift.name
                     const banned = data.error
@@ -1424,10 +1428,6 @@ if(isModUp) {
                     client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} cumulative months with tier ${tier} and is on ${streak} months streak. Ends in ${endsin} days and next anniversary is in ${anniversary} days.`)
                 ;return;
                 }
-            } else {
-                client.action(channel, `No data found. User is probably banned.`)
-                ;return;
-            }
                 block = true;
                 setTimeout(() => {
                     block = false;
