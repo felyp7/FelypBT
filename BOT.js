@@ -55,6 +55,15 @@ var block = false;
 client.on("message", async (channel, user, message, self) => {
     if (self) return;
 
+    (async function () {
+        try {
+               await returnsPromise()
+           } catch (error) {
+               console.error(error)
+               process.exit(1)
+           }
+        console.log('This will not be printed.');
+        })()
 
     let array = ["Blue", "Coral", "DodgerBlue", "SpringGreen", "YellowGreen", "Green", "OrangeRed", "Red", "GoldenRod", "HotPink", "CadetBlue", "SeaGreen", "Chocolate", "BlueViolet", "Firebrick"]
 
