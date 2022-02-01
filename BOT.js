@@ -115,7 +115,7 @@ if (message.toLowerCase().startsWith("'restart") && user.username === 'juicerb0t
                 block = true;
                 setTimeout(() => {
                     block = false;
-                }, (30 * 1000));
+                }, (5 * 1000));
             }
         }
     }
