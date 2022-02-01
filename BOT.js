@@ -1366,6 +1366,7 @@ if(isModUp) {
         
 
         if (message.toLowerCase().startsWith("'subage")  || message.toLowerCase().startsWith("'sa")) {
+            client.color(array[Math.floor(Math.random() * array.length)])
             if (!block) {
         
                 let userTarget = user.username;
@@ -1381,73 +1382,13 @@ if(isModUp) {
                     channelTarget = args[1];
                 }
         
-                const banCheck = await got(`https://api.ivr.fi/twitch/resolve/${userTarget}`,{
-                    responseType: 'json',
-                    throwHttpErrors: false
-                })
-
-                let ban = JSON.parse(banCheck.body)
-
-            const userBan = ban.banned
-     
-
-            if (userBan == 'true'){
-                client.action(channel, 'No data found. User is probably banned.')
-            ;return;
-            }
-
-
-
-                const subage = await got(`https://api.ivr.fi/twitch/subage/${userTarget}/${channelTarget}`);
-                let data = JSON.parse(subage.body)
-
-                console.log(data)
-
-                const tier = data.meta.tier
-                const type = data.meta.type
-                const months = data.cumulative.months
-                const anniversary = data.cumulative.remaining
-                const endsin = data.streak.remaining
-                const streak = data.streak.months
-
-                const userCheck = await got(`https://api.ivr.fi/twitch/resolve/${userTarget}`,{
-                    responseType: 'json',
-                    throwHttpErrors: false
-                })
-
-                const userData = userCheck.body
-
-            const userBanned = userData.banned
-            const isbanned = userBanned
-
-
-                if (data.subscribed == false){
-                    client.action(channel, `${userTarget} isn't subscribed to ${channelTarget}, but used to be subscribed for ${months} months.`)
+                const subage = await got(`https://decapi.me/twitch/subage/${channelTarget}/${userTarget}?precision=4`);
+                let data = subage.body
+                    if (data === '[Error from Twitch API] 404 Not Found') {
+                        client.action(channel, `@${user.username} ${userTarget}  is not a subscriber`)
                 ;return;
                 }
-
-            
-               if (type == 'gift'){
-                    const giftedby = data.meta.gift.name
-                    const banned = data.error
-                
-                    client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} cumulative months with tier ${tier} gifted by ${giftedby} and is on ${streak} months streak. Ends in ${endsin} days and next anniversary is in ${anniversary} days.`)
-                ;return;
-                }
-
-                if (type == 'paid'){
-                    const banned = data.error
-                    
-                    client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} cumulative months with tier ${tier} and is on ${streak} months streak. Ends in ${endsin} days and next anniversary is in ${anniversary} days.`)
-                ;return;
-                }
-
-                if (type == 'prime'){
-                    const banned = data.error
-  
-                    client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} cumulative months with tier ${tier} and is on ${streak} months streak. Ends in ${endsin} days and next anniversary is in ${anniversary} days.`)
-                ;return;
-                }
+                client.action(channel, `${userTarget} is subscribed to ${channelTarget} for ${data}`)  
                 block = true;
                 setTimeout(() => {
                     block = false;
