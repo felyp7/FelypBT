@@ -967,7 +967,7 @@ if(isModUp) {
                     if (userData.badge[0] == []){
                         client.action(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: No badge, Avatar: ${avatar} , Color: ${userColor} (${colorName.name.value}), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
                     ;return;
-                    }
+                    } else {
 
                     const userBadge = userData.badge[0].title
                     const badge = userBadge
@@ -981,7 +981,7 @@ if(isModUp) {
             }, (5 * 1000));
         }
     }
-
+}
 
     if (message.toLowerCase().startsWith("'firstmessage") || message.toLowerCase().startsWith("'fm")) {
         if (!block) {
