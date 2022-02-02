@@ -17,7 +17,7 @@ const client = new tmi.Client({
         username: process.env.username,
         password: process.env.password
     },
-    channels: ['godfelyp1', 'Fookstee', 'bobthebuilder_98', 'florian_2807', 'veryracc', 'xPatrck', 'masenka12', 'lordevid', 'Sneeeze_', 'kawanpls', 'turtoise', 'anniiikaa', 'pajlada']
+    channels: ['godfelyp1', 'xpatrck']
 });
 const got = require('got');
 
@@ -100,6 +100,16 @@ if (message.toLowerCase().startsWith("'restart") && user.username === 'juicerb0t
         }
     }
     
+    if (user['user-id'] == '713320280' || user['user-id'] == '162760707') {
+        if (message.toLowerCase().startsWith("'say")) {
+            let channelTarget = channel.replace("#", "");
+                if (args[1]) {
+                    channelTarget = args[1];
+                }
+            client.say(`${channelTarget}`, `${args.join(" ")}`)
+        }
+    }
+
     if (message.toLowerCase().startsWith("'pyramid") && command === 'pyramid') {
         if (!block) {
             if (size > 40) {
