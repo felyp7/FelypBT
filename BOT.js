@@ -94,7 +94,7 @@ if (message.toLowerCase().startsWith("'restart") && user.username === 'juicerb0t
 
     }
 
-    if (message.toLowerCase().startsWith("'echo") && command === 'echo' && user['user-id'] === "162760707" || user['user-id'] === "713320280") {
+    if (message.toLowerCase().startsWith("'echo") && command === 'echo' && user['user-id'] === "162760707") {
         client.say(channel, `${args.join(" ")}`)
 
     }
