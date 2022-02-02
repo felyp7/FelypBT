@@ -1453,7 +1453,7 @@ if(isModUp) {
             const isbanned = userBanned
 
 
-                if (months == undefined){
+                if (months == undefined || months == 0){
                     client.action(channel, `${userTarget} isn't subscribed to ${channelTarget}.`)
                 ;return;
                 }
