@@ -106,10 +106,6 @@ if (message.toLowerCase().startsWith("'restart") && user.username === 'juicerb0t
             const [channelTarget, ...restArgs] = args;
             const text = restArgs.join(' ');
 
-            let channelTarget = channel
-                if (args[0]) {
-                    channelTarget = args[0];
-                }
             client.say(`${channelTarget}`, `${restArgs.join(" ")}`)
         }
     }
