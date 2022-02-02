@@ -1402,7 +1402,7 @@ if(isModUp) {
             const userBan = ban.banned
      
 
-            if (isbanned == 'true'){
+            if (ban.banned == true){
                 client.action(channel, 'No data found. User is probably banned.')
             ;return;
             }
