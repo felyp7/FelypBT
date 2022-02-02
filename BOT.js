@@ -1392,15 +1392,19 @@ if(isModUp) {
                     channelTarget = args[1];
                 }
         
-                const banCheck = await got(`https://api.ivr.fi/twitch/resolve/${userTarget}`,{
+                const cCheck = await got(`https://api.ivr.fi/twitch/resolve/${channelTarget}`,{
                     responseType: 'json',
                     throwHttpErrors: false
                 })
 
-                let ban = banCheck.body
+                let channelCheck = cCheck.body
 
-            const userBan = ban.banned
+            const channelid = channelCheck.id
      
+            if (!channelid){
+                client.action(channel, 'Channel was not found.')
+            ;return;
+            }
 
             if (ban.banned == true){
                 client.action(channel, 'No data found. User is probably banned.')
