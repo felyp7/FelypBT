@@ -969,8 +969,8 @@ if(isModUp) {
                     ;return;
                     } else {
 
-                    const userBadge = userData.badge[0].title
-                    const badge = userBadge
+                    let userBadge = userData.badge[0].title
+                    let badge = userBadge
 
                     client.action(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: ${badge}, Avatar: ${avatar} , Color: ${userColor} (${colorName.name.value}), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
                 
