@@ -963,12 +963,11 @@ if(isModUp) {
             
             const creation = await got(`https://decapi.me/twitch/creation/${userTarget}`);
                 let creationDate = creation.body
-
-                if (badge == []){
-                    const userBadge = userData.badge[0].title
-                    const badge = userBadge
+                
+                if (!userData.badge[0].title){
                     client.action(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: No badge, Avatar: ${avatar} , Color: ${userColor} (${colorName.name.value}), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
                 } else {
+                    const userBadge = userData.badge[0].title
                     const badge = userBadge
                 client.action(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: ${badge}, Avatar: ${avatar} , Color: ${userColor} (${colorName.name.value}), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
                     
