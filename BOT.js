@@ -951,7 +951,6 @@ if(isModUp) {
             const userBanned = userData.banned
             const userPartner = userData.partner
             const userAffiliate = userData.affiliate
-            const userBadge = userData.badge[0].title
             const userBot = userData.bot
 
             const uid = userId
@@ -960,18 +959,19 @@ if(isModUp) {
             const isbanned = userBanned
             const isPartner = userPartner
             const isAffiliate = userAffiliate
-            const badge = userBadge
             const isBot = userBot
             
             const creation = await got(`https://decapi.me/twitch/creation/${userTarget}`);
                 let creationDate = creation.body
 
                 if (badge == []){
+                    const userBadge = userData.badge[0].title
+                    const badge = userBadge
                     client.action(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: No badge, Avatar: ${avatar} , Color: ${userColor} (${colorName.name.value}), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
-                }
-
+                } else {
+                    const badge = userBadge
                 client.action(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: ${badge}, Avatar: ${avatar} , Color: ${userColor} (${colorName.name.value}), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
-    
+                    
                 
             block = true;
             setTimeout(() => {
@@ -979,6 +979,7 @@ if(isModUp) {
             }, (5 * 1000));
         }
     }
+}
 
     if (message.toLowerCase().startsWith("'firstmessage") || message.toLowerCase().startsWith("'fm")) {
         if (!block) {
