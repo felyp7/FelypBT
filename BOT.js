@@ -1386,7 +1386,7 @@ if(isModUp) {
 
         
 
-        if (message.toLowerCase().startsWith("'subage")  || message.toLowerCase().startsWith("'sa")) {
+        if (message.toLowerCase().startsWith("'subage")  || message.toLowerCase("'sa")) {
             if (!block) {
         
                 let userTarget = user.username;
