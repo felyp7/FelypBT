@@ -102,11 +102,15 @@ if (message.toLowerCase().startsWith("'restart") && user.username === 'juicerb0t
     
     if (user['user-id'] == '713320280' || user['user-id'] == '162760707') {
         if (message.toLowerCase().startsWith("'say")) {
+            
+            const [channelTarget, ...restArgs] = args;
+            const text = restArgs.join(' ');
+
             let channelTarget = channel
                 if (args[0]) {
                     channelTarget = args[0];
                 }
-            client.say(`${channelTarget}`, `${args.join(" ")}`)
+            client.say(`${channelTarget}`, `${restArgs.join(" ")}`)
         }
     }
 
