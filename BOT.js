@@ -1432,6 +1432,11 @@ if(isModUp) {
             const isbanned = userBanned
 
 
+                if (data.cumulative == undefined){
+                    client.action(channel, `${userTarget} isn't subscribed to ${channelTarget}.`)
+                ;return;
+                }
+
                 if (data.subscribed == false){
                     client.action(channel, `${userTarget} isn't subscribed to ${channelTarget}, but used to be subscribed for ${months} months.`)
                 ;return;
