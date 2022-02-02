@@ -951,7 +951,7 @@ if(isModUp) {
             const userBanned = userData.banned
             const userPartner = userData.partner
             const userAffiliate = userData.affiliate
-            const userBadge = userData.badge
+            const userBadge = userData.badge.title
             const userBot = userData.bot
 
             const uid = userId
