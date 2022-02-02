@@ -94,10 +94,12 @@ if (message.toLowerCase().startsWith("'restart") && user.username === 'juicerb0t
 
     }
 
-    if (message.toLowerCase().startsWith("'echo") && command === 'echo' && user['user-id'] === "162760707") {
-        client.say(channel, `${args.join(" ")}`)
-
+    if (user['user-id'] == '713320280' || user['user-id'] == '162760707') {
+        if (message.toLowerCase().startsWith("'echo")) {
+            client.say(channel, `${args.join(" ")}`)
+        }
     }
+    
     if (message.toLowerCase().startsWith("'pyramid") && command === 'pyramid') {
         if (!block) {
             if (size > 40) {
