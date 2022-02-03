@@ -1926,6 +1926,7 @@ if (message.toLowerCase().startsWith("'weather")){
     const Compass = require("cardinal-direction");
     const hdate = require('human-date');
     const moment = require('moment');
+    const kelvinToCelsius = require('kelvin-to-celsius');
 
     weather.setLang('en');
 	
@@ -1986,7 +1987,7 @@ if (message.toLowerCase().startsWith("'weather")){
             ;return;
             }
 
-        client.action(channel, `${JSONObj.name}, ${JSONObj.sys.country}: ${JSONObj.main.temp}°C, feels like ${JSONObj.main.feels_like}°C. Weather: ${JSONObj.weather[0].description}. ${direction} Wind speed: ${JSONObj.wind.speed} m/s. Wind gusts up to ${JSONObj.wind.gust} m/s. Humadity: ${JSONObj.main.humidity}%. Air pressure: ${JSONObj.main.pressure} hPa. Sun rises in ${SunRise}, sunset in ${SunSet}.  `)
+        client.action(channel, `${JSONObj.name}, ${JSONObj.sys.country}: ${kelvinToCelsius(JSONObj.main.temp)}°C, feels like ${kelvinToCelsius(JSONObj.main.feels_like)}°C. Weather: ${JSONObj.weather[0].description}. ${direction} Wind speed: ${JSONObj.wind.speed} m/s. Wind gusts up to ${JSONObj.wind.gust} m/s. Humadity: ${JSONObj.main.humidity}%. Air pressure: ${JSONObj.main.pressure} hPa. Sun rises in ${SunRise}, sunset in ${SunSet}.  `)
         
     }
 	
