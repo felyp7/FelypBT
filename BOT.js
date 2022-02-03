@@ -1962,23 +1962,11 @@ if (message.toLowerCase().startsWith("'weather")){
         var setsunSet = hours2 + ':' + minutes2.substr(-2) + ':' + seconds2.substr(-2);
         
         
-            var d = new Date(JSONObj.sys.sunrise * 1000);
-            var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-            var year = d.getFullYear();
-            var month = months[d.getMonth()];
-            var date = d.getDate();
-            var hour = d.getHours();
-            var min = (d.getMinutes() < 10 ? '0' : '') + d.getMinutes();
-            var sec = (d.getSeconds() < 10 ? '0' : '') + d.getSeconds();
-            const time = date + '. ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
-           
-          
-
-        var SunRise = time
-        var SunSet = moment.unix(JSONObj.sys.sunset).endOf(JSONObj.sys.sunset).fromNow(true);  
+        var SunRise = setsunRise
+        var SunSet = setsunSet  
         
         
-        console.log(channel, `${JSONObj.name}, ${JSONObj.sys.country}: ${JSONObj.main.temp}°C, feels like ${JSONObj.main.feels_like}°C. Weather: ${JSONObj.weather[0].description}. ${deg} Wind speed: ${JSONObj.wind.speed} m/s. Wind gusts up to ${JSONObj.wind.gust} m/s. Humadity: ${JSONObj.main.humidity}%. Air pressure: ${JSONObj.main.pressure} hPa. Sun rises in ${SunRise}, sunset in ${SunSet}.  `)
+        console.log(channel, `${JSONObj.name}, ${JSONObj.sys.country}: ${JSONObj.main.temp}°C, feels like ${JSONObj.main.feels_like}°C. Weather: ${JSONObj.weather[0].description}. ${deg} Wind speed: ${JSONObj.wind.speed} m/s. Wind gusts up to ${JSONObj.wind.gust} m/s. Humadity: ${JSONObj.main.humidity}%. Air pressure: ${JSONObj.main.pressure} hPa. Sun rises at ${SunRise}, sunset at ${SunSet}.  `)
         
     })
 	
