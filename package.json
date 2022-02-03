@@ -26,7 +26,7 @@
     "7tv": "^0.0.4",
     "git-last-commit": "^1.0.1",
     "openweather-apis": "^4.4.2",
-    "degrees-to-directions": "^1.1.1"
+    "degrees-to-direction": "^1.1.1"
   },
   "devDependencies": {},
   "keywords": [],
