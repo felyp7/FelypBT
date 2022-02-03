@@ -1925,6 +1925,7 @@ if (message.toLowerCase().startsWith("'weather")){
     const weather = require('openweather-apis');
     const d2d = require('degrees-to-direction');
     const hdate = require('human-date')
+    const moment = require('moment')
 
     weather.setLang('en');
 	
@@ -1960,8 +1961,9 @@ if (message.toLowerCase().startsWith("'weather")){
         
         var setsunSet = hours2 + '-' + minutes2.substr(-2) + '-' + seconds2.substr(-2);
         
-        var SunRise = hdate.relativeTime(setsunRise)
-        var SunSet = hdate.relativeTime(setsunSet)
+        var SunRise = moment.unix(JSONObj.sys.sunrise).format('h h mm m')
+        var SunSet = moment.unix(JSONObj.sys.sunset).format('h h mm m')
+        
 
         console.log(channel, `${JSONObj.name}, ${JSONObj.sys.country}: ${JSONObj.main.temp}°C, feels like ${JSONObj.main.feels_like}°C. Weather: ${JSONObj.weather[0].description}. ${deg} Wind speed: ${JSONObj.wind.speed} m/s. Wind gusts up to ${JSONObj.wind.gust} m/s. Humadity: ${JSONObj.main.humidity}%. Air pressure: ${JSONObj.main.pressure} hPa. Sun rises in ${SunRise}, sunset in ${SunSet}.  `)
     })
