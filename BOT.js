@@ -1940,7 +1940,6 @@ if (message.toLowerCase().startsWith("'weather")){
      weather.getAllWeather(function(err, JSONObj){
 		console.log(JSONObj);
     
-        var direction = Compass.cardinalFromDegree(JSONObj.wind.deg);
         
         let unix_timestamp = JSONObj.sys.sunrise
 
