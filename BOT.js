@@ -80,6 +80,10 @@ client.on("message", async (channel, user, message, self) => {
         }
     }
 
+    if (message.startsWith("(cookie reminder) juicerb0t, eat cookie please :) 🍪") && user['user-id'] === "229225576") {
+        client.say(channel, '!cookie')
+    }
+
 
 if (message.toLowerCase().startsWith("'restart") && user.username === 'juicerb0t' ) {
     process.exit()
