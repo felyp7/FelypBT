@@ -1937,7 +1937,10 @@ if (message.toLowerCase().startsWith("'weather")){
 
 
 
-     const data = await got(`https://api.openweathermap.org/data/2.5/weather?q=${args.join(" ")},uk&APPID=61f7f889e1b439d97a63ad05f7c708b0`);
+     const data = await got(`https://api.openweathermap.org/data/2.5/weather?q=${args.join(" ")},uk&APPID=61f7f889e1b439d97a63ad05f7c708b0`,{
+        responseType: 'json',
+        throwHttpErrors: false
+    })
 
     let JSONObj = JSON.parse(data.body)
         console.log(JSONObj)
