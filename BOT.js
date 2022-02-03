@@ -1943,6 +1943,11 @@ if (message.toLowerCase().startsWith("'weather")){
         console.log(JSONObj)
         console.log(err)
         
+        if(cod == 404) {
+            client.action(channel, 'No city found :)')
+        ;return;
+        }
+
         const direction = Compass.cardinalFromDegree(JSONObj.wind.deg)
 
         let unix_timestamp = JSONObj.sys.sunrise
