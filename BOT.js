@@ -1929,7 +1929,7 @@ if (message.toLowerCase().startsWith("'weather")){
 	
 	weather.setCity(`${args.join(" ")}`);
 
- 	weather.setUnits('metric');
+ 	weather.setUnits('internal');
 
  	weather.setAPPID('00d701ee23ed1a7df02bc8c4e39b256c');
 
