@@ -1944,7 +1944,10 @@ if (message.toLowerCase().startsWith("'weather")){
         
         let unix_timestamp = JSONObj.sys.sunrise
 
-        var date = new Date(unix_timestamp * 1000);
+        var test1 = new Date(unix_timestamp * 1000);
+        var test = Date.now()
+
+        var date = new Date(test1 - test);
         var hours = date.getHours();
         var minutes = "0" + date.getMinutes();
         var seconds = "0" + date.getSeconds();
@@ -1965,9 +1968,9 @@ if (message.toLowerCase().startsWith("'weather")){
         var SunRise = setsunRise
         var SunSet = setsunSet  
         
+        var test1 = new Date(unix_timestamp * 1000);
         var test = Date.now()
 
-        var test1 = test - unix_timestamp
         
         console.log(SunRise)
 
