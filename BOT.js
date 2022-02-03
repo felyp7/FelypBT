@@ -1923,7 +1923,7 @@ client.say(channel, `${emotes.join(" ")}`)
 
 if (message.toLowerCase().startsWith("'weather")){
     const weather = require('openweather-apis');
-    const d2d = require('degrees-to-direction');
+    const Compass = require("cardinal-direction");
     const hdate = require('human-date')
     const moment = require('moment')
 
@@ -1940,7 +1940,7 @@ if (message.toLowerCase().startsWith("'weather")){
      weather.getAllWeather(function(err, JSONObj){
 		console.log(JSONObj);
     
-        const deg = d2d(JSONObj.wind.deg)
+        var direction = Compass.cardinalFromDegree(JSONObj.wind.deg);
         
         let unix_timestamp = JSONObj.sys.sunrise
 
@@ -1971,7 +1971,7 @@ if (message.toLowerCase().startsWith("'weather")){
         var setsunSet = hours2 + 'h' + minutes2.substr(-2) + 'm';
 
 
-        console.log(channel, `${JSONObj.name}, ${JSONObj.sys.country}: ${JSONObj.main.temp}°C, feels like ${JSONObj.main.feels_like}°C. Weather: ${JSONObj.weather[0].description}. ${deg} Wind speed: ${JSONObj.wind.speed} m/s. Wind gusts up to ${JSONObj.wind.gust} m/s. Humadity: ${JSONObj.main.humidity}%. Air pressure: ${JSONObj.main.pressure} hPa. Sun rises at ${SunRise}, sunset at ${SunSet}.  `)
+        console.log(channel, `${JSONObj.name}, ${JSONObj.sys.country}: ${JSONObj.main.temp}°C, feels like ${JSONObj.main.feels_like}°C. Weather: ${JSONObj.weather[0].description}. ${direction} Wind speed: ${JSONObj.wind.speed} m/s. Wind gusts up to ${JSONObj.wind.gust} m/s. Humadity: ${JSONObj.main.humidity}%. Air pressure: ${JSONObj.main.pressure} hPa. Sun rises at ${SunRise}, sunset at ${SunSet}.  `)
         
     })
 	
