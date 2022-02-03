@@ -28,7 +28,8 @@
     "openweather-apis": "^4.4.2",
     "degrees-to-direction": "^1.1.1",
     "sun-time": "^1.0.2",
-    "db-city": "^1.0.2"
+    "db-city": "^1.0.2",
+    "human-date": "^1.4.0"
   },
   "devDependencies": {},
   "keywords": [],
