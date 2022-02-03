@@ -1942,7 +1942,7 @@ if (message.toLowerCase().startsWith("'weather")){
         throwHttpErrors: false
     })
 
-    let JSONObj = JSON.parse(data.body)
+    let JSONObj = data.body
         console.log(JSONObj)
         
         
