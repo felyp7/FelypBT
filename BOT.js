@@ -1924,7 +1924,7 @@ client.say(channel, `${emotes.join(" ")}`)
 if (message.toLowerCase().startsWith("'weather")){
     const weather = require('openweather-apis');
     const d2d = require('degrees-to-direction');
-    const sun = require('sun-time');
+    const hdate = require('human-date')
 
     weather.setLang('en');
 	
@@ -1939,8 +1939,6 @@ if (message.toLowerCase().startsWith("'weather")){
      weather.getAllWeather(function(err, JSONObj){
 		console.log(JSONObj);
     
-        const sunrise = humanizeDuration(JSONObj.sys.sunrise)
-        const sunset = humanizeDuration(JSONObj.sys.sunset)
         const deg = d2d(JSONObj.wind.deg)
         
         let unix_timestamp = JSONObj.sys.sunrise
@@ -1950,7 +1948,7 @@ if (message.toLowerCase().startsWith("'weather")){
         var minutes = "0" + date.getMinutes();
         var seconds = "0" + date.getSeconds();
         
-        var sunRise = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+        var setsunRise = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
         
 
         let unix_timestamp2 = JSONObj.sys.sunset
@@ -1960,11 +1958,12 @@ if (message.toLowerCase().startsWith("'weather")){
         var minutes2 = "0" + date2.getMinutes();
         var seconds2 = "0" + date2.getSeconds();
         
-        var sunSet = hours2 + ':' + minutes2.substr(-2) + ':' + seconds2.substr(-2);
+        var setsunSet = hours2 + ':' + minutes2.substr(-2) + ':' + seconds2.substr(-2);
         
+        var SunRise = hdate.prettyPrint(setsunRise)
+        var SunSet = hdate.prettyPrint(setsunSet)
 
-
-        console.log(channel, `${JSONObj.name}, ${JSONObj.sys.country}: ${JSONObj.main.temp}°C, feels like ${JSONObj.main.feels_like}°C. Weather: ${JSONObj.weather[0].description}. ${deg} Wind speed: ${JSONObj.wind.speed} m/s. Wind gusts up to ${JSONObj.wind.gust} m/s. Humadity: ${JSONObj.main.humidity}%. Air pressure: ${JSONObj.main.pressure} hPa. Sun rises in ${sunRise}, sunset in ${sunSet}.  `)
+        console.log(channel, `${JSONObj.name}, ${JSONObj.sys.country}: ${JSONObj.main.temp}°C, feels like ${JSONObj.main.feels_like}°C. Weather: ${JSONObj.weather[0].description}. ${deg} Wind speed: ${JSONObj.wind.speed} m/s. Wind gusts up to ${JSONObj.wind.gust} m/s. Humadity: ${JSONObj.main.humidity}%. Air pressure: ${JSONObj.main.pressure} hPa. Sun rises in ${SunRise}, sunset in ${SunSet}.  `)
     })
     
 	
