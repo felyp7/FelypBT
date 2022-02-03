@@ -1938,8 +1938,7 @@ if (message.toLowerCase().startsWith("'weather")){
 
 
      weather.getAllWeather(function(err, JSONObj){
-		
-        let data = JSON.parse(JSONObj)
+
 
         console.log(JSONObj)
         console.log(err)
