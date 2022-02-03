@@ -1960,8 +1960,8 @@ if (message.toLowerCase().startsWith("'weather")){
         
         var setsunSet = hours2 + '/' + minutes2.substr(-2) + ':/' + seconds2.substr(-2);
         
-        var SunRise = hdate.prettyPrint(setsunRise)
-        var SunSet = hdate.prettyPrint(setsunSet)
+        var SunRise = hdate.relativeTime(JSONObj.sys.sunrise)
+        var SunSet = hdate.relativeTime(JSONObj.sys.sunset)
 
         console.log(channel, `${JSONObj.name}, ${JSONObj.sys.country}: ${JSONObj.main.temp}°C, feels like ${JSONObj.main.feels_like}°C. Weather: ${JSONObj.weather[0].description}. ${deg} Wind speed: ${JSONObj.wind.speed} m/s. Wind gusts up to ${JSONObj.wind.gust} m/s. Humadity: ${JSONObj.main.humidity}%. Air pressure: ${JSONObj.main.pressure} hPa. Sun rises in ${SunRise}, sunset in ${SunSet}.  `)
     })
