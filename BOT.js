@@ -1968,7 +1968,7 @@ if (message.toLowerCase().startsWith("'weather")){
         var test = Date.now() * 1000
 
         var test1 = test - unix_timestamp
-        console.log(test - unix_timestamp);
+        console.log(test);
 
         console.log(channel, `${JSONObj.name}, ${JSONObj.sys.country}: ${JSONObj.main.temp}°C, feels like ${JSONObj.main.feels_like}°C. Weather: ${JSONObj.weather[0].description}. ${deg} Wind speed: ${JSONObj.wind.speed} m/s. Wind gusts up to ${JSONObj.wind.gust} m/s. Humadity: ${JSONObj.main.humidity}%. Air pressure: ${JSONObj.main.pressure} hPa. Sun rises at ${SunRise}, sunset at ${SunSet}.  `)
         
