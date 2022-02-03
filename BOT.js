@@ -1938,10 +1938,13 @@ if (message.toLowerCase().startsWith("'weather")){
 
 
      weather.getAllWeather(function(err, JSONObj){
-		console.log(JSONObj);
+		
+        let data = JSON.parse(JSONObj.body)
+
+        console.log(data);
     
         
-        let unix_timestamp = JSONObj.sys.sunrise
+        let unix_timestamp = data.sys.sunrise
 
         var locationTime = new Date(unix_timestamp * 1000);
         var currentTime = Date.now() 
@@ -1956,7 +1959,7 @@ if (message.toLowerCase().startsWith("'weather")){
         
    
 
-        let unix_timestamp2 = JSONObj.sys.sunset
+        let unix_timestamp2 = data.sys.sunset
 
         var locationTime2 = new Date(unix_timestamp2 * 1000);
         var currentTime2 = Date.now() 
@@ -1970,7 +1973,7 @@ if (message.toLowerCase().startsWith("'weather")){
         var setsunSet = hours2 + 'h' + minutes2.substr(-2) + 'm';
 
 
-        console.log(channel, `${JSONObj.name}, ${JSONObj.sys.country}: ${JSONObj.main.temp}°C, feels like ${JSONObj.main.feels_like}°C. Weather: ${JSONObj.weather[0].description}. Wind speed: ${JSONObj.wind.speed} m/s. Wind gusts up to ${JSONObj.wind.gust} m/s. Humadity: ${JSONObj.main.humidity}%. Air pressure: ${JSONObj.main.pressure} hPa. Sun rises at ${SunRise}, sunset at ${SunSet}.  `)
+        console.log(channel, `${data.name}, ${data.sys.country}: ${data.main.temp}°C, feels like ${data.main.feels_like}°C. Weather: ${data.weather[0].description}. Wind speed: ${data.wind.speed} m/s. Wind gusts up to ${data.wind.gust} m/s. Humadity: ${data.main.humidity}%. Air pressure: ${data.main.pressure} hPa. Sun rises at ${SunRise}, sunset at ${SunSet}.  `)
         
     })
 	
