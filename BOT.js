@@ -1946,8 +1946,9 @@ if (message.toLowerCase().startsWith("'weather")){
 
         var test1 = new Date(unix_timestamp * 1000);
         var test = Date.now() 
+        var final = test1 - test
 
-        var date = new Date(test1 - test);
+        var date = new Date(final + 10000000);
         var hours = date.getHours();
         var minutes = "0" + date.getMinutes();
         var seconds = "0" + date.getSeconds();
