@@ -1945,7 +1945,7 @@ if (message.toLowerCase().startsWith("'weather")){
         let unix_timestamp = JSONObj.sys.sunrise
 
         var test1 = new Date(unix_timestamp * 1000);
-        var test = Date.now() + 10000000
+        var test = Date.now() 
 
         var date = new Date(test1 - test);
         var hours = date.getHours();
@@ -1974,7 +1974,7 @@ if (message.toLowerCase().startsWith("'weather")){
         
         console.log(SunRise)
 
-        console.log(date - test);
+        console.log(test);
 
         console.log(channel, `${JSONObj.name}, ${JSONObj.sys.country}: ${JSONObj.main.temp}°C, feels like ${JSONObj.main.feels_like}°C. Weather: ${JSONObj.weather[0].description}. ${deg} Wind speed: ${JSONObj.wind.speed} m/s. Wind gusts up to ${JSONObj.wind.gust} m/s. Humadity: ${JSONObj.main.humidity}%. Air pressure: ${JSONObj.main.pressure} hPa. Sun rises at ${SunRise}, sunset at ${SunSet}.  `)
         
