@@ -1954,7 +1954,7 @@ if (message.toLowerCase().startsWith("'weather")){
 
         let unix_timestamp2 = JSONObj.sys.sunset
 
-        var date2 = new Date(new Date().getTime() * 1000);
+        var date2 = new Date(Date.now());
         var hours2 = date2.getHours();
         var minutes2 = "0" + date2.getMinutes();
         var seconds2 = "0" + date2.getSeconds();
