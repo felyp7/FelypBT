@@ -1948,7 +1948,7 @@ if (message.toLowerCase().startsWith("'weather")){
         var minutes = "0" + date.getMinutes();
         var seconds = "0" + date.getSeconds();
         
-        var setsunRise = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+        var setsunRise = hours + '/' + minutes.substr(-2) + '/' + seconds.substr(-2);
         
 
         let unix_timestamp2 = JSONObj.sys.sunset
@@ -1958,7 +1958,7 @@ if (message.toLowerCase().startsWith("'weather")){
         var minutes2 = "0" + date2.getMinutes();
         var seconds2 = "0" + date2.getSeconds();
         
-        var setsunSet = hours2 + ':' + minutes2.substr(-2) + ':' + seconds2.substr(-2);
+        var setsunSet = hours2 + '/' + minutes2.substr(-2) + ':/' + seconds2.substr(-2);
         
         var SunRise = hdate.prettyPrint(setsunRise)
         var SunSet = hdate.prettyPrint(setsunSet)
