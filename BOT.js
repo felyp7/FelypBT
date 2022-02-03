@@ -1948,7 +1948,7 @@ if (message.toLowerCase().startsWith("'weather")){
         var test = Date.now() 
         var final = test1 - test
 
-        var date = new Date(final - 1000000);
+        var date = new Date(final);
         var hours = date.getHours();
         var minutes = "0" + date.getMinutes();
         var seconds = "0" + date.getSeconds();
