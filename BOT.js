@@ -1961,8 +1961,8 @@ if (message.toLowerCase().startsWith("'weather")){
         
         var setsunSet = hours2 + '-' + minutes2.substr(-2) + '-' + seconds2.substr(-2);
         
-        var SunRise = moment.unix(JSONObj.sys.sunrise).endOf('day').fromNow();  
-        var SunSet = moment.unix(JSONObj.sys.sunset).endOf('day').fromNow();  
+        var SunRise = moment.unix(JSONObj.sys.sunrise).endOf(JSONObj.sys.sunrise).fromNow();  
+        var SunSet = moment.unix(JSONObj.sys.sunset).endOf(JSONObj.sys.sunset).fromNow();  
         
 
         console.log(channel, `${JSONObj.name}, ${JSONObj.sys.country}: ${JSONObj.main.temp}°C, feels like ${JSONObj.main.feels_like}°C. Weather: ${JSONObj.weather[0].description}. ${deg} Wind speed: ${JSONObj.wind.speed} m/s. Wind gusts up to ${JSONObj.wind.gust} m/s. Humadity: ${JSONObj.main.humidity}%. Air pressure: ${JSONObj.main.pressure} hPa. Sun rises in ${SunRise}, sunset in ${SunSet}.  `)
