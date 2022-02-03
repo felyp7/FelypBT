@@ -1972,7 +1972,7 @@ if (message.toLowerCase().startsWith("'weather")){
         var setsunSet = hours2 + 'h' + minutes2.substr(-2) + 'm';
 
 
-        console.log(channel, `${data.name}, ${data.sys.country}: ${data.main.temp}°C, feels like ${data.main.feels_like}°C. Weather: ${data.weather[0].description}. Wind speed: ${data.wind.speed} m/s. Wind gusts up to ${data.wind.gust} m/s. Humadity: ${data.main.humidity}%. Air pressure: ${data.main.pressure} hPa. Sun rises at ${SunRise}, sunset at ${SunSet}.  `)
+        console.log(channel, `${JSONObj.name}, ${JSONObj.sys.country}: ${JSONObj.main.temp}°C, feels like ${JSONObj.main.feels_like}°C. Weather: ${JSONObj.weather[0].description}. Wind speed: ${JSONObj.wind.speed} m/s. Wind gusts up to ${JSONObj.wind.gust} m/s. Humadity: ${JSONObj.main.humidity}%. Air pressure: ${JSONObj.main.pressure} hPa. Sun rises at ${SunRise}, sunset at ${SunSet}.  `)
         
     })
 	
