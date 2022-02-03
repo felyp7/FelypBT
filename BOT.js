@@ -1923,6 +1923,7 @@ client.say(channel, `${emotes.join(" ")}`)
 
 if (message.toLowerCase().startsWith("'weather")){
     const weather = require('openweather-apis');
+    const d2d = require('degrees-to-direction');
 
     weather.setLang('en');
 	
@@ -1936,10 +1937,15 @@ if (message.toLowerCase().startsWith("'weather")){
 
      weather.getAllWeather(function(err, JSONObj){
 		console.log(JSONObj);
+    
+        const sunrise = humanizeDuration(JSONObj.sys.sunrise)
+        const sunset = humanizeDuration(JSONObj.sys.sunset)
+        const deg = d2d(JSONObj.wind.deg)
+        
+        console.log(channel, `${JSONObj.name}, ${JSONObj.sys.country}: ${JSONObj.main.temp}°C, feels like ${JSONObj.main.feels_like}°C. Weather: ${JSONObj.weather[0].description}. ${deg} Wind speed: ${JSONObj.wind.speed} m/s. Wind gusts up to ${JSONObj.wind.gust} m/s. Humadity: ${JSONObj.main.humidity}%. Air pressure: ${JSONObj.main.pressure} hPa. Sun rises in ${sunrise}, sunset in ${sunset}.  `)
     })
-    weather.getTemperature(function(err, temp){
-		console.log(temp);
-	});
+    
+	
 }
 
 
