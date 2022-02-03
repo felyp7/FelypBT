@@ -31,7 +31,7 @@
     "db-city": "^1.0.2",
     "human-date": "^1.4.0",
     "moment": "^2.29.1",
-    "cardinal-direction": "^1.1.+"
+    "cardinal-direction": "^1.1.1"
   },
   "devDependencies": {},
   "keywords": [],
