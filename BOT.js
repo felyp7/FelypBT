@@ -1933,7 +1933,7 @@ if (message.toLowerCase().startsWith("'weather")){
 
     weather.setUnits('metric');
 
- 	weather.setAPPID('61f7f889e1b439d97a63ad05f7c708b0');
+ 	weather.setAPPID('00d701ee23ed1a7df02bc8c4e39b256c');
 
 
 
