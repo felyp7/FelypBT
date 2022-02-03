@@ -1934,11 +1934,11 @@ if (message.toLowerCase().startsWith("'weather")){
 
     weather.setUnits('metric');
 
- 	weather.setAPPID('61f7f889e1b439d97a63ad05f7c708b0');
+ 	weather.setAPPID(process.env.weather_api_token);
 
 
 
-     const data = await got(`https://api.openweathermap.org/data/2.5/weather?q=${args.join(" ")}&APPID=61f7f889e1b439d97a63ad05f7c708b0`,{
+     const data = await got(`https://api.openweathermap.org/data/2.5/weather?q=${args.join(" ")}&APPID=${process.env.weather_api_token}`,{
         responseType: 'json',
         throwHttpErrors: false
     })
