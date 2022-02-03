@@ -1943,7 +1943,28 @@ if (message.toLowerCase().startsWith("'weather")){
         const sunset = humanizeDuration(JSONObj.sys.sunset)
         const deg = d2d(JSONObj.wind.deg)
         
-        console.log(channel, `${JSONObj.name}, ${JSONObj.sys.country}: ${JSONObj.main.temp}°C, feels like ${JSONObj.main.feels_like}°C. Weather: ${JSONObj.weather[0].description}. ${deg} Wind speed: ${JSONObj.wind.speed} m/s. Wind gusts up to ${JSONObj.wind.gust} m/s. Humadity: ${JSONObj.main.humidity}%. Air pressure: ${JSONObj.main.pressure} hPa. Sun rises in ${sun.rise(`${JSONObj.name}`)}, sunset in ${sun.set(`${JSONObj.name}`)}.  `)
+        let unix_timestamp = JSONObj.sys.sunrise
+
+        var date = new Date(unix_timestamp * 1000);
+        var hours = date.getHours();
+        var minutes = "0" + date.getMinutes();
+        var seconds = "0" + date.getSeconds();
+        
+        var sunRise = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+        
+
+        let unix_timestamp2 = JSONObj.sys.sunset
+
+        var date2 = new Date(unix_timestamp2 * 1000);
+        var hours2 = date2.getHours();
+        var minutes2 = "0" + date2.getMinutes();
+        var seconds2 = "0" + date2.getSeconds();
+        
+        var sunSet = hours2 + ':' + minutes2.substr(-2) + ':' + seconds2.substr(-2);
+        
+
+
+        console.log(channel, `${JSONObj.name}, ${JSONObj.sys.country}: ${JSONObj.main.temp}°C, feels like ${JSONObj.main.feels_like}°C. Weather: ${JSONObj.weather[0].description}. ${deg} Wind speed: ${JSONObj.wind.speed} m/s. Wind gusts up to ${JSONObj.wind.gust} m/s. Humadity: ${JSONObj.main.humidity}%. Air pressure: ${JSONObj.main.pressure} hPa. Sun rises in ${sunRise}, sunset in ${sunSet}.  `)
     })
     
 	
