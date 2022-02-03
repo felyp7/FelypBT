@@ -1943,7 +1943,7 @@ if (message.toLowerCase().startsWith("'weather")){
         console.log(JSONObj)
         console.log(err)
         
-        if(JSONObj.main == null) {
+        if(JSONObj.cod == null) {
             client.action(channel, 'No city found :)')
         ;return;
         }
