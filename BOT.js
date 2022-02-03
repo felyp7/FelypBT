@@ -1944,38 +1944,32 @@ if (message.toLowerCase().startsWith("'weather")){
         
         let unix_timestamp = JSONObj.sys.sunrise
 
-        var test1 = new Date(unix_timestamp * 1000);
-        var test = Date.now() 
-        var final = test1 - test
+        var locationTime = new Date(unix_timestamp * 1000);
+        var currentTime = Date.now() 
+        var SunRiseTime = locationTime - currentTime
 
-        var date = new Date(final);
+        var date = new Date(SunRiseTime);
         var hours = date.getHours();
         var minutes = "0" + date.getMinutes();
         var seconds = "0" + date.getSeconds();
         
-        var setsunRise = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+        var SunRise = hours + 'h' + minutes.substr(-2) + 'm';
         
+   
 
         let unix_timestamp2 = JSONObj.sys.sunset
 
-        var date2 = new Date(unix_timestamp * 1000);
+        var locationTime2 = new Date(unix_timestamp2 * 1000);
+        var currentTime2 = Date.now() 
+        var SunSetTime = locationTime2 - currentTime2
+
+        var date2 = new Date(SunSetTime);
         var hours2 = date2.getHours();
         var minutes2 = "0" + date2.getMinutes();
         var seconds2 = "0" + date2.getSeconds();
         
-        var setsunSet = hours2 + ':' + minutes2.substr(-2) + ':' + seconds2.substr(-2);
-        
-        
-        var SunRise = setsunRise
-        var SunSet = setsunSet  
-        
-        var test1 = new Date(unix_timestamp * 1000);
-        var test = Date.now()
+        var setsunSet = hours2 + 'h' + minutes2.substr(-2) + 'm';
 
-        
-        console.log(SunRise)
-
-        console.log(test);
 
         console.log(channel, `${JSONObj.name}, ${JSONObj.sys.country}: ${JSONObj.main.temp}°C, feels like ${JSONObj.main.feels_like}°C. Weather: ${JSONObj.weather[0].description}. ${deg} Wind speed: ${JSONObj.wind.speed} m/s. Wind gusts up to ${JSONObj.wind.gust} m/s. Humadity: ${JSONObj.main.humidity}%. Air pressure: ${JSONObj.main.pressure} hPa. Sun rises at ${SunRise}, sunset at ${SunSet}.  `)
         
