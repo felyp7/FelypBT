@@ -1937,11 +1937,11 @@ if (message.toLowerCase().startsWith("'weather")){
 
 
 
-     weather.getAllWeather(function(err, JSONObj){
+     const data = await got(`https://api.openweathermap.org/data/2.5/weather?q=${args.join(" ")},uk&APPID=61f7f889e1b439d97a63ad05f7c708b0`);
 
-
+    let JSONObj = JSON.parse(data.body)
         console.log(JSONObj)
-        console.log(err)
+        
         
         if(JSONObj.cod == null) {
             client.action(channel, 'No city found :)')
@@ -1981,9 +1981,9 @@ if (message.toLowerCase().startsWith("'weather")){
 
         console.log(channel, `${JSONObj.name}, ${JSONObj.sys.country}: ${JSONObj.main.temp}°C, feels like ${JSONObj.main.feels_like}°C. Weather: ${JSONObj.weather[0].description}. ${direction} Wind speed: ${JSONObj.wind.speed} m/s. Wind gusts up to ${JSONObj.wind.gust} m/s. Humadity: ${JSONObj.main.humidity}%. Air pressure: ${JSONObj.main.pressure} hPa. Sun rises in ${SunRise}, sunset in ${SunSet}.  `)
         
-    })
+    }
 	
-}
+
 
 
 
