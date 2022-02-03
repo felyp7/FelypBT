@@ -1965,7 +1965,7 @@ if (message.toLowerCase().startsWith("'weather")){
         var SunRise = setsunRise
         var SunSet = setsunSet  
         
-        var test = Date.now() * 1000
+        var test = new Date(Date.now() * 1000);
 
         var test1 = test - unix_timestamp
         console.log(test);
