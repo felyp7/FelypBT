@@ -1937,7 +1937,9 @@ if (message.toLowerCase().startsWith("'weather")){
      weather.getAllWeather(function(err, JSONObj){
 		console.log(JSONObj);
     })
-
+    weather.getTemperature(function(err, temp){
+		console.log(temp);
+	});
 }
 
 
