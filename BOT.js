@@ -1924,8 +1924,8 @@ client.say(channel, `${emotes.join(" ")}`)
 if (message.toLowerCase().startsWith("'weather")){
     const weather = require('openweather-apis');
     const Compass = require("cardinal-direction");
-    const hdate = require('human-date')
-    const moment = require('moment')
+    const hdate = require('human-date');
+    const moment = require('moment');
 
     weather.setLang('en');
 	
