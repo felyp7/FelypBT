@@ -1941,7 +1941,7 @@ if (message.toLowerCase().startsWith("'weather")){
 		
         let data = JSON.parse(JSONObj)
 
-        
+        console.log(JSONObj)
     
         
         let unix_timestamp = JSONObj.sys.sunrise
