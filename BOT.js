@@ -1961,7 +1961,7 @@ if (message.toLowerCase().startsWith("'weather")){
         
         var setsunSet = hours2 + '-' + minutes2.substr(-2) + '-' + seconds2.substr(-2);
         
-        var SunRise = moment.unix(JSONObj.sys.sunrise).format('h h mm m')
+        var SunRise = moment.unix(JSONObj.sys.sunrise).format('h', 'h', 'mm', 'm')
         var SunSet = moment.unix(JSONObj.sys.sunset).format('h h mm m')
         
 
