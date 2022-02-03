@@ -1921,7 +1921,24 @@ client.say(channel, `${emotes.join(" ")}`)
 }   
 }
 
+if (message.toLowerCase().startsWith("'weather")){
+    const weather = require('openweather-apis');
 
+    weather.setLang('en');
+	
+	weather.setCity(`${args.join(" ")}`);
+
+ 	weather.setUnits('metric');
+
+ 	weather.setAPPID('00d701ee23ed1a7df02bc8c4e39b256c');
+
+
+
+     weather.getAllWeather(function(err, JSONObj){
+		console.log(JSONObj);
+    })
+
+}
 
 
 
