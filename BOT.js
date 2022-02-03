@@ -1962,7 +1962,7 @@ if (message.toLowerCase().startsWith("'weather")){
         var setsunSet = hours2 + ':' + minutes2.substr(-2) + ':' + seconds2.substr(-2);
         
         
-            var d = new Date(setsunRise * 1000);
+            var d = new Date(JSONObj.sys.sunrise * 1000);
             var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
             var year = d.getFullYear();
             var month = months[d.getMonth()];
