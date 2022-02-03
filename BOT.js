@@ -1945,7 +1945,7 @@ if (message.toLowerCase().startsWith("'weather")){
         let unix_timestamp = JSONObj.sys.sunrise
 
         var test1 = new Date(unix_timestamp * 1000);
-        var test = Date.now()
+        var test = Date.now() + 10000000
 
         var date = new Date(test1 - test);
         var hours = date.getHours();
