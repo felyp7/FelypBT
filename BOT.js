@@ -1943,6 +1943,8 @@ if (message.toLowerCase().startsWith("'weather")){
         console.log(JSONObj)
         console.log(err)
         
+        const direction = Compass.cardinalFromDegree(JSONObj.wind.deg)
+
         let unix_timestamp = JSONObj.sys.sunrise
 
         var locationTime = new Date(unix_timestamp * 1000);
@@ -1972,7 +1974,7 @@ if (message.toLowerCase().startsWith("'weather")){
         var SunSet = hours2 + 'h' + minutes2.substr(-2) + 'm';
 
 
-        console.log(channel, `${JSONObj.name}, ${JSONObj.sys.country}: ${JSONObj.main.temp}°C, feels like ${JSONObj.main.feels_like}°C. Weather: ${JSONObj.weather[0].description}. Wind speed: ${JSONObj.wind.speed} m/s. Wind gusts up to ${JSONObj.wind.gust} m/s. Humadity: ${JSONObj.main.humidity}%. Air pressure: ${JSONObj.main.pressure} hPa. Sun rises at ${SunRise}, sunset at ${SunSet}.  `)
+        console.log(channel, `${JSONObj.name}, ${JSONObj.sys.country}: ${JSONObj.main.temp}°C, feels like ${JSONObj.main.feels_like}°C. Weather: ${JSONObj.weather[0].description}. ${direction} Wind speed: ${JSONObj.wind.speed} m/s.${JSONObj.wind.} Wind gusts up to ${JSONObj.wind.gust} m/s. Humadity: ${JSONObj.main.humidity}%. Air pressure: ${JSONObj.main.pressure} hPa. Sun rises in ${SunRise}, sunset in ${SunSet}.  `)
         
     })
 	
