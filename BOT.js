@@ -1944,7 +1944,7 @@ if (message.toLowerCase().startsWith("'weather")){
         
     
         
-        let unix_timestamp = data.body.sys.sunrise
+        let unix_timestamp = JSONObj.sys.sunrise
 
         var locationTime = new Date(unix_timestamp * 1000);
         var currentTime = Date.now() 
