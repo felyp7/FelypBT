@@ -1946,7 +1946,36 @@ if (message.toLowerCase().startsWith("'weather")){
     let JSONObj = data.body
         console.log(JSONObj)
         
-        
+        if(JSONObj.cod == 400) {
+            client.action(channel, 'No city found :)')
+        ;return;
+        }
+
+        if(JSONObj.cod == 429) {
+            client.action(channel, 'No city found :)')
+        ;return;
+        }
+
+        if(JSONObj.cod == 500) {
+            client.action(channel, 'No city found :)')
+        ;return;
+        }
+
+        if(JSONObj.cod == 502) {
+            client.action(channel, 'No city found :)')
+        ;return;
+        }
+
+        if(JSONObj.cod == 503) {
+            client.action(channel, 'No city found :)')
+        ;return;
+        }
+
+        if(JSONObj.cod == 504) {
+            client.action(channel, 'No city found :)')
+        ;return;
+        }
+
         if(JSONObj.cod == 404) {
             client.action(channel, 'No city found :)')
         ;return;
