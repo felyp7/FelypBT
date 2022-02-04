@@ -952,9 +952,7 @@ if(isModUp) {
                 const userData = userCheck.body
                 const userColor = userData.chatColor
                 
-                
-
-                if(userColor === null) return { reply: 'Default. (never set)' }
+            
 
                 const colorName = await got(`https://www.thecolorapi.com/id?hex=${userColor.replace('#', '')}`).json();
             
