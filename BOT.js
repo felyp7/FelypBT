@@ -953,9 +953,6 @@ if(isModUp) {
                 const userColor = userData.chatColor
                 
             
-
-                const colorName = await got(`https://www.thecolorapi.com/id?hex=${userColor.replace('#', '')}`).json();
-            
             
             const userId = userData.id
             const userAvatar = userData.logo
@@ -973,10 +970,24 @@ if(isModUp) {
             const isAffiliate = userAffiliate
             const isBot = userBot
             
+
+                if (userColor == null) {
+                    if (userData.badge[0] == undefined){
+                        client.action(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: No badge, Avatar: ${avatar} , Color: Default color (Never set), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
+                    ;return;
+                    } else {
+                    client.action(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: ${badge}, Avatar: ${avatar} , Color: Default color (Never set), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
+                    ;return;
+                    }
+                }
+
+            const colorName = await got(`https://www.thecolorapi.com/id?hex=${userColor.replace('#', '')}`).json();
+
             const creation = await got(`https://decapi.me/twitch/creation/${userTarget}`);
                 let creationDate = creation.body
                 
 
+                    
 
                     if (userData.badge[0] == undefined){
                         client.action(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: No badge, Avatar: ${avatar} , Color: ${userColor} (${colorName.name.value}), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
