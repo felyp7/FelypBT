@@ -126,15 +126,15 @@ if (message.toLowerCase().startsWith("'restart") && user.username === 'juicerb0t
                 block = true;
                 setTimeout(() => {
                     block = false;
-                }, (30 * 1000));
+                }, (5 * 1000));
             }
         }
     }
 
     if (message.toLowerCase().startsWith("'spam")) {
         if (!block) {
-            if (size2 > 80) {
-                client.say(channel, 'the maximum size is 80')
+            if (size2 > 1000) {
+                client.say(channel, 'the maximum size is 100')
                  ;return;}
             for (var i = 0; i < args[0]; i++) {
                 client.say(channel, args.slice(1).join(" "))
@@ -145,7 +145,7 @@ if (message.toLowerCase().startsWith("'restart") && user.username === 'juicerb0t
             block = true;
             setTimeout(() => {
                 block = false;
-            }, (30 * 1000));
+            }, (5 * 1000));
         }
     }
 
