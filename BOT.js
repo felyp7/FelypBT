@@ -108,6 +108,8 @@ if (message.toLowerCase().startsWith("'restart") && user.username === 'juicerb0t
         }
     }
 
+
+if(isModUp) { 
     if (message.toLowerCase().startsWith("'pyramid") && command === 'pyramid') {
         if (!block) {
             if (size > 150) {
@@ -130,7 +132,9 @@ if (message.toLowerCase().startsWith("'restart") && user.username === 'juicerb0t
             }
         }
     }
+}
 
+if(isModUp) { 
     if (message.toLowerCase().startsWith("'spam")) {
         if (!block) {
             if (size2 > 300) {
@@ -148,6 +152,7 @@ if (message.toLowerCase().startsWith("'restart") && user.username === 'juicerb0t
             }, (5 * 1000));
         }
     }
+}
 
     if (message == "'artixw") {
         if (!block) {
