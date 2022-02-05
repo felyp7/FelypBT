@@ -17,7 +17,7 @@ const client = new tmi.Client({
         username: process.env.username,
         password: process.env.password
     },
-    channels: ['godfelyp1']
+    channels: ['godfelyp1', 'Fookstee', 'florian_2807', 'veryracc', 'xPatrck', 'masenka12', 'lordevid', 'Sneeeze_', 'kawanpls', 'turtoise', 'anniiikaa', 'pajlada', 'carltincan']
 });
 const got = require('got');
 
@@ -534,8 +534,7 @@ JSON.parse(data.body).map((e) => {
     if (message === "'mods" && user['user-id'] === "713320280") {
         if (!block) {
             client.mods(channel).then(function (data) {
-                let MODS = data.replace(",", " ");
-                client.action(channel, "MODS are: " + MODS)
+                client.action(channel, "MODS are: " + data)
                 block = true;
                 setTimeout(() => {
                     block = false;
@@ -548,8 +547,7 @@ JSON.parse(data.body).map((e) => {
     if (message === "'vips" && user['user-id'] === "713320280") {
         if (!block) {
             client.vips(channel).then(function (data) {
-                let VIPS = data.replace(",", " ");
-                client.action(channel, `VIPS are: ` + VIPS)
+                client.action(channel, `VIPS are: ` + data)
                 block = true;
                 setTimeout(() => {
                     block = false;
