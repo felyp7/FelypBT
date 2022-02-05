@@ -534,8 +534,8 @@ JSON.parse(data.body).map((e) => {
     if (message === "'mods" && user['user-id'] === "162760707") {
         if (!block) {
             client.mods(channel).then(function (data) {
-                let data = data.replace(",", " ");
-                client.action(channel, "MODS are: " + data)
+                let MODS = data.replace(",", " ");
+                client.action(channel, "MODS are: " + MODS)
                 block = true;
                 setTimeout(() => {
                     block = false;
@@ -548,8 +548,8 @@ JSON.parse(data.body).map((e) => {
     if (message === "'vips" && user['user-id'] === "162760707") {
         if (!block) {
             client.vips(channel).then(function (data) {
-                let data = data.replace(",", " ");
-                client.action(channel, `VIPS are: ` + data)
+                let VIPS = data.replace(",", " ");
+                client.action(channel, `VIPS are: ` + VIPS)
                 block = true;
                 setTimeout(() => {
                     block = false;
