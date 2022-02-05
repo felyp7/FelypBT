@@ -17,7 +17,7 @@ const client = new tmi.Client({
         username: process.env.username,
         password: process.env.password
     },
-    channels: ['godfelyp1', 'Fookstee', 'florian_2807', 'Carltincan', 'veryracc', 'xPatrck', 'masenka12', 'lordevid', 'Sneeeze_', 'kawanpls', 'turtoise', 'anniiikaa', 'pajlada', 'bobthebuilder_98']
+    channels: ['godfelyp1']
 });
 const got = require('got');
 
@@ -84,7 +84,8 @@ client.on("message", async (channel, user, message, self) => {
         counter++            
         console.log(channel)
         console.log(messages[counter%messages.length])
-        }
+        client.say(channel, messages[counter%messages.length]);    
+    }
 
 
     const args = message.slice(1).split(' ')
