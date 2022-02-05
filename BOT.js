@@ -55,7 +55,8 @@ var block = false;
 client.on("message", async (channel, user, message, self) => {
     if (self) return;
 
-
+    let counter = 0;
+    
     const colors =  [
         "/color #FFFE66", "/color #F9FE66", "/color #F3FE66", "/color #EDFE66", "/color #E7FE66", "/color #E1FE66", "/color #DBFE66", "/color #D5FE66", "/color #CFFE66", "/color #C9FE66",
         "/color #C3FE66", "/color #BDFE66", "/color #B7FE66", "/color #B0FF66", "/color #AAFF66", "/color #A4FF66", "/color #9EFF66", "/color #98FF66", "/color #92FF66", "/color #8CFF66",
