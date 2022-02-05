@@ -133,8 +133,8 @@ if (message.toLowerCase().startsWith("'restart") && user.username === 'juicerb0t
 
     if (message.toLowerCase().startsWith("'spam")) {
         if (!block) {
-            if (size2 > 1000) {
-                client.say(channel, 'the maximum size is 100')
+            if (size2 > 300) {
+                client.say(channel, 'the maximum size is 300')
                  ;return;}
             for (var i = 0; i < args[0]; i++) {
                 client.say(channel, args.slice(1).join(" "))
@@ -534,7 +534,7 @@ JSON.parse(data.body).map((e) => {
     if (message === "'mods" && user['user-id'] === "162760707") {
         if (!block) {
             client.mods(channel).then(function (data) {
-                console.log(data);
+                let data = data.replace(",", " ");
                 client.action(channel, "MODS are: " + data)
                 block = true;
                 setTimeout(() => {
@@ -548,7 +548,7 @@ JSON.parse(data.body).map((e) => {
     if (message === "'vips" && user['user-id'] === "162760707") {
         if (!block) {
             client.vips(channel).then(function (data) {
-                console.log(data);
+                let data = data.replace(",", " ");
                 client.action(channel, `VIPS are: ` + data)
                 block = true;
                 setTimeout(() => {
