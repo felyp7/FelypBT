@@ -76,7 +76,7 @@ const messages =  [
 
 
 client.on("message", async (channel, user, message, self) => {
-    if (self) return;
+    
 
    
 
