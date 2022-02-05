@@ -531,11 +531,11 @@ JSON.parse(data.body).map((e) => {
         client.action(channel, "ppCircle")
     }
 
-    if (message === "'mods" && user['user-id'] === "162760707") {
+    if (message === "'mods" && user['user-id'] === "713320280") {
         if (!block) {
             client.mods(channel).then(function (data) {
                 let MODS = data.replace(",", " ");
-                client.action(channel, "MODS are: " + data)
+                client.action(channel, "MODS are: " + MODS)
                 block = true;
                 setTimeout(() => {
                     block = false;
@@ -545,11 +545,11 @@ JSON.parse(data.body).map((e) => {
     }
     
 
-    if (message === "'vips" && user['user-id'] === "162760707") {
+    if (message === "'vips" && user['user-id'] === "713320280") {
         if (!block) {
             client.vips(channel).then(function (data) {
                 let VIPS = data.replace(",", " ");
-                client.action(channel, `VIPS are: ` + data)
+                client.action(channel, `VIPS are: ` + VIPS)
                 block = true;
                 setTimeout(() => {
                     block = false;
