@@ -535,7 +535,7 @@ JSON.parse(data.body).map((e) => {
         if (!block) {
             client.mods(channel).then(function (data) {
                 let MODS = data.replace(",", " ");
-                client.action(channel, "MODS are: " + MODS)
+                client.action(channel, "MODS are: " + data)
                 block = true;
                 setTimeout(() => {
                     block = false;
@@ -549,7 +549,7 @@ JSON.parse(data.body).map((e) => {
         if (!block) {
             client.vips(channel).then(function (data) {
                 let VIPS = data.replace(",", " ");
-                client.action(channel, `VIPS are: ` + VIPS)
+                client.action(channel, `VIPS are: ` + data)
                 block = true;
                 setTimeout(() => {
                     block = false;
