@@ -52,40 +52,6 @@ client.connect(process.env.password).catch(console.error);
 var block = false;
 
 
-let counter = 0;
-
-const messages =  [
-    "#FFFE66", "#F9FE66", "#F3FE66", "#EDFE66", "#E7FE66", "#E1FE66", "#DBFE66", "#D5FE66", "#CFFE66", "#C9FE66",
-    "#C3FE66", "#BDFE66", "#B7FE66", "#B0FF66", "#AAFF66", "#A4FF66", "#9EFF66", "#98FF66", "#92FF66", "#8CFF66",
-    "#86FF66", "#80FF66", "#7AFF66", "#74FF66", "#6EFF66", "#68FF66", 
-    "#68FF66", "#68FF6C", "#68FF72", "#68FF78", "#68FF7E", "#68FF83", "#68FF89", "#67FF8F", "#67FF95", "#67FF9B",
-    "#67FFA1", "#67FFA7", "#67FFAD", "#67FFB2", "#67FFB8", "#67FFBE", "#67FFC4", "#67FFCA", "#67FFD0", "#66FFD6",
-    "#66FFDC", "#66FFE1", "#66FFE7", "#66FFED", "#66FFF3", "#66FFF9",
-    "#66FFF9", "#66F9F9", "#66F3F9", "#66EDFA", "#66E7FA", "#66E1FA", "#66DBFA", "#66D5FB", "#66CFFB", "#66C9FB",
-    "#66C3FB", "#66BDFC", "#66B7FC", "#66B0FC", "#66AAFC", "#66A4FD", "#669EFD", "#6698FD", "#6692FD", "#668CFE",
-    "#6686FE", "#6680FE", "#667AFE", "#6674FF", "#666EFF", "#6668FF",
-    "#6668FF", "#6B68FF", "#7168FF", "#7668FF", "#7B68FF", "#8168FF", "#8668FF", "#8C67FF", "#9167FF", "#9667FF",
-    "#9C67FF", "#A167FF", "#A667FF", "#AC67FF", "#B167FF", "#B667FF", "#BC67FF", "#C167FF", "#C667FF", "#CC66FF",
-    "#D166FF", "#D766FF", "#DC66FF", "#E166FF", "#E766FF", "#EC66FF", 
-    "#EC66FF", "#ED66F9", "#EE66F3", "#EE66ED", "#EF66E7", "#F066E0", "#F166DA", "#F166D4", "#F266CE", "#F366C8",
-    "#F466C2", "#F466BC", "#F566B6", "#F666AF", "#F766A9", "#F766A3", "#F8669D", "#F96697", "#FA6691", "#FA668B",
-    "#FB6685", "#FC667E", "#FD6678", "#FD6672", "#FE666C", "#FF6666",
-    "#FF6666", "#FF6C66", "#FF7266", "#FF7866", "#FF7E66", "#FF8466", "#FF8A66", "#FF9166", "#FF9766", "#FF9D66",
-    "#FFA366", "#FFA966", "#FFAF66", "#FFB566", "#FFBB66", "#FFC166", "#FFC766", "#FFCD66", "#FFD366", "#FFDA66",
-    "#FFE066", "#FFE666", "#FFEC66", "#FFF266", "#FFF866", "#FFFE66"];
-
-
-client.on("message", async (channel, user, message, self) => {
-    
-
-   
-
-    if (user.username === 'juicerb0t') {
-        counter++            
-        client.color(messages[counter%messages.length]);    
-    }
-})
-
     client.on("message", async (channel, user, message, self) => {
 
     const args = message.slice(1).split(' ')
@@ -144,8 +110,8 @@ if (message.toLowerCase().startsWith("'restart") && user.username === 'juicerb0t
 
     if (message.toLowerCase().startsWith("'pyramid") && command === 'pyramid') {
         if (!block) {
-            if (size > 40) {
-                client.action(channel, 'the maximum size is 40')
+            if (size > 150) {
+                client.action(channel, 'the maximum size is 150')
                 ; return;
             }
             for (var i = 0; i < args[1]; i++) {
