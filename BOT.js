@@ -82,14 +82,12 @@ client.on("message", async (channel, user, message, self) => {
 
     if (user.username === 'juicerb0t') {
         counter++            
-        console.log(channel)
-        console.log(messages[counter%messages.length])
         client.color(messages[counter%messages.length]);    
     }
 })
 
     client.on("message", async (channel, user, message, self) => {
-        
+
     const args = message.slice(1).split(' ')
     const command = args.shift().toLowerCase();
     const size = args[1]
