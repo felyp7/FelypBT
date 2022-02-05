@@ -76,9 +76,12 @@ client.on("message", async (channel, user, message, self) => {
         "/color #FFA366", "/color #FFA966", "/color #FFAF66", "/color #FFB566", "/color #FFBB66", "/color #FFC166", "/color #FFC766", "/color #FFCD66", "/color #FFD366", "/color #FFDA66",
         "/color #FFE066", "/color #FFE666", "/color #FFEC66", "/color #FFF266", "/color #FFF866", "/color #FFFE66"];
 
-if (user.username === 'juicerb0t'){ 
-    console.log(array[Math.floor(Math.round() * colors.length)])
-}
+        if (user.username === 'juicerb0t') {
+            counter++
+            console.log(channel)
+            console.log(colors[counter%colors.length])
+            
+        }
 
     const args = message.slice(1).split(' ')
     const command = args.shift().toLowerCase();
