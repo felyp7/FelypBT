@@ -55,7 +55,7 @@
  | brb |  | Counts time when you are going to be right back | User
  | gn |  | Counts time when you are sleeping | User
  | wc |  | Counts time when you are on the toilet | User
- | firstmessage | fm | Shows your or someone elses first message in exact channel (Using https://logs.ivr.fi/) | user
+ | firstmessage | fm | Shows your or someone elses first message in exact channel (Using https://logs.ivr.fi/ and https://logs.apulxd.ga/) | user
  | isbanned |  | Checks if user is banned | User
  | ispartner |  | Checks if user is partner | User
  | isaffiliate |  | Checks if user is affiliate | User
@@ -72,3 +72,4 @@
  | allemotes |  | Types every third party thing emotes and sub emotes | user
  | setgame |  | Change game | Developer
  | settitle |  | Change title | Developer
+ | weather |  | Weather status | User
