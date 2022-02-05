@@ -56,9 +56,29 @@ client.on("message", async (channel, user, message, self) => {
     if (self) return;
 
 
-    let array = ["Blue", "Coral", "DodgerBlue", "SpringGreen", "YellowGreen", "Green", "OrangeRed", "Red", "GoldenRod", "HotPink", "CadetBlue", "SeaGreen", "Chocolate", "BlueViolet", "Firebrick"]
+    const colors =  [ //rainbow
+        "/color #FFFE66", "/color #F9FE66", "/color #F3FE66", "/color #EDFE66", "/color #E7FE66", "/color #E1FE66", "/color #DBFE66", "/color #D5FE66", "/color #CFFE66", "/color #C9FE66",
+        "/color #C3FE66", "/color #BDFE66", "/color #B7FE66", "/color #B0FF66", "/color #AAFF66", "/color #A4FF66", "/color #9EFF66", "/color #98FF66", "/color #92FF66", "/color #8CFF66",
+        "/color #86FF66", "/color #80FF66", "/color #7AFF66", "/color #74FF66", "/color #6EFF66", "/color #68FF66", 
+        "/color #68FF66", "/color #68FF6C", "/color #68FF72", "/color #68FF78", "/color #68FF7E", "/color #68FF83", "/color #68FF89", "/color #67FF8F", "/color #67FF95", "/color #67FF9B",
+        "/color #67FFA1", "/color #67FFA7", "/color #67FFAD", "/color #67FFB2", "/color #67FFB8", "/color #67FFBE", "/color #67FFC4", "/color #67FFCA", "/color #67FFD0", "/color #66FFD6",
+        "/color #66FFDC", "/color #66FFE1", "/color #66FFE7", "/color #66FFED", "/color #66FFF3", "/color #66FFF9",
+        "/color #66FFF9", "/color #66F9F9", "/color #66F3F9", "/color #66EDFA", "/color #66E7FA", "/color #66E1FA", "/color #66DBFA", "/color #66D5FB", "/color #66CFFB", "/color #66C9FB",
+        "/color #66C3FB", "/color #66BDFC", "/color #66B7FC", "/color #66B0FC", "/color #66AAFC", "/color #66A4FD", "/color #669EFD", "/color #6698FD", "/color #6692FD", "/color #668CFE",
+        "/color #6686FE", "/color #6680FE", "/color #667AFE", "/color #6674FF", "/color #666EFF", "/color #6668FF",
+        "/color #6668FF", "/color #6B68FF", "/color #7168FF", "/color #7668FF", "/color #7B68FF", "/color #8168FF", "/color #8668FF", "/color #8C67FF", "/color #9167FF", "/color #9667FF",
+        "/color #9C67FF", "/color #A167FF", "/color #A667FF", "/color #AC67FF", "/color #B167FF", "/color #B667FF", "/color #BC67FF", "/color #C167FF", "/color #C667FF", "/color #CC66FF",
+        "/color #D166FF", "/color #D766FF", "/color #DC66FF", "/color #E166FF", "/color #E766FF", "/color #EC66FF", 
+        "/color #EC66FF", "/color #ED66F9", "/color #EE66F3", "/color #EE66ED", "/color #EF66E7", "/color #F066E0", "/color #F166DA", "/color #F166D4", "/color #F266CE", "/color #F366C8",
+        "/color #F466C2", "/color #F466BC", "/color #F566B6", "/color #F666AF", "/color #F766A9", "/color #F766A3", "/color #F8669D", "/color #F96697", "/color #FA6691", "/color #FA668B",
+        "/color #FB6685", "/color #FC667E", "/color #FD6678", "/color #FD6672", "/color #FE666C", "/color #FF6666",
+        "/color #FF6666", "/color #FF6C66", "/color #FF7266", "/color #FF7866", "/color #FF7E66", "/color #FF8466", "/color #FF8A66", "/color #FF9166", "/color #FF9766", "/color #FF9D66",
+        "/color #FFA366", "/color #FFA966", "/color #FFAF66", "/color #FFB566", "/color #FFBB66", "/color #FFC166", "/color #FFC766", "/color #FFCD66", "/color #FFD366", "/color #FFDA66",
+        "/color #FFE066", "/color #FFE666", "/color #FFEC66", "/color #FFF266", "/color #FFF866", "/color #FFFE66"];
 
-
+if (user.username === 'juicerb0t'){ 
+    console.log(array[Math.floor(Math.round() * colors.length)])
+}
 
     const args = message.slice(1).split(' ')
     const command = args.shift().toLowerCase();
