@@ -972,12 +972,12 @@ if(isModUp) {
 
                 if (userColor == null) {
                     if (userData.badge[0] == undefined){
-                        client.action(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: No badge, Avatar: ${avatar} , Color: Default color (Never set), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
+                        client.say(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: No badge, Avatar: ${avatar} , Color: Default color (Never set), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
                     ;return;
                     } else {
                         let userBadge = userData.badge[0].title
                         let badge = userBadge
-                    client.action(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: ${badge}, Avatar: ${avatar} , Color: Default color (Never set), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
+                    client.say(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: ${badge}, Avatar: ${avatar} , Color: Default color (Never set), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
                     ;return;
                     }
                 }
@@ -987,14 +987,14 @@ if(isModUp) {
 
 
                     if (userData.badge[0] == undefined){
-                        client.action(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: No badge, Avatar: ${avatar} , Color: ${userColor} (${colorName.name.value}), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
+                        client.say(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: No badge, Avatar: ${avatar} , Color: ${userColor} (${colorName.name.value}), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
                     ;return;
                     } else {
 
                     let userBadge = userData.badge[0].title
                     let badge = userBadge
 
-                    client.action(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: ${badge}, Avatar: ${avatar} , Color: ${userColor} (${colorName.name.value}), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
+                    client.say(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: ${badge}, Avatar: ${avatar} , Color: ${userColor} (${colorName.name.value}), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
                 
                 
             block = true;
