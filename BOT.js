@@ -79,7 +79,7 @@ var block = false;
     }
 
 
-if (message.toLowerCase().startsWith("'restart") && user.username === 'juicerb0t' ) {
+if (message.toLowerCase().startsWith("'restart") && user.username === 'veryracc' ) {
     process.exit()
 }
 
