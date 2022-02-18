@@ -1896,6 +1896,7 @@ const me = await api.request({
 
                 JSON.parse(dat.item.album.artists).map((e) => {
                 artists.push(e.name);
+                });
 
                 const progress_ms = format(dat.progress_ms)
                 const duration_ms = format(dat.item.duration_ms)
