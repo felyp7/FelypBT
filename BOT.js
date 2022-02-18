@@ -1891,12 +1891,7 @@ const me = await api.request({
                 let dat = JSON.parse(r.body)
                 
                 const format = require('format-duration')
-                
-                let artists = [];
-
-                JSON.parse(dat.item.album.artists[0]).map((e) => {
-                artists.push(e.name);
-                });
+          
 
                 const progress_ms = format(dat.progress_ms)
                 const duration_ms = format(dat.item.duration_ms)
@@ -1907,7 +1902,7 @@ const me = await api.request({
                 ;return;
             }
 
-            client.action(channel, `VeryRacc is currently playing ${dat.item.name} by ${artists.join(" ")} ▶ [${progress_ms}/${duration_ms}] ${dat.item.external_urls.spotify}`)
+            client.action(channel, `VeryRacc is currently playing ${dat.item.name} by ${dat.item.album.artists[0].name} ▶ [${progress_ms}/${duration_ms}] ${dat.item.external_urls.spotify}`)
           }
     }
 })
