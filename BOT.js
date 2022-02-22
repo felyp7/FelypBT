@@ -1702,11 +1702,11 @@ if (message.toLowerCase().startsWith("'tuck")) {
        if (userTarget == user.username){
             client.say(channel, `@${user.username} tucked himself to bed Sadge 👉 🛏 `)
         ;return; 
+        }
  
         client.action(channel, `@${user.username} tucked ${userTarget} to bed FeelsOkayMan 👉 🛏 `)
-    
-        }
     }
+}
 
 if(message == "'rcolor") {
     if (!block) {
