@@ -1706,7 +1706,8 @@ if (message.toLowerCase().startsWith("'tuck")) {
  
         client.action(channel, `@${user.username} tucked ${userTarget} to bed FeelsOkayMan 👉 🛏 `)
     }
-}
+
+
 
 if(message == "'rcolor") {
     if (!block) {
