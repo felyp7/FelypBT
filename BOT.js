@@ -1699,13 +1699,12 @@ if (message.toLowerCase().startsWith("'tuck")) {
         }
         userTarget = args[0];
     }
-        
+       if (userTarget == user.username){
+            client.say(channel, `@${user.username} tucked himself to bed Sadge 👉 🛏 `)
+        ;return; 
+ 
         client.action(channel, `@${user.username} tucked ${userTarget} to bed FeelsOkayMan 👉 🛏 `)
     
-        
-        if (userTarget == user.username){
-            client.say(channel, `@${user.username} tucked himself to bed Sadge 👉 🛏 `)
-        ;return;
         }
     }
 
