@@ -313,22 +313,14 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
 
     let channelTarget = channel.replace("#", "");
 
-    const got = require("got");
+    const got = require("got")
 
-const data = await got(`https://emotes.adamcy.pl/v1/channel/${channelTarget}/emotes/7tv.bttv.ffz.twitch`);
-let emotes = [];
-
-JSON.parse(data.body).map((e) => {
-  emotes.push(e.code);
-});
         client.ping(channel).then(function (data) {
             console.log(data);
         
-        if (emotes.includes(args[0])) {
-            client.action(channel, `${args[0]} 🏓 Pong! Latency is ${Math.floor(Math.round(data * 1000))}ms | Bot Uptime: ${botUptime} | RAM: ${Math.round(process.memoryUsage().rss / 1024 / 1024)}mb | Channels: ${client.getChannels().length} `)
-        } else {
+        
             client.action(channel, `FeelsDankMan 🏓 Pong! Latency is ${Math.floor(Math.round(data * 1000))}ms | Bot Uptime: ${botUptime} | RAM: ${Math.round(process.memoryUsage().rss / 1024 / 1024)}mb | Channels: ${client.getChannels().length}`)
-        }
+        
             block = true;
             setTimeout(() => {
                 block = false;
@@ -1700,13 +1692,6 @@ if (message.toLowerCase().startsWith("'tuck")) {
 
     const got = require("got");
 
-const data = await got(`https://emotes.adamcy.pl/v1/channel/${channelTarget}/emotes/7tv.bttv.ffz.twitch`);
-let emotes = [];
-
-JSON.parse(data.body).map((e) => {
-  emotes.push(e.code);
-});
-
     let userTarget = user.username;
     if (args[0]) {
         if (args[0].startsWith("@")) {
@@ -1715,11 +1700,8 @@ JSON.parse(data.body).map((e) => {
         userTarget = args[0];
     }
         
-    if (emotes.includes(args[1])) {
-        client.action(channel, `@${user.username} tucked ${userTarget} to bed ${args[1]} 👉 🛏 `)
-    } else {
         client.action(channel, `@${user.username} tucked ${userTarget} to bed FeelsOkayMan 👉 🛏 `)
-    }
+    
         
         if (userTarget == user.username){
             client.say(channel, `@${user.username} tucked himself to bed Sadge 👉 🛏 `)
@@ -1910,27 +1892,6 @@ const me = await api.request({
 }
     
 
-
-if (message.toLowerCase().startsWith("'allemotes")) {
-    if (!block) {
-    let channelTarget = channel.replace("#", "");
-
-    const got = require("got");
-
-const data = await got(`https://emotes.adamcy.pl/v1/channel/${channelTarget}/emotes/7tv.bttv.ffz.twitch`);
-let emotes = [];
-
-JSON.parse(data.body).map((e) => {
-  emotes.push(e.code);
-});
-
-client.say(channel, `${emotes.join(" ")}`)
-        block = true;
-        setTimeout(() => {
-        block = false;
-    }, (5 * 1000));
-}   
-}
 
 if (message.toLowerCase().startsWith("'weather")){
     const weather = require('openweather-apis');
