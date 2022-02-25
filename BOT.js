@@ -1984,7 +1984,7 @@ if (message.toLowerCase().startsWith("'weather")){
         var SunSet = hours2 + 'h' + minutes2.substr(-2) + 'm';
 
             if(JSONObj.wind.gust == null){
-                client.action(channel, `${JSONObj.name}, ${JSONObj.sys.country}: ${JSONObj.main.temp}°C, feels like ${JSONObj.main.feels_like}°C. Weather: ${JSONObj.weather[0].description}. ${direction} Wind speed: ${JSONObj.wind.speed} m/s. Humadity: ${JSONObj.main.humidity}%. Air pressure: ${JSONObj.main.pressure} hPa. Sun rises in ${SunRise}, sunset in ${SunSet}.  `)
+                client.action(channel, `${JSONObj.name}, ${JSONObj.sys.country}: ${kelvinToCelsius(JSONObj.main.temp)}°C, feels like ${kelvinToCelsius(JSONObj.main.feels_like)}°C. Weather: ${JSONObj.weather[0].description}. ${direction} Wind speed: ${JSONObj.wind.speed} m/s. Humadity: ${JSONObj.main.humidity}%. Air pressure: ${JSONObj.main.pressure} hPa. Sun rises in ${SunRise}, sunset in ${SunSet}.  `)
             ;return;
             }
 
