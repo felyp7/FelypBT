@@ -112,8 +112,8 @@ if (message.toLowerCase().startsWith("'restart") && user.username === 'veryracc'
 if(isModUp) { 
     if (message.toLowerCase().startsWith("'pyramid") && command === 'pyramid') {
         if (!block) {
-            if (size > 150) {
-                client.action(channel, 'the maximum size is 150')
+            if (size > 90) {
+                client.action(channel, 'the maximum size is 90')
                 ; return;
             }
             for (var i = 0; i < args[1]; i++) {
