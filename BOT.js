@@ -1899,15 +1899,20 @@ const me = await api.request({
             }
 
             client.action(channel, `VeryRacc is currently playing ${dat.item.name} by ${dat.item.album.artists[0].name} ▶ [${progress_ms}/${duration_ms}] ${dat.item.external_urls.spotify}`)
-          }
-    }
-})
-}
+                block = true;
+                setTimeout(() => {
+                    block = false;
+                }, (5 * 1000));  
+           }
+        }
+     })
+  }
 }
     
 
 
 if (message.toLowerCase().startsWith("'weather") && command === 'weather'){
+    if (!block) {
     const weather = require('openweather-apis');
     const Compass = require("cardinal-direction");
     const hdate = require('human-date');
@@ -2003,8 +2008,12 @@ if (message.toLowerCase().startsWith("'weather") && command === 'weather'){
             }
 
         client.action(channel, `${JSONObj.name}, ${JSONObj.sys.country}: ${kelvinToCelsius(JSONObj.main.temp)}°C, feels like ${kelvinToCelsius(JSONObj.main.feels_like)}°C. Weather: ${JSONObj.weather[0].description}. ${direction} Wind speed: ${JSONObj.wind.speed} m/s. Wind gusts up to ${JSONObj.wind.gust} m/s. Humadity: ${JSONObj.main.humidity}%. Air pressure: ${JSONObj.main.pressure} hPa. Sun rises in ${SunRise}, sunset in ${SunSet}.  `)
-        
-    }
+                block = true;
+                setTimeout(() => {
+                    block = false;
+                }, (5 * 1000)); 
+   } 
+}
 	
 
 
