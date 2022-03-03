@@ -64,7 +64,7 @@ var block = false;
     let isModUp = isMod || isBroadcaster;
     let isBroadcasterUp = isBroadcaster;
 
-    if (message.toLowerCase() === "'commands") {
+if(message.toLowerCase().startsWith("'commands") && command === 'commands' {
         if (!block) {
             client.say(channel, `https://github.com/felyp7/juiceb0t`);
             block = true;
@@ -434,7 +434,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         }
     }
 
-    if (message == "'roll") {
+   if(message.toLowerCase().startsWith("'roll") && command === 'roll') {
         if (!block) {
             client.action(channel, `@${user.username} :tf: 👉   ${Math.floor(Math.random() * 2) + 1}!`)
             block = true;
@@ -1723,7 +1723,7 @@ if (message.toLowerCase().startsWith("'tuck")) {
 
 
 
-if(message == "'rcolor") {
+if(message.toLowerCase().startsWith("'rcolor") && command === 'rcolor') {
     if (!block) {
         var color = "";
     for(var i = 0; i < 3; i++) {
@@ -1777,7 +1777,7 @@ if (channel === '#pajlada') {
 }
 }
 
-    if (message === "'broadcaster") {
+  if(message.toLowerCase().startsWith("'broadcaster") && command === 'broadcaster') {
         if (!block) {
             let channelTarget = channel.replace("#", "");
                 if (args[1]) {
@@ -1793,7 +1793,7 @@ if (channel === '#pajlada') {
         }
 
         if (isModUp) {
-            if (message.toLocaleLowerCase().startsWith("'settitle")) {
+            if (message.toLocaleLowerCase().startsWith("'settitle") && channel === '#veryracc') {
                 
                 let channelTarget = channel.replace("#", "");
 
@@ -1814,7 +1814,7 @@ if (channel === '#pajlada') {
 }
 
 if (isModUp) {
-    if (message.toLocaleLowerCase().startsWith("'setgame")) {
+    if (message.toLocaleLowerCase().startsWith("'setgame") && channel === '#veryracc') {
 const game = args.join(" ")
 
 let channelTarget = channel.replace("#", "");
@@ -1907,7 +1907,7 @@ const me = await api.request({
     
 
 
-if (message.toLowerCase().startsWith("'weather")){
+if (message.toLowerCase().startsWith("'weather") && command === 'weather'){
     const weather = require('openweather-apis');
     const Compass = require("cardinal-direction");
     const hdate = require('human-date');
