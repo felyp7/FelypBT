@@ -74,7 +74,7 @@ var block = false;
         }
     }
 
-if (channel === 'veryracc') {
+if (channel === '#veryracc') {
 if (message.toLowerCase() === "'god") {
         if (!block) {
             client.say(channel, `https://www.youtube.com/shorts/tFnWj2S1xQU MentallyIll`);
