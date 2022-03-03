@@ -74,6 +74,16 @@ var block = false;
         }
     }
 
+if (message.toLowerCase() === "'god") {
+        if (!block) {
+            client.say(channel, `https://www.youtube.com/shorts/tFnWj2S1xQU MentallyIll`);
+            block = true;
+            setTimeout(() => {
+                block = false;
+            }, (5 * 1000));
+        }
+    }
+
     if (message.startsWith("(cookie reminder) juicerb0t, eat cookie please :) 🍪") && user['user-id'] === "229225576") {
         client.say(channel, '!cookie')
     }
