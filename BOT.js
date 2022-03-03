@@ -73,18 +73,19 @@ var block = false;
             }, (5 * 1000));
         }
     }
-
 if (channel === '#veryracc') {
-if (message.toLowerCase() === "'god") {
-        if (!block) {
-            client.say(channel, `https://www.youtube.com/shorts/tFnWj2S1xQU MentallyIll`);
-            block = true;
-            setTimeout(() => {
-                block = false;
-            }, (5 * 1000));
-        }
+    if (!block) {
+    if(message == "'god") {
+        client.action(channel, 'https://www.youtube.com/shorts/tFnWj2S1xQU MentallyIll')
+        block = true;
+        setTimeout(() => {
+            block = false;
+        }, (5 * 1000));
     }
 }
+}
+
+
 
     if (message.startsWith("(cookie reminder) juicerb0t, eat cookie please :) 🍪") && user['user-id'] === "229225576") {
         client.say(channel, '!cookie')
@@ -540,7 +541,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         client.action(channel, "ppCircle")
     }
 
-    if (message === "'mods" && user['user-id'] === "713320280") {
+    if (message === "'mods" && user['user-id'] === "162760707") {
         if (!block) {
             client.mods(channel).then(function (data) {
                 client.action(channel, "MODS are: " + data)
@@ -553,7 +554,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
     }
     
 
-    if (message === "'vips" && user['user-id'] === "713320280") {
+    if (message === "'vips" && user['user-id'] === "162760707") {
         if (!block) {
             client.vips(channel).then(function (data) {
                 client.action(channel, `VIPS are: ` + data)
