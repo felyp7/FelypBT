@@ -75,8 +75,7 @@ var block = false;
     }
 
     
-    if(message == "'god") {
-       if (channel === '#veryracc') {      
+    if(message == "'god" && channel === '#veryracc') {      
         if (!block) {
         client.action(channel, 'https://www.youtube.com/shorts/tFnWj2S1xQU MentallyIll')
         block = true;
