@@ -64,7 +64,7 @@ var block = false;
     let isModUp = isMod || isBroadcaster;
     let isBroadcasterUp = isBroadcaster;
 
-if(message.toLowerCase().startsWith("'commands") && command === 'commands' {
+if(message.toLowerCase().startsWith("'commands") && command === 'commands') {
         if (!block) {
             client.say(channel, `https://github.com/felyp7/juiceb0t`);
             block = true;
