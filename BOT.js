@@ -73,9 +73,11 @@ var block = false;
             }, (5 * 1000));
         }
     }
-if (channel === '#veryracc') {
-    if (!block) {
+
+    
     if(message == "'god") {
+       if (channel === '#veryracc') {      
+        if (!block) {
         client.action(channel, 'https://www.youtube.com/shorts/tFnWj2S1xQU MentallyIll')
         block = true;
         setTimeout(() => {
