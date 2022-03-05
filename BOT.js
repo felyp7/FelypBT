@@ -766,10 +766,10 @@ if(isModUp) {
             const userBanned = userData.banned
             const isbanned = userBanned
              
-             if (isbanned = true){
+             if(isbanned == true) {
                 client.action(channel, `${userTarget} Banned: ${isbanned} Reason: ${userData.banReason} MODS`)
                 ;return;
-                 }
+                }
 
                 client.action(channel, `${userTarget} Banned: ${isbanned} MODS`)
     
