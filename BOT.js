@@ -752,7 +752,7 @@ if(isModUp) {
                 }
                 username = args[0];
             }
-                const userCheck = await got(`https://api.ivr.fi/twitch/resolve/${username}`,{
+                const userCheck = await got(`https://api.ivr.fi/v2/twitch/user/${userTarget}`,{
                     responseType: 'json',
                     throwHttpErrors: false
                 })
@@ -765,6 +765,11 @@ if(isModUp) {
 
             const userBanned = userData.banned
             const isbanned = userBanned
+             
+             if (isbanned = true){
+                client.action(channel, `${userTarget} Banned: ${isbanned} Reason: ${userData.banReason} MODS`)
+                ;return;
+                 }
 
                 client.action(channel, `${userTarget} Banned: ${isbanned} MODS`)
     
