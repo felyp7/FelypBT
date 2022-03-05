@@ -77,7 +77,7 @@ if(message.toLowerCase().startsWith("'commands") && command === 'commands') {
     
     if(message.toLowerCase().startsWith("'god") && command === 'god' && channel === '#veryracc') {      
         if (!block) {
-        client.action(channel, 'https://www.youtube.com/shorts/tFnWj2S1xQU MentallyIll')
+        client.action(channel, 'https://www.youtube.com/shorts/tFnWj2S1xQU GodIsGoodGodIsGreat')
         block = true;
         setTimeout(() => {
             block = false;
