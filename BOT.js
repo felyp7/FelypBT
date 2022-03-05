@@ -2015,8 +2015,12 @@ if (message.toLowerCase().startsWith("'weather") && command === 'weather'){
    } 
 }
 	
+const evalueted = await eval('(async () => {' + args.join(" ") + '})()')
+const ev = String(evalueted) || ''
 
-
+ if (message.toLowerCase().startsWith("'eval") && command === 'eval'){ 
+    client.say(channel, ev)
+}
 
 
 });
