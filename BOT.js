@@ -123,7 +123,7 @@ if (message.toLowerCase().startsWith("'restart") && user.username === 'veryracc'
     }
 
 
-if(isModUp) { 
+if(isModUp || user['user-id'] == '162760707') { 
     if (message.toLowerCase().startsWith("'pyramid") && command === 'pyramid') {
         if (!block) {
             if (size > 90) {
@@ -148,7 +148,7 @@ if(isModUp) {
     }
 }
 
-if(isModUp) { 
+if(isModUp || user['user-id'] == '162760707') { 
     if (message.toLowerCase().startsWith("'spam")) {
         if (!block) {
             if (size2 > 300) {
@@ -695,7 +695,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         }
     }
     
-if(isModUp) { 
+if(isModUp || user['user-id'] == '162760707') { 
     if (message.toLowerCase().startsWith("'massping") && command === 'massping') {
  
         const tChannel = channel.replace("#", "")
