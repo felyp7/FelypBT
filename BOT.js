@@ -695,7 +695,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         }
     }
     
-if(isModUp || user['user-id'] == '162760707') { 
+if(isModUp || user['user-id'] == '162760707' && 'juicerb0t'['user-type'] === 'mod') { 
     if (message.toLowerCase().startsWith("'massping") && command === 'massping') {
  
         const tChannel = channel.replace("#", "")
