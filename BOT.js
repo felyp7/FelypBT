@@ -25,6 +25,8 @@ const runTime = new Date().toString()
 
 const humanizeDuration = require("humanize-duration");
 
+const bot = 'juicerb0t'
+
 const rafkList = new Set() //outside  client.on
 
 const rgnList = new Set()
@@ -694,9 +696,10 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
             }, (5 * 1000));
         }
     }
-    
-if(isModUp || user['user-id'] == '162760707' && 'juicerb0t'['user-type'] === 'mod') { 
-    if (message.toLowerCase().startsWith("'massping") && command === 'massping') {
+  
+if (bot['user-type'] == 'mod') {
+    if(isModUp || user['user-id'] == '162760707') { 
+        if (message.toLowerCase().startsWith("'massping") && command === 'massping') {
  
         const tChannel = channel.replace("#", "")
             let request = await got(`https://tmi.twitch.tv/group/user/${tChannel}/chatters`, { responseType: 'json' })
@@ -714,7 +717,7 @@ if(isModUp || user['user-id'] == '162760707' && 'juicerb0t'['user-type'] === 'mo
         }
     }
 }
-    
+}  
 
     if (message.toLowerCase().startsWith("'retard") && command === 'retard') {
         if (!block) {
