@@ -697,7 +697,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         }
     }
   
-if (bot['user-type'] == 'mod') {
+
     if(isModUp || user['user-id'] == '162760707') { 
         if (message.toLowerCase().startsWith("'massping") && command === 'massping') {
  
@@ -717,7 +717,7 @@ if (bot['user-type'] == 'mod') {
         }
     }
 }
-}  
+ 
 
     if (message.toLowerCase().startsWith("'retard") && command === 'retard') {
         if (!block) {
