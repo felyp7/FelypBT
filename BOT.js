@@ -2032,11 +2032,6 @@ if (message.toLowerCase().startsWith("'weather") && command === 'weather'){
 }
 
 
-if (message.toLowerCase().startsWith("@")){
-    if (channel == 'veryracc' && user.username == 'YourMom_BOT_xD'){
-    client.say(channel, `${args[0]} Ayo Weeb`)
-}
-}
 
 });
 
