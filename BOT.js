@@ -1894,8 +1894,12 @@ const me = await api.request({
               } else {
                 let dat = JSON.parse(r.body)
                 
+                let artist = [];
+                JSON.parse(dat.item.album.artists[0].name).map((n) => {
+                    artist.push(n.code);
+                });
+
                 const format = require('format-duration')
-          
 
                 const progress_ms = format(dat.progress_ms)
                 const duration_ms = format(dat.item.duration_ms)
@@ -1906,7 +1910,7 @@ const me = await api.request({
                 ;return;
             }
 
-            client.action(channel, `VeryRacc is currently playing ${dat.item.name} by ${dat.item.album.artists[0].name} ▶ [${progress_ms}/${duration_ms}] ${dat.item.external_urls.spotify}`)
+            client.action(channel, `VeryRacc is currently playing ${dat.item.name} by ${artist.join(" ")} ▶ [${progress_ms}/${duration_ms}] ${dat.item.external_urls.spotify}`)
                 block = true;
                 setTimeout(() => {
                     block = false;
