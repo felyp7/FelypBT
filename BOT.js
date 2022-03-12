@@ -1895,7 +1895,8 @@ const me = await api.request({
                 let dat = JSON.parse(r.body)
                 let data = r.body
 
-                console.log(JSON.parse(data.item.album.artists[0].name))
+                console.log(data)
+                console.log(dat)
 
                 let artist = [];
                 JSON.parse(data.item.album.artists[0].name).map((n) => {
