@@ -1895,12 +1895,13 @@ const me = await api.request({
                 let dat = JSON.parse(r.body)
                 let data = r.body
 
+                console.log(JSON.parse(data.item.album.artists[0].name))
+
                 let artist = [];
                 JSON.parse(data.item.album.artists[0].name).map((n) => {
                     artist.push(n.code);
                 });
 
-                console.log(JSON.parse(data.item.album.artists[0].name))
 
                 const format = require('format-duration')
 
