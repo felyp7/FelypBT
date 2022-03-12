@@ -1893,9 +1893,10 @@ const me = await api.request({
                 client.action(channel, "Nothing is playing on VeryRacc's spotify")
               } else {
                 let dat = JSON.parse(r.body)
-                
+                let data = r.body
+
                 let artist = [];
-                JSON.parse(dat.item.album.artists[0].name).map((n) => {
+                JSON.parse(data.item.album.artists[0].name).map((n) => {
                     artist.push(n.code);
                 });
 
