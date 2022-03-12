@@ -1898,7 +1898,7 @@ const me = await api.request({
                 console.log(data)
 
                 let artist = [];
-                JSON.parse(data.item.artists[0]).map((name) => {
+                JSON.parse(data.item.artists).map((name) => {
                     artist.push(name.code);
                 });
 
