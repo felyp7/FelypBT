@@ -1900,6 +1900,8 @@ const me = await api.request({
                     artist.push(n.code);
                 });
 
+                console.log(JSON.parse(data.item.album.artists[0].name))
+
                 const format = require('format-duration')
 
                 const progress_ms = format(dat.progress_ms)
