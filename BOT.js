@@ -1813,7 +1813,7 @@ if (channel === '#pajlada') {
                 let id = userCheck.body.id
 
         let patch = await got.patch(`https://api.twitch.tv/helix/channels?broadcaster_id=162760707`, {
-            headers: { "Authorization": `Bearer cnqgpj0xa9gtnmawlb83cjeuddphma`, "Client-ID": `xszg16qk7z67cirz37vu1cpdz6qtn0`, "Content-type": 'application/json' },
+            headers: { "Authorization": `Bearer ${process.env.app_oauth}`, "Client-ID": `${process.env.client_id}`, "Content-type": 'application/json' },
             body: JSON.stringify({ "title": `${args.join(" ")}` })
         });
         
