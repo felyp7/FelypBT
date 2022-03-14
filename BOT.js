@@ -1384,17 +1384,10 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         if (message.toLowerCase().startsWith("'game")) {
             if (!block) {
         
-                let userTarget = user.username;
-                if (args[0]) {
-                    if (args[0].startsWith("@")) {
-                        args[0] = args[0].substring(1);
-                    }
-                    userTarget = args[0];
-                }
         
                 let channelTarget = channel.replace("#", "");
-                if (args[1]) {
-                    channelTarget = args[1];
+                if (args[0]) {
+                    channelTarget = args[0];
                 }
         
                 const game = await got(`https://decapi.me/twitch/game/${channelTarget}?`); 
