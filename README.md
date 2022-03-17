@@ -25,12 +25,8 @@
  | spam |  | spams something into the chat (max size 300) | <img src="https://static-cdn.jtvnw.net/badges/v1/5527c58c-fb7d-422d-b71b-f309dcb85cc1/1" width="25" height="25" /> <img src="https://static-cdn.jtvnw.net/badges/v1/3267646d-33f0-4b17-b3df-f923a41db1d0/1" width="25" height="25" />
  | subage | sa | Check your Subage | User 
  | subemotes |  | Shows you all subemote of a streamer | user  
- | uptime |  | Shows the uptime of the bot | User 
- | hello |  | Greets you lol | User
- | xqcTF |  | xqcTF ascii | User
+ | uptime |  | Shows the uptime of the stream | User 
  | xqcL |  | xqcL ascii | User
- | spider |  | spider ascii | User
- | lule |  | LULE ascii | User
  | gaytest |  | GayTest in % | User
  | lesbiantest |  | LesbianTest in % | User
  | cock |  | Surely real size of your cock Okge | User
@@ -39,12 +35,10 @@
  | swag |  | Size of your swag | User
  | vanish |  | Vanishes you | User
  | pyramid |  | Pyramid (max size 90) | <img src="https://static-cdn.jtvnw.net/badges/v1/5527c58c-fb7d-422d-b71b-f309dcb85cc1/1" width="25" height="25" /> <img src="https://static-cdn.jtvnw.net/badges/v1/3267646d-33f0-4b17-b3df-f923a41db1d0/1" width="25" height="25" />
- | wedding |  | The date when you and someone else will have wedding | User
  | love |  | Love between you and someone else <3 | User
  | depression |  | Size of your depression | User
  | emotes |  | Link to site with emotes of the channel | User
  | logs |  | Link to sites with logs | User
- | retard |  | Photos of Felyp Bruh | User
  | avatar |  | Link to picture with avatar of selected user | User
  | subs |  | number of subs (need to verify firs) | User
  | viewers |  | number of viewers | User
@@ -69,7 +63,6 @@
  | bruh |  | Bruh | user
  | broadcaster |  | Pings broadcaster | user
  | song |  | Currenly playing song on spotify | Developer
- | allemotes |  | Types every third party thing emotes and sub emotes | user
  | setgame |  | Change game | Developer
  | settitle |  | Change title | Developer
  | weather |  | Weather status | User
