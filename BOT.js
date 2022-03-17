@@ -1098,6 +1098,12 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         
                 const followage = await got(`https://decapi.me/twitch/followage/${channelTarget}/${userTarget}?precision=3`); // will return the days too
                 let data = followage.body
+                
+                    if (data === `User not found: ${userTarget}`) {
+                        client.action(channel, `${data}`)
+                        ;return;
+                    }
+
                 client.action(channel, `${userTarget} is following ${channelTarget} for: ${data}`)  
         
                 block = true;
