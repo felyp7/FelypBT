@@ -127,9 +127,9 @@ if (message.toLowerCase().startsWith("'restart") && user.username === 'veryracc'
     if(isModUp || user['user-id'] == '162760707') { 
         if (message.toLowerCase().startsWith("'pyramid") && command === 'pyramid') {
             if (!block) {
-                if (parseInt(args[0]) > parseInt(500 / (args.slice(1).join(" ").length + 1))){
-                    client.action(channel, `Max possible height for message is ${parseInt(500 / (args.slice(1).join(" ").length + 1))}`)
-                       ;return;
+                if (parseInt(args[0]) > parseInt(500 / (args[1].length + 1))){
+                    client.action(channel, `Max possible height for message is ${parseInt(500 / (args[1].length + 1))}`)
+                       return;
                     };
                 for (var i = 0; i < args[1]; i++) {
                     client.say(channel, `${args[0]} `.repeat(i))
@@ -148,6 +148,7 @@ if (message.toLowerCase().startsWith("'restart") && user.username === 'veryracc'
             }
         }
     }
+
 
 if(isModUp || user['user-id'] == '162760707') { 
     if (message.toLowerCase().startsWith("'spam")) {
