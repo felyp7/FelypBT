@@ -134,7 +134,6 @@ if(isModUp || user['user-id'] == '162760707') {
                 error: true,
                 reply: true,
             };
-                            if (e < 0) break;
                             block = true;
                             setTimeout(() => {
                                 block = false;
