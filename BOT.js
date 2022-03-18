@@ -134,6 +134,14 @@ if(isModUp || user['user-id'] == '162760707') {
                 error: true,
                 reply: true,
             };
+
+            for (var i = 0; i < args[1]; i++) {
+                client.say(channel, `${args[0]} `.repeat(i))
+
+                if (i > args[1]) break;
+            };
+            for (var e = args[1]; e > 0; e--) {
+                client.say(channel, `${args[0]} `.repeat(e))
                             block = true;
                             setTimeout(() => {
                                 block = false;
@@ -141,7 +149,7 @@ if(isModUp || user['user-id'] == '162760707') {
                         }
                     }
                 }
-            
+            }
 
 if(isModUp || user['user-id'] == '162760707') { 
     if (message.toLowerCase().startsWith("'spam")) {
