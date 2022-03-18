@@ -124,26 +124,32 @@ if (message.toLowerCase().startsWith("'restart") && user.username === 'veryracc'
         }
     }
 
-    if(isModUp || user['user-id'] == '162760707') { 
-        if (message.toLowerCase().startsWith("'pyramid") && command === 'pyramid') {
+    if (isModUp || user["user-id"] == "162760707") {
+        if (message.toLowerCase().startsWith("'pyramid") && command === "pyramid") {
             if (!block) {
-                if (size > 90) {
-                    client.action(channel, 'the maximum size is 90')
-                    ; return;
+                if (!args[1] || isNaN(parseInt(args[0]))) {
+                    return client.say(channel, `Usage: 'pyramid 1-100 message`);
                 }
-                for (var i = 0; i < args[1]; i++) {
-                    client.say(channel, `${args[0]} `.repeat(i))
-    
-                    if (i > args[1]) break;
-                };
-                for (var e = args[1]; e > 0; e--) {
-                    client.say(channel, `${args[0]} `.repeat(e))
-    
-                    if (e < 0) break;
-                    block = true;
-                    setTimeout(() => {
-                        block = false;
-                    }, (5 * 1000));
+                if (parseInt(args[0]) < 1 || parseInt(args[0]) > 100) {
+                    return client.say(channel, `Height needs to be between 1 and 100`);
+                }
+                if (parseInt(args[0]) > parseInt(500 / (args.slice(1).join(" ").length + 1))) {
+                    return client.say(channel, `Max possible height for message is ${parseInt(498 / (args.slice(1).join(" ").length + 1))}`);
+                }
+                let msg = "";
+                let phrase = args.slice(1).join(" ");
+                block = true;
+                setTimeout(() => {
+                    block = false;
+                }, 5 * 1000);
+                for (let i = 1; i < parseInt(args[0]) * 2; i++) {
+                    (function (ind) {
+                        setTimeout(function () {
+                            if (i < parseInt(args[0]) + 1) msg += `${phrase} `;
+                            else msg = msg.substring(phrase.length + 1);
+                            client.say(channel, `${msg}`);
+                        }, 70 * (ind + 1));
+                    })(i);
                 }
             }
         }
