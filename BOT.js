@@ -17,7 +17,7 @@ const client = new tmi.Client({
         username: process.env.username,
         password: process.env.password
     },
-    channels: ['godfelyp1', 'scarder_', 'opat04', 'feelsdonkman', 'lukyjuk', 'speedster05', 'bobthebuilder_98', 'Fookstee', 'florian_2807', 'veryracc', 'xPatrck', 'masenka12', 'lordevid', 'Sneeeze_', 'kawanpls', 'turtoise', 'anniiikaa', 'pajlada', 'carltincan']
+    channels: ['godfelyp1', 'scarder_', 'opat04', 'feelsdonkman', 'lukyjuk', 'speedster05', 'bobthebuilder_98', 'Fookstee', 'florian_2807', 'meIiodaas', 'xPatrck', 'masenka12', 'lordevid', 'Sneeeze_', 'kawanpls', 'turtoise', 'anniiikaa', 'pajlada', 'carltincan']
 });
 const got = require('got');
 
@@ -1816,6 +1816,7 @@ if (channel === '#pajlada') {
                 })
 
                 let id = userCheck.body.id
+
 
         let patch = await got.patch(`https://api.twitch.tv/helix/channels?broadcaster_id=162760707`, {
             headers: { "Authorization": `Bearer ${process.env.app_oauth}`, "Client-ID": `${process.env.client_id}`, "Content-type": 'application/json' },
