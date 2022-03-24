@@ -77,7 +77,7 @@ if(message.toLowerCase().startsWith("'commands") && command === 'commands') {
     }
 
     
-    if(message.toLowerCase().startsWith("'god") && command === 'god' && channel === '#veryracc') {      
+    if(message.toLowerCase().startsWith("'god") && command === 'god' && channel === '#meiiodaas') {      
         if (!block) {
         client.action(channel, 'https://www.youtube.com/shorts/tFnWj2S1xQU GodIsGoodGodIsGreat')
         block = true;
@@ -95,7 +95,7 @@ if(message.toLowerCase().startsWith("'commands") && command === 'commands') {
     }
 
 
-if (message.toLowerCase().startsWith("'restart") && user.username === 'veryracc' ) {
+if (message.toLowerCase().startsWith("'restart") && user.username === 'meiiodaas' ) {
     process.exit()
 }
 
@@ -1806,7 +1806,7 @@ if (channel === '#pajlada') {
         }
 
         if (isModUp) {
-            if (message.toLocaleLowerCase().startsWith("'settitle") && channel === '#veryracc') {
+            if (message.toLocaleLowerCase().startsWith("'settitle") && channel === '#meiiodaas') {
                 
                 let channelTarget = channel.replace("#", "");
 
@@ -1828,7 +1828,7 @@ if (channel === '#pajlada') {
 }
 
 if (isModUp) {
-    if (message.toLocaleLowerCase().startsWith("'setgame") && channel === '#veryracc') {
+    if (message.toLocaleLowerCase().startsWith("'setgame") && channel === '#meiiodaas') {
 const game = args.join(" ")
 
 let channelTarget = channel.replace("#", "");
@@ -1896,7 +1896,7 @@ const me = await api.request({
               console.log(`>> ERROR ${e}`)
             } else {
               if(r.body.length < 60){
-                client.action(channel, "Nothing is playing on VeryRacc's spotify")
+                client.action(channel, "Nothing is playing on MeIiodaas's spotify")
               } else {
                 let dat = JSON.parse(r.body)
                 let data = r.body
@@ -1908,11 +1908,11 @@ const me = await api.request({
             const paused = dat.is_playing
 
             if (dat.is_playing ==  false) {
-                client.action(channel, "Nothing is playing on VeryRacc's spotify")
+                client.action(channel, "Nothing is playing on MeIiodaas's spotify")
                 ;return;
             }
 
-            client.action(channel, `VeryRacc is currently playing ${dat.item.name} by ${dat.item.album.artists[0].name} ▶ [${progress_ms}/${duration_ms}] ${dat.item.external_urls.spotify}`)
+            client.action(channel, `MeIiodaas is currently playing ${dat.item.name} by ${dat.item.album.artists[0].name} ▶ [${progress_ms}/${duration_ms}] ${dat.item.external_urls.spotify}`)
                 block = true;
                 setTimeout(() => {
                     block = false;
