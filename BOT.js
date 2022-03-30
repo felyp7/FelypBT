@@ -1944,7 +1944,7 @@ const me = await api.request({
 
                 const format = require('format-duration')
 
-                let test = JSON.parse(data)
+                let test = JSON.parse(data.body)
 
                 let artists = {};
                 
