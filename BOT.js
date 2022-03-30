@@ -1940,9 +1940,17 @@ const me = await api.request({
                 client.action(channel, "Nothing is playing on MeIiodaas's spotify")
               } else {
                 let dat = JSON.parse(r.body)
-                let data = r.body
+                let data = r
 
                 const format = require('format-duration')
+
+                
+                let artists = {};
+                
+                JSON.parse(data.body.item.artists).map((e) => {
+                  art.push(e.name);
+                });
+
 
                 const progress_ms = format(dat.progress_ms)
                 const duration_ms = format(dat.item.duration_ms)
@@ -1953,7 +1961,7 @@ const me = await api.request({
                 ;return;
             }
 
-            client.action(channel, `MeIiodaas is currently playing ${dat.item.name} by ${dat.item.album.artists[0].name} ▶ [${progress_ms}/${duration_ms}] ${dat.item.external_urls.spotify}`)
+            client.action(channel, `MeIiodaas is currently playing ${dat.item.name} by ${artists.join("")} ▶ [${progress_ms}/${duration_ms}] ${dat.item.external_urls.spotify}`)
                 block = true;
                 setTimeout(() => {
                     block = false;
