@@ -1945,7 +1945,7 @@ const me = await api.request({
                 const format = require('format-duration')
 
                 
-                let artists = {};
+                let artists = [];
                 
                 JSON.parse(data.body.item.artists).map((e) => {
                   art.push(e.name);
