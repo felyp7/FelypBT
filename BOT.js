@@ -1950,9 +1950,7 @@ const me = await api.request({
                 
                 console.log(test)
 
-                JSON.parse(data.body.item).map((e) => {
-                  artists.push(e.name);
-                });
+                
 
 
                 const progress_ms = format(dat.progress_ms)
