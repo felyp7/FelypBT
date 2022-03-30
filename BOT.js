@@ -1946,7 +1946,7 @@ const me = await api.request({
 
                 let test = (data.body)
 
-                let artists = JSON.parse(r.body.item.artists[0].name)
+                
 
                 const progress_ms = format(dat.progress_ms)
                 const duration_ms = format(dat.item.duration_ms)
