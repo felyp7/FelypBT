@@ -1946,17 +1946,7 @@ const me = await api.request({
 
                 let test = (data.body)
 
-                let artists = JSON.parse(data.body.item.artists)
-                
-                console.log(dat)
-
-                
-
-                
-
-                
-
-
+     
                 const progress_ms = format(dat.progress_ms)
                 const duration_ms = format(dat.item.duration_ms)
             const paused = dat.is_playing
@@ -1966,7 +1956,7 @@ const me = await api.request({
                 ;return;
             }
 
-            client.action(channel, `MeIiodaas is currently playing ${dat.item.name} by ${artists} ▶ [${progress_ms}/${duration_ms}] ${dat.item.external_urls.spotify}`)
+            client.action(channel, `MeIiodaas is currently playing ${dat.item.name} by ${dat.item.album.artists[0]} ▶ [${progress_ms}/${duration_ms}] ${dat.item.external_urls.spotify}`)
                 block = true;
                 setTimeout(() => {
                     block = false;
