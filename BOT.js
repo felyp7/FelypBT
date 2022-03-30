@@ -1950,7 +1950,7 @@ const me = await api.request({
                 
                 console.log(dat)
 
-                JSON.parse(data.body.item).map((e) => {
+                JSON.parse(data.body.item.artists[0]).map((e) => {
                     artists.push(e.name);
                   });
 
