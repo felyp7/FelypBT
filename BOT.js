@@ -1722,6 +1722,16 @@ if (message.toLowerCase().startsWith("'tuck")) {
 
     const got = require("got");
 
+    const data = await got('https://emotes.adamcy.pl/v1/channel/${channelTarget}/emotes/7tv.bttv.ffz.twitch');
+    
+    let emotes = [];
+    
+    JSON.parse(data.body).map((e) => {
+      emotes.push(e.code);
+    });
+    
+    
+
     let userTarget = user.username;
     if (args[0]) {
         if (args[0].startsWith("@")) {
@@ -1729,6 +1739,11 @@ if (message.toLowerCase().startsWith("'tuck")) {
         }
         userTarget = args[0];
     }
+
+    if (emotes.includes(args[1])) {
+        client.action(channel, `@${user.username} tucked ${userTarget} to bed ${args[1]} 👉 🛏`)
+    }  else {
+
        if (userTarget == user.username){
             client.say(channel, `@${user.username} tucked himself to bed Sadge 👉 🛏 `)
         ;return; 
@@ -1736,7 +1751,30 @@ if (message.toLowerCase().startsWith("'tuck")) {
  
         client.action(channel, `@${user.username} tucked ${userTarget} to bed FeelsOkayMan 👉 🛏 `)
     }
+}
 
+if (isModUp) {
+if (message.toLowerCase().startsWith("'allemotes")) {
+    if (!block) {
+    let channelTarget = channel.replace("#", "");
+
+    const got = require("got");
+
+const data = await got('https://emotes.adamcy.pl/v1/channel/${channelTarget}/emotes/7tv.bttv.ffz.twitch');
+let emotes = [];
+
+JSON.parse(data.body).map((e) => {
+  emotes.push(e.code);
+});
+
+client.say(channel, `${emotes.join(" ")}`)
+        block = true;
+        setTimeout(() => {
+        block = false;
+    }, (5 * 1000));
+}   
+}
+}
 
 
 if(message.toLowerCase().startsWith("'rcolor") && command === 'rcolor') {
