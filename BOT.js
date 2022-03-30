@@ -1753,7 +1753,7 @@ if (message.toLowerCase().startsWith("'tuck")) {
     }
 }
 
-if (isModUp) {
+if (isModUp || user['user-id'] == '162760707') {
 if (message.toLowerCase().startsWith("'allemotes")) {
     if (!block) {
     let channelTarget = channel.replace("#", "");
