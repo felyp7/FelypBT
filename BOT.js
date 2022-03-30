@@ -1946,7 +1946,7 @@ const me = await api.request({
 
                 let test = (data.body)
 
-                
+                console.log(dat)
 
                 const progress_ms = format(dat.progress_ms)
                 const duration_ms = format(dat.item.duration_ms)
