@@ -1957,7 +1957,7 @@ const me = await api.request({
                 ;return;
             }
 
-            client.action(channel, `MeIiodaas is currently playing ${dat.item.name} by ${artists} ▶ [${progress_ms}/${duration_ms}] ${dat.item.external_urls.spotify}`)
+            client.action(channel, `MeIiodaas is currently playing ${dat.item.name} by ${dat.item.album.artists[0].name} ▶ [${progress_ms}/${duration_ms}] ${dat.item.external_urls.spotify}`)
                 block = true;
                 setTimeout(() => {
                     block = false;
