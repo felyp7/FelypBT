@@ -2,6 +2,33 @@ require('dotenv').config();
 
 const tmi = require('tmi.js');
 
+const getChannels = (config) => {
+    return fs.readFileSync("channels.txt")
+        .toString()
+        .split(/\r?\n/i)
+        .map(i => i.toLowerCase())
+        .filter(Boolean)
+        .filter(i => !i.startsWith("#"))
+        .concat(config.username)
+ }
+ 
+ /**
+ * Writes to the channels file attempting to keep newlines and comments.
+ * @param {Array<string>} arr
+ */
+ const setChannels = (arr, config) => {
+    let lines = fs.readFileSync("channels.txt").toString().split(/\r?\n/i).filter(i => {
+        if (i.startsWith("#")) return true;
+        if (i === "") return true;
+        return false;
+    })
+ 
+    // Always 1 empty line at the end.
+    if (lines[lines.length-1] != "") lines.push("")
+    lines = lines.concat(arr)
+    fs.writeFileSync("channels.txt", lines.filter(i => i !== config.username).join('\r\n'))
+ }
+
 const client = new tmi.Client({    
 
     options: { 
@@ -17,7 +44,7 @@ const client = new tmi.Client({
         username: process.env.username,
         password: process.env.password
     },
-    channels: ['godfelyp1', 'scarder_', 'opat04', 'feelsdonkman', 'lukyjuk', 'speedster05', 'bobthebuilder_98', 'Fookstee', 'florian_2807', 'meIiodaas', 'xPatrck', 'masenka12', 'lordevid', 'Sneeeze_', 'kawanpls', 'turtoise', 'anniiikaa', 'pajlada', 'carltincan']
+    channels: getChannels
 });
 const got = require('got');
 
@@ -48,6 +75,9 @@ const shower = client.shower
 
 client.wc = new Map()
 const wc = client.wc
+
+
+
 
 client.connect(process.env.password).catch(console.error);
 
