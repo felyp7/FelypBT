@@ -1948,7 +1948,7 @@ const me = await api.request({
 
                 let artists = {};
                 
-                (data.body.item.artists).map((e) => {
+                (data.body.item).map((e) => {
                     artists.push(e.name);
                   });
 
