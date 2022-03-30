@@ -1946,7 +1946,7 @@ const me = await api.request({
 
                 let test = (data.body)
 
-                let artists = JSON.parse(data.body.item.artists[0])
+                let artists = JSON.parse(data.body.item.artists)
                 
                 console.log(dat)
 
