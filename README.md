@@ -7,6 +7,7 @@
 | Command  | Alias  | Description  | min. Permission |
 |:-----------:|:-----------:|:------------:|:------:|
  | 7tvsearch |  | Search an emote on the 7TV website | User 
+ | allemotes |  | Returns all emotes (bttv, ffz, 7tv) | <img src="https://static-cdn.jtvnw.net/badges/v1/5527c58c-fb7d-422d-b71b-f309dcb85cc1/1" width="25" height="25" /> <img src="https://static-cdn.jtvnw.net/badges/v1/3267646d-33f0-4b17-b3df-f923a41db1d0/1" width="25" height="25" />
  | accage |  |Check Accountage of you or other users | User  
  | bttvsearch |  | Search an emote on the BetterTTV website | User 
  | cock |  | Your cock size | User 
