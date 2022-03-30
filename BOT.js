@@ -17,7 +17,7 @@ const client = new tmi.Client({
         username: process.env.username,
         password: process.env.password
     },
-    channels: ["opat04", "meiiodaas", "xpatrck", "sneeeze_", "fookstee", "carltincan", "turtoise", "anniiikaa", "bobthebuilder_98", "pajlada", "masenka12", "scarder_", "lukyjuk", "godfelyp1", "lordevid", "kawanpls"]
+    channels: ["opat04", "meiiodaas", "xpatrck", "sneeeze_", "fookstee", "carltincan", "turtoise", "anniiikaa", "bobthebuilder_98", "pajlada", "masenka12", "scarder_", "lukyjuk", "godfelyp1", "lordevid", "kawanpls", "speedster05", "feelsdonkman"]
 });
 const got = require('got');
 
