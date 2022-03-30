@@ -1944,10 +1944,11 @@ const me = await api.request({
 
                 const format = require('format-duration')
 
-                
+                let test = JSON.parse(data.body.item)
+
                 let artists = {};
                 
-                console.log(JSON.parse(data.body.item))
+                console.log(test)
 
                 JSON.parse(data.body.item).map((e) => {
                   artists.push(e.name);
