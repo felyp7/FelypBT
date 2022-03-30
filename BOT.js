@@ -1722,7 +1722,7 @@ if (message.toLowerCase().startsWith("'tuck")) {
 
     const got = require("got");
 
-    const data = await got('https://emotes.adamcy.pl/v1/channel/${channelTarget}/emotes/7tv.bttv.ffz.twitch');
+    const data = await got(`https://emotes.adamcy.pl/v1/channel/${channelTarget}/emotes/7tv.bttv.ffz.twitch`);
     
     let emotes = [];
     
@@ -1760,7 +1760,7 @@ if (message.toLowerCase().startsWith("'allemotes")) {
 
     const got = require("got");
 
-const data = await got('https://emotes.adamcy.pl/v1/channel/${channelTarget}/emotes/7tv.bttv.ffz.twitch');
+const data = await got(`https://emotes.adamcy.pl/v1/channel/${channelTarget}/emotes/7tv.bttv.ffz.twitch`);
 let emotes = [];
 
 JSON.parse(data.body).map((e) => {
