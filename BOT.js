@@ -1946,13 +1946,11 @@ const me = await api.request({
 
                 let test = (data.body)
 
-                let artists = {};
+                let artists = JSON.parse(data.body.item.artists[0])
                 
                 console.log(dat)
 
-                JSON.parse(data.body.item.artists[0]).map((e) => {
-                    artists.push(e.name);
-                  });
+                
 
                 
 
@@ -1968,7 +1966,7 @@ const me = await api.request({
                 ;return;
             }
 
-            client.action(channel, `MeIiodaas is currently playing ${dat.item.name} by ${artists.join("")} ▶ [${progress_ms}/${duration_ms}] ${dat.item.external_urls.spotify}`)
+            client.action(channel, `MeIiodaas is currently playing ${dat.item.name} by ${artists} ▶ [${progress_ms}/${duration_ms}] ${dat.item.external_urls.spotify}`)
                 block = true;
                 setTimeout(() => {
                     block = false;
