@@ -534,7 +534,14 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                 if (args[1]) {
                     channelTarget = args[1];
                 }
-                client.action(channel, `@${user.username} https://e.wrnv.xyz/list/${channelTarget} RaccAttack : https://emotes.raccatta.cc/twitch/${channelTarget}`)
+
+                if (args[0] == []) {
+                    client.action(channel, `@${user.username} https://e.wrnv.xyz/list/${channelTarget} RaccAttack : https://emotes.raccatta.cc/twitch/${channelTarget}`)
+                } else {
+                    client.action(channel, `@${user.username} https://e.wrnv.xyz/list/${userTarget} RaccAttack : https://emotes.raccatta.cc/twitch/${userTarget}`)
+                }
+
+                
             block = true;
             setTimeout(() => {
                 block = false;
