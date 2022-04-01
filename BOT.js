@@ -1174,9 +1174,18 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                 if (args[1]) {
                     channelTarget = args[1];
                 }
-                const viewers = await got(`https://decapi.me/twitch/viewercount/${channelTarget}?`); 
-                let data = viewers.body
-                client.action(channel, data)  
+
+                    if (args[0] == []) {
+                        let viewers = (`https://decapi.me/twitch/viewercount/${channelTarget}?`)
+                        let data = viewers.body
+                        
+                        client.action(channel, data)
+                    } else {
+                        let viewers = await got(`https://decapi.me/twitch/viewercount/${userTarget}?`); 
+                        let data = viewers.body
+                        
+                        client.action(channel, data)
+                    }
         
                 block = true;
                 setTimeout(() => {
