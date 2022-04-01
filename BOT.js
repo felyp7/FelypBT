@@ -1312,9 +1312,17 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                     channelTarget = args[0];
                 }
         
-                const game = await got(`https://decapi.me/twitch/game/${channelTarget}?`); 
-                let data = game.body
-                client.action(channel, `${channelTarget} is currently playing  ${data}`)  
+                    if (args[0] == []) {
+                        let game = await got(`https://decapi.me/twitch/game/${channelTarget}?`); 
+                        let data = game.body
+                        
+                        client.action(channel, `${channelTarget} is currently playing  ${data}`)
+                    }  else {
+                        let game = await got(`https://decapi.me/twitch/game/${userTarget}?`); 
+                        let data = game.body
+                        
+                        client.action(channel, `${userTarget} is currently playing  ${data}`)
+                    }
         
                 block = true;
                 setTimeout(() => {
