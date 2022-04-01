@@ -1307,6 +1307,14 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
             if (!block) {
         
         
+                let userTarget = user.username;
+                if (args[0]) {
+                    if (args[0].startsWith("@")) {
+                        args[0] = args[0].substring(1);
+                    }
+                    userTarget = args[0];
+                }
+
                 let channelTarget = channel.replace("#", "");
                 if (args[0]) {
                     channelTarget = args[0];
