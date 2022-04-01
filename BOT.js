@@ -1256,10 +1256,18 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                     channelTarget = args[1];
                 }
         
-                const title = await got(`https://decapi.me/twitch/title/${channelTarget}?`); 
-                let data = title.body
-                
-                client.action(channel, `Title is: ${data}`)  
+                    if (args[0] == []) {
+                        let title = await got(`https://decapi.me/twitch/title/${channelTarget}?`); 
+                        let data = title.body
+
+                        client.action(channel, `Title is: ${data}`)  
+                    } else {
+                        let title = await got(`https://decapi.me/twitch/title/${userTarget}?`); 
+                        let data = title.body
+                        
+                        client.action(channel, `Title is: ${data}`)
+                    }
+
         
                 block = true;
                 setTimeout(() => {
