@@ -1998,6 +1998,12 @@ if (message.toLowerCase().startsWith("'weather") && command === 'weather'){
 }
 	
 
+if (message.toLowerCase().startsWith("'currency")) {
+    let request = await got(`https://api.currencylayer.com/convert?from=${args[1]}&to=${args[2]}&amount=${args[0]}?access_key=Ybd2e62d2c0afb62e75b7431a69110117`, { responseType: 'json' })
+
+    client.action(channel, `${request.body}`)
+}
+
 
  if (message.toLowerCase().startsWith("'eval") && command === 'eval'){ 
     const evalueted = await eval('(async () => {' + args.join(" ") + '})()')
