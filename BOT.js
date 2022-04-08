@@ -1145,7 +1145,14 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                     channelTarget = args[1];
                 }
                 
+            if (args[0] == null) {
+
                 const uptime = await got(`https://decapi.me/twitch/uptime/${channelTarget}`); 
+                let data = uptime.body
+                client.action(channel, data)
+            ;return;
+            }
+                const uptime = await got(`https://decapi.me/twitch/uptime/${userTarget}`); 
                 let data = uptime.body
                 client.action(channel, data)  
         
@@ -1174,17 +1181,18 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                     channelTarget = args[1];
                 }
 
-                    if (args[0] == []) {
+                    if (args[0] == null) {
                         let viewers = (`https://decapi.me/twitch/viewercount/${channelTarget}?`)
                         let data = viewers.body
                         
                         client.action(channel, data)
-                    } else {
+                    ;return;
+                    } 
                         let viewers = await got(`https://decapi.me/twitch/viewercount/${userTarget}?`); 
                         let data = viewers.body
                         
                         client.action(channel, data)
-                    }
+                    
         
                 block = true;
                 setTimeout(() => {
@@ -1322,17 +1330,18 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                     channelTarget = args[0];
                 }
         
-                    if (args[0] == []) {
+                    if (args[0] == null) {
                         let game = await got(`https://decapi.me/twitch/game/${channelTarget}?`); 
                         let data = game.body
                         
                         client.action(channel, `${channelTarget} is currently playing  ${data}`)
-                    }  else {
+                    ;return;
+                    } 
                         let game = await got(`https://decapi.me/twitch/game/${userTarget}?`); 
                         let data = game.body
                         
                         client.action(channel, `${userTarget} is currently playing  ${data}`)
-                    }
+                    
         
                 block = true;
                 setTimeout(() => {
