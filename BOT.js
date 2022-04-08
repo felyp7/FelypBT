@@ -1255,7 +1255,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                     channelTarget = args[1];
                 }
         
-                    if (args[0] == []) {
+                    if (args[0] == null) {
                         let title = await got(`https://decapi.me/twitch/title/${channelTarget}?`); 
                         let data = title.body
 
