@@ -1260,12 +1260,15 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                         let data = title.body
 
                         client.action(channel, `Title is: ${data}`)  
-                    } else {
+                     ;return; 
+                    }
+
+
                         let title = await got(`https://decapi.me/twitch/title/${userTarget}?`); 
                         let data = title.body
                         
                         client.action(channel, `Title is: ${data}`)
-                    }
+                    
 
         
                 block = true;
