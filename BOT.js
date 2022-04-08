@@ -25,7 +25,7 @@ const runTime = new Date().toString()
 
 const humanizeDuration = require("humanize-duration");
 
-const bot = 'juicerb0t'
+const bot = 'mldsbt'
 
 const rafkList = new Set() //outside  client.on
 
@@ -93,7 +93,7 @@ if(message.toLowerCase().startsWith("'commands") && command === 'commands') {
 
 
 
-    if (message.startsWith("(cookie reminder) juicerb0t, eat cookie please :) 🍪") && user['user-id'] === "229225576") {
+    if (message.startsWith("(cookie reminder) mldsbt, eat cookie please :) 🍪") && user['user-id'] === "229225576") {
         client.say(channel, '!cookie')
     }
 
@@ -599,7 +599,6 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                 if (args[1]) {
                     channelTarget = args[1];
                 }
-            client.color("Red")
             client.action(channel, `@${user.username} https://logs.apulxd.ga/?channel=${channelTarget}&username=${userTarget} or https://logs.ivr.fi/?channel=${channelTarget}&username=${userTarget}`)
             block = true;
             setTimeout(() => {
