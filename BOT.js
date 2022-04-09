@@ -994,10 +994,10 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                     channelTarget = args[1];
                 }
         
-                const followage = await got(`https://decapi.me/twitch/followage/${channelTarget}/${userTarget}?precision=3`); // will return the days too
+                const followage = await got(`https://isso.pro/thelab/followsince.php?s=${channelTarget}&u=${userTarget}`); // will return the days too
                 let data = followage.body
                 
-                    if (data === `User not found: ${userTarget}`) {
+                    if (data === `${userTarget}`) {
                         client.action(channel, `${data}`)
                         ;return;
                     }
