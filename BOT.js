@@ -1002,7 +1002,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                         ;return;
                     }
 
-                client.action(channel, `${userTarget} is following ${channelTarget} for: ${data}`)  
+                client.action(channel, `${data}`)  
         
                 block = true;
                 setTimeout(() => {
