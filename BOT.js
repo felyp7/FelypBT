@@ -549,6 +549,34 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         }
     }
 
+    if (message.toLowerCase().startsWith("'chatstats")) {
+        if (!block) {
+            let userTarget = user.username;
+                if (args[0]) {
+                    if (args[0].startsWith("@")) {
+                        args[0] = args[0].substring(1);
+                    }
+                    userTarget = args[0];
+                }
+        
+                let channelTarget = channel.replace("#", "");
+                if (args[1]) {
+                    channelTarget = args[1];
+                }
+
+                if(args[0] == null) {
+                client.action(channel, `https://stats.streamelements.com/c/${channelTarget}`)
+                } ;return;
+
+                client.action(channel, `https://stats.streamelements.com/c/${userTarget}`)
+                
+            block = true;
+            setTimeout(() => {
+                block = false;
+            }, (5 * 1000));
+        }
+    }
+
 
     if (message.toLowerCase().startsWith("'color") && command === 'color') {
         if (!block) {
