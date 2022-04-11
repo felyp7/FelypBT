@@ -566,7 +566,8 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
 
                 if(args[0] == null) {
                 client.action(channel, `https://stats.streamelements.com/c/${channelTarget}`)
-                } ;return;
+                ;return;    
+                } 
 
                 client.action(channel, `https://stats.streamelements.com/c/${userTarget}`)
                 
