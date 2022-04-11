@@ -997,10 +997,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                 const followage = await got(`https://isso.pro/thelab/followsince.php?s=${channelTarget}&u=${userTarget}`); // will return the days too
                 let data = followage.body
                 
-                    if (data === `${userTarget}`) {
-                        client.action(channel, `${data}`)
-                        ;return;
-                    }
+                    
 
                 client.action(channel, `${data}`)  
         
@@ -1757,6 +1754,18 @@ if (channel === '#pajlada') {
     if (!block) {
     if(message == "monkaStop ALARM" && user['user-id'] === "670591988") {
         client.action(channel, 'pajaGIGA 🚨 ALERT')
+        block = true;
+        setTimeout(() => {
+            block = false;
+        }, (5 * 1000));
+    }
+}
+}
+
+if (channel === '#opat04') {
+    if (!block) {
+    if(message == "'plugdj") {
+        client.action(channel, 'https://pubby.club/~/d9787f08-3f34-445c-b04d-26fea7be7d58')
         block = true;
         setTimeout(() => {
             block = false;
