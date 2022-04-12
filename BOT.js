@@ -535,7 +535,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                     channelTarget = args[1];
                 }
 
-                if (args[1] == null) {
+                if (args[0] == null) {
                     client.action(channel, `@${user.username} https://e.wrnv.xyz/list/${channelTarget} RaccAttack : https://emotes.raccatta.cc/twitch/${channelTarget}`)
                 ;return;
                 } 
