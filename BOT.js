@@ -591,7 +591,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                 }
                 username = args[0];
             }
-                const userCheck = await got(`https://api.ivr.fi/twitch/resolve/${username}`,{
+                const userCheck = await got(`https://api.ivr.fi/v2/twitch/user/${username}`,{
                     responseType: 'json',
                     throwHttpErrors: false
                 })
