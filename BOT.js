@@ -630,7 +630,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                 if (args[1]) {
                     channelTarget = args[1];
                 }
-            client.action(channel, `@${user.username} https://logs.apulxd.ga/?channel=${channelTarget}&username=${userTarget} or https://logs.ivr.fi/?channel=${channelTarget}&username=${userTarget}`)
+            client.action(channel, `@${user.username} https://logs.paauulli.me/?channel=${channelTarget}&username=${userTarget} or https://logs.ivr.fi/?channel=${channelTarget}&username=${userTarget}`)
             block = true;
             setTimeout(() => {
                 block = false;
