@@ -25,7 +25,7 @@ const runTime = new Date().toString()
 
 const humanizeDuration = require("humanize-duration");
 
-const bot = 'mldsbt'
+const bot = 'felypbt'
 
 const rafkList = new Set() //outside  client.on
 
@@ -95,7 +95,7 @@ if(message.toLowerCase().startsWith("'commands") && command === 'commands') {
 
 
 
-    if (message.startsWith("(cookie reminder) mldsbt, eat cookie please :) 🍪") && user['user-id'] === "229225576") {
+    if (message.startsWith("(cookie reminder) felypbt, eat cookie please :) 🍪") && user['user-id'] === "229225576") {
         client.say(channel, '!cookie')
     }
 
