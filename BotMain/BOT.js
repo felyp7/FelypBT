@@ -2193,7 +2193,7 @@ const me = await api.request({
 
 if(message.toLowerCase().startsWith("'test") && command === 'test') {
     if (!block) {
-        client.say(channel, `test xd`);
+        client.say(channel, `test xd lol `);
         block = true;
         setTimeout(() => {
             block = false;
