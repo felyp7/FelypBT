@@ -619,7 +619,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
 
                 client.action(channel, `${userColor} (${colorName.name.value}) `) 
                 
-                client.say(channel, `/color #b5f0b7`);
+                client.say(channel, `/color red`);
             block = true;
             setTimeout(() => {
                 block = false;
@@ -1837,7 +1837,7 @@ if(message.toLowerCase().startsWith("'rcolor") && command === 'rcolor') {
 
     client.action(channel, `${colorName.name.value} #${color}`);
 
-    client.say(channel, `/color #b5f0b7`);
+    client.say(channel, `/color red`);
     block = true;
     setTimeout(() => {
         block = false;
