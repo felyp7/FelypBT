@@ -2198,10 +2198,11 @@ if (message.toLowerCase().startsWith("'query")) {
         const WolframAlphaAPI = require('wolfram-alpha-api');
         const waApi = WolframAlphaAPI('9HYJY9-ARQUG4X5EV');
 
-
-        waApi.getShort('Who is xqc').then((data) => {
-            console.log(data)
-        }).catch(console.error);
+        const data = await got(`https://api.wolframalpha.com/v1/result?appid=9HYJY9-ARQUG4X5EV&i=${args.join(" ")}`,{
+            responseType: 'json',
+            throwHttpErrors: false
+        })
+        client.action(channel, data)
 
         block = true;
         setTimeout(() => {
