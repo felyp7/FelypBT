@@ -36,7 +36,8 @@
     "sun-time": "^1.0.2",
     "tmi.js": "^1.8.5",
     "twit": "^2.2.11",
-    "underscore": "^1.13.2"
+    "underscore": "^1.13.2",
+    "wolfram-alpha-api": "^0.2.1"
   },
   "keywords": [],
   "description": ""
