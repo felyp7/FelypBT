@@ -2199,7 +2199,7 @@ if (message.toLowerCase().startsWith("'query")) {
         const waApi = WolframAlphaAPI('9HYJY9-ARQUG4X5EV');
 
 
-        waApi.getShort(args.join(" ")).then((data) => {
+        waApi.getShort('Who is xqc').then((data) => {
             console.log(data)
         }).catch(console.error);
 
