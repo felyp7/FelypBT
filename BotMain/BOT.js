@@ -2198,7 +2198,9 @@ if (message.toLowerCase().startsWith("'query")) {
         const WolframAlphaAPI = require('wolfram-alpha-api');
         const waApi = WolframAlphaAPI('9HYJY9-ARQUG4X5EV');
 
-        const data = await got(`https://api.wolframalpha.com/v1/result?appid=9HYJY9-ARQUG4X5EV&i=${args.join(" ")}`)
+        const data = await got(`https://api.wolframalpha.com/v1/result?appid=9HYJY9-ARQUG4X5EV&i=${args.join(" ")}`, {
+            throwHttpErrors: false
+        })
         client.action(channel, data.body)
 
         block = true;
