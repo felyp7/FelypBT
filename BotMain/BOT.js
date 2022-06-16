@@ -16,7 +16,7 @@ const client = new tmi.Client({
     identity: {
         username: process.env.username,
         password: process.env.password
-    }, channels: ["opat04", "felyp8", "notfelyp", "xpatrck", "0egs", "yamatosdeath1", "d3vld", "sneeeze_","matysek__", "fookstee", "carltincan", "turtoise", "bobthebuilder_98", "pajlada", "masenka12", "scarder_", "lukyjuk", "forenunab", "lordevid", "kawanpls", "speedster05", "feelsdonkman", "lul85xd__", "yosefsaa7", "CuentadeGato", "liptongod", "kattah", "florian_2807" ]
+    }, channels: ["felypbt"]
 });
     
 const got = require('got');
@@ -2192,6 +2192,23 @@ const me = await api.request({
 }
 
 
+if (message.toLowerCase().startsWith("'query")) {
+    if (!block) {
+
+        const WolframAlphaAPI = require('wolfram-alpha-api');
+        const waApi = WolframAlphaAPI('9HYJY9-ARQUG4X5EV');
+
+
+        waApi.getShort(`${args.join(" ")}`).then((data) => {
+            console.log(data)
+        })
+
+        block = true;
+        setTimeout(() => {
+            block = false;
+        }, (5 * 1000));  
+   }
+}
 
 
 
