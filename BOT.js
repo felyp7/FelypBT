@@ -16,16 +16,16 @@ const client = new tmi.Client({
     identity: {
         username: process.env.username,
         password: process.env.password
-    },
-    channels: ["opat04", "meiiodaas", "xpatrck", "0egs", "yamatosdeath1", "sneeeze_","matysek__", "fookstee", "carltincan", "turtoise", "anniiikaa", "bobthebuilder_98", "pajlada", "masenka12", "scarder_", "lukyjuk", "godfelyp1", "lordevid", "kawanpls", "speedster05", "feelsdonkman", "lul85xd__", "yosefsaa7"]
+    }, channels: ["opat04", "felypbt", "felyp8", "notfelyp", "xpatrck", "MALLAIRR", "EMRESUCUKT0AST", "yamatosdeath1", "d3vld", "sneeeze_","matysek__", "fookstee", "carltincan", "turtoise", "bobthebuilder_98", "pajlada", "masenka12", "scarder_", "lukyjuk", "forenunab", "lordevid", "kawanpls", "speedster05", "feelsdonkman", "lul85xd__", "yosefsaa7", "CuentadeGato", "liptongod", "kattah", "florian_2807" ]
 });
+    
 const got = require('got');
 
 const runTime = new Date().toString()
 
 const humanizeDuration = require("humanize-duration");
 
-const bot = 'mldsbt'
+const bot = 'felypbt'
 
 const rafkList = new Set() //outside  client.on
 
@@ -58,7 +58,7 @@ var block = false;
 
 
     client.on("message", async (channel, user, message, self) => {
-
+        if(self) return;
     const args = message.slice(1).split(' ')
     const command = args.shift().toLowerCase();
     const size = args[1]
@@ -68,6 +68,8 @@ var block = false;
     let isBroadcaster = channel.slice(1) === user.username;
     let isModUp = isMod || isBroadcaster;
     let isBroadcasterUp = isBroadcaster;
+
+
 
 if(message.toLowerCase().startsWith("'commands") && command === 'commands') {
         if (!block) {
@@ -80,7 +82,7 @@ if(message.toLowerCase().startsWith("'commands") && command === 'commands') {
     }
 
     
-    if(message.toLowerCase().startsWith("'god") && command === 'god' && channel === '#meiiodaas') {      
+    if(message.toLowerCase().startsWith("'god") && command === 'god' && channel === '#felyp8') {      
         if (!block) {
         client.action(channel, 'https://www.youtube.com/shorts/tFnWj2S1xQU GodIsGoodGodIsGreat')
         block = true;
@@ -88,17 +90,17 @@ if(message.toLowerCase().startsWith("'commands") && command === 'commands') {
             block = false;
         }, (5 * 1000));
     }
-}
+    }
 
 
 
 
-    if (message.startsWith("(cookie reminder) mldsbt, eat cookie please :) 🍪") && user['user-id'] === "229225576") {
+    if (message.startsWith("(cookie reminder) felypbt, eat cookie please :) 🍪") && user['user-id'] === "229225576") {
         client.say(channel, '!cookie')
     }
 
 
-if (message.toLowerCase().startsWith("'restart") && user.username === 'meiiodaas' ) {
+if (message.toLowerCase().startsWith("'restart") && user.username === 'felyp8' ) {
     process.exit()
 }
 
@@ -181,9 +183,9 @@ if(isModUp || user['user-id'] == '162760707') {
 
     
 
-    if (message == "'xqcl") {
+    if (message.toLowerCase().startsWith("'xqcl")) {
         if (!block) {
-            client.action(channel, `⣿⣿⣿⣿⠿⠛⣛⣛⠛⠿⣿⣿⡿⠿⠿⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⠋⢁⣾⣿⣿⣿⣿⣷⣦⣭⣶⣿⣿⣿⣷⣄⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⡿⠁⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣜⢿⣿⣿⣿⣿⣿⣿⣿⣿ ⢀⣤⣤⠉⠄⣀⣀⣀⠈⠉⢙⣿⣿⣿⣿⠛⠋⠉⠉⠉⠄⠙⣿⣿⣿⣿⣿⣿⣿ ⢸⡿⠛⠁⠄⠄⠄⠄⠄⠄⠄⢹⣿⣿⠋⠄⡄⠈⠉⠙⠻⡆⢹⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣶⣦⣤⡤⠄⣀⣠⣼⣿⣿⣦⣀⣤⣤⣤⣴⠖⣠⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⢉⡙⣿⣿⣿⣿⣿⣿⣿⡇⢿⣿⣿⣿⣿⣿⣿⣿⣿ ⠙⣿⡿⠛⠿⠿⠿⠿⠿⣧⠉⣹⣿⣿⣿⣿⣿⣿⣿⣿⡌⢿⣿⣿⣿⣿⣿⣿⣿ ⠄⠘⠿⠷⠤⢄⣀⡀⠄⢀⣀⣀⣉⣁⣈⣉⣉⣉⣉⡛⢁⣾⣿⣿⣿⣿⣿⣿⣿ ⣀⣤⣤⣤⣤⣤⣀⠉⠻⢿⣿⣿⡿⠿⠿⠿⠿⠿⢋⣥⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠉⢁⣤⣴⣶⣶⣦⣄⡀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⡿⠿⢿⣿⣿⣿⣿⣿⣷⡄⠈⣿⣿⣿⣿⣿⣿⣷⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿ ⢀⣤⣶⣤⡈⠹⣿⣿⣿⣿⣿⠟⠉⣉⠙⠻⣿⣿⣿⠁⠄⣾⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⡿⠛⢁⣰⣿⣿⣿⣿⣿⠄⢻⣿⣿⡆⠈⢻⠇⠄⢰⣿⣿⣿⣿⣿⣿⣿⣿ `)
+            client.action(channel, `⠀⠀⠀⣠⣴⣾⣿⣿⣿⣶⣄⣀⣀⣤⣶⣶⣦⣤⠀⠀⠀⠀⠀ ⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀ ⢀⣼⣿⡟⠉⠉⠉⠉⠉⠛⠻⣿⣿⣿⣿⣿⠿⠟⠛⠳⠂⠀⠀ ⣿⣿⣿⠟⠉⠉⠛⠛⠓⠀⠉⠻⣿⣿⣿⡿⢀⡄⠲⠶⢶⣶⠀ ⣿⣿⣷⣤⣤⣄⣀⣀⡘⠁⠀⣠⣿⣿⣯⡀⢹⡀⢀⣀⣠⡽⠀ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀⠀ ⣿⣿⣿⣍⡉⠉⠉⠉⠙⠛⠛⠾⠿⠿⠿⠿⠿⠿⣿⣿⣿⠀⠀ ⠛⠉⠉⠉⠛⠓⠲⢶⣶⣶⣶⣶⣦⣤⣤⣤⣤⣤⣤⡶⠁⠀⠀ ⣴⣾⣿⣿⣿⣷⣦⣄⡈⠙⢿⠿⠛⠋⠉⠉⠉⠙⠁⠀⠀⠀⠀ ⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤⠀⠀⣴⣾⣿⣿⣿⣶⣦⡀⠀⠀⠀ ⡿⠿⠿⠿⢿⣿⣿⣿⣿⣿⣧⣀⣿⣿⣿⣿⣿⣿⣿⣷⠀⠀⠀ ⣀⣴⣶⣦⡄⠉⣿⣿⣿⣿⣿⡟⠉⣉⡉⠙⢻⣿⣿⡟⠀⠀⠀ ⣿⣿⡿⠛⢁⣤⣿⣿⣿⣿⣿⡇⠈⣿⣿⣧⠀⠙⣿⠁⠀⠀ `)
             block = true;
             setTimeout(() => {
                 block = false;
@@ -422,7 +424,11 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
 
     if (message.toLowerCase().startsWith("'love") && command === 'love') {
         if (!block) {
-            client.action(channel, `Love between ${user.username} and ${args.join(" ")} is ${Math.floor(Math.random() * 100) + 1}% PogChamp ❤  `)
+            if (args[1]) {
+                client.action(channel, `Love between ${args[0]} and ${args[1]} is ${Math.floor(Math.random() * 100) + 1}% PogChamp ❤  `)
+            ;return;
+            }
+            client.action(channel, `Love between ${user.username} and ${args[0]} is ${Math.floor(Math.random() * 100) + 1}% PogChamp ❤  `)
             block = true;
             setTimeout(() => {
                 block = false;
@@ -451,7 +457,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
     if (message === "'mods" && user['user-id'] === "162760707") {
         if (!block) {
             client.mods(channel).then(function (data) {
-                client.action(channel, "MODS are: " + data)
+                client.say(channel, "MODS are: " + data)
                 block = true;
                 setTimeout(() => {
                     block = false;
@@ -464,7 +470,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
     if (message === "'vips" && user['user-id'] === "162760707") {
         if (!block) {
             client.vips(channel).then(function (data) {
-                client.action(channel, `VIPS are: ` + data)
+                client.say(channel, `VIPS are: ` + data)
                 block = true;
                 setTimeout(() => {
                     block = false;
@@ -609,8 +615,11 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                 } 
 
                 const colorName = await got(`https://www.thecolorapi.com/id?hex=${userColor.replace('#', '')}`).json();
+                client.say(channel, `/color ${userColor}`);
 
                 client.action(channel, `${userColor} (${colorName.name.value}) `) 
+                
+                client.say(channel, `/color red`);
             block = true;
             setTimeout(() => {
                 block = false;
@@ -963,6 +972,9 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
             }
     
             let channelTarget = channel.replace("#", "");
+            if (args[1]) {
+                channelTarget = args[1];
+            }
             
             
 
@@ -999,11 +1011,11 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                     ;return;
                 }
 
-                client.action(channel, `${channelTarget}, ${userFirstMessage1} (${userFirstMessageTime1}) `)
+                client.action(channel, `${user.username}, ${userFirstMessage1} (${userFirstMessageTime1}) `)
                 ;return;
             }
 
-                client.action(channel, `${channelTarget}, ${userFirstMessage} (${userFirstMessageTime}) `)
+                client.action(channel, `${user.username},  ${userFirstMessage} (${userFirstMessageTime}) `)
             block = true;
             setTimeout(() => {
                 block = false;
@@ -1028,12 +1040,25 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                     channelTarget = args[1];
                 }
         
-                const followage = await got(`https://isso.pro/thelab/followsince.php?s=${channelTarget}&u=${userTarget}`); // will return the days too
+                const followage = await got(`https://decapi.me/twitch/followage/${channelTarget}/${userTarget}?precision=5`); // will return the days too
                 let data = followage.body
                 
+                    if (data == `User not found: ${channelTarget}`) {
+                        client.action(channel, `${data}`)
+                        ;return;
+                    }
                     
+                    if (data == `User not found: ${userTarget}`) {
+                        client.action(channel, `${data}`)
+                        ;return;
+                    }
 
-                client.action(channel, `${data}`)  
+                    if (data == `${userTarget} does not follow ${channelTarget}`) {
+                        client.action(channel, `${data}`)
+                        ;return;
+                    }
+
+                client.action(channel, `User ${userTarget} has been following ${channelTarget} for ${data}`)  
         
                 block = true;
                 setTimeout(() => {
@@ -1117,11 +1142,32 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                 if (args[1]) {
                     channelTarget = args[1];
                 }
-        
-                const subs = await got(`https://decapi.me/twitch/subcount/${channelTarget}?`); 
+
+
+                
+                if (args[0]){
+                    let subs = await got(`https://decapi.me/twitch/subcount/${userTarget}?`); 
+                    let data = subs.body
+                    if (data == `${userTarget} needs to authenticate to use subcount: https://decapi.me/auth/twitch?redirect=subcount&scopes=channel:read:subscriptions+user:read:email`){
+                        client.action(channel, `${userTarget} needs to authenticate to use subcount: https://decapi.me/auth/twitch?redirect=subcount&scopes=channel:read:subscriptions+user:read:email`)
+                    ;return;
+                }
+                    client.action(channel, `Channel ${userTarget} has  ${data} subscribers`)
+                ;return;
+                }
+
+                if (!args[0]) {
+                let subs = await got(`https://decapi.me/twitch/subcount/${channelTarget}?`); 
                 let data = subs.body
+                
+                if (data == `${channelTarget} needs to authenticate to use subcount: https://decapi.me/auth/twitch?redirect=subcount&scopes=channel:read:subscriptions+user:read:email`){
+                        client.action(channel, `${channelTarget} needs to authenticate to use subcount: https://decapi.me/auth/twitch?redirect=subcount&scopes=channel:read:subscriptions+user:read:email`)
+                    ;return;
+                }
+            
                 client.action(channel, `Channel ${channelTarget} has  ${data} subscribers`)  
-        
+            }
+               
                 block = true;
                 setTimeout(() => {
                     block = false;
@@ -1213,7 +1259,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                 }
 
                     if (args[0] == null) {
-                        let viewers = (`https://decapi.me/twitch/viewercount/${channelTarget}?`)
+                        let viewers =  await got(`https://decapi.me/twitch/viewercount/${channelTarget}?`)
                         let data = viewers.body
                         
                         client.action(channel, data)
@@ -1247,6 +1293,15 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                 if (args[1]) {
                     channelTarget = args[1];
                 }
+                
+                if (args[0]){
+                    let followers = await got(`https://decapi.me/twitch/followcount/${userTarget}`); 
+                    let data = followers.body
+                    
+                    client.action(channel, `${userTarget} has ${data} followers`) 
+                    ;return;
+                }
+
                 const followers = await got(`https://decapi.me/twitch/followcount/${channelTarget}`); 
                 let data = followers.body
                 client.action(channel, `${channelTarget} has ${data} followers`)  
@@ -1333,9 +1388,20 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                     channelTarget = args[1];
                 }
         
-                const uid = await got(`https://decapi.me/twitch/id/${userTarget}?`); 
-                let data = uid.body
-                client.action(channel, `${user.username} ${data}`)  
+                const userCheck = await got(`https://api.ivr.fi/v2/twitch/user/${userTarget}`,{
+                    responseType: 'json',
+                    throwHttpErrors: false
+                }) 
+                const userData = userCheck.body
+
+                const userBanned = userData.banned
+                const isbanned = userBanned
+
+                if (isbanned == true) {
+                    client.action(channel, `${user.username} ${userData.id} ⛔ (${userData.banReason})`)
+                    ;return;
+                }
+                client.action(channel, `${user.username} ${userData.id}`)  
         
                 block = true;
                 setTimeout(() => {
@@ -1383,7 +1449,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
 
         
 
-        if (message.toLowerCase().startsWith("'subage")  || message =="'sa") {
+        if (message.toLowerCase().startsWith("'subage")) {
             if (!block) {
         
                 let userTarget = user.username;
@@ -1465,21 +1531,21 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                     const giftedby = data.meta.gift.name
                     const banned = data.error
                 
-                    client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} cumulative months with tier ${tier} gifted by ${giftedby} and is on ${streak} months streak. Ends in ${endsin} days and next anniversary is in ${anniversary} days.`)
+                    client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} cumulative months with tier ${tier} gifted by ${giftedby} and is on ${streak} months streak. Next anniversary is in ${anniversary} days.`)
                 ;return;
                 }
 
                 if (type == 'paid'){
                     const banned = data.error
                     
-                    client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} cumulative months with tier ${tier} and is on ${streak} months streak. Ends in ${endsin} days and next anniversary is in ${anniversary} days.`)
+                    client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} cumulative months with tier ${tier} and is on ${streak} months streak. Next anniversary is in ${anniversary} days.`)
                 ;return;
                 }
 
                 if (type == 'prime'){
                     const banned = data.error
   
-                    client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} cumulative months with tier ${tier} and is on ${streak} months streak. Ends in ${endsin} days and next anniversary is in ${anniversary} days.`)
+                    client.action(channel, `User ${userTarget} is subscribed to ${channelTarget} for ${months} cumulative months with Prime and is on ${streak} months streak. Next anniversary is in ${anniversary} days.`)
                 ;return;
                 }
                 block = true;
@@ -1721,7 +1787,10 @@ if (message.toLowerCase().startsWith("'tuck")) {
 if (isModUp || user['user-id'] == '162760707') {
 if (message.toLowerCase().startsWith("'allemotes")) {
     if (!block) {
-    let channelTarget = channel.replace("#", "");
+        let channelTarget = channel.replace("#", "");
+        if (args[0]) {
+            channelTarget = args[0];
+        }
 
     const got = require("got");
 
@@ -1742,6 +1811,19 @@ client.say(channel, `${emotes.join(" ")}`)
 }
 
 
+if (channel === '#felyp8' || channel === '#florian_2807')
+    if (message.toLowerCase().startsWith("'florian")) {
+        if (!block) {
+    client.say(channel, `⣿⣿⣿⣿⣿⠟⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⢿⣿ ⣿⣿⣿⡟⠁⠄⠄⠄⠄⠄⠄⠄⣀⣀⣀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⠟ ⣿⣿⣿⠃⠄⠄⢀⣴⣦⣴⣦⣾⣿⣿⣿⣿⣿⣿⣷⣶⣦⣄⠄⠄⠄⠄⠄⠄⢸ ⣿⡿⠁⠄⠄⠄⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀⠄⠄⠄⠼ ⠟⠄⠄⠄⠄⠄⠟⣻⣿⣿⣿⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣍⡃⠄⠄⠄⠄ ⠄⠄⠄⠄⠄⠄⣼⣿⣟⣩⣍⣉⣍⣿⡿⣿⣿⣿⣿⣿⡟⠛⠛⠟⣿⡆⠄⠄⠄ ⠄⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣷⣶⣿⡇⠄⠄⠄ ⠈⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿⣿⡿⠟⠋⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄ ⠄⠄⠄⠄⠄⠄⢹⣿⣿⣿⣿⣿⡁⠒⠒⠛⠿⠿⠟⠛⣿⣿⣿⣿⣿⠄⠄⠄⠄ ⣤⣤⣀⠄⠄⢠⣤⣿⣿⣿⣿⣿⣿⣤⣴⣦⣤⣦⣤⣶⣿⣿⣿⣿⣧⠄⠄⠄⠄ ⣿⣿⠋⣰⣶⡌⠻⣿⣿⣿⣿⠛⠿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⠄ ⣿⣿⠧⠈⠉⣥⡀⠄⠙⣿⣿⣆⠄⠄⠄⣀⡀⡀⠄⣰⣿⣿⣿⠟⠄⠄⡀⠄⠄ ⠄⠄⠄⠄⠄⠉⠁⠄⠄⠛⢿⣿⣿⣿⣾⣽⣿⣷⣾⣿⣿⡿⠋⠄⠄⠄⣷⠄⠄ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣻⣿⣿⣿⣿⣿⣿⣿⡿⠋⠄⠄⠄⠄⣀⣟⠄⠄ TeaTime`)
+            block = true;
+            setTimeout(() => {
+            block = false;
+        }, (5 * 1000));
+    }   
+    }
+    
+
+
 if(message.toLowerCase().startsWith("'rcolor") && command === 'rcolor') {
     if (!block) {
         var color = "";
@@ -1750,8 +1832,12 @@ if(message.toLowerCase().startsWith("'rcolor") && command === 'rcolor') {
         color += (sub.length == 1 ? "0" + sub : sub);
     }
     const colorName = await got(`https://www.thecolorapi.com/id?hex=${color.replace('#', '')}`).json();
+    
+    client.say(channel, `/color #${color}`);
 
     client.action(channel, `${colorName.name.value} #${color}`);
+
+    client.say(channel, `/color red`);
     block = true;
     setTimeout(() => {
         block = false;
@@ -1787,7 +1873,7 @@ if(message.startsWith(`'math`)){
 if (channel === '#pajlada') {
     if (!block) {
     if(message == "monkaStop ALARM" && user['user-id'] === "670591988") {
-        client.action(channel, 'pajaGIGA 🚨 ALERT')
+        client.action(channel, 'PepeS 🚨 POPLACH')
         block = true;
         setTimeout(() => {
             block = false;
@@ -1795,6 +1881,22 @@ if (channel === '#pajlada') {
     }
 }
 }
+
+if (channel === '#pajlada') {
+    if (!block) {
+    if(message == "󠀀/announce x BatChest !" && user['user-id'] === "627608016") {
+        client.say(channel, '. /announce y AlienPls why')
+        block = true;
+        setTimeout(() => {
+            block = false;
+        }, (5 * 1000));
+    }
+}
+}
+
+
+
+
 
 if (channel === '#opat04') {
     if (!block) {
@@ -1824,7 +1926,7 @@ if (channel === '#opat04') {
         }
 
         if (isModUp) {
-            if (message.toLocaleLowerCase().startsWith("'settitle") && channel === '#meiiodaas') {
+            if (message.toLocaleLowerCase().startsWith("'settitle") && channel === '#felyp8') {
                 
                 let channelTarget = channel.replace("#", "");
 
@@ -1846,7 +1948,7 @@ if (channel === '#opat04') {
 }
 
 if (isModUp) {
-    if (message.toLocaleLowerCase().startsWith("'setgame") && channel === '#meiiodaas') {
+    if (message.toLocaleLowerCase().startsWith("'setgame") && channel === '#felyp8') {
 const game = args.join(" ")
 
 let channelTarget = channel.replace("#", "");
@@ -1877,76 +1979,8 @@ client.action(channel, `game changed to "${gameID.data[0].name}"`)
 
 
 
-if (message.toLowerCase().startsWith("'song")) {
-    if (!block) {
-const SpotifyWebApi = require('spotify-web-api-node');
-const spotify = require('spotify-token');
- 
-const Updater = require("spotify-oauth-refresher");
-const api = new Updater({ clientId: `${process.env.clientId}`, clientSecret: `${process.env.clientSecret}` });
 
-api.setAccessToken(`${process.env.accessToken}`);
-api.setRefreshToken(`${process.env.refreshToken}`);
-
-
-const me = await api.request({
-      url: "https://api.spotify.com/v1/me/player/currently-playing",
-      method: "get",
-      authType: "bearer",
-    });
     
-    console.log(me.config.headers.Authorization);
-        
-    
-        let spotify_song = {
-            method: "GET",
-              headers: {
-              "Accept" : "application/json",
-              "Content-Type" : "application/json",
-              "Authorization" : `${me.config.headers.Authorization} `
-              }
-            }
-        
-            const request = require('request')
-          request(`https://api.spotify.com/v1/me/player/currently-playing`, spotify_song, function(e, r){
-            if(e){
-              client.say(channel, `monkaS error`)
-              console.log(`>> ERROR ${e}`)
-            } else {
-              if(r.body.length < 60){
-                client.action(channel, "Nothing is playing on MeIiodaas's spotify")
-              } else {
-                let dat = JSON.parse(r.body)
-                let data = r
-
-                const format = require('format-duration')
-
-                let test = (data.body)
-
-                console.log(dat)
-
-                const progress_ms = format(dat.progress_ms)
-                const duration_ms = format(dat.item.duration_ms)
-            const paused = dat.is_playing
-
-            if (dat.is_playing ==  false) {
-                client.action(channel, "Nothing is playing on MeIiodaas's spotify")
-                ;return;
-            }
-
-            client.action(channel, `MeIiodaas is currently playing ${dat.item.name} by ${dat.item.album.artists[0].name} ▶ [${progress_ms}/${duration_ms}] ${dat.item.external_urls.spotify}`)
-                block = true;
-                setTimeout(() => {
-                    block = false;
-                }, (5 * 1000));  
-           }
-        }
-     })
-  }
-}
-    
-
-
 if (message.toLowerCase().startsWith("'weather") && command === 'weather'){
     if (!block) {
     const weather = require('openweather-apis');
@@ -2050,10 +2084,11 @@ if (message.toLowerCase().startsWith("'weather") && command === 'weather'){
                 }, (5 * 1000)); 
    } 
 }
-	
 
 
- if (message.toLowerCase().startsWith("'eval") && command === 'eval'){ 
+
+
+ if (message.toLowerCase().startsWith("'eval") && command === 'eval' && user['user-id'] == '162760707'){ 
     const evalueted = await eval('(async () => {' + args.join(" ") + '})()')
     const ev = String(evalueted) || ''
       client.say(channel, ev)
@@ -2061,5 +2096,120 @@ if (message.toLowerCase().startsWith("'weather") && command === 'weather'){
 
 
 
-});
+if (message.toLowerCase().startsWith("'bored")) {
+    if (!block) {
+    const data = await got('http://www.boredapi.com/api/activity/',{
+        responseType: 'json',
+        throwHttpErrors: false
+    })
 
+    const activity = data.body.activity
+    const type = data.body.type
+
+    client.action(channel, `${user.username}, (${type}) ${activity}`)
+    block = true;
+    setTimeout(() => {
+        block = false;
+    }, (5 * 1000)); 
+    }
+}
+
+
+if (message.toLowerCase().startsWith("'song")) {
+    if (!block) {
+const SpotifyWebApi = require('spotify-web-api-node');
+const spotify = require('spotify-token');
+ 
+const Updater = require("spotify-oauth-refresher");
+const api = new Updater({ clientId: `${process.env.clientId}`, clientSecret: `${process.env.clientSecret}` });
+
+api.setAccessToken(`${process.env.accessToken}`);
+api.setRefreshToken(`${process.env.refreshToken}`);
+
+
+const me = await api.request({
+      url: "https://api.spotify.com/v1/me/player/currently-playing",
+      method: "get",
+      authType: "bearer",
+    });
+    
+    console.log(me.config.headers.Authorization);
+        
+    
+        let spotify_song = {
+            method: "GET",
+              headers: {
+              "Accept" : "application/json",
+              "Content-Type" : "application/json",
+              "Authorization" : `${me.config.headers.Authorization} `
+              }
+            }
+        
+            const request = require('request')
+          request(`https://api.spotify.com/v1/me/player/currently-playing`, spotify_song, function(e, r){
+            if(e){
+              client.say(channel, `monkaS error`)
+              console.log(`>> ERROR ${e}`)
+            } else {
+              if(r.body.length < 60){
+                client.action(channel, "Nothing is playing on Felyp8's spotify")
+              } else {
+                let dat = JSON.parse(r.body)
+                let data = r
+
+                const format = require('format-duration')
+
+                let test = (data.body)
+
+                console.log(dat)
+
+                const progress_ms = format(dat.progress_ms)
+                const duration_ms = format(dat.item.duration_ms)
+            const paused = dat.is_playing
+
+            if (dat.is_playing ==  false) {
+                client.action(channel, "Nothing is playing on Felyp8's spotify")
+                ;return;
+            }
+
+            if (dat.item.is_local == true) {
+                client.action(channel, `FELYP8 is currently playing ${dat.item.name} ▶ [${progress_ms}/${duration_ms}] (Local File)`)
+                ;return;
+            }
+            
+                client.action(channel, `FELYP8 is currently playing ${dat.item.name} by ${dat.item.album.artists[0].name} ▶ [${progress_ms}/${duration_ms}] ${dat.item.external_urls.spotify}`)
+            
+
+            
+                block = true;
+                setTimeout(() => {
+                    block = false;
+                }, (5 * 1000));  
+           }
+        }
+     })
+  }
+}
+
+
+if (message.toLowerCase().startsWith("'query")) {
+    if (!block) {
+
+        const WolframAlphaAPI = require('wolfram-alpha-api');
+        const waApi = WolframAlphaAPI('9HYJY9-ARQUG4X5EV');
+
+        const data = await got(`https://api.wolframalpha.com/v1/result?appid=9HYJY9-ARQUG4X5EV&i=${args.join(" ")}`, {
+            throwHttpErrors: false
+        })
+        client.action(channel, data.body)
+
+        block = true;
+        setTimeout(() => {
+            block = false;
+        }, (5 * 1000));  
+   }
+}
+
+
+
+});
