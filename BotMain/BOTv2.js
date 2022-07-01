@@ -1,72 +1,103 @@
 require('dotenv').config();
 
-const { ChatClient } = require("dank-twitch-irc"),
+const tmi = require('tmi.js');
 
-{ channel} = require('./settings.json');
+const client = new tmi.Client({    
 
-let client = new ChatClient({
-    username: "mldsbt", 
-    password: "oauth:lbdqs19etp8ytexgoz8se0bhzoy4up", 
-
-    rateLimits: "verifiedBot",
+    options: { 
+        joinInterval: 300,
+        debug: true, 
+        messagesLogLevel: "info"
+    },
     connection: {
-        type: "websocket",
-        secure: true,
+        reconnect: true,
+        secure: true
     },
-    rateLimits: {
-      highPrivmsgLimits: 100,
-      lowPrivmsgLimits: 20,
-    },
-    maxChannelCountPerConnection: 100, 
-    connectionRateLimits: {
-      parallelConnections: 50, 
-      releaseTime: 1000, 
-    },
-    requestMembershipCapability: false, 
-    installDefaultMixins: false,
-    ignoreUnhandledPromiseRejections: true, 
-  });
-
-
-  client.connect()
- 
-client.on('ready', () => {
-    client.joinAll(channel)
-    console.log(channel)
-    console.log("connected")
-    console.log()
-})
+    identity: {
+        username: "felyp8",
+        password: "oauth:qhoywx8dtxmxbozm5mahovzc60ph0h"
+    }, channels: ["elpws", "felypbt"]
+});
+    
+const got = require('got');
 
 const runTime = new Date().toString()
- 
- 
-let counter = 0;
 
- 
-client.on("PRIVMSG", async (msg, self) => {
- 
-    const prefix = "~";
-    const args = msg.messageText.slice(1).split(' ')
+const humanizeDuration = require("humanize-duration");
+
+const bot = 'felypbt'
+
+const rafkList = new Set() //outside  client.on
+
+const rgnList = new Set()
+
+client.afk = new Map()
+const afk = client.afk
+
+client.brb = new Map()
+const brb = client.brb
+
+client.gn = new Map()
+const gn = client.gn
+
+client.food = new Map()
+const food = client.food
+
+client.shower = new Map()
+const shower = client.shower
+
+client.wc = new Map()
+const wc = client.wc
+
+
+
+
+client.connect(process.env.password).catch(console.error);
+
+var block = false;
+
+
+    client.on("message", async (channel, user, message, self) => {
+        if(self) return;
+    const args = message.slice(1).split(' ')
     const command = args.shift().toLowerCase();
     const size = args[1]
     const size2 = args[0]
-    let isMod = msg.isMod;
-    let isBroadcaster = msg.channelName === msg.senderUsername;
+
+    let isMod = user.mod || user['user-type'] === 'mod';
+    let isBroadcaster = channel.slice(1) === user.username;
+    let isModUp = isMod || isBroadcaster;
+    let isBroadcasterUp = isBroadcaster;
 
 
-    if (msg.messageText.startsWith(prefix)) { 
- 
-           
-        
 
-    if (command === "xd") {
-        client.say(msg.channelName, `forsen`)
+
+if (channel === '#felypbt') {
+    if(message.toLowerCase().startsWith("'a") && user['user-id'] === "162760707") {
+      if (!block) {
+        let channelTarget = channel.replace("#", "");
+        if (args[0]) {
+            channelTarget = args[0];
+        }
+
+    const got = require("got");
+
+const data = await got(`https://emotes.adamcy.pl/v1/channel/${channelTarget}/emotes/7tv.bttv.ffz.twitch`);
+let emotes = [];
+
+JSON.parse(data.body).map((e) => {
+  emotes.push(e.code);
+});
+
+client.say("elpws", `${emotes.join(" ")}`)
+        block = true;
+        setTimeout(() => {
+            block = false;
+        }, (5 * 1000));
     }
+}
+}
 
 
 
-
-
-
-    }
 });

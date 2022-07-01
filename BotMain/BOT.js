@@ -81,17 +81,6 @@ if(message.toLowerCase().startsWith("'commands") && command === 'commands') {
         }
     }
 
-    
-    if(message.toLowerCase().startsWith("'god") && command === 'god' && channel === '#felyp8') {      
-        if (!block) {
-        client.action(channel, 'https://www.youtube.com/shorts/tFnWj2S1xQU GodIsGoodGodIsGreat')
-        block = true;
-        setTimeout(() => {
-            block = false;
-        }, (5 * 1000));
-    }
-    }
-
 
 
 
@@ -273,27 +262,11 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
 
    
 
-    if (message == "'pingpong") {
-        if (!block) {
-            client.action(channel, `ppPing ppPong 🏓 PingPong `)
-            block = true;
-            setTimeout(() => {
-                block = false;
-            }, (5 * 1000));
-        }
-    }
+
 
     
 
-    if (message == "'copetix") {
-        if (!block) {
-            client.action(channel, `⠈⠀⠐⠠⠐⡀⡂⡢⡂⢆⠪⡘⠤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⢀⢂⢅⢎⢢⢊⢔⢕⡎⣗⡵⣕⣵⡱⡠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⢰⢱⢕⣗⢷⣽⣾⣯⣿⣿⣿⣿⡿⣿⡄⠋⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⢜⢜⢵⢝⣽⢯⣿⣿⣟⣿⣾⣿⣿⣿⣿⠌⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠌⢆⢇⢟⣞⣿⣻⣽⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⡘⠔⢅⢣⢳⣯⣿⣿⣿⣿⣿⣿⣿⡿⡾⡿⠵⢀⠨⡀⠀⠀⠀⠀⠀⠀⠀���⠀ ⣈⠪⠨⡂⠫⡪⡓⣝⢽⢙⠿⣽⡺⣺⣽⣞⡾⡢⡢⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠹⣎⢌⡢⡑⣝⣟⣿⣽⡎⢜⣿⣝⣿⣽⣯⢯⠂⠈⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠂⠝⣷⡹⢮⣻⣽⡿⡾⣹⢮⣻⣿⣾⣽⣽⢧⠃⠀⠀⠀⠀⡀⠀⠀⡀⠀⠀⠀ ⠀⠡⢊⢫⢷⡽⣾⢾⣟⠝⡾⠽⣿⢿⣻⡽⡕⣠⣶⢿⣻⡷⡾⠺⠠⠀⠀⠀⠀ ⠐⡈⠀⠕⡍⢯⢟⡿⡽⣻⢽⣻⡽⡿⣽⢧⣓⡟⡥⡧⡶⡴⣲⢽⡲⣲⣲⢤⡂ ⢸⢶⡈⡐⠨⢊⢗⡵⣟⣞⣷⣟⣿⢿⡯⢃⡽⡇⢯⣻⢮⣣⡵⡶⡮⣵⣲⣺⡂ ⠀⠍⢷⣔⠈⡀⠂⡝⣵⣳⣳⣏⣟⣿⡃⣾⡏⠀⣟⢾⢽⣺⢽⢽⢽⣺⣺⣺⡂ ⠀⠡⡡⢙⠷⢶⣦⣤⣁⢓⠵⡻⣺⡵⣟⠏⠂⡀⠹⠽⠵⠼⠭⠭⠽⠾⠵⠗⠇ `)
-            block = true;
-            setTimeout(() => {
-                block = false;
-            }, (5 * 1000));
-        }
-    }
+
 
     if (message == "'trihard") {
         if (!block) {
@@ -2195,10 +2168,7 @@ const me = await api.request({
 if (message.toLowerCase().startsWith("'query")) {
     if (!block) {
 
-        const WolframAlphaAPI = require('wolfram-alpha-api');
-        const waApi = WolframAlphaAPI('9HYJY9-ARQUG4X5EV');
-
-        const data = await got(`https://api.wolframalpha.com/v1/result?appid=9HYJY9-ARQUG4X5EV&i=${args.join(" ")}`, {
+        const data = await got(`https://api.wolframalpha.com/v1/result?appid=${process.env.wolfram_api_key}&i=${args.join(" ")}`, {
             throwHttpErrors: false
         })
         client.action(channel, data.body)
