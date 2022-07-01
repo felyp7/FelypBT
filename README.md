@@ -1,4 +1,4 @@
-# JuicerB0t 
+# FelypBT
 
 ### Bot prefix is: '        
 
