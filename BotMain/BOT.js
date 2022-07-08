@@ -73,7 +73,7 @@ var block = false;
 
 if(message.toLowerCase().startsWith("'commands") && command === 'commands') {
         if (!block) {
-            client.say(channel, `FeelsDankMan 👉 forsen.ga `);
+            client.say(channel, `FeelsDankMan 👉 felyp.ga `);
             block = true;
             setTimeout(() => {
                 block = false;
