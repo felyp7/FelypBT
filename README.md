@@ -67,6 +67,3 @@
  | setgame |  | Change game | Developer
  | settitle |  | Change title | Developer
  | weather |  | Weather status | User
- 
- give me shark badge
- give me shark badge2
