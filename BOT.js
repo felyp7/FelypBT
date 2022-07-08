@@ -2210,6 +2210,18 @@ if (message.toLowerCase().startsWith("'query")) {
    }
 }
 
+if (channel === '#kattah') {
+    if (!block) {
+    if(message == "pokimane" && user['user-id'] === "790623318") {
+        client.say(channel, 'pokimane')
+        block = true;
+        setTimeout(() => {
+            block = false;
+        }, (5 * 1000));
+    }
+}
+}
+
 
 
 });
