@@ -101,7 +101,7 @@ if (message.toLowerCase().startsWith("'restart") && user.username === 'felyp8' )
         client.say(channel, `/timeout @${user.username} 1`)
 
     }
-
+    
     if (user['user-id'] == '713320280' || user['user-id'] == '162760707') {
         if (message.toLowerCase().startsWith("'echo")) {
             client.say(channel, `${args.join(" ")}`)
@@ -2180,6 +2180,16 @@ if (message.toLowerCase().startsWith("'query")) {
    }
 }
 
-
+if (channel === '#kattah') {
+    if (!block) {
+    if(message == "pokimane" && user['user-id'] === "790623318") {
+        client.say(channel, 'pokimane')
+        block = true;
+        setTimeout(() => {
+            block = false;
+        }, (5 * 1000));
+    }
+}
+}
 
 });
