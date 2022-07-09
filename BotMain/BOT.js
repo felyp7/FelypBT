@@ -862,7 +862,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                 }
                 username = args[0];
             }
-                const userCheck = await got(`https://api.ivr.fi/twitch/resolve/${username}`,{
+                const userCheck = await got(`https://api.ivr.fi/v2/twitch/user/${username}`,{
                     responseType: 'json',
                     throwHttpErrors: false
                 })
@@ -886,26 +886,29 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
             const userPartner = userData.partner
             const userAffiliate = userData.affiliate
             const userBot = userData.bot
+            const userBanner = userData.banner
+
 
             const uid = userId
-            const avatar = userAvatar.replace("300x300", "600x600")
+            const avatar = userAvatar
             const bio = userBio
             const isbanned = userBanned
             const isPartner = userPartner
             const isAffiliate = userAffiliate
             const isBot = userBot
+            const banner = userBanner
             
             const creation = await got(`https://decapi.me/twitch/creation/${userTarget}`);
                 let creationDate = creation.body
 
                 if (userColor == null) {
                     if (userData.badge[0] == undefined){
-                        client.say(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: No badge, Avatar: ${avatar} , Color: Default color (Never set), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
+                        client.say(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: No badge, Avatar: ${avatar} , Profile Banner: ${banner} , Color: Default color (Never set), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
                     ;return;
                     } else {
                         let userBadge = userData.badge[0].title
                         let badge = userBadge
-                    client.say(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: ${badge}, Avatar: ${avatar} , Color: Default color (Never set), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
+                    client.say(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: ${badge}, Avatar: ${avatar} , Profile Banner: ${banner} ,  Color: Default color (Never set), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
                     ;return;
                     }
                 }
@@ -915,14 +918,14 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
 
 
                     if (userData.badge[0] == undefined){
-                        client.say(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: No badge, Avatar: ${avatar} , Color: ${userColor} (${colorName.name.value}), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
+                        client.say(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: No badge, Avatar: ${avatar} , Profile Banner: ${banner} ,  Color: ${userColor} (${colorName.name.value}), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
                     ;return;
                     } else {
 
                     let userBadge = userData.badge[0].title
                     let badge = userBadge
 
-                    client.say(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: ${badge}, Avatar: ${avatar} , Color: ${userColor} (${colorName.name.value}), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
+                    client.say(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: ${badge}, Avatar: ${avatar} , Profile Banner: ${banner} ,  Color: ${userColor} (${colorName.name.value}), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
                 
                 
             block = true;
@@ -1087,12 +1090,40 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                     channelTarget = args[1];
                 }
         
-                const avatar = await got(`https://decapi.me/twitch/avatar/${userTarget}`)
-                let data = avatar.body
+                const avatar = await got(`https://api.ivr.fi/v2/twitch/user/${userTarget}`)
+                let data = avatar.body.logo
 
-                let pfp = data.replace("300x300", "600x600")
+                let pfp = data
         
                 client.action(channel, `${pfp}`)  
+        
+                block = true;
+                setTimeout(() => {
+                    block = false;
+                }, (5 * 1000));
+            }
+        }
+
+        if (message.toLowerCase().startsWith("'banner")) {
+            if (!block) {
+        
+                let userTarget = user.username;
+                if (args[0]) {
+                    if (args[0].startsWith("@")) {
+                        args[0] = args[0].substring(1);
+                    }
+                    userTarget = args[0];
+                }
+        
+                let channelTarget = channel.replace("#", "");
+                if (args[1]) {
+                    channelTarget = args[1];
+                }
+        
+                const banner = await got(`https://api.ivr.fi/v2/twitch/user/${userTarget}`)
+                let data = banner.body.banner
+        
+                client.action(channel, `${data}`)  
         
                 block = true;
                 setTimeout(() => {
