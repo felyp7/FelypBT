@@ -883,9 +883,9 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
             const userAvatar = userData.logo
             const userBio = userData.bio
             const userBanned = userData.banned
-            const userPartner = userData.partner
-            const userAffiliate = userData.affiliate
-            const userBot = userData.bot
+            const userPartner = userData.isPartner
+            const userAffiliate = userData.isAffiliate
+            const userBot = userData.verifiedBot
             const userBanner = userData.banner
 
 
