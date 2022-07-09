@@ -826,11 +826,11 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
 
                 const userData = userCheck.body
 
-            const useraffiliate = userData.isAffiliate
+            const useraffiliate = userData.roles.isAffiliate
             const isAffiliate = useraffiliate
             const prefix = userData.emotePrefix
 
-            if (prefix === []) {
+            if (prefix === null) {
                 client.action(channel, `${userTarget} Affiliate: ${isAffiliate}, No Emote Prefix ;p `)
             ;return;
             }
