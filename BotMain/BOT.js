@@ -888,7 +888,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
             const userBot = userData.bot
 
             const uid = userId
-            const avatar = userAvatar
+            const avatar = userAvatar.replace("300x300", "600x600")
             const bio = userBio
             const isbanned = userBanned
             const isPartner = userPartner
