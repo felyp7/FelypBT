@@ -2283,4 +2283,14 @@ if (channel === '#kattah') {
 }
 }
 
+    
+    if(message == "'test'" && user['user-id'] === "162760707") {
+        client.say(channel, 'test')
+        block = true;
+        setTimeout(() => {
+            block = false;
+        }, (5 * 1000));
+    }
+
+
 });
