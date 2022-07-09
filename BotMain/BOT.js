@@ -815,7 +815,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                 }
                 username = args[0];
             }
-                const userCheck = await got(`https://api.ivr.fi/twitch/resolve/${username}`,{
+                const userCheck = await got(`https://api.ivr.fi/v2/twitch/user/${username}`,{
                     responseType: 'json',
                     throwHttpErrors: false
                 })
@@ -843,6 +843,58 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
             }, (5 * 1000));
         }
     }
+
+
+    if (message.toLowerCase().startsWith("'emoteprefix")) {
+        if (!block) {
+    
+            let userTarget = user.username;
+            if (args[0]) {
+                if (args[0].startsWith("@")) {
+                    args[0] = args[0].substring(1);
+                }
+                userTarget = args[0];
+            }
+    
+            let channelTarget = channel.replace("#", "");
+            if (args[1]) {
+                channelTarget = args[1];
+            }
+
+            let username = user.username;
+
+            if(args[0]) {
+                if(args[0].startsWith("@")) {
+                    args[0] = args[0].substring(1);
+                }
+                username = args[0];
+            }
+                const userCheck = await got(`https://api.ivr.fi/v2/twitch/user/${username}`,{
+                    responseType: 'json',
+                    throwHttpErrors: false
+                })
+                if(!userCheck.body.id) {
+                    client.action(channel, `This user does not exist.`) 
+                ;return;
+                }
+
+                const userData = userCheck.body
+                const prefix = userData.emotePrefix
+
+            if (prefix === undefined) {
+                client.action(channel, `No Emote Prefix ;p `)
+            ;return;
+            }
+
+                client.action(channel, `Emote Prefix: ${prefix} ;p `)
+    
+            block = true;
+            setTimeout(() => {
+                block = false;
+            }, (5 * 1000));
+        }
+    }
+
 
     if (message.toLowerCase().startsWith("'whois")) {
         if (!block) {
