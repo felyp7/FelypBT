@@ -830,7 +830,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
             const isAffiliate = useraffiliate
             const prefix = userData.emotePrefix
 
-            if (prefix === undefined) {
+            if (prefix === []) {
                 client.action(channel, `${userTarget} Affiliate: ${isAffiliate}, No Emote Prefix ;p `)
             ;return;
             }
@@ -881,7 +881,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                 const userData = userCheck.body
                 const prefix = userData.emotePrefix
 
-            if (prefix === undefined) {
+            if (prefix === []) {
                 client.action(channel, `No Emote Prefix ;p `)
             ;return;
             }
