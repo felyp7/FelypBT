@@ -1091,9 +1091,9 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                 }
         
                 const avatar = await got(`https://api.ivr.fi/v2/twitch/user/${userTarget}`)
-                let data = avatar.body.logo
+                let data = avatar.body
 
-                let pfp = data
+                let pfp = data.logo
         
                 client.action(channel, `${pfp}`)  
         
