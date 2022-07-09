@@ -826,10 +826,16 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
 
                 const userData = userCheck.body
 
-            const useraffiliate = userData.affiliate
+            const useraffiliate = userData.isAffiliate
             const isAffiliate = useraffiliate
+            const prefix = userData.emotePrefix
 
-                client.action(channel, `${userTarget} Affiliate: ${isAffiliate} ;p `)
+            if (prefix === undefined) {
+                client.action(channel, `${userTarget} Affiliate: ${isAffiliate}, No Emote Prefix ;p `)
+            ;return;
+            }
+
+                client.action(channel, `${userTarget} Affiliate: ${isAffiliate}, Emote Prefix: ${prefix} ;p `)
     
             block = true;
             setTimeout(() => {
