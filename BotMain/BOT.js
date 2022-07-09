@@ -1123,7 +1123,10 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                     channelTarget = args[1];
                 }
         
-                const banner = await got(`https://api.ivr.fi/v2/twitch/user/${userTarget}`)
+                const banner = await got(`https://api.ivr.fi/v2/twitch/user/${userTarget}`,{
+                    responseType: 'json',
+                    throwHttpErrors: false
+                }) 
                 let data = banner.body.banner
         
                 client.action(channel, `${data}`)  
