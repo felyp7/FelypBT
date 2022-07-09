@@ -1090,7 +1090,10 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                     channelTarget = args[1];
                 }
         
-                const avatar = await got(`https://api.ivr.fi/v2/twitch/user/${userTarget}`)
+                const avatar = await got(`https://api.ivr.fi/v2/twitch/user/${userTarget}`,{
+                    responseType: 'json',
+                    throwHttpErrors: false
+                }) 
                 let data = avatar.body
 
                 let pfp = data.logo
