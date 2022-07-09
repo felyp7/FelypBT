@@ -917,12 +917,12 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
 
 
 
-                    if (userData.badge[0] == undefined){
+                    if (userData.badges[0] == undefined){
                         client.say(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: No badge, Avatar: ${avatar} , Profile Banner: ${banner} ,  Color: ${userColor} (${colorName.name.value}), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
                     ;return;
                     } else {
 
-                    let userBadge = userData.badge[0].title
+                    let userBadge = userData.badges[0].title
                     let badge = userBadge
 
                     client.say(channel, `@${user.username} ${userTarget}, Banned: ${isbanned}, Partner: ${isPartner}, Affiliate: ${isAffiliate}, Bot: ${isBot}, Badge: ${badge}, Avatar: ${avatar} , Profile Banner: ${banner} ,  Color: ${userColor} (${colorName.name.value}), Account created at ${creationDate}, id: ${uid}, bio: ${bio}`)
