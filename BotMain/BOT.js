@@ -1089,8 +1089,10 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         
                 const avatar = await got(`https://decapi.me/twitch/avatar/${userTarget}`)
                 let data = avatar.body
+
+                let pfp = data.replace("300x300", "600x600")
         
-                client.action(channel, `${data}`)  
+                client.action(channel, `${pfp}`)  
         
                 block = true;
                 setTimeout(() => {
