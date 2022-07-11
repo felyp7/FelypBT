@@ -16,7 +16,7 @@ const client = new tmi.Client({
     identity: {
         username: process.env.username,
         password: process.env.password
-    }, channels: ["opat04", "felypbt", "BobIsAMistake", "felyp8", "notfelyp", "xpatrck", "MALLAIRR", "EMRESUCUKT0AST", "yamatosdeath1", "d3vld", "sneeeze_","matysek__", "fookstee", "carltincan", "turtoise", "bobthebuilder_98", "pajlada", "masenka12", "scarder_", "lukyjuk", "forenunab", "lordevid", "kawanpls", "speedster05", "feelsdonkman", "lul85xd__", "yosefsaa7", "CuentadeGato", "liptongod", "kattah", "florian_2807" ]
+    }, channels: ["opat04", "felypbt", "FeelsGloomyMan", "BobIsAMistake", "felyp8", "notfelyp", "xpatrck", "MALLAIRR", "EMRESUCUKT0AST", "yamatosdeath1", "d3vld", "sneeeze_","matysek__", "fookstee", "carltincan", "turtoise", "bobthebuilder_98", "pajlada", "masenka12", "scarder_", "lukyjuk", "forenunab", "lordevid", "kawanpls", "speedster05", "feelsdonkman", "lul85xd__", "yosefsaa7", "CuentadeGato", "liptongod", "kattah", "florian_2807" ]
 });
     
 const got = require('got');
@@ -71,7 +71,7 @@ var block = false;
 
 
 
-if(message.toLowerCase().startsWith("'commands") && command === 'commands') {
+    if(message.toLowerCase().startsWith("'commands") && command === 'commands') {
         if (!block) {
             client.say(channel, `FeelsDankMan 👉 felyp.ga `);
             block = true;
@@ -82,16 +82,14 @@ if(message.toLowerCase().startsWith("'commands") && command === 'commands') {
     }
 
 
-
-
     if (message.startsWith("(cookie reminder) felypbt, eat cookie please :) 🍪") && user['user-id'] === "229225576") {
         client.say(channel, '!cookie')
     }
 
 
-if (message.toLowerCase().startsWith("'restart") && user.username === 'felyp8' ) {
+    if (message.toLowerCase().startsWith("'restart") && user.username === 'felyp8' ) {
     process.exit()
-}
+    }
 
     if (message.toLowerCase().startsWith("'vanish")) {
         if (isModUp) {
@@ -150,8 +148,8 @@ if (message.toLowerCase().startsWith("'restart") && user.username === 'felyp8' )
     }
 
 
-if(isModUp || user['user-id'] == '162760707') { 
-    if (message.toLowerCase().startsWith("'spam")) {
+    if(isModUp || user['user-id'] == '162760707') { 
+        if (message.toLowerCase().startsWith("'spam")) {
         if (!block) {
             if (size2 > 300) {
                 client.say(channel, 'the maximum size is 300')
@@ -167,11 +165,10 @@ if(isModUp || user['user-id'] == '162760707') {
                 block = false;
             }, (5 * 1000));
         }
+        }
     }
-}
 
     
-
     if (message.toLowerCase().startsWith("'xqcl")) {
         if (!block) {
             client.action(channel, `⠀⠀⠀⣠⣴⣾⣿⣿⣿⣶⣄⣀⣀⣤⣶⣶⣦⣤⠀⠀⠀⠀⠀ ⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀ ⢀⣼⣿⡟⠉⠉⠉⠉⠉⠛⠻⣿⣿⣿⣿⣿⠿⠟⠛⠳⠂⠀⠀ ⣿⣿⣿⠟⠉⠉⠛⠛⠓⠀⠉⠻⣿⣿⣿⡿⢀⡄⠲⠶⢶⣶⠀ ⣿⣿⣷⣤⣤⣄⣀⣀⡘⠁⠀⣠⣿⣿⣯⡀⢹⡀⢀⣀⣠⡽⠀ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀⠀ ⣿⣿⣿⣍⡉⠉⠉⠉⠙⠛⠛⠾⠿⠿⠿⠿⠿⠿⣿⣿⣿⠀⠀ ⠛⠉⠉⠉⠛⠓⠲⢶⣶⣶⣶⣶⣦⣤⣤⣤⣤⣤⣤⡶⠁⠀⠀ ⣴⣾⣿⣿⣿⣷⣦⣄⡈⠙⢿⠿⠛⠋⠉⠉⠉⠙⠁⠀⠀⠀⠀ ⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤⠀⠀⣴⣾⣿⣿⣿⣶⣦⡀⠀⠀⠀ ⡿⠿⠿⠿⢿⣿⣿⣿⣿⣿⣧⣀⣿⣿⣿⣿⣿⣿⣿⣷⠀⠀⠀ ⣀⣴⣶⣦⡄⠉⣿⣿⣿⣿⣿⡟⠉⣉⡉⠙⢻⣿⣿⡟⠀⠀⠀ ⣿⣿⡿⠛⢁⣤⣿⣿⣿⣿⣿⡇⠈⣿⣿⣧⠀⠙⣿⠁⠀⠀ `)
@@ -183,8 +180,6 @@ if(isModUp || user['user-id'] == '162760707') {
     }
 
 
-    
-
     if (message == "'thejungle") {
         if (!block) {
             client.action(channel, `The Jungle isnt just a place; its a sanctuary where we put our problems aside and enjoy watching the gaming warlord juicer. Youve changed more lives than you think Mr. Cow, xqcL   `)
@@ -194,8 +189,6 @@ if(isModUp || user['user-id'] == '162760707') {
             }, (5 * 1000));
         }
     }
-
-
 
    
     if (message == "'tf") {
@@ -211,8 +204,6 @@ if(isModUp || user['user-id'] == '162760707') {
     }
 
 
-
-
     if (message == "'okayeg") {
         if (!block) {
             client.action(channel, `⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⠉⠉⠉⣩⡏⡘⣯⡈⠙⢿⣿⣛⣩⣤⣤⣭⣽⣿⣿ ⣿⣿⣿⣿⣿⣿⡿⠛⠉⠄⠄⠄⠄⠄⢿⡇⢡⣿⣿⣦⠈⠑⣿⣿⣿⠉⣿⣿⣿⣿ ⣿⣿⣿⡿⠿⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠉⠚⠿⢿⡿⠄⠄⠉⢿⣟⠄⣿⣿⣿⣿ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠹⠾⠿⠋⠄⣿ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸ ⢠⣶⣶⠢⣄⣀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸ ⠘⢿⣿⣷⣮⡹⣷⣦⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘ ⠄⠄⠈⢿⣿⣿⣎⡛⠿⣷⣦⣀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ⣦⣤⣀⠄⠈⠛⠿⣿⣷⣮⣍⣛⠿⢿⣶⣶⣦⣄⣀⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠ ⣿⣿⣿⣿⣶⣦⣄⡀⠉⠉⠉⠛⠻⢷⣦⣭⣭⣙⣛⣛⠷⠶⠤⠤⠤⠤⠤⠤⠤⢎ ⣿⡟⣩⣶⣶⣦⡙⢿⣷⣦⣄⡀⠄⠄⠈⠉⠉⠉⠛⠛⠛⠛⠛⠿⠿⢿⣿⡿⢿⣿ ⡟⣸⣿⣿⣿⣿⣿⡄⣿⣿⣿⣿⣷⣶⣤⣤⣀⡀⠄⠄⠄⠄⠄⠄⢀⣀⣰⣾⣿⣿ ⡇⣿⣿⣿⣿⣿⣿⣿⢸⣿⠋⣭⡙⢿⠋⣩⡝⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣷⡘⢿⣿⣿⣿⠿⣃⣿⣿⡀⠶⠒⣾⡀⠻⠏⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣶⣮⣭⣶⣾⣿⣿⣿⣿⣿⣿⣿⣍⣉⣁⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿`)
@@ -222,6 +213,7 @@ if(isModUp || user['user-id'] == '162760707') {
             }, (5 * 1000));
         }
     }
+
 
     if (message == "'lule") {
         if (!block) {
@@ -234,7 +226,7 @@ if(isModUp || user['user-id'] == '162760707') {
     }
 
 
-if (message.toLowerCase().startsWith("'ping") && command === 'ping') {  
+    if (message.toLowerCase().startsWith("'ping") && command === 'ping') {  
     if (!block) {
     const getUptime = new Date().getTime() - Date.parse(runTime)
     const botUptime = humanizeDuration(getUptime, { round: true })
@@ -260,13 +252,6 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         }
     }
 
-   
-
-
-
-    
-
-
 
     if (message == "'trihard") {
         if (!block) {
@@ -279,8 +264,6 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
     }
 
     
-    
-    
     if (message == "'poki") {
         if (!block) {
             client.action(channel, `Simping for Pokimane isn't just a moment, it’s a lifestyle 💫 a reason to breathe 🤲 an escape from this evil world filled with thieves 🌏 It’s art 🖼 the first gift you open on Xmas 🎁 a hug from a loved one 🤗 everything you’ve ever wanted love 💗 everything you need 💕🥺`)
@@ -290,7 +273,6 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
             }, (5 * 1000));
         }
     }
-
 
 
     if (message.toLowerCase().startsWith("'pick") && command === 'pick') {
@@ -304,6 +286,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         }
     }
 
+
     if (message.toLowerCase().startsWith("'8ball") && command === '8ball') {
         if (!block) {
             let array = ["Yes Okayge", "No Okayge", "Maybe Okayge", "Surely Clueless", "Fuck You Bruh", "NOIDONTTHINKSO", "Copege I believe so", "YESIDOTHINKSO", "Clueless TeaTime", "Basedding no", "NOIDONTTHINKSO Never Doubt"]
@@ -315,6 +298,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         }
     }
 
+
    if(message.toLowerCase().startsWith("'roll") && command === 'roll') {
         if (!block) {
             client.action(channel, `@${user.username} :tf: 👉   ${Math.floor(Math.random() * 2) + 1}!`)
@@ -324,6 +308,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
             }, (5 * 1000));
         }
     }
+
 
     if (message.toLowerCase().startsWith("'gaytest") && command === 'gaytest') {
         if (!block) {
@@ -335,6 +320,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         }
     }
 
+
     if (message.toLowerCase().startsWith("'lesbiantest") && command === 'lesbiantest') {
         if (!block) {
             client.action(channel, `@${user.username} ${args.join(" ")} is  ${Math.floor(Math.random() * 100) + 1}% lesbian Okayge`)
@@ -344,6 +330,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
             }, (5 * 1000));
         }
     }
+
 
     if (message.toLowerCase().startsWith("'cock") && command === 'cock') {
         if (!block) {
@@ -355,6 +342,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         }
     }
 
+
     if (message.toLowerCase().startsWith("'vagina") && command === 'vagina') {
         if (!block) {
             client.action(channel, `@${user.username} ${args.join(" ")} 's vagina is ${Math.floor(Math.random() * 17) + 1}cm deep Okayge`)
@@ -364,6 +352,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
             }, (5 * 1000));
         }
     }
+
 
     if (message.toLowerCase().startsWith("'iq") && command === 'iq') {
         if (!block) {
@@ -375,6 +364,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         }
     }
 
+
     if (message.toLowerCase().startsWith("'wedding") && command === 'wedding') {
         if (!block) {
             client.action(channel, `@${user.username} and ${args.join(" ")} will have wedding in ${Math.floor(Math.random() * 20) + 1} Years ${Math.floor(Math.random() * 11) + 1} Months ${Math.floor(Math.random() * 30) + 1} Days ${Math.floor(Math.random() * 59) + 1} Minutes 💒 ❤ 💍  Pag`)
@@ -385,6 +375,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         }
     }
 
+
     if (message.toLowerCase().startsWith("'swag") && command === 'swag') {
         if (!block) {
             client.action(channel, `@${user.username} ${args.join(" ")} has ${Math.floor(Math.random() * 100) + 1} % swag 😎 `)
@@ -394,6 +385,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
             }, (5 * 1000));
         }
     }
+
 
     if (message.toLowerCase().startsWith("'love") && command === 'love') {
         if (!block) {
@@ -409,6 +401,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         }
     }
 
+
     if (message.toLowerCase().startsWith("'depression") && command === 'depression') {
         if (!block) {
             client.action(channel, `@${user.username} ${args.join(" ")} is ${Math.floor(Math.random() * 100) + 1}% Depressed PoroSad 💔  `)
@@ -419,13 +412,16 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         }
     }
 
+
     if (message.startsWith("ppBounce") && user['user-id'] === "654447790") {
         client.action(channel, "ppJump")
     }
 
+
     if (message.startsWith("ppCircle") && user['user-id'] === "625016038") {
         client.action(channel, "ppCircle")
     }
+
 
     if (message === "'mods" && user['user-id'] === "162760707") {
         if (!block) {
@@ -452,6 +448,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         }
     }
 
+
     if (message.toLowerCase().startsWith("'7tvsearch") && command === '7tvsearch') {
         if (!block) {
             if (args.join(" ") == []) {
@@ -471,6 +468,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
 
     }
 
+
     if (message.toLowerCase().startsWith("'bttvsearch") && command === 'bttvsearch') {
         if (!block) {
             if (args.join(" ") == []) {
@@ -485,6 +483,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         }
     }
 
+
     if (message.toLowerCase().startsWith("'ffzsearch") && command === 'ffzsearch') {
         if (!block) {
             if (args.join(" ") == []) {
@@ -498,6 +497,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
             }, (5 * 1000));
         }
     }
+
 
     if (message.toLowerCase().startsWith("'emotes") && command === 'emotes') {
         if (!block) {
@@ -529,6 +529,7 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
             }, (5 * 1000));
         }
     }
+
 
     if (message.toLowerCase().startsWith("'chatstats")) {
         if (!block) {
@@ -1052,8 +1053,8 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
     }
 
 
-        if (message.toLowerCase().startsWith("'followage")  || message.toLowerCase().startsWith("'fa")) {
-            if (!block) {
+    if (message.toLowerCase().startsWith("'followage")  || message.toLowerCase().startsWith("'fa")) {
+        if (!block) {
         
                 let userTarget = user.username;
                 if (args[0]) {
@@ -1095,11 +1096,9 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
             }
         }
 
-        
 
-
-        if (message.toLowerCase().startsWith("'accage")) {
-            if (!block) {
+    if (message.toLowerCase().startsWith("'accage")) {
+        if (!block) {
         
                 let userTarget = user.username;
                 if (args[0]) {
@@ -1126,8 +1125,9 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
             }
         }
 
-        if (message.toLowerCase().startsWith("'avatar")) {
-            if (!block) {
+
+    if (message.toLowerCase().startsWith("'avatar")) {
+        if (!block) {
         
                 let userTarget = user.username;
                 if (args[0]) {
@@ -1159,8 +1159,9 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
             }
         }
 
-        if (message.toLowerCase().startsWith("'banner")) {
-            if (!block) {
+
+    if (message.toLowerCase().startsWith("'banner")) {
+        if (!block) {
         
                 let userTarget = user.username;
                 if (args[0]) {
@@ -1191,8 +1192,8 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         }
 
 
-        if (message.toLowerCase().startsWith("'subs")) {
-            if (!block) {
+    if (message.toLowerCase().startsWith("'subs")) {
+        if (!block) {
         
                 let userTarget = user.username;
                 if (args[0]) {
@@ -1239,8 +1240,8 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
             }
         }
 
-        if (message.toLowerCase().startsWith("'subemotes")) {
-            if (!block) {
+    if (message.toLowerCase().startsWith("'subemotes")) {
+        if (!block) {
         
                 let userTarget = user.username;
                 if (args[0]) {
@@ -1270,8 +1271,8 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         }
 
 
-        if (message.toLowerCase().startsWith("'uptime")) {
-            if (!block) {
+    if (message.toLowerCase().startsWith("'uptime")) {
+        if (!block) {
         
                 let userTarget = user.username;
                 if (args[0]) {
@@ -1305,9 +1306,8 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         }
 
 
-
-        if (message.toLowerCase().startsWith("'viewers") && command === 'viewers') {
-            if (!block) {
+    if (message.toLowerCase().startsWith("'viewers") && command === 'viewers') {
+        if (!block) {
         
                 let userTarget = user.username;
                 if (args[0]) {
@@ -1341,9 +1341,10 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
                 }, (5 * 1000));
             }
         }
-        
-        if (message.toLowerCase().startsWith("'followers") && command === 'followers') {
-            if (!block) {
+    
+
+    if (message.toLowerCase().startsWith("'followers") && command === 'followers') {
+        if (!block) {
         
                 let userTarget = user.username;
                 if (args[0]) {
@@ -1378,8 +1379,8 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         }
         
 
-        if (message.toLowerCase().startsWith("'modlookup")  || message.toLowerCase().startsWith("'ml")) {
-            if (!block) {
+    if (message.toLowerCase().startsWith("'modlookup")  || message.toLowerCase().startsWith("'ml")) {
+        if (!block) {
         
                 let userTarget = user.username;
                 if (args[0]) {
@@ -1397,8 +1398,9 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         }
     }
 
-        if (message.toLowerCase().startsWith("'title")) {
-            if (!block) {
+        
+    if (message.toLowerCase().startsWith("'title")) {
+        if (!block) {
         
                 let userTarget = user.username;
                 if (args[0]) {
@@ -1436,8 +1438,9 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
             }
         }
 
-        if (message.toLowerCase().startsWith("'uid")) {
-            if (!block) {
+
+    if (message.toLowerCase().startsWith("'uid")) {
+        if (!block) {
         
                 let userTarget = user.username;
                 if (args[0]) {
@@ -1474,8 +1477,9 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
             }
         }
 
-        if (message.toLowerCase().startsWith("'game")) {
-            if (!block) {
+
+    if (message.toLowerCase().startsWith("'game")) {
+        if (!block) {
         
         
                 let userTarget = user.username;
@@ -1512,9 +1516,8 @@ if (message.toLowerCase().startsWith("'ping") && command === 'ping') {
         }
 
         
-
-        if (message.toLowerCase().startsWith("'subage")) {
-            if (!block) {
+    if (message.toLowerCase().startsWith("'subage")) {
+        if (!block) {
         
                 let userTarget = user.username;
                 if (args[0]) {
@@ -1624,9 +1627,8 @@ if (foodcheck) {
     client.food.delete(user['user-id']); 
     client.action(channel, `${user['display-name']} finished eating 🍔: ${foodcheck.reason} (${humanizeDuration(new Date().getTime() - Date.parse(foodcheck.time), { round: true })})`)
 }
- 
-if (message.toLowerCase().startsWith("'food")) {
-    if (!block) {
+    if (message.toLowerCase().startsWith("'food")) {
+        if (!block) {
 
         let foodMessage = args.join(' ') ? args.join(' ') : 'no message';
         let foodlist = client.food.get(user['user-id']);
@@ -1652,9 +1654,8 @@ let wccheck = client.wc.get(user['user-id']);
 if (wccheck) { 
     client.wc.delete(user['user-id']); 
     client.action(channel, `${user['display-name']} came back from toilet 🚽: ${wccheck.reason} (${humanizeDuration(new Date().getTime() - Date.parse(wccheck.time), { round: true })})`)
-}
- 
-if (message.toLowerCase().startsWith("'wc")) {
+} 
+    if (message.toLowerCase().startsWith("'wc")) {
     if (!block) {
 
         let wcMessage = args.join(' ') ? args.join(' ') : 'no message';
@@ -1682,9 +1683,8 @@ if (brbcheck) {
     client.brb.delete(user['user-id']); 
     client.action(channel, `${user['display-name']} is back: ${brbcheck.reason} (${humanizeDuration(new Date().getTime() - Date.parse(brbcheck.time), { round: true })})`)
 }
-
-if (message.toLowerCase().startsWith("'brb")) {
-    if (!block) {
+    if (message.toLowerCase().startsWith("'brb")) {
+        if (!block) {
 
         let brbMessage = args.join(' ') ? args.join(' ') : 'ppHop';
         let brblist = client.brb.get(user['user-id']);
@@ -1711,9 +1711,8 @@ if (gncheck) {
     client.gn.delete(user['user-id']); 
     client.action(channel, `${user['display-name']} just woke up: ${gncheck.reason} (${humanizeDuration(new Date().getTime() - Date.parse(gncheck.time), { round: true })})`)
 }
-
-if (message.toLowerCase().startsWith("'gn")) {
-    if (!block) {
+    if (message.toLowerCase().startsWith("'gn")) {
+        if (!block) {
 
         let gnMessage = args.join(' ') ? args.join(' ') : '🛏 💤 ';
         let gnlist = client.gn.get(user['user-id']);
@@ -1740,9 +1739,8 @@ if (showercheck) {
     client.shower.delete(user['user-id']); 
     client.action(channel, `${user['display-name']} finished showering 🚿 : ${showercheck.reason} (${humanizeDuration(new Date().getTime() - Date.parse(showercheck.time), { round: true })})`)
 }
-
-if (message.toLowerCase().startsWith("'shower")) {
-    if (!block) {
+    if (message.toLowerCase().startsWith("'shower")) {
+        if (!block) {
 
         let showerMessage = args.join(' ') ? args.join(' ') : 'no message';
         let showerlist = client.shower.get(user['user-id']);
@@ -1764,13 +1762,13 @@ if (message.toLowerCase().startsWith("'shower")) {
     }
 }
 
-if(message == "'bruh"){
-    if (!block) {
-    client.action(channel, 'Bruh')
-    block = true;
-    setTimeout(() => {
+    if(message == "'bruh"){
+        if (!block) {
+        client.action(channel, 'Bruh')
+        block = true;
+        setTimeout(() => {
         block = false;
-    }, (5 * 1000));
+        }, (5 * 1000));
 }
 }
 
@@ -1779,11 +1777,8 @@ if (afkcheck) {
     client.afk.delete(user['user-id']); 
     client.action(channel, `${user['display-name']} is no longer afk: ${afkcheck.reason} (${humanizeDuration(new Date().getTime() - Date.parse(afkcheck.time), { round: true })})`)
 }
-
-
-
-if (message.toLowerCase().startsWith("'afk")) {
-    if (!block) {
+    if (message.toLowerCase().startsWith("'afk")) {
+        if (!block) {
 
         let afkMessage = args.join(' ') ? args.join(' ') : 'no message';
         let afklist = client.afk.get(user['user-id']);
@@ -1806,12 +1801,7 @@ if (message.toLowerCase().startsWith("'afk")) {
 }
 
 
-
-
-
-
-
-if (message.toLowerCase().startsWith("'tuck")) {
+    if (message.toLowerCase().startsWith("'tuck")) {
 
     let channelTarget = channel.replace("#", "");
 
@@ -1848,8 +1838,9 @@ if (message.toLowerCase().startsWith("'tuck")) {
     }
 }
 
-if (isModUp || user['user-id'] == '162760707') {
-if (message.toLowerCase().startsWith("'allemotes")) {
+
+    if (isModUp || user['user-id'] == '162760707') {
+    if (message.toLowerCase().startsWith("'allemotes")) {
     if (!block) {
         let channelTarget = channel.replace("#", "");
         if (args[0]) {
@@ -1875,7 +1866,7 @@ client.say(channel, `${emotes.join(" ")}`)
 }
 
 
-if (channel === '#felyp8' || channel === '#florian_2807')
+    if (channel === '#felyp8' || channel === '#florian_2807')
     if (message.toLowerCase().startsWith("'florian")) {
         if (!block) {
     client.say(channel, `⣿⣿⣿⣿⣿⠟⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⢿⣿ ⣿⣿⣿⡟⠁⠄⠄⠄⠄⠄⠄⠄⣀⣀⣀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⠟ ⣿⣿⣿⠃⠄⠄⢀⣴⣦⣴⣦⣾⣿⣿⣿⣿⣿⣿⣷⣶⣦⣄⠄⠄⠄⠄⠄⠄⢸ ⣿⡿⠁⠄⠄⠄⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀⠄⠄⠄⠼ ⠟⠄⠄⠄⠄⠄⠟⣻⣿⣿⣿⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣍⡃⠄⠄⠄⠄ ⠄⠄⠄⠄⠄⠄⣼⣿⣟⣩⣍⣉⣍⣿⡿⣿⣿⣿⣿⣿⡟⠛⠛⠟⣿⡆⠄⠄⠄ ⠄⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣷⣶⣿⡇⠄⠄⠄ ⠈⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿⣿⡿⠟⠋⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄ ⠄⠄⠄⠄⠄⠄⢹⣿⣿⣿⣿⣿⡁⠒⠒⠛⠿⠿⠟⠛⣿⣿⣿⣿⣿⠄⠄⠄⠄ ⣤⣤⣀⠄⠄⢠⣤⣿⣿⣿⣿⣿⣿⣤⣴⣦⣤⣦⣤⣶⣿⣿⣿⣿⣧⠄⠄⠄⠄ ⣿⣿⠋⣰⣶⡌⠻⣿⣿⣿⣿⠛⠿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⠄ ⣿⣿⠧⠈⠉⣥⡀⠄⠙⣿⣿⣆⠄⠄⠄⣀⡀⡀⠄⣰⣿⣿⣿⠟⠄⠄⡀⠄⠄ ⠄⠄⠄⠄⠄⠉⠁⠄⠄⠛⢿⣿⣿⣿⣾⣽⣿⣷⣾⣿⣿⡿⠋⠄⠄⠄⣷⠄⠄ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣻⣿⣿⣿⣿⣿⣿⣿⡿⠋⠄⠄⠄⠄⣀⣟⠄⠄ TeaTime`)
@@ -1888,8 +1879,8 @@ if (channel === '#felyp8' || channel === '#florian_2807')
     
 
 
-if(message.toLowerCase().startsWith("'rcolor") && command === 'rcolor') {
-    if (!block) {
+    if(message.toLowerCase().startsWith("'rcolor") && command === 'rcolor') {
+        if (!block) {
         var color = "";
     for(var i = 0; i < 3; i++) {
         var sub = Math.floor(Math.random() * 256).toString(16);
@@ -1909,8 +1900,8 @@ if(message.toLowerCase().startsWith("'rcolor") && command === 'rcolor') {
 }
 };
 
-if(message.startsWith(`'math`)){
-    if(message.split(" ")[1] !== undefined){
+    if(message.startsWith(`'math`)){
+        if(message.split(" ")[1] !== undefined){
         let excersise = message.substring(message.split(" ")[0].split("").length +1, message.split("").length)
       excersise = excersise.replace(/\s/g, "")
       let validnums = 0
@@ -1934,9 +1925,9 @@ if(message.startsWith(`'math`)){
     }  
 }
 
-if (channel === '#pajlada') {
-    if (!block) {
-    if(message == "monkaStop ALARM" && user['user-id'] === "670591988") {
+    if (channel === '#pajlada') {
+        if (!block) {
+            if(message == "monkaStop ALARM" && user['user-id'] === "670591988") {
         client.action(channel, 'PepeS 🚨 POPLACH')
         block = true;
         setTimeout(() => {
@@ -1946,9 +1937,9 @@ if (channel === '#pajlada') {
 }
 }
 
-if (channel === '#pajlada') {
-    if (!block) {
-    if(message == "󠀀/announce x BatChest !" && user['user-id'] === "627608016") {
+    if (channel === '#pajlada') {
+        if (!block) {
+            if(message == "󠀀/announce x BatChest !" && user['user-id'] === "627608016") {
         client.say(channel, '. /announce y AlienPls why')
         block = true;
         setTimeout(() => {
@@ -1959,12 +1950,9 @@ if (channel === '#pajlada') {
 }
 
 
-
-
-
-if (channel === '#opat04') {
-    if (!block) {
-    if(message == "'plugdj") {
+    if (channel === '#opat04') {
+        if (!block) {
+            if(message == "'plugdj") {
         client.action(channel, 'https://pubby.club/~/d9787f08-3f34-445c-b04d-26fea7be7d58')
         block = true;
         setTimeout(() => {
@@ -1974,7 +1962,7 @@ if (channel === '#opat04') {
 }
 }
 
-  if(message.toLowerCase().startsWith("'broadcaster") && command === 'broadcaster') {
+    if(message.toLowerCase().startsWith("'broadcaster") && command === 'broadcaster') {
         if (!block) {
             let channelTarget = channel.replace("#", "");
                 if (args[1]) {
@@ -1989,8 +1977,9 @@ if (channel === '#opat04') {
             }
         }
 
-        if (isModUp) {
-            if (message.toLocaleLowerCase().startsWith("'settitle") && channel === '#felyp8') {
+
+    if (isModUp) {
+        if (message.toLocaleLowerCase().startsWith("'settitle") && channel === '#felyp8') {
                 
                 let channelTarget = channel.replace("#", "");
 
@@ -2011,8 +2000,9 @@ if (channel === '#opat04') {
     }
 }
 
-if (isModUp) {
-    if (message.toLocaleLowerCase().startsWith("'setgame") && channel === '#felyp8') {
+
+    if (isModUp) {
+        if (message.toLocaleLowerCase().startsWith("'setgame") && channel === '#felyp8') {
 const game = args.join(" ")
 
 let channelTarget = channel.replace("#", "");
@@ -2041,11 +2031,8 @@ client.action(channel, `game changed to "${gameID.data[0].name}"`)
 }
 }
 
-
-
-
-    
-if (message.toLowerCase().startsWith("'weather") && command === 'weather'){
+ 
+    if (message.toLowerCase().startsWith("'weather") && command === 'weather'){
     if (!block) {
     const weather = require('openweather-apis');
     const Compass = require("cardinal-direction");
@@ -2150,17 +2137,14 @@ if (message.toLowerCase().startsWith("'weather") && command === 'weather'){
 }
 
 
-
-
- if (message.toLowerCase().startsWith("'eval") && command === 'eval' && user['user-id'] == '162760707'){ 
+    if (message.toLowerCase().startsWith("'eval") && command === 'eval' && user['user-id'] == '162760707'){ 
     const evalueted = await eval('(async () => {' + args.join(" ") + '})()')
     const ev = String(evalueted) || ''
       client.say(channel, ev)
 }
 
 
-
-if (message.toLowerCase().startsWith("'bored")) {
+    if (message.toLowerCase().startsWith("'bored")) {
     if (!block) {
     const data = await got('http://www.boredapi.com/api/activity/',{
         responseType: 'json',
@@ -2179,7 +2163,7 @@ if (message.toLowerCase().startsWith("'bored")) {
 }
 
 
-if (message.toLowerCase().startsWith("'song")) {
+    if (message.toLowerCase().startsWith("'song")) {
     if (!block) {
 const SpotifyWebApi = require('spotify-web-api-node');
 const spotify = require('spotify-token');
@@ -2256,7 +2240,7 @@ const me = await api.request({
 }
 
 
-if (message.toLowerCase().startsWith("'query")) {
+    if (message.toLowerCase().startsWith("'query")) {
     if (!block) {
 
         const data = await got(`https://api.wolframalpha.com/v1/result?appid=${process.env.wolfram_api_key}&i=${args.join(" ")}`, {
@@ -2271,9 +2255,9 @@ if (message.toLowerCase().startsWith("'query")) {
    }
 }
 
-if (channel === '#kattah') {
-    if (!block) {
-    if(message == "pokimane" && user['user-id'] === "790623318") {
+    if (channel === '#kattah') {
+        if (!block) {
+            if(message == "pokimane" && user['user-id'] === "790623318") {
         client.say(channel, 'pokimane')
         block = true;
         setTimeout(() => {
