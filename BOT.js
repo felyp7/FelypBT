@@ -2268,7 +2268,7 @@ const me = await api.request({
 
     
     if(message == "test" && user['user-id'] === "162760707") {
-        client.say(channel, 'xdd')
+        client.say(channel, 'xdd a')
         block = true;
         setTimeout(() => {
             block = false;
