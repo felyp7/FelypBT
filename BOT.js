@@ -1,5 +1,8 @@
 require('dotenv').config();
 
+
+
+
 const tmi = require('tmi.js');
 
 const client = new tmi.Client({    
@@ -16,8 +19,28 @@ const client = new tmi.Client({
     identity: {
         username: process.env.username,
         password: process.env.password
-    }, channels: ["opat04", "felypbt", "FeelsGloomyMan", "deadgeplease", "Ruqayyah_Esquivel", "BobIsAMistake", "felyp8", "notfelyp", "xpatrck", "MALLAIRR", "EMRESUCUKT0AST", "yamatosdeath1", "d3vld", "sneeeze_","matysek__", "fookstee", "carltincan", "turtoise", "bobthebuilder_98", "pajlada", "masenka12", "scarder_", "lukyjuk", "forenunab", "lordevid", "kawanpls", "speedster05", "feelsdonkman", "lul85xd__", "yosefsaa7", "CuentadeGato", "liptongod", "kattah", "florian_2807" ]
+    },
+    channels: ["felyp8"]
 });
+
+const db = require("./util/db.js");
+const utils = require("./util/utils.js");
+
+const main = async () => {
+    const channels = await db.channels.find({}).exec();
+    for (const channel of channels) {
+        try {
+            await client.join(channel.username);
+            console.log(`[Twitch] Joined ${channel.username}`);
+        } catch (err) {
+            console.error(`Failed to join channel ${channel.username}`, err);
+        }
+    }
+};
+
+main()
+
+
     
 const got = require('got');
 
@@ -52,12 +75,28 @@ const wc = client.wc
 
 
 
+
 client.connect(process.env.password).catch(console.error);
 
 var block = false;
 
 
     client.on("message", async (channel, user, message, self) => {
+
+        const isUserSeenBefore = await db.users.findOne({id: user['user-id']});
+        if (!isUserSeenBefore) {
+        const userdata =
+        new db.users({
+            id: user['user-id'],
+            username: user.username,
+            firstSeen: new Date(),
+            level: "normal",
+            // normal level & admin level
+        });
+
+        await userdata.save();
+        }
+
         if(self) return;
     const args = message.slice(1).split(' ')
     const command = args.shift().toLowerCase();
@@ -81,13 +120,71 @@ var block = false;
         }
     }
 
+    if(message.toLowerCase().startsWith("'join") && user['user-id'] === "162760707") {
+        if (!block) {
+            const channelData = await db.channels.findOne({ username: args[0].toLowerCase() }).exec();
+            if (channelData) {
+                client.say(channel, `already in channel ${args[0]}`);
+                block = true;
+                setTimeout(() => {
+                    block = false;
+                }, (5 * 1000));
+            } else {
+                try {
+                    await client.join(args[0].toLowerCase());
+                } catch (err) {
+                    console.log(err);
+                    client.say(channel, `error joining ${args[0]}`);
+                    block = true;
+                    setTimeout(() => {
+                        block = false;
+                    }, (5 * 1000));
+                }
+                const newChannel = new db.channels({
+                    username: args[0].toLowerCase(),
+                    id: await utils.IDByLogin(args[0].toLowerCase()),
+                    joinedAt: new Date(),
+                });
+                await newChannel.save();
+                return client.say(channel, `joined ${args[0]}`); 
+            }
+        }
+    }
+
+    if(message.toLowerCase().startsWith("'part") && user['user-id'] === "162760707") {
+        if (!block) {
+            const channelData = await db.channels.findOneAndDelete({ username: args[0].toLowerCase() }).exec();
+            if (channelData) {
+                client.part(args[0].toLowerCase());
+                client.say(channel, `left channel "${args[0]}"`);
+                block = true;
+                setTimeout(() => {
+                    block = false;
+                }, (5 * 1000));
+              } else {
+                client.say(channel, `not in channel ${args[0]}`);
+            }
+        }
+    }
+
+    if(message.toLowerCase().startsWith("'commands") && command === 'commands') {
+        if (!block) {
+            client.say(channel, `FeelsDankMan 👉 felyp.ga `);
+            block = true;
+            setTimeout(() => {
+                block = false;
+            }, (5 * 1000));
+        }
+    }
+
 
     if (message.startsWith("(cookie reminder) felypbt, eat cookie please :) 🍪") && user['user-id'] === "229225576") {
         client.say(channel, '!cookie')
     }
 
 
-    if (message.toLowerCase().startsWith("'restart") && user.username === 'felyp8' ) {
+    if (message.toLowerCase().startsWith("'restart") && user.username === 'kattah' ) {
+        client.say(channel, "restarting kekw")
     process.exit()
     }
 
@@ -644,6 +741,8 @@ var block = false;
         }
     }
 }
+
+
 
 
     if (message.toLowerCase().startsWith("'isbanned")) {
@@ -2274,6 +2373,5 @@ const me = await api.request({
             block = false;
         }, (5 * 1000));
     }
-
-
-});
+    
+})
