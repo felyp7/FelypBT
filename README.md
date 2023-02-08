@@ -1,1 +1,1 @@
-<img src="https://gachi.gay/fGBoP" width="500" height="500"/>
+<img src="https://i.felyp.ga/yGMPU.png" width="500" height="500"/>
